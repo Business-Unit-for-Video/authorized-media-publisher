@@ -57,10 +57,14 @@ def test_youtube_download_uses_yt_dlp(tmp_path: Path) -> None:
     cookies = tmp_path / "youtube-cookies.txt"
     cookies.write_text("cookie", encoding="utf-8")
     with patch("subprocess.run") as run:
-        download_video(
+        result = run.return_value
+        result.stdout = str(tmp_path / "video.source.mp4") + "\n"
+        (tmp_path / "video.source.mp4").write_bytes(b"video")
+        actual = download_video(
             "https://www.youtube.com/watch?v=abc", tmp_path / "video.source", cookies
         )
     command = run.call_args.args[0]
+    assert actual.name == "video.source.mp4"
     assert command[1:3] == ["-m", "yt_dlp"]
     assert "--no-playlist" in command
     assert command[command.index("--js-runtimes") + 1] == "node"

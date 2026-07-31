@@ -200,20 +200,25 @@ def download(url: str, target: Path) -> None:
             handle.write(chunk)
 
 
-def download_video(url: str, target: Path, cookie_path: Path | None = None) -> None:
+def download_video(url: str, target: Path, cookie_path: Path | None = None) -> Path:
     host = (urlparse(url).hostname or "").lower()
     if host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}:
         command = [
             sys.executable, "-m", "yt_dlp", "--no-playlist",
             "--js-runtimes", "node", "--remote-components", "ejs:github",
             "-f", "bv*+ba/b", "--merge-output-format", "mp4",
+            "--print", "after_move:filepath",
         ]
         if cookie_path:
             command.extend(["--cookies", str(cookie_path)])
-        command.extend(["-o", str(target), url])
-        subprocess.run(command, check=True)
-        return
+        command.extend(["-o", f"{target}.%(ext)s", url])
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
+        paths = [Path(line) for line in result.stdout.splitlines() if line.strip()]
+        if not paths or not paths[-1].is_file():
+            raise RuntimeError("yt-dlp did not report a downloaded media file")
+        return paths[-1]
     download(url, target)
+    return target
 
 
 def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) -> None:
@@ -272,10 +277,9 @@ def build(
         temp_dir = Path(temp)
         for index, video_row in enumerate(selected_videos):
             image_row, image_cycle = selected_images[index]
-            video_path = temp_dir / f"{video_row['id']}.source"
+            video_path = download_video(video_row["video_url"], temp_dir / video_row["id"], youtube_cookies)
             image_path = temp_dir / f"{image_row['id']}.image"
             output_path = output_dir / f"{index + 1:04d}-{video_row['id']}.mp4"
-            download_video(video_row["video_url"], video_path, youtube_cookies)
             download(image_row["image_url"], image_path)
             run_ffmpeg(video_path, image_path, output_path, width, height)
             report.append({
