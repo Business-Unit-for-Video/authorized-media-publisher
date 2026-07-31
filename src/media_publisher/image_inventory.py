@@ -133,7 +133,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--queries", type=Path, default=Path("config/image-searches.txt"))
     parser.add_argument("--limit", type=int, default=20)
-    parser.add_argument("--output", type=Path, default=Path("image-library"))
+    parser.add_argument("--output", type=Path, default=Path("output"))
     args = parser.parse_args()
     if args.limit < 1 or args.limit > 500:
         parser.error("--limit must be between 1 and 500")
