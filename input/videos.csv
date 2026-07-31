@@ -1,2 +1,0 @@
-video_id,url,title,channel,channel_id,duration,upload_date,availability,live_status,view_count,matched_queries,discovered_at
-example-001,https://www.youtube.com/watch?v=REPLACE_ME,授权视频标题,频道名称,channel-id,0,,public,not_live,0,query,2026-01-01T00:00:00+00:00
