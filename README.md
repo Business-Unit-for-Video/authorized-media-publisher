@@ -1,25 +1,37 @@
-# Adult Performer Image Inventory
+# Authorized Media Publisher
 
-This repository only scans approved public image sources and writes an auditable image-link inventory. It does not process videos, download media binaries, publish to Bilibili, or infer permission from a public URL.
+This repository contains only the processing and publishing logic. It does not search for, bundle, or endorse any third-party video or image source.
 
-## Inputs and output
+## Inputs
 
-- `config/image-searches.txt`: one performer or search query per line.
-- `output/images.csv`: tabular image links and metadata.
-- `output/images.jsonl`: machine-readable records.
-- `output/licensed-image-urls.txt`: convenience list for records with license metadata.
-- `output/manifest.json`: counts, source failures, and scope notes.
+`input/videos.csv` is intentionally shaped like the one-link-per-song output from `youtube-music-video-search`, but this repository does not download that repository's URLs automatically. Replace the example with videos you own or are licensed to reuse.
 
-The scanner defaults to Wikimedia Commons because it exposes source and license metadata through an API. It does not crawl adult sites, bypass access controls, or use anti-bot evasion.
+`input/images.csv` contains photo URLs. Each row must include:
+
+- `rights_basis`: ownership, license, model/photographer consent, or another documented legal basis;
+- `publish_scope`: for example `private` or `public` and the target platform;
+- `attribution`: required credit text.
+
+Do not add a real person's photo URL unless you have the necessary image rights and consent for the declared Bilibili use. The workflow does not search for adult-performer photos and does not infer permission from a public URL.
+
+## Local run
 
 ```bash
-python -m pip install -e '.[test]'
-media-image-inventory --queries config/image-searches.txt --limit 20 --output output
-pytest -q
+python -m pip install -e .
+# Requires ffmpeg on PATH.
+media-publisher --videos input/videos.csv --images input/images.csv
 ```
 
-Each record preserves the source page, original image URL, thumbnail URL, dimensions, creator/credit fields, license metadata, query, source, and collection time. `license-metadata-present` only means that license metadata was returned by the source. It is not approval to use a real person's likeness on Bilibili; identity, copyright, consent, publicity rights, platform terms, and attribution still require review.
+Each source video is downloaded, the selected image is scaled with aspect ratio preserved, padded to the requested fixed canvas (default `1920x1080`), and combined with the source audio. `output/build-report.json` records both sources and rights metadata.
 
 ## GitHub Actions
 
-`.github/workflows/image-inventory.yml` is the only workflow. It runs weekly or by manual dispatch, uploads `output/` as an Artifact, and commits refreshed inventory data to `main` when it changes. HTTP 403/429 failures are recorded in `output/manifest.json`; if all queries fail, the workflow exits non-zero instead of claiming a successful empty library.
+`.github/workflows/publish.yml` is manual only. `publish_mode=build` creates an artifact and does not upload to Bilibili. `private` uploads as a private draft; `public` is an explicit public upload choice. Configure the repository environment `bilibili-publish` with an Actions secret named `BILIBILI_COOKIE_JSON`. The secret value must be the Biliup cookie JSON, and is written only to the ephemeral runner filesystem.
+
+The workflow uses the Biliup CLI and currently pins `biliup==1.2.2`. Review Bilibili rules, copyright status, image rights, and the generated artifact before public submission.
+
+## Image inventory
+
+The discovery list is maintained separately in [`Business-Unit-for-Video/adult-performer-image-inventory`](https://github.com/Business-Unit-for-Video/adult-performer-image-inventory). Its committed `output/` contains exactly 1000 deduplicated candidate image links with source pages and query provenance.
+
+Do not feed that discovery output directly into a public upload. Review selected rows for identity, copyright, consent, publicity rights, attribution, and Bilibili use, then copy only approved rows into `input/images.csv` with a documented `rights_basis` and `publish_scope`.

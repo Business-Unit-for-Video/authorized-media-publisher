@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "public-image-inventory"
+name = "bilibili-authorized-media-publisher"
 version = "0.1.0"
-description = "Build an auditable public image-link inventory"
+description = "Create and optionally publish videos from explicitly authorized media manifests"
 requires-python = ">=3.11"
 dependencies = []
 
@@ -13,6 +13,8 @@ dependencies = []
 test = ["pytest>=8"]
 
 [project.scripts]
+media-publisher = "media_publisher.cli:main"
+media-publish-bilibili = "media_publisher.publish:main"
 media-image-inventory = "media_publisher.image_inventory:main"
 
 [tool.setuptools.packages.find]
