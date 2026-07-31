@@ -10,7 +10,7 @@ This repository contains only the processing and publishing logic. It does not s
 video_id,url,title,channel,channel_id,duration,upload_date,availability,live_status,view_count,matched_queries,discovered_at
 ```
 
-The publisher maps `video_id` to its internal ID and `url` to the source URL. The discovery CSV does not establish reuse permission, so the manual workflow separately requires `video_rights_basis` and `video_publish_scope`. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for authorized direct media URLs.
+The publisher maps `video_id` to its internal ID and `url` to the source URL. Rights and publish-scope fields are optional audit metadata rather than runtime gates. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for direct media URLs.
 
 `input/images.csv` accepts the exact 17-column output from `adult-performer-image-inventory/output/images.csv`:
 
@@ -18,7 +18,7 @@ The publisher maps `video_id` to its internal ID and `url` to the source URL. Th
 id,person_query,title,source_page_url,image_url,thumbnail_url,mime,width,height,license_short_name,license_url,artist,credit,usage_terms,source,rights_status,collected_at
 ```
 
-The publisher maps `image_url` directly and uses `credit` or `artist` as attribution. The discovery `rights_status` remains auditable metadata; the workflow separately requires `image_rights_basis` and `image_publish_scope`.
+The publisher maps `image_url` directly and uses `credit` or `artist` as attribution. The discovery `rights_status`, optional rights metadata, and attribution remain available in the generated audit report.
 
 Image rotation and video publishing are persisted together in `state/publish-state.json`. The build selects only the next `batch_size` video IDs that are not complete and does not advance state. Private/public publishing reserves the video and image before upload, records the returned Bilibili `aid`/`bvid`, and then attaches the video to the selected Bilibili Season collection. Later runs skip completed video IDs. If collection attachment fails after upload, the next run retries only the attachment rather than uploading a duplicate. Once all image IDs have been used, the image cycle increments and reuse starts from the beginning. The legacy `state/image-usage.json` is imported when the unified state is first created.
 

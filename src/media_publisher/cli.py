@@ -188,10 +188,6 @@ def validate_rows(rows: list[dict[str, str]], label: str) -> None:
         if not item_id or item_id in seen:
             raise ValueError(f"{label}: duplicate or empty id: {item_id!r}")
         seen.add(item_id)
-        if not row["rights_basis"].strip():
-            raise ValueError(f"{label} {item_id}: rights_basis is required")
-        if not row["publish_scope"].strip():
-            raise ValueError(f"{label} {item_id}: publish_scope is required")
         parsed = urlparse(row["video_url"] if label == "video" else row["image_url"])
         if parsed.scheme not in {"http", "https"} or not parsed.netloc:
             raise ValueError(f"{label} {item_id}: URL must be http(s)")

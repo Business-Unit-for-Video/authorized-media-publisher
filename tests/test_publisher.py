@@ -31,14 +31,13 @@ def initial_state() -> dict[str, object]:
     }
 
 
-def test_manifest_requires_rights_basis(tmp_path: Path) -> None:
+def test_manifest_allows_empty_rights_metadata(tmp_path: Path) -> None:
     path = write(
         tmp_path / "videos.csv",
-        "id,title,video_url,rights_basis,publish_scope\na,t,https://x.test/a.mp4,,public\n",
+        "id,title,video_url,rights_basis,publish_scope\na,t,https://x.test/a.mp4,,\n",
     )
     rows = read_manifest(path, ("id", "title", "video_url", "rights_basis", "publish_scope"))
-    with pytest.raises(ValueError, match="rights_basis"):
-        validate_rows(rows, "video")
+    validate_rows(rows, "video")
 
 
 def test_youtube_inventory_schema_is_normalized(tmp_path: Path) -> None:
