@@ -64,6 +64,8 @@ def test_youtube_download_uses_yt_dlp(tmp_path: Path) -> None:
     command = run.call_args.args[0]
     assert command[1:3] == ["-m", "yt_dlp"]
     assert "--no-playlist" in command
+    assert command[command.index("--js-runtimes") + 1] == "node"
+    assert command[command.index("--remote-components") + 1] == "ejs:github"
     assert command[command.index("--cookies") + 1] == str(cookies)
 
 

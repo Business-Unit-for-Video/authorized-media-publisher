@@ -209,6 +209,7 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> N
     if host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}:
         command = [
             sys.executable, "-m", "yt_dlp", "--no-playlist",
+            "--js-runtimes", "node", "--remote-components", "ejs:github",
             "-f", "bv*+ba/b", "--merge-output-format", "mp4",
         ]
         if cookie_path:
