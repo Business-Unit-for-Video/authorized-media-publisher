@@ -204,14 +204,17 @@ def download(url: str, target: Path) -> None:
             handle.write(chunk)
 
 
-def download_video(url: str, target: Path) -> None:
+def download_video(url: str, target: Path, cookie_path: Path | None = None) -> None:
     host = (urlparse(url).hostname or "").lower()
     if host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}:
-        subprocess.run([
+        command = [
             sys.executable, "-m", "yt_dlp", "--no-playlist",
             "-f", "bv*+ba/b", "--merge-output-format", "mp4",
-            "-o", str(target), url,
-        ], check=True)
+        ]
+        if cookie_path:
+            command.extend(["--cookies", str(cookie_path)])
+        command.extend(["-o", str(target), url])
+        subprocess.run(command, check=True)
         return
     download(url, target)
 
@@ -241,6 +244,7 @@ def build(
     image_publish_scope: str = "",
     publish_state_path: Path = Path("state/publish-state.json"),
     batch_size: int = 1,
+    youtube_cookies: Path | None = None,
 ) -> int:
     videos = read_video_manifest(video_manifest, video_rights_basis, video_publish_scope)
     images = read_image_manifest(image_manifest, image_rights_basis, image_publish_scope)
@@ -274,7 +278,7 @@ def build(
             video_path = temp_dir / f"{video_row['id']}.source"
             image_path = temp_dir / f"{image_row['id']}.image"
             output_path = output_dir / f"{index + 1:04d}-{video_row['id']}.mp4"
-            download_video(video_row["video_url"], video_path)
+            download_video(video_row["video_url"], video_path, youtube_cookies)
             download(image_row["image_url"], image_path)
             run_ffmpeg(video_path, image_path, output_path, width, height)
             report.append({
@@ -308,12 +312,13 @@ def main() -> int:
     parser.add_argument("--image-publish-scope", default="")
     parser.add_argument("--publish-state", type=Path, default=Path("state/publish-state.json"))
     parser.add_argument("--batch-size", type=int, default=1)
+    parser.add_argument("--youtube-cookies", type=Path)
     args = parser.parse_args()
     count = build(
         args.videos, args.images, args.output, args.width, args.height,
         args.video_rights_basis, args.video_publish_scope,
         args.image_rights_basis, args.image_publish_scope,
-        args.publish_state, args.batch_size,
+        args.publish_state, args.batch_size, args.youtube_cookies,
     )
     print(json.dumps({"built": count, "width": args.width, "height": args.height}, ensure_ascii=False))
     return 0

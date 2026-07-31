@@ -55,11 +55,16 @@ def test_youtube_inventory_schema_is_normalized(tmp_path: Path) -> None:
 
 
 def test_youtube_download_uses_yt_dlp(tmp_path: Path) -> None:
+    cookies = tmp_path / "youtube-cookies.txt"
+    cookies.write_text("cookie", encoding="utf-8")
     with patch("subprocess.run") as run:
-        download_video("https://www.youtube.com/watch?v=abc", tmp_path / "video.source")
+        download_video(
+            "https://www.youtube.com/watch?v=abc", tmp_path / "video.source", cookies
+        )
     command = run.call_args.args[0]
     assert command[1:3] == ["-m", "yt_dlp"]
     assert "--no-playlist" in command
+    assert command[command.index("--cookies") + 1] == str(cookies)
 
 
 def test_inventory_image_schema_is_normalized(tmp_path: Path) -> None:

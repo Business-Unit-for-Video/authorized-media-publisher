@@ -74,6 +74,14 @@ jobs:
         run: python -m pip install . yt-dlp
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Write optional YouTube cookie file
+        env:
+          YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_COOKIE_FILE }}
+        run: |
+          if [ -n "$YOUTUBE_COOKIE_FILE" ]; then
+            printf '%s' "$YOUTUBE_COOKIE_FILE" > "$RUNNER_TEMP/youtube-cookies.txt"
+            chmod 600 "$RUNNER_TEMP/youtube-cookies.txt"
+          fi
       - name: Validate and build videos
         env:
           VIDEO_MANIFEST: ${{ inputs.video_manifest }}
@@ -85,7 +93,12 @@ jobs:
           IMAGE_RIGHTS_BASIS: ${{ inputs.image_rights_basis }}
           IMAGE_PUBLISH_SCOPE: ${{ inputs.image_publish_scope }}
           BATCH_SIZE: ${{ inputs.batch_size }}
+          YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
         run: |
+          YOUTUBE_COOKIE_ARGS=()
+          if [ -f "$YOUTUBE_COOKIE_PATH" ]; then
+            YOUTUBE_COOKIE_ARGS=(--youtube-cookies "$YOUTUBE_COOKIE_PATH")
+          fi
           media-publisher \
             --videos "$VIDEO_MANIFEST" \
             --images "$IMAGE_MANIFEST" \
@@ -96,7 +109,8 @@ jobs:
             --image-rights-basis "$IMAGE_RIGHTS_BASIS" \
             --image-publish-scope "$IMAGE_PUBLISH_SCOPE" \
             --publish-state state/publish-state.json \
-            --batch-size "$BATCH_SIZE"
+            --batch-size "$BATCH_SIZE" \
+            "${YOUTUBE_COOKIE_ARGS[@]}"
       - name: Upload review artifact
         uses: actions/upload-artifact@v4
         with:
