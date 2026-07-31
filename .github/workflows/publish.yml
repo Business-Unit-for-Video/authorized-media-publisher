@@ -20,18 +20,6 @@ on:
         description: "CSV path for authorized images or adult-performer-image-inventory/output/images.csv"
         required: true
         default: "input/images.csv"
-      image_rights_basis:
-        description: "Documented image ownership/license/consent basis"
-        required: true
-      image_publish_scope:
-        description: "Approved image use scope, for example: Bilibili private review"
-        required: true
-      video_rights_basis:
-        description: "Documented ownership/license basis for the imported video inventory"
-        required: true
-      video_publish_scope:
-        description: "Approved use scope, for example: Bilibili private review"
-        required: true
       batch_size:
         description: "Number of new videos to process in this run"
         required: true
@@ -88,10 +76,6 @@ jobs:
           IMAGE_MANIFEST: ${{ inputs.image_manifest }}
           OUTPUT_WIDTH: ${{ inputs.width }}
           OUTPUT_HEIGHT: ${{ inputs.height }}
-          VIDEO_RIGHTS_BASIS: ${{ inputs.video_rights_basis }}
-          VIDEO_PUBLISH_SCOPE: ${{ inputs.video_publish_scope }}
-          IMAGE_RIGHTS_BASIS: ${{ inputs.image_rights_basis }}
-          IMAGE_PUBLISH_SCOPE: ${{ inputs.image_publish_scope }}
           BATCH_SIZE: ${{ inputs.batch_size }}
           YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
         run: |
@@ -104,10 +88,6 @@ jobs:
             --images "$IMAGE_MANIFEST" \
             --width "$OUTPUT_WIDTH" \
             --height "$OUTPUT_HEIGHT" \
-            --video-rights-basis "$VIDEO_RIGHTS_BASIS" \
-            --video-publish-scope "$VIDEO_PUBLISH_SCOPE" \
-            --image-rights-basis "$IMAGE_RIGHTS_BASIS" \
-            --image-publish-scope "$IMAGE_PUBLISH_SCOPE" \
             --publish-state state/publish-state.json \
             --batch-size "$BATCH_SIZE" \
             "${YOUTUBE_COOKIE_ARGS[@]}"
