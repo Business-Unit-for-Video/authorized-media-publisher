@@ -12,11 +12,15 @@ video_id,url,title,channel,channel_id,duration,upload_date,availability,live_sta
 
 The publisher maps `video_id` to its internal ID and `url` to the source URL. The discovery CSV does not establish reuse permission, so the manual workflow separately requires `video_rights_basis` and `video_publish_scope`. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for authorized direct media URLs.
 
-`input/images.csv` contains photo URLs. Each row must include:
+`input/images.csv` accepts the exact 17-column output from `adult-performer-image-inventory/output/images.csv`:
 
-- `rights_basis`: ownership, license, model/photographer consent, or another documented legal basis;
-- `publish_scope`: for example `private` or `public` and the target platform;
-- `attribution`: required credit text.
+```text
+id,person_query,title,source_page_url,image_url,thumbnail_url,mime,width,height,license_short_name,license_url,artist,credit,usage_terms,source,rights_status,collected_at
+```
+
+The publisher maps `image_url` directly and uses `credit` or `artist` as attribution. The discovery `rights_status` remains auditable metadata; the workflow separately requires `image_rights_basis` and `image_publish_scope`.
+
+Image rotation is persisted in `state/image-usage.json`. A successful build records each selected image ID. Later builds continue with unused IDs; after all inventory IDs have been used, the state starts the next cycle and permits reuse. The state is committed only after the build succeeds.
 
 Do not add a real person's photo URL unless you have the necessary image rights and consent for the declared Bilibili use. The workflow does not search for adult-performer photos and does not infer permission from a public URL.
 

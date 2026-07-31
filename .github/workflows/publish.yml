@@ -17,9 +17,15 @@ on:
         required: true
         default: "input/videos.csv"
       image_manifest:
-        description: "CSV path for explicitly authorized image URLs"
+        description: "CSV path for authorized images or adult-performer-image-inventory/output/images.csv"
         required: true
         default: "input/images.csv"
+      image_rights_basis:
+        description: "Documented image ownership/license/consent basis"
+        required: true
+      image_publish_scope:
+        description: "Approved image use scope, for example: Bilibili private review"
+        required: true
       video_rights_basis:
         description: "Documented ownership/license basis for the imported video inventory"
         required: true
@@ -36,7 +42,7 @@ on:
         default: "1080"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: authorized-media-publisher
@@ -64,6 +70,8 @@ jobs:
           OUTPUT_HEIGHT: ${{ inputs.height }}
           VIDEO_RIGHTS_BASIS: ${{ inputs.video_rights_basis }}
           VIDEO_PUBLISH_SCOPE: ${{ inputs.video_publish_scope }}
+          IMAGE_RIGHTS_BASIS: ${{ inputs.image_rights_basis }}
+          IMAGE_PUBLISH_SCOPE: ${{ inputs.image_publish_scope }}
         run: |
           media-publisher \
             --videos "$VIDEO_MANIFEST" \
@@ -71,13 +79,26 @@ jobs:
             --width "$OUTPUT_WIDTH" \
             --height "$OUTPUT_HEIGHT" \
             --video-rights-basis "$VIDEO_RIGHTS_BASIS" \
-            --video-publish-scope "$VIDEO_PUBLISH_SCOPE"
+            --video-publish-scope "$VIDEO_PUBLISH_SCOPE" \
+            --image-rights-basis "$IMAGE_RIGHTS_BASIS" \
+            --image-publish-scope "$IMAGE_PUBLISH_SCOPE"
       - name: Upload review artifact
         uses: actions/upload-artifact@v4
         with:
           name: authorized-media-${{ github.run_id }}
           path: output/
           if-no-files-found: error
+      - name: Commit image usage state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/image-usage.json
+          if git diff --cached --quiet; then
+            echo "Image usage state unchanged"
+          else
+            git commit -m "chore: advance image usage state"
+            git push
+          fi
 
   publish:
     needs: build
