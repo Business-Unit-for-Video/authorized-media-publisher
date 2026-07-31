@@ -4,12 +4,14 @@ import argparse
 import csv
 import json
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 VIDEO_FIELDS = ("id", "title", "video_url", "rights_basis", "publish_scope")
+YOUTUBE_FIELDS = ("video_id", "url", "title")
 IMAGE_FIELDS = ("id", "image_url", "rights_basis", "publish_scope", "attribution")
 
 
@@ -20,6 +22,29 @@ def read_manifest(path: Path, fields: tuple[str, ...]) -> list[dict[str, str]]:
     if missing:
         raise ValueError(f"{path}: missing columns: {', '.join(sorted(missing))}")
     return rows
+
+
+def read_video_manifest(
+    path: Path,
+    rights_basis: str = "",
+    publish_scope: str = "",
+) -> list[dict[str, str]]:
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle)
+        fieldnames = set(reader.fieldnames or [])
+        rows = list(reader)
+    if set(VIDEO_FIELDS).issubset(fieldnames):
+        return rows
+    missing = set(YOUTUBE_FIELDS) - fieldnames
+    if missing:
+        raise ValueError(f"{path}: unsupported video schema; missing columns: {', '.join(sorted(missing))}")
+    return [{
+        "id": row["video_id"],
+        "title": row["title"],
+        "video_url": row["url"],
+        "rights_basis": rights_basis,
+        "publish_scope": publish_scope,
+    } for row in rows]
 
 
 def validate_rows(rows: list[dict[str, str]], label: str) -> None:
@@ -47,6 +72,18 @@ def download(url: str, target: Path) -> None:
             handle.write(chunk)
 
 
+def download_video(url: str, target: Path) -> None:
+    host = (urlparse(url).hostname or "").lower()
+    if host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}:
+        subprocess.run([
+            sys.executable, "-m", "yt_dlp", "--no-playlist",
+            "-f", "bv*+ba/b", "--merge-output-format", "mp4",
+            "-o", str(target), url,
+        ], check=True)
+        return
+    download(url, target)
+
+
 def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) -> None:
     filtergraph = (
         f"scale={width}:{height}:force_original_aspect_ratio=decrease,"
@@ -60,8 +97,16 @@ def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) 
     subprocess.run(command, check=True)
 
 
-def build(video_manifest: Path, image_manifest: Path, output_dir: Path, width: int, height: int) -> int:
-    videos = read_manifest(video_manifest, VIDEO_FIELDS)
+def build(
+    video_manifest: Path,
+    image_manifest: Path,
+    output_dir: Path,
+    width: int,
+    height: int,
+    video_rights_basis: str = "",
+    video_publish_scope: str = "",
+) -> int:
+    videos = read_video_manifest(video_manifest, video_rights_basis, video_publish_scope)
     images = read_manifest(image_manifest, IMAGE_FIELDS)
     validate_rows(videos, "video")
     validate_rows(images, "image")
@@ -74,7 +119,7 @@ def build(video_manifest: Path, image_manifest: Path, output_dir: Path, width: i
             video_path = temp_dir / f"{video_row['id']}.source"
             image_path = temp_dir / f"{image_row['id']}.image"
             output_path = output_dir / f"{index + 1:04d}-{video_row['id']}.mp4"
-            download(video_row["video_url"], video_path)
+            download_video(video_row["video_url"], video_path)
             download(image_row["image_url"], image_path)
             run_ffmpeg(video_path, image_path, output_path, width, height)
             report.append({
@@ -99,8 +144,13 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=Path("output/videos"))
     parser.add_argument("--width", type=int, default=1920)
     parser.add_argument("--height", type=int, default=1080)
+    parser.add_argument("--video-rights-basis", default="")
+    parser.add_argument("--video-publish-scope", default="")
     args = parser.parse_args()
-    count = build(args.videos, args.images, args.output, args.width, args.height)
+    count = build(
+        args.videos, args.images, args.output, args.width, args.height,
+        args.video_rights_basis, args.video_publish_scope,
+    )
     print(json.dumps({"built": count, "width": args.width, "height": args.height}, ensure_ascii=False))
     return 0
 

@@ -20,6 +20,12 @@ on:
         description: "CSV path for explicitly authorized image URLs"
         required: true
         default: "input/images.csv"
+      video_rights_basis:
+        description: "Documented ownership/license basis for the imported video inventory"
+        required: true
+      video_publish_scope:
+        description: "Approved use scope, for example: Bilibili private review"
+        required: true
       width:
         description: "Output width"
         required: true
@@ -47,7 +53,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install Python package
-        run: python -m pip install .
+        run: python -m pip install . yt-dlp
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Validate and build videos
@@ -56,12 +62,16 @@ jobs:
           IMAGE_MANIFEST: ${{ inputs.image_manifest }}
           OUTPUT_WIDTH: ${{ inputs.width }}
           OUTPUT_HEIGHT: ${{ inputs.height }}
-        run: >-
-          media-publisher
-          --videos "$VIDEO_MANIFEST"
-          --images "$IMAGE_MANIFEST"
-          --width "$OUTPUT_WIDTH"
-          --height "$OUTPUT_HEIGHT"
+          VIDEO_RIGHTS_BASIS: ${{ inputs.video_rights_basis }}
+          VIDEO_PUBLISH_SCOPE: ${{ inputs.video_publish_scope }}
+        run: |
+          media-publisher \
+            --videos "$VIDEO_MANIFEST" \
+            --images "$IMAGE_MANIFEST" \
+            --width "$OUTPUT_WIDTH" \
+            --height "$OUTPUT_HEIGHT" \
+            --video-rights-basis "$VIDEO_RIGHTS_BASIS" \
+            --video-publish-scope "$VIDEO_PUBLISH_SCOPE"
       - name: Upload review artifact
         uses: actions/upload-artifact@v4
         with:

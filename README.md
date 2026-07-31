@@ -4,7 +4,13 @@ This repository contains only the processing and publishing logic. It does not s
 
 ## Inputs
 
-`input/videos.csv` is intentionally shaped like the one-link-per-song output from `youtube-music-video-search`, but this repository does not download that repository's URLs automatically. Replace the example with videos you own or are licensed to reuse.
+`input/videos.csv` uses the exact `youtube-music-video-search/output/videos.csv` schema:
+
+```text
+video_id,url,title,channel,channel_id,duration,upload_date,availability,live_status,view_count,matched_queries,discovered_at
+```
+
+The publisher maps `video_id` to its internal ID and `url` to the source URL. The discovery CSV does not establish reuse permission, so the manual workflow separately requires `video_rights_basis` and `video_publish_scope`. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for authorized direct media URLs.
 
 `input/images.csv` contains photo URLs. Each row must include:
 
