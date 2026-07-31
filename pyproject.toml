@@ -7,7 +7,7 @@ name = "bilibili-authorized-media-publisher"
 version = "0.1.0"
 description = "Create and optionally publish videos from explicitly authorized media manifests"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["requests>=2.31"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]

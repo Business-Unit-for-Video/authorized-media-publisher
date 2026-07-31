@@ -20,7 +20,7 @@ id,person_query,title,source_page_url,image_url,thumbnail_url,mime,width,height,
 
 The publisher maps `image_url` directly and uses `credit` or `artist` as attribution. The discovery `rights_status` remains auditable metadata; the workflow separately requires `image_rights_basis` and `image_publish_scope`.
 
-Image rotation is persisted in `state/image-usage.json`. A successful build records each selected image ID. Later builds continue with unused IDs; after all inventory IDs have been used, the state starts the next cycle and permits reuse. The state is committed only after the build succeeds.
+Image rotation and video publishing are persisted together in `state/publish-state.json`. The build selects only the next `batch_size` video IDs that are not complete and does not advance state. Private/public publishing reserves the video and image before upload, records the returned Bilibili `aid`/`bvid`, and then attaches the video to the selected Bilibili Season collection. Later runs skip completed video IDs. If collection attachment fails after upload, the next run retries only the attachment rather than uploading a duplicate. Once all image IDs have been used, the image cycle increments and reuse starts from the beginning. The legacy `state/image-usage.json` is imported when the unified state is first created.
 
 Do not add a real person's photo URL unless you have the necessary image rights and consent for the declared Bilibili use. The workflow does not search for adult-performer photos and does not infer permission from a public URL.
 

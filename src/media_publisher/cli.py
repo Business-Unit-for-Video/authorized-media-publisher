@@ -116,6 +116,69 @@ def write_image_state(path: Path, state: dict[str, object]) -> None:
     temporary.replace(path)
 
 
+def load_publish_state(path: Path, legacy_image_state_path: Path | None = None) -> dict[str, object]:
+    if path.exists():
+        state = json.loads(path.read_text(encoding="utf-8"))
+    else:
+        images = load_image_state(legacy_image_state_path) if legacy_image_state_path else {
+            "cycle": 1, "used_image_ids": []
+        }
+        state = {"version": 1, "images": images, "videos": {}, "season": {}}
+    if state.get("version") != 1 or not isinstance(state.get("videos"), dict):
+        raise ValueError(f"{path}: unsupported publish state")
+    images = state.get("images")
+    if not isinstance(images, dict):
+        raise ValueError(f"{path}: images must be an object")
+    load_image_state_from_value(images, path)
+    if not isinstance(state.get("season", {}), dict):
+        raise ValueError(f"{path}: season must be an object")
+    return state
+
+
+def load_image_state_from_value(state: dict[str, object], path: Path) -> dict[str, object]:
+    used = state.get("used_image_ids", [])
+    cycle = state.get("cycle", 1)
+    if not isinstance(used, list) or not all(isinstance(item, str) for item in used):
+        raise ValueError(f"{path}: used_image_ids must be a list of strings")
+    if not isinstance(cycle, int) or cycle < 1:
+        raise ValueError(f"{path}: cycle must be a positive integer")
+    return {"cycle": cycle, "used_image_ids": used}
+
+
+def select_video_batch(
+    videos: list[dict[str, str]], state: dict[str, object], batch_size: int,
+) -> list[dict[str, str]]:
+    if batch_size < 1:
+        raise ValueError("batch_size must be a positive integer")
+    known = state["videos"]
+    selected = [
+        row for row in videos
+        if row["id"] not in known or known[row["id"]].get("status") == "uploading"
+    ]
+    return selected[:batch_size]
+
+
+def select_images_with_cycles(
+    images: list[dict[str, str]], count: int, state: dict[str, object],
+) -> tuple[list[tuple[dict[str, str], int]], dict[str, object]]:
+    if not images:
+        raise ValueError("image: manifest is empty")
+    used = set(state["used_image_ids"])
+    cycle = int(state["cycle"])
+    selected: list[tuple[dict[str, str], int]] = []
+    while len(selected) < count:
+        available = [row for row in images if row["id"] not in used]
+        if not available:
+            used.clear()
+            cycle += 1
+            available = list(images)
+        take = min(count - len(selected), len(available))
+        for row in available[:take]:
+            selected.append((row, cycle))
+            used.add(row["id"])
+    return selected, {"cycle": cycle, "used_image_ids": sorted(used)}
+
+
 def validate_rows(rows: list[dict[str, str]], label: str) -> None:
     if not rows:
         raise ValueError(f"{label}: manifest is empty")
@@ -176,20 +239,38 @@ def build(
     video_publish_scope: str = "",
     image_rights_basis: str = "",
     image_publish_scope: str = "",
-    image_state_path: Path = Path("state/image-usage.json"),
+    publish_state_path: Path = Path("state/publish-state.json"),
+    batch_size: int = 1,
 ) -> int:
     videos = read_video_manifest(video_manifest, video_rights_basis, video_publish_scope)
     images = read_image_manifest(image_manifest, image_rights_basis, image_publish_scope)
     validate_rows(videos, "video")
     validate_rows(images, "image")
-    image_state = load_image_state(image_state_path)
-    selected_images, next_image_state = select_images(images, len(videos), image_state)
+    publish_state = load_publish_state(
+        publish_state_path, publish_state_path.with_name("image-usage.json")
+    )
+    selected_videos = select_video_batch(videos, publish_state, batch_size)
+    selected_images: list[tuple[dict[str, str], int]] = []
+    working_image_state = dict(publish_state["images"])
+    image_by_id = {row["id"]: row for row in images}
+    for video_row in selected_videos:
+        existing = publish_state["videos"].get(video_row["id"], {})
+        if existing.get("status") == "uploading":
+            image_id = str(existing["image_id"])
+            if image_id not in image_by_id:
+                raise ValueError(f"reserved image {image_id} is no longer in the manifest")
+            selected_images.append((image_by_id[image_id], int(existing["image_cycle"])))
+        else:
+            chosen, working_image_state = select_images_with_cycles(
+                images, 1, working_image_state
+            )
+            selected_images.extend(chosen)
     output_dir.mkdir(parents=True, exist_ok=True)
     report: list[dict[str, str]] = []
     with tempfile.TemporaryDirectory(prefix="media-publisher-") as temp:
         temp_dir = Path(temp)
-        for index, video_row in enumerate(videos):
-            image_row = selected_images[index]
+        for index, video_row in enumerate(selected_videos):
+            image_row, image_cycle = selected_images[index]
             video_path = temp_dir / f"{video_row['id']}.source"
             image_path = temp_dir / f"{image_row['id']}.image"
             output_path = output_dir / f"{index + 1:04d}-{video_row['id']}.mp4"
@@ -197,6 +278,7 @@ def build(
             download(image_row["image_url"], image_path)
             run_ffmpeg(video_path, image_path, output_path, width, height)
             report.append({
+                "video_id": video_row["id"],
                 "file": str(output_path),
                 "title": video_row["title"],
                 "video_source": video_row["video_url"],
@@ -204,14 +286,13 @@ def build(
                 "image_source": image_row["image_url"],
                 "image_rights_basis": image_row["rights_basis"],
                 "image_id": image_row["id"],
-                "image_usage_cycle": str(next_image_state["cycle"]),
+                "image_usage_cycle": str(image_cycle),
                 "attribution": image_row["attribution"],
             })
     (output_dir.parent / "build-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    write_image_state(image_state_path, next_image_state)
-    return len(videos)
+    return len(selected_videos)
 
 
 def main() -> int:
@@ -225,12 +306,14 @@ def main() -> int:
     parser.add_argument("--video-publish-scope", default="")
     parser.add_argument("--image-rights-basis", default="")
     parser.add_argument("--image-publish-scope", default="")
-    parser.add_argument("--image-state", type=Path, default=Path("state/image-usage.json"))
+    parser.add_argument("--publish-state", type=Path, default=Path("state/publish-state.json"))
+    parser.add_argument("--batch-size", type=int, default=1)
     args = parser.parse_args()
     count = build(
         args.videos, args.images, args.output, args.width, args.height,
         args.video_rights_basis, args.video_publish_scope,
-        args.image_rights_basis, args.image_publish_scope, args.image_state,
+        args.image_rights_basis, args.image_publish_scope,
+        args.publish_state, args.batch_size,
     )
     print(json.dumps({"built": count, "width": args.width, "height": args.height}, ensure_ascii=False))
     return 0

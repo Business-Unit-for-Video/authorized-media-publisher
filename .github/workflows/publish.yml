@@ -32,6 +32,18 @@ on:
       video_publish_scope:
         description: "Approved use scope, for example: Bilibili private review"
         required: true
+      batch_size:
+        description: "Number of new videos to process in this run"
+        required: true
+        default: "1"
+      season_title:
+        description: "Bilibili collection title; existing collection is reused by exact title"
+        required: true
+        default: "音乐视频合集"
+      season_description:
+        description: "Description used only when creating a new Bilibili collection"
+        required: false
+        default: ""
       width:
         description: "Output width"
         required: true
@@ -72,6 +84,7 @@ jobs:
           VIDEO_PUBLISH_SCOPE: ${{ inputs.video_publish_scope }}
           IMAGE_RIGHTS_BASIS: ${{ inputs.image_rights_basis }}
           IMAGE_PUBLISH_SCOPE: ${{ inputs.image_publish_scope }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
         run: |
           media-publisher \
             --videos "$VIDEO_MANIFEST" \
@@ -81,24 +94,15 @@ jobs:
             --video-rights-basis "$VIDEO_RIGHTS_BASIS" \
             --video-publish-scope "$VIDEO_PUBLISH_SCOPE" \
             --image-rights-basis "$IMAGE_RIGHTS_BASIS" \
-            --image-publish-scope "$IMAGE_PUBLISH_SCOPE"
+            --image-publish-scope "$IMAGE_PUBLISH_SCOPE" \
+            --publish-state state/publish-state.json \
+            --batch-size "$BATCH_SIZE"
       - name: Upload review artifact
         uses: actions/upload-artifact@v4
         with:
           name: authorized-media-${{ github.run_id }}
           path: output/
           if-no-files-found: error
-      - name: Commit image usage state
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state/image-usage.json
-          if git diff --cached --quiet; then
-            echo "Image usage state unchanged"
-          else
-            git commit -m "chore: advance image usage state"
-            git push
-          fi
 
   publish:
     needs: build
@@ -124,9 +128,20 @@ jobs:
           test -n "$BILIBILI_COOKIE_JSON"
           printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/cookies.json"
           chmod 600 "$RUNNER_TEMP/cookies.json"
-      - name: Publish
+      - name: Configure state commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Publish and attach to collection
+        env:
+          SEASON_TITLE: ${{ inputs.season_title }}
+          SEASON_DESCRIPTION: ${{ inputs.season_description }}
         run: >-
           media-publish-bilibili
           --report output/build-report.json
           --cookies "$RUNNER_TEMP/cookies.json"
           --visibility "${{ inputs.publish_mode }}"
+          --state state/publish-state.json
+          --season-title "$SEASON_TITLE"
+          --season-description "$SEASON_DESCRIPTION"
+          --run-id "${{ github.run_id }}"
