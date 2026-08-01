@@ -6,12 +6,14 @@ import pytest
 
 from media_publisher.cli import (
     build,
+    download_image,
     download_video,
     read_image_manifest,
     read_manifest,
     read_video_manifest,
     select_images,
     select_video_batch,
+    validate_image,
     validate_rows,
 )
 from media_publisher.publish import publish
@@ -80,7 +82,39 @@ def test_inventory_image_schema_is_normalized(tmp_path: Path) -> None:
     )
     rows = read_image_manifest(path, "licensed", "private")
     assert rows[0]["image_url"] == "https://x.test/i.jpg"
+    assert rows[0]["thumbnail_url"] == "https://x.test/t.jpg"
     assert rows[0]["attribution"] == "https://x.test/page"
+
+
+def test_image_validation_decodes_a_frame(tmp_path: Path) -> None:
+    path = tmp_path / "image"
+    path.write_bytes(b"not an image")
+    with pytest.raises(ValueError, match="not a valid image"):
+        validate_image(path)
+
+
+def test_image_download_retries_then_uses_thumbnail(tmp_path: Path) -> None:
+    row = {
+        "id": "i1",
+        "image_url": "https://x.test/full.jpg",
+        "thumbnail_url": "https://x.test/thumb.jpg",
+    }
+    attempts: list[str] = []
+
+    def fake_download(url: str, target: Path) -> None:
+        attempts.append(url)
+        target.write_bytes(b"response")
+
+    def fake_validate(path: Path) -> None:
+        if len(attempts) < 3:
+            raise ValueError("invalid image")
+
+    with patch("media_publisher.cli.download", side_effect=fake_download), patch(
+        "media_publisher.cli.validate_image", side_effect=fake_validate
+    ):
+        actual = download_image(row, tmp_path / "image")
+    assert actual == row["thumbnail_url"]
+    assert attempts == [row["image_url"], row["image_url"], row["thumbnail_url"]]
 
 
 def test_image_rotation_resets_after_exhaustion() -> None:
@@ -121,7 +155,9 @@ def test_build_limits_batch_and_does_not_advance_state(tmp_path: Path) -> None:
     videos, images = build_manifests(tmp_path)
     output = tmp_path / "output" / "videos"
     state = tmp_path / "state" / "publish-state.json"
-    with patch("media_publisher.cli.download_video"), patch("media_publisher.cli.download"), patch(
+    with patch("media_publisher.cli.download_video"), patch(
+        "media_publisher.cli.download_image", side_effect=lambda row, path: row["image_url"]
+    ), patch(
         "media_publisher.cli.run_ffmpeg"
     ):
         assert build(videos, images, output, 1280, 720, publish_state_path=state, batch_size=1) == 1
@@ -134,7 +170,9 @@ def test_build_limits_batch_and_does_not_advance_state(tmp_path: Path) -> None:
 def test_failed_build_does_not_advance_state(tmp_path: Path) -> None:
     videos, images = build_manifests(tmp_path)
     state = tmp_path / "state" / "publish-state.json"
-    with patch("media_publisher.cli.download_video"), patch("media_publisher.cli.download"), patch(
+    with patch("media_publisher.cli.download_video"), patch(
+        "media_publisher.cli.download_image", side_effect=lambda row, path: row["image_url"]
+    ), patch(
         "media_publisher.cli.run_ffmpeg", side_effect=RuntimeError("ffmpeg failed")
     ):
         with pytest.raises(RuntimeError, match="ffmpeg failed"):

@@ -58,13 +58,14 @@ def read_image_manifest(
         fieldnames = set(reader.fieldnames or [])
         rows = list(reader)
     if set(IMAGE_FIELDS).issubset(fieldnames):
-        return rows
+        return [{**row, "thumbnail_url": row.get("thumbnail_url") or ""} for row in rows]
     missing = set(IMAGE_INVENTORY_FIELDS) - fieldnames
     if missing:
         raise ValueError(f"{path}: unsupported image schema; missing columns: {', '.join(sorted(missing))}")
     return [{
         "id": row["id"],
         "image_url": row["image_url"],
+        "thumbnail_url": row.get("thumbnail_url") or "",
         "rights_basis": rights_basis,
         "publish_scope": publish_scope,
         "attribution": row.get("credit") or row.get("artist") or row.get("source_page_url") or "",
@@ -200,6 +201,42 @@ def download(url: str, target: Path) -> None:
             handle.write(chunk)
 
 
+def validate_image(path: Path) -> None:
+    result = subprocess.run(
+        [
+            "ffmpeg", "-v", "error", "-i", str(path),
+            "-frames:v", "1", "-f", "null", "-",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        detail = result.stderr.strip() or "unable to decode an image frame"
+        raise ValueError(f"downloaded file is not a valid image: {detail}")
+
+
+def download_image(row: dict[str, str], target: Path) -> str:
+    urls = [row["image_url"]]
+    thumbnail_url = row.get("thumbnail_url", "").strip()
+    if thumbnail_url and thumbnail_url not in urls:
+        urls.append(thumbnail_url)
+    failures: list[str] = []
+    for url in urls:
+        for attempt in range(2):
+            try:
+                target.unlink(missing_ok=True)
+                download(url, target)
+                validate_image(target)
+                return url
+            except Exception as exc:
+                failures.append(f"{url} attempt {attempt + 1}: {exc}")
+    target.unlink(missing_ok=True)
+    raise RuntimeError(
+        f"image {row['id']}: primary and fallback downloads were invalid; "
+        + "; ".join(failures)
+    )
+
+
 def download_video(url: str, target: Path, cookie_path: Path | None = None) -> Path:
     host = (urlparse(url).hostname or "").lower()
     if host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"}:
@@ -275,12 +312,17 @@ def build(
     report: list[dict[str, str]] = []
     with tempfile.TemporaryDirectory(prefix="media-publisher-") as temp:
         temp_dir = Path(temp)
+        downloaded_images: list[tuple[Path, str]] = []
+        # Validate all selected images before expensive video downloads and transcodes.
+        for index, (image_row, _) in enumerate(selected_images):
+            image_path = temp_dir / f"{index:04d}-{image_row['id']}.image"
+            actual_image_url = download_image(image_row, image_path)
+            downloaded_images.append((image_path, actual_image_url))
         for index, video_row in enumerate(selected_videos):
             image_row, image_cycle = selected_images[index]
             video_path = download_video(video_row["video_url"], temp_dir / video_row["id"], youtube_cookies)
-            image_path = temp_dir / f"{image_row['id']}.image"
+            image_path, actual_image_url = downloaded_images[index]
             output_path = output_dir / f"{index + 1:04d}-{video_row['id']}.mp4"
-            download(image_row["image_url"], image_path)
             run_ffmpeg(video_path, image_path, output_path, width, height)
             report.append({
                 "video_id": video_row["id"],
@@ -288,7 +330,7 @@ def build(
                 "title": video_row["title"],
                 "video_source": video_row["video_url"],
                 "video_rights_basis": video_row["rights_basis"],
-                "image_source": image_row["image_url"],
+                "image_source": actual_image_url,
                 "image_rights_basis": image_row["rights_basis"],
                 "image_id": image_row["id"],
                 "image_usage_cycle": str(image_cycle),
