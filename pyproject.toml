@@ -15,6 +15,7 @@ test = ["pytest>=8"]
 [project.scripts]
 media-publisher = "media_publisher.cli:main"
 media-publish-bilibili = "media_publisher.publish:main"
+media-publish-serial = "media_publisher.serial:main"
 media-image-inventory = "media_publisher.image_inventory:main"
 
 [tool.setuptools.packages.find]

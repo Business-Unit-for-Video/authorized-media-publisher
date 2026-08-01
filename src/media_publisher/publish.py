@@ -39,11 +39,15 @@ def reserve_record(
         existing = videos[video_id]
         if existing.get("video_url") != record["video_source"]:
             raise ValueError(f"video {video_id}: source URL changed")
-        if existing.get("status") == "uploading":
+        if existing.get("status") == "reserved":
             if existing.get("image_id") != record["image_id"]:
                 raise ValueError(f"video {video_id}: reserved image changed")
             existing.update({"workflow_run_id": run_id, "reserved_at": now_iso()})
             return
+        if existing.get("status") == "submitting":
+            raise RuntimeError(
+                f"video {video_id}: upload may have completed; inspect Bilibili before retrying"
+            )
         raise ValueError(f"video {video_id}: already uploaded or published")
     images = state["images"]
     image_cycle = int(record["image_usage_cycle"])
@@ -54,7 +58,7 @@ def reserve_record(
     used.add(record["image_id"])
     images["used_image_ids"] = sorted(used)
     videos[video_id] = {
-        "status": "uploading",
+        "status": "reserved",
         "video_url": record["video_source"],
         "title": record["title"],
         "image_id": record["image_id"],
@@ -62,6 +66,11 @@ def reserve_record(
         "workflow_run_id": run_id,
         "reserved_at": now_iso(),
     }
+
+
+def mark_submitting(state: dict[str, object], video_id: str) -> None:
+    entry = state["videos"][video_id]
+    entry.update({"status": "submitting", "submitting_at": now_iso()})
 
 
 def mark_uploaded(state: dict[str, object], video_id: str, result: dict[str, object]) -> None:
@@ -251,6 +260,7 @@ def publish(
     persist: Callable[[Path, str], None] = git_commit_state,
     uploader: Callable[..., dict[str, object]] = upload_video,
     season_factory: Callable[[Path], SeasonClient] = SeasonClient,
+    max_items: int | None = None,
 ) -> int:
     records = json.loads(report_path.read_text(encoding="utf-8"))
     state = load_publish_state(state_path, state_path.with_name("image-usage.json"))
@@ -271,15 +281,22 @@ def publish(
     }
     completed = 0
     for video_id, entry in pending_uploaded:
+        if max_items is not None and completed >= max_items:
+            return completed
         season_client.attach(int(entry["aid"]), str(entry["title"]), section_id)
         mark_published(state, video_id, season_id, section_id)
         save_state(state_path, state)
         persist(state_path, f"chore: attach Bilibili season {video_id}")
         completed += 1
     for record in records:
+        if max_items is not None and completed >= max_items:
+            return completed
         reserve_record(state, record, run_id)
         save_state(state_path, state)
         persist(state_path, f"chore: reserve Bilibili video {record['video_id']}")
+        mark_submitting(state, record["video_id"])
+        save_state(state_path, state)
+        persist(state_path, f"chore: mark Bilibili submission {record['video_id']}")
         result = uploader(record, cookie_path, visibility, tid, tags)
         mark_uploaded(state, record["video_id"], result)
         save_state(state_path, state)

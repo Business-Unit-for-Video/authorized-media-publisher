@@ -17,6 +17,7 @@ from media_publisher.cli import (
     validate_rows,
 )
 from media_publisher.publish import publish
+from media_publisher.serial import serial_publish
 
 
 def write(path: Path, text: str) -> Path:
@@ -129,7 +130,7 @@ def test_image_rotation_resets_after_exhaustion() -> None:
 def test_batch_skips_reserved_and_published() -> None:
     videos = [{"id": "v1"}, {"id": "v2"}, {"id": "v3"}]
     state = initial_state()
-    state["videos"] = {"v1": {"status": "published"}, "v2": {"status": "uploading"}}
+    state["videos"] = {"v1": {"status": "published"}, "v2": {"status": "reserved"}}
     assert [row["id"] for row in select_video_batch(videos, state, 2)] == ["v2", "v3"]
     with pytest.raises(ValueError, match="positive"):
         select_video_batch(videos, state, 0)
@@ -203,6 +204,151 @@ def report_file(tmp_path: Path) -> Path:
     }]))
 
 
+def test_serial_publish_builds_and_publishes_one_at_a_time(tmp_path: Path) -> None:
+    events: list[tuple[str, int]] = []
+    next_item = 0
+
+    def builder(*args, **kwargs) -> int:
+        nonlocal next_item
+        assert kwargs["batch_size"] == 1
+        next_item += 1
+        output_dir = args[2]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir / f"{next_item}.mp4").write_bytes(b"video")
+        (output_dir.parent / "build-report.json").write_text(
+            json.dumps([{"video_id": f"v{next_item}"}]), encoding="utf-8"
+        )
+        events.append(("build", next_item))
+        return 1
+
+    def publisher(*args, **kwargs) -> int:
+        report = json.loads(args[0].read_text(encoding="utf-8"))
+        item = int(report[0]["video_id"][1:])
+        events.append(("publish", item))
+        return 1
+
+    result = serial_publish(
+        tmp_path / "videos.csv",
+        tmp_path / "images.csv",
+        tmp_path / "output" / "videos",
+        1280,
+        720,
+        tmp_path / "state.json",
+        3,
+        None,
+        tmp_path / "cookies.json",
+        "private",
+        171,
+        "tag",
+        "season",
+        "",
+        "run",
+        builder=builder,
+        publisher=publisher,
+    )
+    assert result == {"built": 3, "published": 3}
+    assert events == [
+        ("build", 1), ("publish", 1),
+        ("build", 2), ("publish", 2),
+        ("build", 3), ("publish", 3),
+    ]
+
+
+def test_serial_publish_stops_when_no_new_video(tmp_path: Path) -> None:
+    builds = 0
+    publishes = 0
+
+    def builder(*args, **kwargs) -> int:
+        nonlocal builds
+        builds += 1
+        output_dir = args[2]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir.parent / "build-report.json").write_text("[]", encoding="utf-8")
+        return 0
+
+    def publisher(*args, **kwargs) -> int:
+        nonlocal publishes
+        publishes += 1
+        return 0
+
+    result = serial_publish(
+        tmp_path / "videos.csv", tmp_path / "images.csv",
+        tmp_path / "output" / "videos", 1280, 720,
+        tmp_path / "state.json", 10, None, tmp_path / "cookies.json",
+        "private", 171, "tag", "season", "", "run",
+        builder=builder, publisher=publisher,
+    )
+    assert result == {"built": 0, "published": 0}
+    assert builds == 1
+    assert publishes == 1
+
+
+def test_serial_publish_stops_after_publish_failure(tmp_path: Path) -> None:
+    events: list[str] = []
+
+    def builder(*args, **kwargs) -> int:
+        output_dir = args[2]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir.parent / "build-report.json").write_text("[]", encoding="utf-8")
+        events.append("build")
+        return 1
+
+    def publisher(*args, **kwargs) -> int:
+        events.append("publish")
+        raise RuntimeError("upload failed")
+
+    with pytest.raises(RuntimeError, match="upload failed"):
+        serial_publish(
+            tmp_path / "videos.csv", tmp_path / "images.csv",
+            tmp_path / "output" / "videos", 1280, 720,
+            tmp_path / "state.json", 10, None, tmp_path / "cookies.json",
+            "private", 171, "tag", "season", "", "run",
+            builder=builder, publisher=publisher,
+        )
+    assert events == ["build", "publish"]
+
+
+def test_serial_publish_blocks_uncertain_upload_state(tmp_path: Path) -> None:
+    state_path = tmp_path / "state.json"
+    state = initial_state()
+    state["videos"] = {"v1": {"status": "submitting"}}
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    with pytest.raises(RuntimeError, match="outcome is uncertain"):
+        serial_publish(
+            tmp_path / "videos.csv", tmp_path / "images.csv",
+            tmp_path / "output" / "videos", 1280, 720,
+            state_path, 10, None, tmp_path / "cookies.json",
+            "private", 171, "tag", "season", "", "run",
+        )
+
+
+def test_serial_publish_finishes_one_pending_attachment_before_build(tmp_path: Path) -> None:
+    state_path = tmp_path / "state.json"
+    state = initial_state()
+    state["videos"] = {"v1": {"status": "uploaded", "aid": 1, "title": "one"}}
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    events: list[str] = []
+
+    def publisher(*args, **kwargs) -> int:
+        assert kwargs["max_items"] == 1
+        events.append("publish")
+        return 1
+
+    def builder(*args, **kwargs) -> int:
+        events.append("build")
+        return 1
+
+    result = serial_publish(
+        tmp_path / "videos.csv", tmp_path / "images.csv",
+        tmp_path / "output" / "videos", 1280, 720,
+        state_path, 1, None, tmp_path / "cookies.json",
+        "private", 171, "tag", "season", "", "run",
+        builder=builder, publisher=publisher,
+    )
+    assert result == {"built": 0, "published": 1}
+    assert events == ["publish"]
+
+
 def test_publish_persists_reservation_upload_and_season(tmp_path: Path) -> None:
     state = tmp_path / "state" / "publish-state.json"
     commits: list[str] = []
@@ -220,7 +366,48 @@ def test_publish_persists_reservation_upload_and_season(tmp_path: Path) -> None:
     assert saved["videos"]["v1"]["aid"] == 123
     assert saved["images"]["used_image_ids"] == ["i1"]
     assert season.attached == [123]
-    assert len(commits) == 3
+    assert len(commits) == 4
+
+
+def test_publish_max_items_limits_multi_record_report(tmp_path: Path) -> None:
+    state = tmp_path / "state" / "publish-state.json"
+    report = write(tmp_path / "report.json", json.dumps([
+        {
+            "video_id": "v1", "title": "one", "video_source": "https://example.com/1",
+            "image_id": "i1", "image_source": "https://example.com/i1",
+            "image_usage_cycle": 0, "output": str(tmp_path / "1.mp4"),
+        },
+        {
+            "video_id": "v2", "title": "two", "video_source": "https://example.com/2",
+            "image_id": "i2", "image_source": "https://example.com/i2",
+            "image_usage_cycle": 0, "output": str(tmp_path / "2.mp4"),
+        },
+    ]))
+    (tmp_path / "1.mp4").write_bytes(b"video")
+    (tmp_path / "2.mp4").write_bytes(b"video")
+    uploaded: list[str] = []
+
+    class FakeSeason:
+        def __init__(self, _: Path):
+            pass
+
+        def resolve_or_create(self, title: str, description: str) -> tuple[int, int]:
+            return 10, 20
+
+        def attach(self, aid: int, title: str, section_id: int) -> None:
+            pass
+
+    count = publish(
+        report, tmp_path / "cookies.json", "private", 171, "tag", state,
+        "season", "description", max_items=1,
+        persist=lambda *_: None,
+        uploader=lambda record, *_: uploaded.append(record["video_id"]) or {"aid": 1, "bvid": "BV1"},
+        season_factory=FakeSeason,
+    )
+    assert count == 1
+    assert uploaded == ["v1"]
+    saved = json.loads(state.read_text(encoding="utf-8"))
+    assert set(saved["videos"]) == {"v1"}
 
 
 def test_uploaded_video_retries_only_season_attachment(tmp_path: Path) -> None:

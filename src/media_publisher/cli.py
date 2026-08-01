@@ -154,7 +154,7 @@ def select_video_batch(
     known = state["videos"]
     selected = [
         row for row in videos
-        if row["id"] not in known or known[row["id"]].get("status") == "uploading"
+        if row["id"] not in known or known[row["id"]].get("status") == "reserved"
     ]
     return selected[:batch_size]
 
@@ -298,7 +298,7 @@ def build(
     image_by_id = {row["id"]: row for row in images}
     for video_row in selected_videos:
         existing = publish_state["videos"].get(video_row["id"], {})
-        if existing.get("status") == "uploading":
+        if existing.get("status") == "reserved":
             image_id = str(existing["image_id"])
             if image_id not in image_by_id:
                 raise ValueError(f"reserved image {image_id} is no longer in the manifest")

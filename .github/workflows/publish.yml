@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       publish_mode:
-        description: "Build only, or upload privately/publicly after build"
+        description: "Build only, or build and upload one item at a time"
         required: true
         default: "build"
         type: choice
@@ -21,7 +21,7 @@ on:
         required: true
         default: "input/images.csv"
       batch_size:
-        description: "Number of new videos to process in this run"
+        description: "Maximum number of new videos to process serially in this run"
         required: true
         default: "1"
       season_title:
@@ -50,9 +50,8 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ inputs.publish_mode == 'build' }}
     runs-on: ubuntu-latest
-    outputs:
-      publish_mode: ${{ inputs.publish_mode }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -98,8 +97,7 @@ jobs:
           path: output/
           if-no-files-found: error
 
-  publish:
-    needs: build
+  serial_publish:
     if: ${{ inputs.publish_mode != 'build' }}
     runs-on: ubuntu-latest
     environment: bilibili-publish
@@ -108,34 +106,52 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install publisher and Biliup uploader
-        run: python -m pip install . biliup==1.2.2
-      - name: Download built artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: authorized-media-${{ github.run_id }}
-          path: output/
-      - name: Write Bilibili cookie file
+      - name: Install publisher, downloader, uploader, and FFmpeg
+        run: |
+          python -m pip install . yt-dlp biliup==1.2.2
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+      - name: Write credential files
         env:
+          YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_COOKIE_FILE }}
           BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_COOKIE_JSON }}
         run: |
+          if [ -n "$YOUTUBE_COOKIE_FILE" ]; then
+            printf '%s' "$YOUTUBE_COOKIE_FILE" > "$RUNNER_TEMP/youtube-cookies.txt"
+            chmod 600 "$RUNNER_TEMP/youtube-cookies.txt"
+          fi
           test -n "$BILIBILI_COOKIE_JSON"
-          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/cookies.json"
-          chmod 600 "$RUNNER_TEMP/cookies.json"
+          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
+          chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
       - name: Configure state commits
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Publish and attach to collection
+      - name: Build and publish each video serially
         env:
+          VIDEO_MANIFEST: ${{ inputs.video_manifest }}
+          IMAGE_MANIFEST: ${{ inputs.image_manifest }}
+          OUTPUT_WIDTH: ${{ inputs.width }}
+          OUTPUT_HEIGHT: ${{ inputs.height }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
           SEASON_TITLE: ${{ inputs.season_title }}
           SEASON_DESCRIPTION: ${{ inputs.season_description }}
-        run: >-
-          media-publish-bilibili
-          --report output/build-report.json
-          --cookies "$RUNNER_TEMP/cookies.json"
-          --visibility "${{ inputs.publish_mode }}"
-          --state state/publish-state.json
-          --season-title "$SEASON_TITLE"
-          --season-description "$SEASON_DESCRIPTION"
-          --run-id "${{ github.run_id }}"
+          YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
+        run: |
+          YOUTUBE_COOKIE_ARGS=()
+          if [ -f "$YOUTUBE_COOKIE_PATH" ]; then
+            YOUTUBE_COOKIE_ARGS=(--youtube-cookies "$YOUTUBE_COOKIE_PATH")
+          fi
+          media-publish-serial \
+            --videos "$VIDEO_MANIFEST" \
+            --images "$IMAGE_MANIFEST" \
+            --width "$OUTPUT_WIDTH" \
+            --height "$OUTPUT_HEIGHT" \
+            --state state/publish-state.json \
+            --batch-size "$BATCH_SIZE" \
+            --bilibili-cookies "$RUNNER_TEMP/bilibili-cookies.json" \
+            --visibility "${{ inputs.publish_mode }}" \
+            --season-title "$SEASON_TITLE" \
+            --season-description "$SEASON_DESCRIPTION" \
+            --run-id "${{ github.run_id }}" \
+            "${YOUTUBE_COOKIE_ARGS[@]}"

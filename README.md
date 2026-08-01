@@ -36,7 +36,7 @@ Selected images are downloaded and validated before expensive video downloads be
 
 ## GitHub Actions
 
-`.github/workflows/publish.yml` is manual only. `publish_mode=build` creates an artifact and does not upload to Bilibili. `private` uploads as a private draft; `public` is an explicit public upload choice. Configure the repository environment `bilibili-publish` with an Actions secret named `BILIBILI_COOKIE_JSON`. The secret value must be the Biliup cookie JSON, and is written only to the ephemeral runner filesystem.
+`.github/workflows/publish.yml` is manual only. `publish_mode=build` builds up to `batch_size` items as one review Artifact and does not upload to Bilibili. For `private` and `public`, `batch_size` is the maximum number of state items processed in the run. Execution is strictly serial: finish one pending collection attachment when present, otherwise build one video, publish it, persist its state, and only then continue. A failure therefore preserves earlier completed uploads. Before remote submission, state changes from `reserved` to `submitting`; if the runner stops while the remote result is unknown, later runs halt instead of automatically creating a duplicate, so the Bilibili account and state must be reconciled manually. Configure the repository environment `bilibili-publish` with an Actions secret named `BILIBILI_COOKIE_JSON`. The secret value must be the Biliup cookie JSON, and is written only to the ephemeral runner filesystem.
 
 The workflow uses the Biliup CLI and currently pins `biliup==1.2.2`. Review Bilibili rules, copyright status, image rights, and the generated artifact before public submission.
 
