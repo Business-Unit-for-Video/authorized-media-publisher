@@ -1,0 +1,78 @@
+name: Diagnose Bilibili submission
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    environment: bilibili-publish
+    steps:
+      - name: Inspect own Bilibili submissions (read only)
+        env:
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_COOKIE_JSON }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sys
+          import requests
+
+          target = "wIgduzASI6A"
+          title_terms = ("Jay Chou", "I Do", "周杰倫")
+          try:
+              raw = os.environ["BILIBILI_COOKIE_JSON"]
+              obj = json.loads(raw)
+              cookies = {x["name"]: x["value"] for x in obj["cookie_info"]["cookies"]}
+          except Exception as exc:
+              print(f"COOKIE_FORMAT_ERROR: {type(exc).__name__}")
+              sys.exit(1)
+
+          s = requests.Session()
+          s.cookies.update(cookies)
+          s.headers.update({
+              "User-Agent": "Mozilla/5.0",
+              "Referer": "https://member.bilibili.com/",
+          })
+
+          nav = s.get("https://api.bilibili.com/x/web-interface/nav", timeout=20).json()
+          data = nav.get("data") or {}
+          print(f"LOGIN code={nav.get('code')} isLogin={data.get('isLogin')} mid={data.get('mid')}")
+          if nav.get("code") != 0 or not data.get("isLogin"):
+              sys.exit(2)
+
+          endpoints = [
+              "https://member.bilibili.com/x/web/archives?status=is_pubing%2Cpubed%2Cnot_pubed&pn=1&ps=100&coop=1",
+              "https://member.bilibili.com/x/web/archives?status=is_pubing%2Cpubed%2Cnot_pubed&pn=1&ps=100&coop=1&interactive=1",
+          ]
+          seen = set()
+          matches = []
+          for url in endpoints:
+              try:
+                  result = s.get(url, timeout=20).json()
+                  print(f"ARCHIVES code={result.get('code')} endpoint={url.split('?')[0]}")
+                  rows = ((result.get("data") or {}).get("archives") or [])
+                  for row in rows:
+                      arc = row.get("Archive") or row.get("archive") or row
+                      key = str(arc.get("aid") or arc.get("bvid") or arc.get("title"))
+                      if key in seen:
+                          continue
+                      seen.add(key)
+                      text = str(arc.get("title") or "")
+                      if target in json.dumps(arc, ensure_ascii=False) or all(t.lower() in text.lower() for t in title_terms):
+                          matches.append(arc)
+              except Exception as exc:
+                  print(f"ARCHIVES_ERROR: {type(exc).__name__}")
+
+          if matches:
+              print("MATCHES:")
+              for arc in matches:
+                  print(json.dumps({k: arc.get(k) for k in (
+                      "aid", "bvid", "title", "state", "pubdate", "ptime", "reject_reason", "copyright"
+                  )}, ensure_ascii=False, sort_keys=True))
+          else:
+              print("MATCHES: none in published/reviewing/rejected archive list")
+          PY
