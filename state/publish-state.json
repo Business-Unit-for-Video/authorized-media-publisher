@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "images": {
+    "cycle": 1,
+    "used_image_ids": [
+      "d4095c9554e2a778f808"
+    ]
+  },
+  "videos": {
+    "wIgduzASI6A": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=wIgduzASI6A",
+      "title": "Jay Chou 周杰倫【I Do】Official Music Video",
+      "image_id": "d4095c9554e2a778f808",
+      "image_cycle": 1,
+      "workflow_run_id": "30730053306-1",
+      "reserved_at": "2026-08-02T03:08:35.272105+00:00"
+    }
+  },
+  "season": {
+    "title": "周杰伦",
+    "season_id": 8728825,
+    "section_id": 9727754
+  }
+}
