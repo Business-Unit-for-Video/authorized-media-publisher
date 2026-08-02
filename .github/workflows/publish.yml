@@ -1,15 +1,14 @@
-name: Build and optionally publish authorized media
+name: Publish authorized media
 
 on:
   workflow_dispatch:
     inputs:
       publish_mode:
-        description: "Build only, or build and upload one item at a time"
+        description: "Build and upload one item at a time"
         required: true
-        default: "build"
+        default: "private"
         type: choice
         options:
-          - build
           - private
           - public
       video_manifest:
@@ -49,56 +48,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    if: ${{ inputs.publish_mode == 'build' }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - name: Install Python package
-        run: python -m pip install . yt-dlp
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Write optional YouTube cookie file
-        env:
-          YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_COOKIE_FILE }}
-        run: |
-          if [ -n "$YOUTUBE_COOKIE_FILE" ]; then
-            printf '%s' "$YOUTUBE_COOKIE_FILE" > "$RUNNER_TEMP/youtube-cookies.txt"
-            chmod 600 "$RUNNER_TEMP/youtube-cookies.txt"
-          fi
-      - name: Validate and build videos
-        env:
-          VIDEO_MANIFEST: ${{ inputs.video_manifest }}
-          IMAGE_MANIFEST: ${{ inputs.image_manifest }}
-          OUTPUT_WIDTH: ${{ inputs.width }}
-          OUTPUT_HEIGHT: ${{ inputs.height }}
-          BATCH_SIZE: ${{ inputs.batch_size }}
-          YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
-        run: |
-          YOUTUBE_COOKIE_ARGS=()
-          if [ -f "$YOUTUBE_COOKIE_PATH" ]; then
-            YOUTUBE_COOKIE_ARGS=(--youtube-cookies "$YOUTUBE_COOKIE_PATH")
-          fi
-          media-publisher \
-            --videos "$VIDEO_MANIFEST" \
-            --images "$IMAGE_MANIFEST" \
-            --width "$OUTPUT_WIDTH" \
-            --height "$OUTPUT_HEIGHT" \
-            --publish-state state/publish-state.json \
-            --batch-size "$BATCH_SIZE" \
-            "${YOUTUBE_COOKIE_ARGS[@]}"
-      - name: Upload review artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: authorized-media-${{ github.run_id }}
-          path: output/
-          if-no-files-found: error
-
-  serial_publish:
-    if: ${{ inputs.publish_mode != 'build' }}
+  publish:
     runs-on: ubuntu-latest
     environment: bilibili-publish
     steps:

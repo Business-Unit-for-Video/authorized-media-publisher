@@ -34,6 +34,17 @@ def initial_state() -> dict[str, object]:
     }
 
 
+def test_workflow_exposes_only_publish_modes() -> None:
+    workflow = (Path(__file__).parents[1] / ".github/workflows/publish.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "          - build\n" not in workflow
+    assert "  build:\n" not in workflow
+    assert "  publish:\n" in workflow
+    assert "          - private\n" in workflow
+    assert "          - public\n" in workflow
+
+
 def test_manifest_allows_empty_rights_metadata(tmp_path: Path) -> None:
     path = write(
         tmp_path / "videos.csv",
