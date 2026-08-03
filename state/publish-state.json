@@ -10,6 +10,7 @@
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "82ccdc55a44da3468164",
+      "859b9716a5db48eaa3b2",
       "a20601d314d07a692397",
       "bd486765c1338d9e5b62",
       "c6b51b35f239e288d0d1",
@@ -203,6 +204,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-03T16:13:31.891978+00:00"
+    },
+    "CcfnZOJpbM4": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=CcfnZOJpbM4",
+      "title": "周杰倫 Jay Chou【上海 一九四三 Shanghai 1943】Official MV",
+      "image_id": "859b9716a5db48eaa3b2",
+      "image_cycle": 1,
+      "workflow_run_id": "30829927132-9",
+      "reserved_at": "2026-08-03T16:14:29.002273+00:00"
     }
   },
   "season": {
