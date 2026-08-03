@@ -3,7 +3,8 @@
   "images": {
     "cycle": 1,
     "used_image_ids": [
-      "6a4795ce0cdb5300f0c8"
+      "6a4795ce0cdb5300f0c8",
+      "a20601d314d07a692397"
     ]
   },
   "videos": {
@@ -23,6 +24,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-03T03:28:27.930211+00:00"
+    },
+    "me7jfhFIZvk": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=me7jfhFIZvk",
+      "title": "周杰倫 Jay Chou【Mine Mine】Official MV",
+      "image_id": "a20601d314d07a692397",
+      "image_cycle": 1,
+      "workflow_run_id": "30782168348-1",
+      "reserved_at": "2026-08-03T03:37:02.360892+00:00"
     }
   },
   "season": {
