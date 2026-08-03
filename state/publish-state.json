@@ -3,6 +3,7 @@
   "images": {
     "cycle": 1,
     "used_image_ids": [
+      "03c1b478e81968112293",
       "0f65e071a42b4f7cf8d9",
       "10340e09a8a23fe11eb5",
       "361c0994d83f189d7fef",
@@ -239,6 +240,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-03T16:15:57.406537+00:00"
+    },
+    "uIWypArI73w": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=uIWypArI73w",
+      "title": "周杰倫 Jay Chou【不能說的祕密 Secret】-Official Music Video",
+      "image_id": "03c1b478e81968112293",
+      "image_cycle": 1,
+      "workflow_run_id": "30829927132-11",
+      "reserved_at": "2026-08-03T16:17:12.627169+00:00"
     }
   },
   "season": {
