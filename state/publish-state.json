@@ -188,14 +188,17 @@
       "published_at": "2026-08-03T16:09:38.853829+00:00"
     },
     "_trE3M24kQY": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=_trE3M24kQY",
       "title": "周杰倫 Jay Chou【三年二班 Class 3-2】-Official Music Video",
       "image_id": "361c0994d83f189d7fef",
       "image_cycle": 1,
       "workflow_run_id": "30829927132-8",
       "reserved_at": "2026-08-03T16:13:11.201885+00:00",
-      "submitting_at": "2026-08-03T16:13:12.184727+00:00"
+      "submitting_at": "2026-08-03T16:13:12.184727+00:00",
+      "aid": 117032456554537,
+      "bvid": "BV1zoM96GEYg",
+      "uploaded_at": "2026-08-03T16:13:29.774660+00:00"
     }
   },
   "season": {
