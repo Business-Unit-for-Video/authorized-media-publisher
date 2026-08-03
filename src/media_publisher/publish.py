@@ -204,7 +204,8 @@ class SeasonClient:
             "GET", "https://member.bilibili.com/x2/creative/web/season/section",
             params={"id": section_id},
         ) or {}
-        if any(int(item.get("aid", 0)) == aid for item in section.get("episodes", [])):
+        episodes = section.get("episodes") or []
+        if any(int(item.get("aid", 0)) == aid for item in episodes):
             return
         verify = self.request(
             "GET",
@@ -243,7 +244,8 @@ class SeasonClient:
             "GET", "https://member.bilibili.com/x2/creative/web/season/section",
             params={"id": section_id},
         ) or {}
-        if not any(int(item.get("aid", 0)) == aid for item in refreshed.get("episodes", [])):
+        refreshed_episodes = refreshed.get("episodes") or []
+        if not any(int(item.get("aid", 0)) == aid for item in refreshed_episodes):
             raise RuntimeError(f"video {aid} was not present after season attachment")
 
 

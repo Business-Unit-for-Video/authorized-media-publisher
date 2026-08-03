@@ -16,7 +16,7 @@ from media_publisher.cli import (
     validate_image,
     validate_rows,
 )
-from media_publisher.publish import publish
+from media_publisher.publish import SeasonClient, publish
 from media_publisher.serial import serial_publish
 
 
@@ -205,6 +205,26 @@ class FakeSeason:
         if self.fail_attach:
             raise RuntimeError("season failed")
         self.attached.append(aid)
+
+
+def test_season_attach_accepts_null_episode_lists() -> None:
+    client = object.__new__(SeasonClient)
+    responses = iter([
+        {"episodes": None},
+        {"ep_audits": {"123": {"code": 0, "cid": 456}}},
+        None,
+        {"episodes": [{"aid": 123}]},
+    ])
+    requests: list[tuple[str, str]] = []
+
+    def request(method: str, url: str, **kwargs):
+        requests.append((method, url))
+        return next(responses)
+
+    client.request = request
+    client.csrf = "csrf"
+    client.attach(123, "title", 20)
+    assert len(requests) == 4
 
 
 def report_file(tmp_path: Path) -> Path:
