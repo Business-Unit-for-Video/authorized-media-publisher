@@ -116,7 +116,7 @@
       "published_at": "2026-08-03T16:01:53.809492+00:00"
     },
     "L229QDxDakU": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=L229QDxDakU",
       "title": "周杰倫 Jay Chou【一路向北 All the Way North】-Official Music Video",
       "image_id": "bd486765c1338d9e5b62",
@@ -126,7 +126,11 @@
       "submitting_at": "2026-08-03T16:03:41.665742+00:00",
       "aid": 117032406289385,
       "bvid": "BV1ZcMR6zEAP",
-      "uploaded_at": "2026-08-03T16:03:53.767572+00:00"
+      "uploaded_at": "2026-08-03T16:03:53.767572+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-03T16:03:55.787728+00:00"
     }
   },
   "season": {
