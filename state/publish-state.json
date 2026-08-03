@@ -242,7 +242,7 @@
       "published_at": "2026-08-03T16:15:57.406537+00:00"
     },
     "uIWypArI73w": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=uIWypArI73w",
       "title": "周杰倫 Jay Chou【不能說的祕密 Secret】-Official Music Video",
       "image_id": "03c1b478e81968112293",
@@ -252,7 +252,11 @@
       "submitting_at": "2026-08-03T16:17:13.588521+00:00",
       "aid": 117032473331990,
       "bvid": "BV16RM96CEJi",
-      "uploaded_at": "2026-08-03T16:17:26.792555+00:00"
+      "uploaded_at": "2026-08-03T16:17:26.792555+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-03T16:17:28.699238+00:00"
     }
   },
   "season": {
