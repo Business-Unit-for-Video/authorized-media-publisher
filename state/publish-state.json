@@ -62,14 +62,17 @@
       "published_at": "2026-08-03T04:31:21.601127+00:00"
     },
     "LbUKhXO2oCs": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=LbUKhXO2oCs",
       "title": "周杰倫 Jay Chou 【Now You See Me】Official MV (120s)",
       "image_id": "60471a9beefc956dbb51",
       "image_cycle": 1,
       "workflow_run_id": "30829927132-1",
       "reserved_at": "2026-08-03T15:59:15.905418+00:00",
-      "submitting_at": "2026-08-03T15:59:16.979336+00:00"
+      "submitting_at": "2026-08-03T15:59:16.979336+00:00",
+      "aid": 117032389445855,
+      "bvid": "BV1iAMR6MEi4",
+      "uploaded_at": "2026-08-03T15:59:27.949475+00:00"
     }
   },
   "season": {
