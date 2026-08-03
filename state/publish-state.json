@@ -44,14 +44,17 @@
       "published_at": "2026-08-03T03:37:13.550426+00:00"
     },
     "-biOGdYiF-I": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=-biOGdYiF-I",
       "title": "周杰倫 Jay Chou【Mojito】Official MV ★ Check out \"J-Style Trip\" on Netflix -Travelogue, Magic and Fun!",
       "image_id": "d2a44f25560a465360e6",
       "image_cycle": 1,
       "workflow_run_id": "30784441494-1",
       "reserved_at": "2026-08-03T04:28:05.398206+00:00",
-      "submitting_at": "2026-08-03T04:28:06.404215+00:00"
+      "submitting_at": "2026-08-03T04:28:06.404215+00:00",
+      "aid": 117029688379031,
+      "bvid": "BV1ghMQ6pEzZ",
+      "uploaded_at": "2026-08-03T04:31:19.580856+00:00"
     }
   },
   "season": {
