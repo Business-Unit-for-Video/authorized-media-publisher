@@ -224,13 +224,14 @@
       "published_at": "2026-08-03T16:14:43.129177+00:00"
     },
     "MAjY8mCTXWk": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=MAjY8mCTXWk",
       "title": "周杰倫 Jay Chou【不愛我就拉倒 If You Don't Love Me, It's Fine】Official MV 發燒影片華語地區蟬聯第一 美國直衝前二",
       "image_id": "0f65e071a42b4f7cf8d9",
       "image_cycle": 1,
       "workflow_run_id": "30829927132-10",
-      "reserved_at": "2026-08-03T16:15:43.216624+00:00"
+      "reserved_at": "2026-08-03T16:15:43.216624+00:00",
+      "submitting_at": "2026-08-03T16:15:44.228157+00:00"
     }
   },
   "season": {
