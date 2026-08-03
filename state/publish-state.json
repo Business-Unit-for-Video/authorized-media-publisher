@@ -5,6 +5,7 @@
     "used_image_ids": [
       "371980b3bdcfc382aba7",
       "60471a9beefc956dbb51",
+      "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "a20601d314d07a692397",
       "d2a44f25560a465360e6"
@@ -95,6 +96,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-03T16:00:57.393119+00:00"
+    },
+    "C18nyaRnR1Q": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=C18nyaRnR1Q",
+      "title": "周杰倫 Jay Chou【一口氣全唸對 One Breath】Official MV",
+      "image_id": "6986c0a6aae9e41c5e2e",
+      "image_cycle": 1,
+      "workflow_run_id": "30829927132-3",
+      "reserved_at": "2026-08-03T16:01:40.339892+00:00"
     }
   },
   "season": {
