@@ -152,7 +152,7 @@
       "published_at": "2026-08-03T16:06:29.651054+00:00"
     },
     "PJyFND4-zR4": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=PJyFND4-zR4",
       "title": "Jay Chou 周杰倫【Aurora in July 七月的極光】Official Music Video",
       "image_id": "c6b51b35f239e288d0d1",
@@ -162,7 +162,11 @@
       "submitting_at": "2026-08-03T16:07:25.800707+00:00",
       "aid": 117032423000520,
       "bvid": "BV1r9M965EFA",
-      "uploaded_at": "2026-08-03T16:07:36.294541+00:00"
+      "uploaded_at": "2026-08-03T16:07:36.294541+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-03T16:07:39.425444+00:00"
     }
   },
   "season": {
