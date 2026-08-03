@@ -170,14 +170,17 @@
       "published_at": "2026-08-03T16:07:39.425444+00:00"
     },
     "Bbp9ZaJD_eA": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=Bbp9ZaJD_eA",
       "title": "周杰倫 Jay Chou【七里香 Orange Jasmine】-Official Music Video",
       "image_id": "10340e09a8a23fe11eb5",
       "image_cycle": 1,
       "workflow_run_id": "30829927132-7",
       "reserved_at": "2026-08-03T16:09:23.898151+00:00",
-      "submitting_at": "2026-08-03T16:09:24.923266+00:00"
+      "submitting_at": "2026-08-03T16:09:24.923266+00:00",
+      "aid": 117032439841344,
+      "bvid": "BV1wQM962ERk",
+      "uploaded_at": "2026-08-03T16:09:36.948951+00:00"
     }
   },
   "season": {
