@@ -7,7 +7,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 VIDEO_FIELDS = ("id", "title", "video_url", "rights_basis", "publish_scope")
@@ -195,7 +195,15 @@ def validate_rows(rows: list[dict[str, str]], label: str) -> None:
 
 
 def download(url: str, target: Path) -> None:
-    request = Request(url, headers={"User-Agent": "authorized-media-publisher/0.1"})
+    parts = urlsplit(url)
+    request_url = urlunsplit((
+        parts.scheme,
+        parts.netloc,
+        quote(parts.path, safe="/%:@"),
+        parts.query,
+        parts.fragment,
+    ))
+    request = Request(request_url, headers={"User-Agent": "authorized-media-publisher/0.1"})
     with urlopen(request) as response, target.open("wb") as handle:
         while chunk := response.read(1024 * 1024):
             handle.write(chunk)

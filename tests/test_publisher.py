@@ -1,11 +1,12 @@
 import json
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 
 from media_publisher.cli import (
     build,
+    download,
     download_image,
     download_video,
     read_image_manifest,
@@ -103,6 +104,15 @@ def test_image_validation_decodes_a_frame(tmp_path: Path) -> None:
     path.write_bytes(b"not an image")
     with pytest.raises(ValueError, match="not a valid image"):
         validate_image(path)
+
+
+def test_download_percent_encodes_non_ascii_url_path(tmp_path: Path) -> None:
+    response = MagicMock()
+    response.__enter__.return_value.read.side_effect = [b"image", b""]
+    with patch("media_publisher.cli.urlopen", return_value=response) as mocked:
+        download("https://laoshi.ink/assets/img/celebrities/jav/いち花.jpg", tmp_path / "image")
+    assert "%E3%81%84%E3%81%A1%E8%8A%B1.jpg" in mocked.call_args.args[0].full_url
+    assert (tmp_path / "image").read_bytes() == b"image"
 
 
 def test_image_download_retries_then_uses_thumbnail(tmp_path: Path) -> None:
