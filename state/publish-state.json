@@ -134,14 +134,17 @@
       "published_at": "2026-08-03T16:03:55.787728+00:00"
     },
     "COhiu3c7Sgc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=COhiu3c7Sgc",
       "title": "周杰倫 Jay Chou【一點點 A Little Bit】Official MV",
       "image_id": "82ccdc55a44da3468164",
       "image_cycle": 1,
       "workflow_run_id": "30829927132-5",
       "reserved_at": "2026-08-03T16:06:16.015939+00:00",
-      "submitting_at": "2026-08-03T16:06:17.099433+00:00"
+      "submitting_at": "2026-08-03T16:06:17.099433+00:00",
+      "aid": 117032423066499,
+      "bvid": "BV1c9M96LEzF",
+      "uploaded_at": "2026-08-03T16:06:27.485532+00:00"
     }
   },
   "season": {
