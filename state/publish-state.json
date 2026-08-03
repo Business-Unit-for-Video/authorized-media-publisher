@@ -3,6 +3,7 @@
   "images": {
     "cycle": 1,
     "used_image_ids": [
+      "371980b3bdcfc382aba7",
       "60471a9beefc956dbb51",
       "6a4795ce0cdb5300f0c8",
       "a20601d314d07a692397",
@@ -77,6 +78,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-03T15:59:30.265966+00:00"
+    },
+    "s__iJysWkCY": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=s__iJysWkCY",
+      "title": "Patrick Brasca & Jay Chou【Six Degrees】",
+      "image_id": "371980b3bdcfc382aba7",
+      "image_cycle": 1,
+      "workflow_run_id": "30829927132-2",
+      "reserved_at": "2026-08-03T16:00:44.113278+00:00"
     }
   },
   "season": {
