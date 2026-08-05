@@ -332,7 +332,7 @@
       "published_at": "2026-08-05T02:53:28.851426+00:00"
     },
     "s9wvjSkR_Ms": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=s9wvjSkR_Ms",
       "title": "周杰倫Jay Chou【伊斯坦堡 Istanbul】-Official Music Video",
       "image_id": "a3caffc084ca41e62ed4",
@@ -342,7 +342,11 @@
       "submitting_at": "2026-08-05T02:54:19.296826+00:00",
       "aid": 117040627058660,
       "bvid": "BV1ofM66YEuu",
-      "uploaded_at": "2026-08-05T02:54:29.168688+00:00"
+      "uploaded_at": "2026-08-05T02:54:29.168688+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-05T02:54:31.046184+00:00"
     }
   },
   "season": {
