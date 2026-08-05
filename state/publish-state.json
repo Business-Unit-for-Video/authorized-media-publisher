@@ -422,14 +422,17 @@
       "published_at": "2026-08-05T02:59:36.838290+00:00"
     },
     "lqVvHAFPIrw": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=lqVvHAFPIrw",
       "title": "周杰倫 Jay Chou【免費教學錄影帶 Free Tutorial Video】Official MV",
       "image_id": "c7c8924c1b00e8bf33d0",
       "image_cycle": 1,
       "workflow_run_id": "30970257825-10",
       "reserved_at": "2026-08-05T03:00:34.664323+00:00",
-      "submitting_at": "2026-08-05T03:00:35.645369+00:00"
+      "submitting_at": "2026-08-05T03:00:35.645369+00:00",
+      "aid": 117040660613469,
+      "bvid": "BV1RwMr6hEjv",
+      "uploaded_at": "2026-08-05T03:00:45.473622+00:00"
     }
   },
   "season": {
