@@ -278,7 +278,7 @@
       "published_at": "2026-08-05T02:48:17.072203+00:00"
     },
     "NDFULbHgL6E": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=NDFULbHgL6E",
       "title": "周杰倫 Jay Chou【世界末日 End of the World】Official MV",
       "image_id": "08122a87ad329f9c8ccc",
@@ -288,7 +288,11 @@
       "submitting_at": "2026-08-05T02:49:28.052785+00:00",
       "aid": 117040610281411,
       "bvid": "BV1dcMr6wEsS",
-      "uploaded_at": "2026-08-05T02:49:39.919789+00:00"
+      "uploaded_at": "2026-08-05T02:49:39.919789+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-05T02:49:41.776169+00:00"
     }
   },
   "season": {
