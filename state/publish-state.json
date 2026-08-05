@@ -23,6 +23,7 @@
       "bd486765c1338d9e5b62",
       "c2906d936ee8384b7fac",
       "c6b51b35f239e288d0d1",
+      "c7c8924c1b00e8bf33d0",
       "d2a44f25560a465360e6",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e"
@@ -419,6 +420,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-05T02:59:36.838290+00:00"
+    },
+    "lqVvHAFPIrw": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=lqVvHAFPIrw",
+      "title": "周杰倫 Jay Chou【免費教學錄影帶 Free Tutorial Video】Official MV",
+      "image_id": "c7c8924c1b00e8bf33d0",
+      "image_cycle": 1,
+      "workflow_run_id": "30970257825-10",
+      "reserved_at": "2026-08-05T03:00:34.664323+00:00"
     }
   },
   "season": {
