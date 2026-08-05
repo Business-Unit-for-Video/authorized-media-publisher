@@ -386,13 +386,14 @@
       "published_at": "2026-08-05T02:56:37.311514+00:00"
     },
     "a0AyNzV3yk8": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=a0AyNzV3yk8",
       "title": "周杰倫 JAY CHOU【倒影 Reflection】Official MV",
       "image_id": "b6392e23670eb827ff02",
       "image_cycle": 1,
       "workflow_run_id": "30970257825-8",
-      "reserved_at": "2026-08-05T02:58:03.750044+00:00"
+      "reserved_at": "2026-08-05T02:58:03.750044+00:00",
+      "submitting_at": "2026-08-05T02:58:04.746721+00:00"
     }
   },
   "season": {
