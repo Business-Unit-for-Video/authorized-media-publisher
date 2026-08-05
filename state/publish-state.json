@@ -296,7 +296,7 @@
       "published_at": "2026-08-05T02:49:41.776169+00:00"
     },
     "2Tg3uzSAkXk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=2Tg3uzSAkXk",
       "title": "周杰倫 Jay Chou【亂舞春秋 Chaotic Dance】-Official Music Video",
       "image_id": "f2d61df0e6f7fac6c32b",
@@ -306,7 +306,11 @@
       "submitting_at": "2026-08-05T02:50:55.845976+00:00",
       "aid": 117040627057435,
       "bvid": "BV1ofM66YE8w",
-      "uploaded_at": "2026-08-05T02:51:07.607845+00:00"
+      "uploaded_at": "2026-08-05T02:51:07.607845+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-05T02:51:09.349996+00:00"
     }
   },
   "season": {
