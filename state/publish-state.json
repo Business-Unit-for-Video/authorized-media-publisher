@@ -260,13 +260,14 @@
       "published_at": "2026-08-03T16:17:28.699238+00:00"
     },
     "_VxLOj3TB5k": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=_VxLOj3TB5k",
       "title": "周杰倫Jay Chou X aMEI【不該 Shouldn't Be】Official MV",
       "image_id": "b7ee15c4b1c398fbea57",
       "image_cycle": 1,
       "workflow_run_id": "30970257825-1",
-      "reserved_at": "2026-08-05T02:47:59.271167+00:00"
+      "reserved_at": "2026-08-05T02:47:59.271167+00:00",
+      "submitting_at": "2026-08-05T02:48:00.251567+00:00"
     }
   },
   "season": {
