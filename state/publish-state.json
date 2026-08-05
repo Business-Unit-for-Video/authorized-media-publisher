@@ -314,7 +314,7 @@
       "published_at": "2026-08-05T02:51:09.349996+00:00"
     },
     "9q7JOQfcJQM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=9q7JOQfcJQM",
       "title": "周杰倫 Jay Chou【以父之名 In The Name of The Father】-Official Music Video",
       "image_id": "c2906d936ee8384b7fac",
@@ -324,7 +324,11 @@
       "submitting_at": "2026-08-05T02:53:09.494677+00:00",
       "aid": 117040627124134,
       "bvid": "BV1jfM66eEzu",
-      "uploaded_at": "2026-08-05T02:53:26.974250+00:00"
+      "uploaded_at": "2026-08-05T02:53:26.974250+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-05T02:53:28.851426+00:00"
     }
   },
   "season": {
