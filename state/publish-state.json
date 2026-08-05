@@ -368,13 +368,14 @@
       "published_at": "2026-08-05T02:55:36.909128+00:00"
     },
     "X_XqvQJi_6E": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=X_XqvQJi_6E",
       "title": "周杰倫 Jay Chou【你比從前快樂 You Are Happier Than Before】Official MV",
       "image_id": "f62778673f8cff15186e",
       "image_cycle": 1,
       "workflow_run_id": "30970257825-7",
-      "reserved_at": "2026-08-05T02:56:23.841780+00:00"
+      "reserved_at": "2026-08-05T02:56:23.841780+00:00",
+      "submitting_at": "2026-08-05T02:56:24.945044+00:00"
     }
   },
   "season": {
