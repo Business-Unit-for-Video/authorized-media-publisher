@@ -350,7 +350,7 @@
       "published_at": "2026-08-05T02:54:31.046184+00:00"
     },
     "Wrbjahfg8RM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=Wrbjahfg8RM",
       "title": "周杰倫 Jay Chou【你好嗎 How Are You】Official MV",
       "image_id": "2e632f68f39c6da8318a",
@@ -360,7 +360,11 @@
       "submitting_at": "2026-08-05T02:55:24.403555+00:00",
       "aid": 117040643835942,
       "bvid": "BV19PMr6FEhe",
-      "uploaded_at": "2026-08-05T02:55:35.086772+00:00"
+      "uploaded_at": "2026-08-05T02:55:35.086772+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-05T02:55:36.909128+00:00"
     }
   },
   "season": {
