@@ -404,7 +404,7 @@
       "published_at": "2026-08-05T02:58:18.018440+00:00"
     },
     "rKFtivD7Rvw": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=rKFtivD7Rvw",
       "title": "周杰倫 Jay Chou【傻笑 Smile (feat. 袁詠琳 Cindy)】Official MV",
       "image_id": "10b9f309a38e5ce38f7c",
@@ -414,7 +414,11 @@
       "submitting_at": "2026-08-05T02:59:23.109389+00:00",
       "aid": 117040660612118,
       "bvid": "BV1RwMr6hEaA",
-      "uploaded_at": "2026-08-05T02:59:34.954273+00:00"
+      "uploaded_at": "2026-08-05T02:59:34.954273+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-05T02:59:36.838290+00:00"
     }
   },
   "season": {
