@@ -566,14 +566,17 @@
       "published_at": "2026-08-19T02:50:50.222306+00:00"
     },
     "hnmWCmR6o7A": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=hnmWCmR6o7A",
       "title": "周杰倫 Jay Chou【印地安老斑鳩 Ancient Indian Turtledove】-Official Music Video",
       "image_id": "a62ad9dc52185980620a",
       "image_cycle": 1,
       "workflow_run_id": "32209033248-8",
       "reserved_at": "2026-08-19T02:52:04.313611+00:00",
-      "submitting_at": "2026-08-19T02:52:05.256477+00:00"
+      "submitting_at": "2026-08-19T02:52:05.256477+00:00",
+      "aid": 117119899405920,
+      "bvid": "BV1wF876wEji",
+      "uploaded_at": "2026-08-19T02:52:16.618107+00:00"
     }
   },
   "season": {
