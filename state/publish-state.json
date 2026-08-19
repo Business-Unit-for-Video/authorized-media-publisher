@@ -494,7 +494,7 @@
       "published_at": "2026-08-19T02:43:36.028554+00:00"
     },
     "j9k3liT2MLo": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=j9k3liT2MLo",
       "title": "周杰倫 Jay Chou【前世情人 Lover From Previous Life】Official MV",
       "image_id": "f22b178f63b255d05744",
@@ -504,7 +504,11 @@
       "submitting_at": "2026-08-19T02:46:23.412413+00:00",
       "aid": 117119882693641,
       "bvid": "BV1WR8j6vE2P",
-      "uploaded_at": "2026-08-19T02:46:34.059477+00:00"
+      "uploaded_at": "2026-08-19T02:46:34.059477+00:00",
+      "season_id": 8873671,
+      "section_id": 9894720,
+      "season_attached": true,
+      "published_at": "2026-08-19T02:46:36.160503+00:00"
     }
   },
   "season": {
