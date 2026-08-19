@@ -530,7 +530,7 @@
       "published_at": "2026-08-19T02:47:56.980606+00:00"
     },
     "duZDsG3tvoA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=duZDsG3tvoA",
       "title": "周杰倫 Jay Chou【半島鐵盒 Peninsula Ironbox】Official MV",
       "image_id": "5679c79136508a251c92",
@@ -540,7 +540,11 @@
       "submitting_at": "2026-08-19T02:49:15.136332+00:00",
       "aid": 117119882628534,
       "bvid": "BV1PR8j6vEJU",
-      "uploaded_at": "2026-08-19T02:49:27.034529+00:00"
+      "uploaded_at": "2026-08-19T02:49:27.034529+00:00",
+      "season_id": 8873671,
+      "section_id": 9894720,
+      "season_attached": true,
+      "published_at": "2026-08-19T02:49:29.034112+00:00"
     }
   },
   "season": {
