@@ -476,13 +476,14 @@
       "published_at": "2026-08-19T02:41:24.470966+00:00"
     },
     "eM6mF4RWhe0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=eM6mF4RWhe0",
       "title": "周杰倫 Jay Chou【分裂 Split】Official MV",
       "image_id": "c956277354e6c1d4fe2d",
       "image_cycle": 1,
       "workflow_run_id": "32209033248-3",
-      "reserved_at": "2026-08-19T02:43:20.824283+00:00"
+      "reserved_at": "2026-08-19T02:43:20.824283+00:00",
+      "submitting_at": "2026-08-19T02:43:21.744551+00:00"
     }
   },
   "season": {
