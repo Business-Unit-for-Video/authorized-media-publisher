@@ -602,7 +602,7 @@
       "published_at": "2026-08-19T02:53:06.241011+00:00"
     },
     "fuM1aVCGR8c": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=fuM1aVCGR8c",
       "title": "Jay Chou 周杰倫【反方向的鐘 Counter-clockwise Clock】-Official Music Video",
       "image_id": "e8633c5b5efe960f62c4",
@@ -612,7 +612,11 @@
       "submitting_at": "2026-08-19T02:54:13.380858+00:00",
       "aid": 117119899469536,
       "bvid": "BV1pF876wEJB",
-      "uploaded_at": "2026-08-19T02:54:24.908038+00:00"
+      "uploaded_at": "2026-08-19T02:54:24.908038+00:00",
+      "season_id": 8873671,
+      "section_id": 9894720,
+      "season_attached": true,
+      "published_at": "2026-08-19T02:54:26.983491+00:00"
     }
   },
   "season": {
