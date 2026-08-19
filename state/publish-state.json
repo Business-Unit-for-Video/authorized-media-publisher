@@ -584,13 +584,14 @@
       "published_at": "2026-08-19T02:52:18.800617+00:00"
     },
     "yjYkxdXd7EA": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=yjYkxdXd7EA",
       "title": "周杰倫 JAY CHOU【即興曲 Improvisation】Official MV",
       "image_id": "63e1e19c6ecb140428f7",
       "image_cycle": 1,
       "workflow_run_id": "32209033248-9",
-      "reserved_at": "2026-08-19T02:52:54.590275+00:00"
+      "reserved_at": "2026-08-19T02:52:54.590275+00:00",
+      "submitting_at": "2026-08-19T02:52:55.481098+00:00"
     }
   },
   "season": {
