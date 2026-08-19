@@ -440,13 +440,14 @@
       "published_at": "2026-08-05T03:00:47.396130+00:00"
     },
     "S-p4gXbIifo": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=S-p4gXbIifo",
       "title": "周杰倫 Jay Chou【公主病 Princess Syndrome】Official MV",
       "image_id": "4bd7bc24adbb25fd5741",
       "image_cycle": 1,
       "workflow_run_id": "32209033248-1",
-      "reserved_at": "2026-08-19T02:39:52.759354+00:00"
+      "reserved_at": "2026-08-19T02:39:52.759354+00:00",
+      "submitting_at": "2026-08-19T02:39:53.803616+00:00"
     }
   },
   "season": {
