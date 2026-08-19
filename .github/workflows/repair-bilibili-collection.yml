@@ -1,0 +1,79 @@
+name: Repair Bilibili collection membership
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: authorized-media-publisher
+  cancel-in-progress: false
+
+jobs:
+  move:
+    runs-on: ubuntu-latest
+    environment: bilibili-publish
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install publisher
+        run: python -m pip install .
+      - name: Write Bilibili credential
+        env:
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_COOKIE_JSON }}
+        run: |
+          test -n "$BILIBILI_COOKIE_JSON"
+          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
+          chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
+      - name: Move misplaced videos into 周杰伦
+        id: repair
+        run: |
+          python scripts/move_bilibili_season_videos.py \
+            --cookies "$RUNNER_TEMP/bilibili-cookies.json" \
+            --source-section-id 9894720 \
+            --target-section-id 9727754 \
+            --aid 117119849072262 \
+            --aid 117119849072338 \
+            --aid 117119865917013 \
+            --aid 117119882693641 \
+            --aid 117119882627162 \
+            --aid 117119882628534 \
+            --aid 117119899469831 \
+            --aid 117119899405920 \
+            --aid 117119899469967 \
+            --aid 117119899469536
+      - name: Reconcile repository collection state
+        if: ${{ success() }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("state/publish-state.json")
+          state = json.loads(path.read_text(encoding="utf-8"))
+          moved_aids = {
+              117119849072262, 117119849072338, 117119865917013,
+              117119882693641, 117119882627162, 117119882628534,
+              117119899469831, 117119899405920, 117119899469967,
+              117119899469536,
+          }
+          for entry in state["videos"].values():
+              if int(entry.get("aid") or 0) in moved_aids:
+                  entry["season_id"] = 8728825
+                  entry["section_id"] = 9727754
+                  entry["season_attached"] = True
+          state["season"] = {
+              "title": "周杰伦",
+              "season_id": 8728825,
+              "section_id": 9727754,
+          }
+          path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/publish-state.json
+          git diff --cached --quiet || git commit -m "fix: reconcile Bilibili collection membership"
+          git push origin HEAD:main
