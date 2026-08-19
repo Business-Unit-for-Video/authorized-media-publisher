@@ -17,6 +17,7 @@
       "60471a9beefc956dbb51",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
+      "82a624df78be4642e03b",
       "82ccdc55a44da3468164",
       "859b9716a5db48eaa3b2",
       "a20601d314d07a692397",
@@ -545,6 +546,15 @@
       "section_id": 9894720,
       "season_attached": true,
       "published_at": "2026-08-19T02:49:29.034112+00:00"
+    },
+    "3I27c6t-0No": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=3I27c6t-0No",
+      "title": "周杰倫 Jay Chou【半獸人 Half-beast Human】Official MV",
+      "image_id": "82a624df78be4642e03b",
+      "image_cycle": 1,
+      "workflow_run_id": "32209033248-7",
+      "reserved_at": "2026-08-19T02:50:35.271483+00:00"
     }
   },
   "season": {
