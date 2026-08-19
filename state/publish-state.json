@@ -512,14 +512,17 @@
       "published_at": "2026-08-19T02:46:36.160503+00:00"
     },
     "ocDo3ySyHSI": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=ocDo3ySyHSI",
       "title": "周杰倫 Jay Chou【千里之外 Far Away (feat.費玉清 Fei Yu-ching)】-Official Music Video",
       "image_id": "a315e1837de19309b9bb",
       "image_cycle": 1,
       "workflow_run_id": "32209033248-5",
       "reserved_at": "2026-08-19T02:47:43.318846+00:00",
-      "submitting_at": "2026-08-19T02:47:44.237588+00:00"
+      "submitting_at": "2026-08-19T02:47:44.237588+00:00",
+      "aid": 117119882627162,
+      "bvid": "BV1PR8j6vEeW",
+      "uploaded_at": "2026-08-19T02:47:54.942291+00:00"
     }
   },
   "season": {
