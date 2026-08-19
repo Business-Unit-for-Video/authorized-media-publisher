@@ -59,20 +59,37 @@ def move(
                 continue
             raise RuntimeError(f"aid {aid} disappeared from both sections")
 
-        if aid not in target:
-            client.attach(aid, str(source_episode.get("title") or aid), target_section_id)
-        target_verified = by_aid(episodes(client, target_section_id))
-        if aid not in target_verified:
-            raise RuntimeError(f"aid {aid} was not verified in target; source retained")
-
         episode_id = int(source_episode.get("id") or 0)
         if not episode_id:
             raise RuntimeError(f"aid {aid}: source episode has no episode id")
-        client.request(
-            "POST",
-            "https://member.bilibili.com/x2/creative/web/season/section/episode/del",
-            data={"id": episode_id, "csrf": client.csrf},
-        )
+
+        if aid not in target:
+            # Bilibili rejects adding an archive that is still present in another
+            # season. Preserve the full source episode first, remove it, then
+            # restore it to the source section if target attachment fails.
+            client.request(
+                "POST",
+                "https://member.bilibili.com/x2/creative/web/season/section/episode/del",
+                data={"id": episode_id, "csrf": client.csrf},
+            )
+            if aid in by_aid(episodes(client, source_section_id)):
+                raise RuntimeError(f"aid {aid}: source removal was not verified")
+            try:
+                client.attach(aid, str(source_episode.get("title") or aid), target_section_id)
+            except Exception:
+                client.attach(aid, str(source_episode.get("title") or aid), source_section_id)
+                if aid not in by_aid(episodes(client, source_section_id)):
+                    raise RuntimeError(
+                        f"aid {aid}: target attachment failed and source restoration failed"
+                    )
+                raise
+        else:
+            client.request(
+                "POST",
+                "https://member.bilibili.com/x2/creative/web/season/section/episode/del",
+                data={"id": episode_id, "csrf": client.csrf},
+            )
+
         source_after = by_aid(episodes(client, source_section_id))
         target_after = by_aid(episodes(client, target_section_id))
         if aid in source_after or aid not in target_after:
