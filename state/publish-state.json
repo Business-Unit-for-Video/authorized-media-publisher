@@ -458,13 +458,14 @@
       "published_at": "2026-08-19T02:40:08.691809+00:00"
     },
     "FbqBv7Tz1QY": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=FbqBv7Tz1QY",
       "title": "周杰倫 Jay Chou【公公偏頭痛 Eunuch with a Headache】Official MV",
       "image_id": "18b816827aafeed03652",
       "image_cycle": 1,
       "workflow_run_id": "32209033248-2",
-      "reserved_at": "2026-08-19T02:41:10.720392+00:00"
+      "reserved_at": "2026-08-19T02:41:10.720392+00:00",
+      "submitting_at": "2026-08-19T02:41:11.648181+00:00"
     }
   },
   "season": {
