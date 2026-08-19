@@ -460,8 +460,8 @@
       "aid": 117119849072262,
       "bvid": "BV1Gz8j61E3U",
       "uploaded_at": "2026-08-19T02:40:06.691687+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:40:08.691809+00:00"
     },
@@ -477,8 +477,8 @@
       "aid": 117119849072338,
       "bvid": "BV1Gz8j61EgH",
       "uploaded_at": "2026-08-19T02:41:22.461170+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:41:24.470966+00:00"
     },
@@ -494,8 +494,8 @@
       "aid": 117119865917013,
       "bvid": "BV1Wo8j6PE3P",
       "uploaded_at": "2026-08-19T02:43:33.981812+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:43:36.028554+00:00"
     },
@@ -511,8 +511,8 @@
       "aid": 117119882693641,
       "bvid": "BV1WR8j6vE2P",
       "uploaded_at": "2026-08-19T02:46:34.059477+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:46:36.160503+00:00"
     },
@@ -528,8 +528,8 @@
       "aid": 117119882627162,
       "bvid": "BV1PR8j6vEeW",
       "uploaded_at": "2026-08-19T02:47:54.942291+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:47:56.980606+00:00"
     },
@@ -545,8 +545,8 @@
       "aid": 117119882628534,
       "bvid": "BV1PR8j6vEJU",
       "uploaded_at": "2026-08-19T02:49:27.034529+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:49:29.034112+00:00"
     },
@@ -562,8 +562,8 @@
       "aid": 117119899469831,
       "bvid": "BV1HF876wERd",
       "uploaded_at": "2026-08-19T02:50:48.211019+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:50:50.222306+00:00"
     },
@@ -579,8 +579,8 @@
       "aid": 117119899405920,
       "bvid": "BV1wF876wEji",
       "uploaded_at": "2026-08-19T02:52:16.618107+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:52:18.800617+00:00"
     },
@@ -596,8 +596,8 @@
       "aid": 117119899469967,
       "bvid": "BV1HF876wEXv",
       "uploaded_at": "2026-08-19T02:53:04.071544+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:53:06.241011+00:00"
     },
@@ -613,15 +613,15 @@
       "aid": 117119899469536,
       "bvid": "BV1pF876wEJB",
       "uploaded_at": "2026-08-19T02:54:24.908038+00:00",
-      "season_id": 8873671,
-      "section_id": 9894720,
+      "season_id": 8728825,
+      "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-19T02:54:26.983491+00:00"
     }
   },
   "season": {
-    "title": "音乐视频合集",
-    "season_id": 8873671,
-    "section_id": 9894720
+    "title": "周杰伦",
+    "season_id": 8728825,
+    "section_id": 9727754
   }
 }
