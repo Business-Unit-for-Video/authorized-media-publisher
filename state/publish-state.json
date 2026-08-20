@@ -1052,13 +1052,14 @@
       "published_at": "2026-08-20T23:56:29.470394+00:00"
     },
     "aGsrg1NO1cM": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=aGsrg1NO1cM",
       "title": "Jay Chou 周杰倫【My Daughter, Your Highness女兒殿下】Official Music Video",
       "image_id": "d23c2d652e9f160ad9ba",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-15",
-      "reserved_at": "2026-08-20T23:57:21.817437+00:00"
+      "reserved_at": "2026-08-20T23:57:21.817437+00:00",
+      "submitting_at": "2026-08-20T23:57:22.938996+00:00"
     }
   },
   "season": {
