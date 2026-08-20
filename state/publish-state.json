@@ -21,6 +21,7 @@
       "5f081868679989c63b81",
       "60471a9beefc956dbb51",
       "63e1e19c6ecb140428f7",
+      "6808694377d47a41bdd4",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "82a624df78be4642e03b",
@@ -887,6 +888,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-20T23:45:10.444537+00:00"
+    },
+    "AdkkF6MT0R0": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=AdkkF6MT0R0",
+      "title": "周杰倫 Jay Chou【夜的第七章 Chapter Seven】-Official Music Video",
+      "image_id": "6808694377d47a41bdd4",
+      "image_cycle": 1,
+      "workflow_run_id": "32429426478-6",
+      "reserved_at": "2026-08-20T23:46:08.562804+00:00"
     }
   },
   "season": {
