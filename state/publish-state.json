@@ -746,13 +746,14 @@
       "published_at": "2026-08-20T01:16:16.452621+00:00"
     },
     "SnKAHq6O0Is": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=SnKAHq6O0Is",
       "title": "周杰倫 Jay Chou【四季列車 Four Seasons Train】Official MV",
       "image_id": "ea8d54421823936a8c50",
       "image_cycle": 1,
       "workflow_run_id": "32319802755-8",
-      "reserved_at": "2026-08-20T01:17:04.308582+00:00"
+      "reserved_at": "2026-08-20T01:17:04.308582+00:00",
+      "submitting_at": "2026-08-20T01:17:06.092801+00:00"
     }
   },
   "season": {
