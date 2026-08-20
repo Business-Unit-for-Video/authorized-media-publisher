@@ -908,14 +908,17 @@
       "published_at": "2026-08-20T23:46:26.242786+00:00"
     },
     "wTZrLNQ8WF8": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=wTZrLNQ8WF8",
       "title": "周杰倫 Jay Chou【夜的第七章電影版 Chapter Seven】-Official Movie Version",
       "image_id": "188e4ed85f82ac0e4d26",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-7",
       "reserved_at": "2026-08-20T23:48:08.002338+00:00",
-      "submitting_at": "2026-08-20T23:48:09.239206+00:00"
+      "submitting_at": "2026-08-20T23:48:09.239206+00:00",
+      "aid": 117130502669901,
+      "bvid": "BV1VZ8K6XE9w",
+      "uploaded_at": "2026-08-20T23:48:30.140584+00:00"
     }
   },
   "season": {
