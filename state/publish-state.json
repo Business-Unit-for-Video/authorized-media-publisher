@@ -944,7 +944,7 @@
       "published_at": "2026-08-20T23:49:34.623152+00:00"
     },
     "-u4sPnpaFEA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=-u4sPnpaFEA",
       "title": "周杰倫 Jay Chou【大笨鐘 Big Ben】Official MV",
       "image_id": "691d1235476d934d30ca",
@@ -954,7 +954,11 @@
       "submitting_at": "2026-08-20T23:50:28.425728+00:00",
       "aid": 117130502671824,
       "bvid": "BV1VZ8K6XEuR",
-      "uploaded_at": "2026-08-20T23:50:40.573560+00:00"
+      "uploaded_at": "2026-08-20T23:50:40.573560+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T23:50:42.613450+00:00"
     }
   },
   "season": {
