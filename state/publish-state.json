@@ -1016,7 +1016,7 @@
       "published_at": "2026-08-20T23:53:44.009806+00:00"
     },
     "-gJzlOJ0Zoo": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=-gJzlOJ0Zoo",
       "title": "周杰倫 Jay Chou【天涯過客 Passer-by】Official MV",
       "image_id": "92a629d439d88775b281",
@@ -1026,7 +1026,11 @@
       "submitting_at": "2026-08-20T23:54:35.462261+00:00",
       "aid": 117130519381704,
       "bvid": "BV1Ro8K6pEN8",
-      "uploaded_at": "2026-08-20T23:54:49.143049+00:00"
+      "uploaded_at": "2026-08-20T23:54:49.143049+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T23:54:51.446716+00:00"
     }
   },
   "season": {
