@@ -782,7 +782,7 @@
       "published_at": "2026-08-20T01:18:34.848669+00:00"
     },
     "MKNrnSsIwf8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=MKNrnSsIwf8",
       "title": "周杰倫 Jay Chou【回到過去 Back to the Past】Official MV",
       "image_id": "d0ceb26c4d76e8e2a60c",
@@ -792,7 +792,11 @@
       "submitting_at": "2026-08-20T01:19:58.738536+00:00",
       "aid": 117125201005386,
       "bvid": "BV19rbZ6hEXA",
-      "uploaded_at": "2026-08-20T01:20:11.027409+00:00"
+      "uploaded_at": "2026-08-20T01:20:11.027409+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T01:20:13.050015+00:00"
     }
   },
   "season": {
