@@ -818,14 +818,17 @@
       "published_at": "2026-08-20T23:40:01.928378+00:00"
     },
     "IoCoIxkGkVw": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=IoCoIxkGkVw",
       "title": "周杰倫 Jay Chou【園遊會 Fun Fair】-Official Music Video",
       "image_id": "f03b9eb15b184744d9d5",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-2",
       "reserved_at": "2026-08-20T23:41:19.175492+00:00",
-      "submitting_at": "2026-08-20T23:41:20.257747+00:00"
+      "submitting_at": "2026-08-20T23:41:20.257747+00:00",
+      "aid": 117130469182384,
+      "bvid": "BV1vR8K6REe7",
+      "uploaded_at": "2026-08-20T23:41:37.003337+00:00"
     }
   },
   "season": {
