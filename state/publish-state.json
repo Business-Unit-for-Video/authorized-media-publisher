@@ -1070,7 +1070,7 @@
       "published_at": "2026-08-20T23:57:50.758447+00:00"
     },
     "gqzlB7Gla2E": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=gqzlB7Gla2E",
       "title": "周杰倫 Jay Chou【她的睫毛 Her Eyelashes】-Official Music Video",
       "image_id": "0581e5f054b69da47340",
@@ -1080,7 +1080,11 @@
       "submitting_at": "2026-08-20T23:58:41.109657+00:00",
       "aid": 117130536159423,
       "bvid": "BV1ZU8K6ZE5r",
-      "uploaded_at": "2026-08-20T23:58:55.412220+00:00"
+      "uploaded_at": "2026-08-20T23:58:55.412220+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T23:58:57.536966+00:00"
     }
   },
   "season": {
