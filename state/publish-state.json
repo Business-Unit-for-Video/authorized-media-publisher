@@ -980,7 +980,7 @@
       "published_at": "2026-08-20T23:51:43.258024+00:00"
     },
     "eaW0jUGaHe0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=eaW0jUGaHe0",
       "title": "Jay Chou 周杰倫【天地一鬥 Spark 】-Official Music Video(ft. Kobe Bryant)",
       "image_id": "ca22927434caa819f146",
@@ -990,7 +990,11 @@
       "submitting_at": "2026-08-20T23:52:28.731301+00:00",
       "aid": 117130519449161,
       "bvid": "BV15o8K6WEFE",
-      "uploaded_at": "2026-08-20T23:52:41.960000+00:00"
+      "uploaded_at": "2026-08-20T23:52:41.960000+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T23:52:44.237419+00:00"
     }
   },
   "season": {
