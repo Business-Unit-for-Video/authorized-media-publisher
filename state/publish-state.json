@@ -692,7 +692,7 @@
       "published_at": "2026-08-20T01:11:20.610771+00:00"
     },
     "yfn8sE9obWU": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=yfn8sE9obWU",
       "title": "周杰倫 Jay Chou【哪裡都是你 You are everywhere】Official MV",
       "image_id": "28c40c00e25e200ba535",
@@ -702,7 +702,11 @@
       "submitting_at": "2026-08-20T01:13:03.103012+00:00",
       "aid": 117125167517100,
       "bvid": "BV1LBbZ6eEJH",
-      "uploaded_at": "2026-08-20T01:13:16.887170+00:00"
+      "uploaded_at": "2026-08-20T01:13:16.887170+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T01:13:18.897861+00:00"
     }
   },
   "season": {
