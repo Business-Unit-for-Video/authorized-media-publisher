@@ -836,13 +836,14 @@
       "published_at": "2026-08-20T23:41:39.059582+00:00"
     },
     "kOriLqPD7PI": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=kOriLqPD7PI",
       "title": "周杰倫 Jay Chou (feat. 林書豪Jeremy Lin)【土耳其冰淇淋 Tu Er Qi Ice Cream】Official MV",
       "image_id": "555e4a19ec4530546b36",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-3",
-      "reserved_at": "2026-08-20T23:42:36.129973+00:00"
+      "reserved_at": "2026-08-20T23:42:36.129973+00:00",
+      "submitting_at": "2026-08-20T23:42:37.222715+00:00"
     }
   },
   "season": {
