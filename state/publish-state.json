@@ -872,14 +872,17 @@
       "published_at": "2026-08-20T23:44:01.846372+00:00"
     },
     "6Q0Pd53mojY": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=6Q0Pd53mojY",
       "title": "周杰倫 Jay Chou【夜曲 Nocturne】-Official Music Video",
       "image_id": "c8b08889c8e1d6ebe8b0",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-5",
       "reserved_at": "2026-08-20T23:44:54.736111+00:00",
-      "submitting_at": "2026-08-20T23:44:55.994632+00:00"
+      "submitting_at": "2026-08-20T23:44:55.994632+00:00",
+      "aid": 117130485828996,
+      "bvid": "BV1R98K6sEQW",
+      "uploaded_at": "2026-08-20T23:45:08.379517+00:00"
     }
   },
   "season": {
