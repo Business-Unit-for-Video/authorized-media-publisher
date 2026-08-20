@@ -656,14 +656,17 @@
       "published_at": "2026-08-20T01:09:23.038518+00:00"
     },
     "bu7nU9Mhpyo": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=bu7nU9Mhpyo",
       "title": "周杰倫 Jay Chou (特別演出: 派偉俊)【告白氣球 Love Confession】Official MV",
       "image_id": "0bfa6cc45baa74ea7938",
       "image_cycle": 1,
       "workflow_run_id": "32319802755-3",
       "reserved_at": "2026-08-20T01:10:09.805594+00:00",
-      "submitting_at": "2026-08-20T01:10:10.871876+00:00"
+      "submitting_at": "2026-08-20T01:10:10.871876+00:00",
+      "aid": 117125150674173,
+      "bvid": "BV1Q1bZ6ZEun",
+      "uploaded_at": "2026-08-20T01:10:21.766010+00:00"
     }
   },
   "season": {
