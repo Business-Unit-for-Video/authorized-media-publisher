@@ -800,14 +800,17 @@
       "published_at": "2026-08-20T01:20:13.050015+00:00"
     },
     "pm91leB_P8c": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=pm91leB_P8c",
       "title": "周杰倫 Jay Chou【困獸之鬥 Struggle】-Official Music Video",
       "image_id": "b6fcc8191934fb858af6",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-1",
       "reserved_at": "2026-08-20T23:39:27.785377+00:00",
-      "submitting_at": "2026-08-20T23:39:29.091797+00:00"
+      "submitting_at": "2026-08-20T23:39:29.091797+00:00",
+      "aid": 117130469050447,
+      "bvid": "BV1RR8K69Ep9",
+      "uploaded_at": "2026-08-20T23:39:59.661648+00:00"
     }
   },
   "season": {
