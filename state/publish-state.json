@@ -638,13 +638,14 @@
       "published_at": "2026-08-20T01:08:09.759799+00:00"
     },
     "D0x09XJgyO4": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=D0x09XJgyO4",
       "title": "周杰倫 Jay Chou【同一種調調 Same Tone】 -Official Music Video",
       "image_id": "dce650a04ba22fdb92c9",
       "image_cycle": 1,
       "workflow_run_id": "32319802755-2",
-      "reserved_at": "2026-08-20T01:09:07.927636+00:00"
+      "reserved_at": "2026-08-20T01:09:07.927636+00:00",
+      "submitting_at": "2026-08-20T01:09:09.159443+00:00"
     }
   },
   "season": {
