@@ -710,13 +710,14 @@
       "published_at": "2026-08-20T01:13:18.897861+00:00"
     },
     "GKT_1DTa2as": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=GKT_1DTa2as",
       "title": "周杰倫 Jay Chou【喬克叔叔 Uncle Joker】-Official Music Video",
       "image_id": "5f081868679989c63b81",
       "image_cycle": 1,
       "workflow_run_id": "32319802755-6",
-      "reserved_at": "2026-08-20T01:15:03.777894+00:00"
+      "reserved_at": "2026-08-20T01:15:03.777894+00:00",
+      "submitting_at": "2026-08-20T01:15:04.983847+00:00"
     }
   },
   "season": {
