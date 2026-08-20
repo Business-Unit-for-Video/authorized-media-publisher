@@ -59,7 +59,8 @@
       "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e",
-      "f8729fa6014de02d9c65"
+      "f8729fa6014de02d9c65",
+      "ffa5b9e2e21ba5f97726"
     ]
   },
   "videos": {
@@ -1031,6 +1032,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-20T23:54:51.446716+00:00"
+    },
+    "Hgnpi3eBQ9o": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=Hgnpi3eBQ9o",
+      "title": "Jay Chou 周杰倫【Children of the Sun 太陽之子】Official Music Video",
+      "image_id": "ffa5b9e2e21ba5f97726",
+      "image_cycle": 1,
+      "workflow_run_id": "32429426478-14",
+      "reserved_at": "2026-08-20T23:56:13.845912+00:00"
     }
   },
   "season": {
