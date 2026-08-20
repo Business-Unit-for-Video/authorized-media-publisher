@@ -9,6 +9,7 @@
       "0f65e071a42b4f7cf8d9",
       "10340e09a8a23fe11eb5",
       "10b9f309a38e5ce38f7c",
+      "188e4ed85f82ac0e4d26",
       "18b816827aafeed03652",
       "28c40c00e25e200ba535",
       "2e632f68f39c6da8318a",
@@ -905,6 +906,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-20T23:46:26.242786+00:00"
+    },
+    "wTZrLNQ8WF8": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=wTZrLNQ8WF8",
+      "title": "周杰倫 Jay Chou【夜的第七章電影版 Chapter Seven】-Official Movie Version",
+      "image_id": "188e4ed85f82ac0e4d26",
+      "image_cycle": 1,
+      "workflow_run_id": "32429426478-7",
+      "reserved_at": "2026-08-20T23:48:08.002338+00:00"
     }
   },
   "season": {
