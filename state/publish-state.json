@@ -728,13 +728,14 @@
       "published_at": "2026-08-20T01:15:19.034861+00:00"
     },
     "I1boAt2ChIs": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=I1boAt2ChIs",
       "title": "周杰倫 Jay Chou【嘻哈空姐 Hip-hop Flight Attendant】Official MV",
       "image_id": "e6218dc29c412b76b210",
       "image_cycle": 1,
       "workflow_run_id": "32319802755-7",
-      "reserved_at": "2026-08-20T01:16:02.667183+00:00"
+      "reserved_at": "2026-08-20T01:16:02.667183+00:00",
+      "submitting_at": "2026-08-20T01:16:03.784446+00:00"
     }
   },
   "season": {
