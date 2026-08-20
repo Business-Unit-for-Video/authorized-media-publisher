@@ -55,7 +55,8 @@
       "f03b9eb15b184744d9d5",
       "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
-      "f62778673f8cff15186e"
+      "f62778673f8cff15186e",
+      "f8729fa6014de02d9c65"
     ]
   },
   "videos": {
@@ -959,6 +960,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-20T23:50:42.613450+00:00"
+    },
+    "GDBD6h8BWIc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=GDBD6h8BWIc",
+      "title": "周杰倫 Jay Chou【天台的月光 Moonlight on the Rooftop】Official Music Video",
+      "image_id": "f8729fa6014de02d9c65",
+      "image_cycle": 1,
+      "workflow_run_id": "32429426478-10",
+      "reserved_at": "2026-08-20T23:51:19.802808+00:00"
     }
   },
   "season": {
