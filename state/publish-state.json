@@ -854,13 +854,14 @@
       "published_at": "2026-08-20T23:42:54.236088+00:00"
     },
     "Ur-x4pZT1Rk": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=Ur-x4pZT1Rk",
       "title": "周杰倫 Jay Chou【外婆 Grandma】-Official Music Video",
       "image_id": "b2430018cd50aceaf458",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-4",
-      "reserved_at": "2026-08-20T23:43:45.825020+00:00"
+      "reserved_at": "2026-08-20T23:43:45.825020+00:00",
+      "submitting_at": "2026-08-20T23:43:47.005010+00:00"
     }
   },
   "season": {
