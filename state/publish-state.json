@@ -23,6 +23,7 @@
       "82a624df78be4642e03b",
       "82ccdc55a44da3468164",
       "859b9716a5db48eaa3b2",
+      "9bd08d1fec865e833fbf",
       "a20601d314d07a692397",
       "a315e1837de19309b9bb",
       "a3caffc084ca41e62ed4",
@@ -671,6 +672,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-20T01:10:23.972847+00:00"
+    },
+    "EZxhW-uSN_I": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=EZxhW-uSN_I",
+      "title": "Jay Chou 周杰倫【周大俠 Master Chou】-Official Music Video(電影「功夫灌籃」主題曲)",
+      "image_id": "9bd08d1fec865e833fbf",
+      "image_cycle": 1,
+      "workflow_run_id": "32319802755-4",
+      "reserved_at": "2026-08-20T01:11:06.160535+00:00"
     }
   },
   "season": {
