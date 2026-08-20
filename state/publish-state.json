@@ -764,7 +764,7 @@
       "published_at": "2026-08-20T01:17:20.518000+00:00"
     },
     "JljURsMOLmc": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=JljURsMOLmc",
       "title": "周杰倫 Jay Chou【四面楚歌 Surrounded】-Official Music Video",
       "image_id": "eb3a41f81a98b3e055b9",
@@ -774,7 +774,11 @@
       "submitting_at": "2026-08-20T01:18:21.653818+00:00",
       "aid": 117125184229096,
       "bvid": "BV1dqbZ6PEqJ",
-      "uploaded_at": "2026-08-20T01:18:32.584304+00:00"
+      "uploaded_at": "2026-08-20T01:18:32.584304+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-20T01:18:34.848669+00:00"
     }
   },
   "season": {
