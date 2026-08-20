@@ -48,6 +48,7 @@
       "ca22927434caa819f146",
       "d0ceb26c4d76e8e2a60c",
       "d2a44f25560a465360e6",
+      "dc75d5f53f0c09a0b35a",
       "dce650a04ba22fdb92c9",
       "e6218dc29c412b76b210",
       "e8633c5b5efe960f62c4",
@@ -995,6 +996,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-20T23:52:44.237419+00:00"
+    },
+    "zVJN1maXgH4": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=zVJN1maXgH4",
+      "title": "周杰倫+Kobe Bryant【天地一鬥 官方完整MV】Jay Chou \"Spark\" MV",
+      "image_id": "dc75d5f53f0c09a0b35a",
+      "image_cycle": 1,
+      "workflow_run_id": "32429426478-12",
+      "reserved_at": "2026-08-20T23:53:25.550230+00:00"
     }
   },
   "season": {
