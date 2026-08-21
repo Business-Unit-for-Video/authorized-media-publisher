@@ -1142,13 +1142,14 @@
       "published_at": "2026-08-21T00:03:22.544932+00:00"
     },
     "MpP9dw_j2PI": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=MpP9dw_j2PI",
       "title": "周杰倫 Jay Chou【娘子 Wife】-Official Music Video",
       "image_id": "7449defe331043ec66b5",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-20",
-      "reserved_at": "2026-08-21T00:04:15.073860+00:00"
+      "reserved_at": "2026-08-21T00:04:15.073860+00:00",
+      "submitting_at": "2026-08-21T00:04:17.198051+00:00"
     }
   },
   "season": {
