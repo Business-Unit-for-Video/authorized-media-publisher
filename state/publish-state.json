@@ -1124,13 +1124,14 @@
       "published_at": "2026-08-21T00:02:19.627464+00:00"
     },
     "lCzWCxVAkfc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=lCzWCxVAkfc",
       "title": "周杰倫 Jay Chou【威廉古堡 William Castle】Official MV",
       "image_id": "345b29d62ac9da6b2e48",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-19",
-      "reserved_at": "2026-08-21T00:03:04.192394+00:00"
+      "reserved_at": "2026-08-21T00:03:04.192394+00:00",
+      "submitting_at": "2026-08-21T00:03:05.811395+00:00"
     }
   },
   "season": {
