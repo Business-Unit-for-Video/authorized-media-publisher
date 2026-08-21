@@ -1088,13 +1088,14 @@
       "published_at": "2026-08-20T23:58:57.536966+00:00"
     },
     "uAUBexRRFr0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=uAUBexRRFr0",
       "title": "周杰倫 Jay Chou【好久不見 Long Time No See】Official MV",
       "image_id": "d0a16fd25064ed910ca3",
       "image_cycle": 1,
       "workflow_run_id": "32429426478-17",
-      "reserved_at": "2026-08-21T00:00:47.301845+00:00"
+      "reserved_at": "2026-08-21T00:00:47.301845+00:00",
+      "submitting_at": "2026-08-21T00:00:48.397544+00:00"
     }
   },
   "season": {
