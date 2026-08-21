@@ -1142,7 +1142,7 @@
       "published_at": "2026-08-21T00:03:22.544932+00:00"
     },
     "MpP9dw_j2PI": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=MpP9dw_j2PI",
       "title": "周杰倫 Jay Chou【娘子 Wife】-Official Music Video",
       "image_id": "7449defe331043ec66b5",
@@ -1152,7 +1152,11 @@
       "submitting_at": "2026-08-21T00:04:17.198051+00:00",
       "aid": 117130569714446,
       "bvid": "BV1oQ8K6dEPe",
-      "uploaded_at": "2026-08-21T00:04:30.670383+00:00"
+      "uploaded_at": "2026-08-21T00:04:30.670383+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-21T00:04:32.730120+00:00"
     }
   },
   "season": {
