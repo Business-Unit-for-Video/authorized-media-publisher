@@ -1232,13 +1232,14 @@
       "published_at": "2026-08-22T07:57:22.164200+00:00"
     },
     "pAZjcx150Zc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=pAZjcx150Zc",
       "title": "周杰倫+林志玲【帶我飛 官方完整MV】Jay Chou \"Fly Away\" MV",
       "image_id": "c1c726d73be6b35532f3",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-5",
-      "reserved_at": "2026-08-22T07:58:23.660061+00:00"
+      "reserved_at": "2026-08-22T07:58:23.660061+00:00",
+      "submitting_at": "2026-08-22T07:58:24.621631+00:00"
     }
   },
   "season": {
