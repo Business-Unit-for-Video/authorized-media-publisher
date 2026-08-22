@@ -1304,13 +1304,14 @@
       "published_at": "2026-08-22T08:05:05.391683+00:00"
     },
     "55yJh4SHUBY": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=55yJh4SHUBY",
       "title": "周杰倫 Jay Chou【忍者 Ninja】Official MV",
       "image_id": "01887476e2d54920a015",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-9",
-      "reserved_at": "2026-08-22T08:05:45.597736+00:00"
+      "reserved_at": "2026-08-22T08:05:45.597736+00:00",
+      "submitting_at": "2026-08-22T08:05:46.563708+00:00"
     }
   },
   "season": {
