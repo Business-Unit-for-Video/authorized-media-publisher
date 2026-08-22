@@ -1268,7 +1268,7 @@
       "published_at": "2026-08-22T08:02:28.233628+00:00"
     },
     "WxZvXPTBC0A": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=WxZvXPTBC0A",
       "title": "周杰倫 Jay Chou【彩虹 Rainbow】-Official Music Video",
       "image_id": "603fb58da84ea14afb5d",
@@ -1278,7 +1278,11 @@
       "submitting_at": "2026-08-22T08:03:29.738465+00:00",
       "aid": 117138102684642,
       "bvid": "BV1Ct8161EeT",
-      "uploaded_at": "2026-08-22T08:03:46.851679+00:00"
+      "uploaded_at": "2026-08-22T08:03:46.851679+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-22T08:03:48.831963+00:00"
     }
   },
   "season": {
