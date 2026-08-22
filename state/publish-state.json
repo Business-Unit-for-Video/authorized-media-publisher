@@ -1268,13 +1268,14 @@
       "published_at": "2026-08-22T08:02:28.233628+00:00"
     },
     "WxZvXPTBC0A": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=WxZvXPTBC0A",
       "title": "周杰倫 Jay Chou【彩虹 Rainbow】-Official Music Video",
       "image_id": "603fb58da84ea14afb5d",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-7",
-      "reserved_at": "2026-08-22T08:03:28.807308+00:00"
+      "reserved_at": "2026-08-22T08:03:28.807308+00:00",
+      "submitting_at": "2026-08-22T08:03:29.738465+00:00"
     }
   },
   "season": {
