@@ -1214,14 +1214,17 @@
       "published_at": "2026-08-22T07:55:26.715502+00:00"
     },
     "N2DkKFxijv0": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=N2DkKFxijv0",
       "title": "周杰倫 Jay Chou【對不起 Sorry】Official MV",
       "image_id": "38b4b35c0ed74e4f6d3e",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-4",
       "reserved_at": "2026-08-22T07:56:49.236829+00:00",
-      "submitting_at": "2026-08-22T07:56:50.156933+00:00"
+      "submitting_at": "2026-08-22T07:56:50.156933+00:00",
+      "aid": 117138085906271,
+      "bvid": "BV1C88165Egs",
+      "uploaded_at": "2026-08-22T07:57:19.987359+00:00"
     }
   },
   "season": {
