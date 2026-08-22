@@ -1160,14 +1160,17 @@
       "published_at": "2026-08-21T00:04:32.730120+00:00"
     },
     "1hI-7vj2FhE": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=1hI-7vj2FhE",
       "title": "周杰倫 Jay Chou【安靜 Silence】Official MV",
       "image_id": "8f5a5515564b04018593",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-1",
       "reserved_at": "2026-08-22T07:51:06.584465+00:00",
-      "submitting_at": "2026-08-22T07:51:07.564384+00:00"
+      "submitting_at": "2026-08-22T07:51:07.564384+00:00",
+      "aid": 117138069326855,
+      "bvid": "BV1ys816UEZM",
+      "uploaded_at": "2026-08-22T07:51:35.679952+00:00"
     }
   },
   "season": {
