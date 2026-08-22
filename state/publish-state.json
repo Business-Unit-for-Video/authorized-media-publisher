@@ -1196,13 +1196,14 @@
       "published_at": "2026-08-22T07:53:26.034099+00:00"
     },
     "PaJdceSx4JA": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=PaJdceSx4JA",
       "title": "周杰倫 Jay Chou【將軍 General】-Official Music Video",
       "image_id": "ab3a8e8b2f4b9313e3f0",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-3",
-      "reserved_at": "2026-08-22T07:54:34.447189+00:00"
+      "reserved_at": "2026-08-22T07:54:34.447189+00:00",
+      "submitting_at": "2026-08-22T07:54:35.367479+00:00"
     }
   },
   "season": {
