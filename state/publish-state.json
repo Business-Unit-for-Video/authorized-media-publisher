@@ -1214,7 +1214,7 @@
       "published_at": "2026-08-22T07:55:26.715502+00:00"
     },
     "N2DkKFxijv0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=N2DkKFxijv0",
       "title": "周杰倫 Jay Chou【對不起 Sorry】Official MV",
       "image_id": "38b4b35c0ed74e4f6d3e",
@@ -1224,7 +1224,11 @@
       "submitting_at": "2026-08-22T07:56:50.156933+00:00",
       "aid": 117138085906271,
       "bvid": "BV1C88165Egs",
-      "uploaded_at": "2026-08-22T07:57:19.987359+00:00"
+      "uploaded_at": "2026-08-22T07:57:19.987359+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-22T07:57:22.164200+00:00"
     }
   },
   "season": {
