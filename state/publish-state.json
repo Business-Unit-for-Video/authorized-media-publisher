@@ -1286,14 +1286,17 @@
       "published_at": "2026-08-22T08:03:48.831963+00:00"
     },
     "xVTI5eSzwzQ": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=xVTI5eSzwzQ",
       "title": "周杰倫 Jay Chou【心雨 Rainy Mood】-Official Music Video",
       "image_id": "0feab7e32cd85857ce25",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-8",
       "reserved_at": "2026-08-22T08:04:48.372755+00:00",
-      "submitting_at": "2026-08-22T08:04:49.332974+00:00"
+      "submitting_at": "2026-08-22T08:04:49.332974+00:00",
+      "aid": 117138119460655,
+      "bvid": "BV1i1816PEcm",
+      "uploaded_at": "2026-08-22T08:05:03.314893+00:00"
     }
   },
   "season": {
