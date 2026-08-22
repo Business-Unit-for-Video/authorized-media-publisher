@@ -1178,14 +1178,17 @@
       "published_at": "2026-08-22T07:51:37.915833+00:00"
     },
     "gxZHH8x2zPg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=gxZHH8x2zPg",
       "title": "周杰倫 Jay Chou【完美主義 Perfectionism】-Official Music Video",
       "image_id": "36766a9450924c6a695f",
       "image_cycle": 1,
       "workflow_run_id": "32560609621-2",
       "reserved_at": "2026-08-22T07:53:02.291986+00:00",
-      "submitting_at": "2026-08-22T07:53:03.303001+00:00"
+      "submitting_at": "2026-08-22T07:53:03.303001+00:00",
+      "aid": 117138069261171,
+      "bvid": "BV1xs816UEFG",
+      "uploaded_at": "2026-08-22T07:53:24.045450+00:00"
     }
   },
   "season": {
