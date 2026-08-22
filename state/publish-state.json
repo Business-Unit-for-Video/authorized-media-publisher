@@ -3,6 +3,7 @@
   "images": {
     "cycle": 1,
     "used_image_ids": [
+      "01887476e2d54920a015",
       "03c1b478e81968112293",
       "0581e5f054b69da47340",
       "08122a87ad329f9c8ccc",
@@ -1301,6 +1302,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-22T08:05:05.391683+00:00"
+    },
+    "55yJh4SHUBY": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=55yJh4SHUBY",
+      "title": "周杰倫 Jay Chou【忍者 Ninja】Official MV",
+      "image_id": "01887476e2d54920a015",
+      "image_cycle": 1,
+      "workflow_run_id": "32560609621-9",
+      "reserved_at": "2026-08-22T08:05:45.597736+00:00"
     }
   },
   "season": {
