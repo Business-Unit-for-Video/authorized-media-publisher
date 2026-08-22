@@ -1250,7 +1250,7 @@
       "published_at": "2026-08-22T07:58:40.666486+00:00"
     },
     "-7r6VqSllNg": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=-7r6VqSllNg",
       "title": "周杰倫 Jay Chou【床邊故事 Bedtime Stories】Official MV",
       "image_id": "8ff2600a9346404a7d1b",
@@ -1260,7 +1260,11 @@
       "submitting_at": "2026-08-22T08:00:35.465616+00:00",
       "aid": 117138102750353,
       "bvid": "BV1At8162Eh4",
-      "uploaded_at": "2026-08-22T08:02:25.964074+00:00"
+      "uploaded_at": "2026-08-22T08:02:25.964074+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-22T08:02:28.233628+00:00"
     }
   },
   "season": {
