@@ -1466,14 +1466,17 @@
       "published_at": "2026-08-23T03:26:27.928547+00:00"
     },
     "s-VFpsrbWLk": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=s-VFpsrbWLk",
       "title": "周杰倫 Jay Chou【我不配 Not Good Enough For You】-Official Music Video",
       "image_id": "de477164aae9c639e01a",
       "image_cycle": 1,
       "workflow_run_id": "32614919651-8",
       "reserved_at": "2026-08-23T03:27:20.201920+00:00",
-      "submitting_at": "2026-08-23T03:27:21.203919+00:00"
+      "submitting_at": "2026-08-23T03:27:21.203919+00:00",
+      "aid": 117142682864552,
+      "bvid": "BV17k8s61Eye",
+      "uploaded_at": "2026-08-23T03:27:36.688038+00:00"
     }
   },
   "season": {
