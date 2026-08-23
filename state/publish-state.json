@@ -1358,7 +1358,7 @@
       "published_at": "2026-08-23T03:18:09.985417+00:00"
     },
     "5XK2C9w6oVk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=5XK2C9w6oVk",
       "title": "周杰倫 Jay Chou【愛在西元前 Love before AD】Official MV",
       "image_id": "428a36985bf12c7becb9",
@@ -1368,7 +1368,11 @@
       "submitting_at": "2026-08-23T03:18:53.672432+00:00",
       "aid": 117142649376170,
       "bvid": "BV1y48s6dEoa",
-      "uploaded_at": "2026-08-23T03:19:06.896732+00:00"
+      "uploaded_at": "2026-08-23T03:19:06.896732+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-23T03:19:08.930124+00:00"
     }
   },
   "season": {
