@@ -1430,14 +1430,17 @@
       "published_at": "2026-08-23T03:23:41.187998+00:00"
     },
     "odNYK272RtQ": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=odNYK272RtQ",
       "title": "周杰倫 Jay Chou【愛的飛行日記 Diary of Love (feat. 楊瑞代 Gary)】Official MV",
       "image_id": "4c0596da3eed215b787e",
       "image_cycle": 1,
       "workflow_run_id": "32614919651-6",
       "reserved_at": "2026-08-23T03:24:23.190513+00:00",
-      "submitting_at": "2026-08-23T03:24:24.244593+00:00"
+      "submitting_at": "2026-08-23T03:24:24.244593+00:00",
+      "aid": 117142666151923,
+      "bvid": "BV12x8s64EsP",
+      "uploaded_at": "2026-08-23T03:24:36.017161+00:00"
     }
   },
   "season": {
