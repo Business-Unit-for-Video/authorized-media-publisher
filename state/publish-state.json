@@ -1484,7 +1484,7 @@
       "published_at": "2026-08-23T03:27:38.776262+00:00"
     },
     "TbFWYT9VGRk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=TbFWYT9VGRk",
       "title": "周杰倫 Jay Chou【我是如此相信 I Truly Believe】(電影天火主題曲) Official MV",
       "image_id": "8ec409e72e675855127c",
@@ -1494,7 +1494,11 @@
       "submitting_at": "2026-08-23T03:28:54.688889+00:00",
       "aid": 117142699640837,
       "bvid": "BV1Er8s6jELS",
-      "uploaded_at": "2026-08-23T03:29:09.549927+00:00"
+      "uploaded_at": "2026-08-23T03:29:09.549927+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-23T03:29:11.672728+00:00"
     }
   },
   "season": {
