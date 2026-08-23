@@ -1394,14 +1394,17 @@
       "published_at": "2026-08-23T03:20:49.643117+00:00"
     },
     "H5VQdhYh9rc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=H5VQdhYh9rc",
       "title": "周杰倫 Jay Chou【愛情懸崖 Cliff】-Official Music Video",
       "image_id": "14683834d645baa2a9c9",
       "image_cycle": 1,
       "workflow_run_id": "32614919651-4",
       "reserved_at": "2026-08-23T03:21:54.505186+00:00",
-      "submitting_at": "2026-08-23T03:21:55.543765+00:00"
+      "submitting_at": "2026-08-23T03:21:55.543765+00:00",
+      "aid": 117142666087264,
+      "bvid": "BV1xx8s64E6c",
+      "uploaded_at": "2026-08-23T03:22:08.197953+00:00"
     }
   },
   "season": {
