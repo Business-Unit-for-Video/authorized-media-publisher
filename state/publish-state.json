@@ -1376,13 +1376,14 @@
       "published_at": "2026-08-23T03:19:08.930124+00:00"
     },
     "2kdYSeoHChg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=2kdYSeoHChg",
       "title": "周杰倫 Jay Chou【愛情廢柴 Failure at love】Official MV",
       "image_id": "1585a11b484a7814f4f4",
       "image_cycle": 1,
       "workflow_run_id": "32614919651-3",
-      "reserved_at": "2026-08-23T03:20:30.622731+00:00"
+      "reserved_at": "2026-08-23T03:20:30.622731+00:00",
+      "submitting_at": "2026-08-23T03:20:31.675376+00:00"
     }
   },
   "season": {
