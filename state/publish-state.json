@@ -1412,7 +1412,7 @@
       "published_at": "2026-08-23T03:22:10.258829+00:00"
     },
     "ZLldhJXp7iw": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=ZLldhJXp7iw",
       "title": "Jay Chou 周杰倫【Aegean Sea 愛琴海】Official Music Video",
       "image_id": "d3781052d3066e0c4a91",
@@ -1422,7 +1422,11 @@
       "submitting_at": "2026-08-23T03:23:27.356198+00:00",
       "aid": 117142666349754,
       "bvid": "BV1Nx8s6xEgD",
-      "uploaded_at": "2026-08-23T03:23:39.180788+00:00"
+      "uploaded_at": "2026-08-23T03:23:39.180788+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-23T03:23:41.187998+00:00"
     }
   },
   "season": {
