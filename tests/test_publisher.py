@@ -35,15 +35,29 @@ def initial_state() -> dict[str, object]:
     }
 
 
-def test_workflow_exposes_only_publish_modes() -> None:
+def test_workflow_is_public_only() -> None:
     workflow = (Path(__file__).parents[1] / ".github/workflows/publish.yml").read_text(
         encoding="utf-8"
     )
     assert "          - build\n" not in workflow
     assert "  build:\n" not in workflow
     assert "  publish:\n" in workflow
-    assert "          - private\n" in workflow
-    assert "          - public\n" in workflow
+    assert "publish_mode:" not in workflow
+    assert "--visibility public" in workflow
+
+
+def test_publish_rejects_non_public_visibility(tmp_path: Path) -> None:
+    with pytest.raises(ValueError, match="public-only"):
+        publish(
+            tmp_path / "missing-report.json",
+            tmp_path / "cookies.json",
+            "private",
+            171,
+            "tag",
+            tmp_path / "state.json",
+            "season",
+            "",
+        )
 
 
 def test_manifest_allows_empty_rights_metadata(tmp_path: Path) -> None:
@@ -61,10 +75,10 @@ def test_youtube_inventory_schema_is_normalized(tmp_path: Path) -> None:
         "video_id,url,title,channel,channel_id,duration,upload_date,availability,live_status,view_count,matched_queries,discovered_at\n"
         "abc,https://www.youtube.com/watch?v=abc,Song,Artist,c,212,20200101,public,not_live,1,q,now\n",
     )
-    assert read_video_manifest(path, "licensed", "private") == [{
+    assert read_video_manifest(path, "licensed", "public") == [{
         "id": "abc", "title": "Song",
         "video_url": "https://www.youtube.com/watch?v=abc",
-        "rights_basis": "licensed", "publish_scope": "private",
+        "rights_basis": "licensed", "publish_scope": "public",
     }]
 
 
@@ -93,7 +107,7 @@ def test_inventory_image_schema_is_normalized(tmp_path: Path) -> None:
         "id,person_query,title,source_page_url,image_url,thumbnail_url,mime,width,height,license_short_name,license_url,artist,credit,usage_terms,source,rights_status,collected_at\n"
         "i1,q,t,https://x.test/page,https://x.test/i.jpg,https://x.test/t.jpg,image/jpeg,100,100,UNKNOWN,,,,,Bing Images,review-required,now\n",
     )
-    rows = read_image_manifest(path, "licensed", "private")
+    rows = read_image_manifest(path, "licensed", "public")
     assert rows[0]["image_url"] == "https://x.test/i.jpg"
     assert rows[0]["thumbnail_url"] == "https://x.test/t.jpg"
     assert rows[0]["attribution"] == "https://x.test/page"
@@ -161,14 +175,14 @@ def build_manifests(tmp_path: Path) -> tuple[Path, Path]:
     videos = write(
         tmp_path / "videos.csv",
         "id,title,video_url,rights_basis,publish_scope\n"
-        "v1,one,https://x.test/1.mp4,owned,private\n"
-        "v2,two,https://x.test/2.mp4,licensed,private\n",
+        "v1,one,https://x.test/1.mp4,owned,public\n"
+        "v2,two,https://x.test/2.mp4,licensed,public\n",
     )
     images = write(
         tmp_path / "images.csv",
         "id,image_url,rights_basis,publish_scope,attribution\n"
-        "i1,https://x.test/1.jpg,licensed,private,Artist\n"
-        "i2,https://x.test/2.jpg,licensed,private,Artist\n",
+        "i1,https://x.test/1.jpg,licensed,public,Artist\n"
+        "i2,https://x.test/2.jpg,licensed,public,Artist\n",
     )
     return videos, images
 
@@ -278,7 +292,7 @@ def test_serial_publish_builds_and_publishes_one_at_a_time(tmp_path: Path) -> No
         3,
         None,
         tmp_path / "cookies.json",
-        "private",
+        "public",
         171,
         "tag",
         "season",
@@ -316,7 +330,7 @@ def test_serial_publish_stops_when_no_new_video(tmp_path: Path) -> None:
         tmp_path / "videos.csv", tmp_path / "images.csv",
         tmp_path / "output" / "videos", 1280, 720,
         tmp_path / "state.json", 10, None, tmp_path / "cookies.json",
-        "private", 171, "tag", "season", "", "run",
+        "public", 171, "tag", "season", "", "run",
         builder=builder, publisher=publisher,
     )
     assert result == {"built": 0, "published": 0}
@@ -343,7 +357,7 @@ def test_serial_publish_stops_after_publish_failure(tmp_path: Path) -> None:
             tmp_path / "videos.csv", tmp_path / "images.csv",
             tmp_path / "output" / "videos", 1280, 720,
             tmp_path / "state.json", 10, None, tmp_path / "cookies.json",
-            "private", 171, "tag", "season", "", "run",
+            "public", 171, "tag", "season", "", "run",
             builder=builder, publisher=publisher,
         )
     assert events == ["build", "publish"]
@@ -359,7 +373,7 @@ def test_serial_publish_blocks_uncertain_upload_state(tmp_path: Path) -> None:
             tmp_path / "videos.csv", tmp_path / "images.csv",
             tmp_path / "output" / "videos", 1280, 720,
             state_path, 10, None, tmp_path / "cookies.json",
-            "private", 171, "tag", "season", "", "run",
+            "public", 171, "tag", "season", "", "run",
         )
 
 
@@ -383,7 +397,7 @@ def test_serial_publish_finishes_one_pending_attachment_before_build(tmp_path: P
         tmp_path / "videos.csv", tmp_path / "images.csv",
         tmp_path / "output" / "videos", 1280, 720,
         state_path, 1, None, tmp_path / "cookies.json",
-        "private", 171, "tag", "season", "", "run",
+        "public", 171, "tag", "season", "", "run",
         builder=builder, publisher=publisher,
     )
     assert result == {"built": 0, "published": 1}
@@ -395,7 +409,7 @@ def test_publish_persists_reservation_upload_and_season(tmp_path: Path) -> None:
     commits: list[str] = []
     season = FakeSeason()
     count = publish(
-        report_file(tmp_path), tmp_path / "cookies.json", "private", 171, "tag",
+        report_file(tmp_path), tmp_path / "cookies.json", "public", 171, "tag",
         state, "测试合集名称超过二十个字符时应截断", "desc", "run-1",
         persist=lambda path, message: commits.append(message),
         uploader=lambda *args: {"aid": 123, "bvid": "BV1"},
@@ -439,7 +453,7 @@ def test_publish_max_items_limits_multi_record_report(tmp_path: Path) -> None:
             pass
 
     count = publish(
-        report, tmp_path / "cookies.json", "private", 171, "tag", state,
+        report, tmp_path / "cookies.json", "public", 171, "tag", state,
         "season", "description", max_items=1,
         persist=lambda *_: None,
         uploader=lambda record, *_: uploaded.append(record["video_id"]) or {"aid": 1, "bvid": "BV1"},
@@ -462,7 +476,7 @@ def test_uploaded_video_retries_only_season_attachment(tmp_path: Path) -> None:
 
     with pytest.raises(RuntimeError, match="season failed"):
         publish(
-            report_file(tmp_path), tmp_path / "cookies.json", "private", 171, "tag",
+            report_file(tmp_path), tmp_path / "cookies.json", "public", 171, "tag",
             state, "合集", "", persist=lambda *args: None, uploader=uploader,
             season_factory=lambda path: FakeSeason(fail_attach=True),
         )
@@ -470,7 +484,7 @@ def test_uploaded_video_retries_only_season_attachment(tmp_path: Path) -> None:
     empty = write(tmp_path / "empty.json", "[]")
     season = FakeSeason()
     assert publish(
-        empty, tmp_path / "cookies.json", "private", 171, "tag", state, "合集", "",
+        empty, tmp_path / "cookies.json", "public", 171, "tag", state, "合集", "",
         persist=lambda *args: None, uploader=uploader, season_factory=lambda path: season,
     ) == 1
     assert uploader_calls == 1

@@ -3,14 +3,6 @@ name: Publish authorized media
 on:
   workflow_dispatch:
     inputs:
-      publish_mode:
-        description: "Build and upload one item at a time"
-        required: true
-        default: "private"
-        type: choice
-        options:
-          - private
-          - public
       video_manifest:
         description: "CSV path for explicitly authorized video URLs"
         required: true
@@ -100,7 +92,7 @@ jobs:
             --state state/publish-state.json \
             --batch-size "$BATCH_SIZE" \
             --bilibili-cookies "$RUNNER_TEMP/bilibili-cookies.json" \
-            --visibility "${{ inputs.publish_mode }}" \
+            --visibility public \
             --season-title "$SEASON_TITLE" \
             --season-description "$SEASON_DESCRIPTION" \
             --run-id "${{ github.run_id }}" \

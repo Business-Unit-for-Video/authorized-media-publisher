@@ -113,11 +113,14 @@ def upload_video(
 ) -> dict[str, object]:
     from biliup.plugins.bili_webup import BiliBili, Data
 
+    if visibility != "public":
+        raise ValueError("Bilibili publishing is public-only")
+
     @dataclass
     class PublishData(Data):
         is_only_self: int = 0
 
-    video = PublishData(is_only_self=1 if visibility == "private" else 0)
+    video = PublishData(is_only_self=0)
     video.title = record["title"][:80]
     video.desc = (
         f"Video source: {record['video_source']}\n"
@@ -127,8 +130,6 @@ def upload_video(
     video.source = record["video_source"]
     video.tid = tid
     video.set_tag([item.strip() for item in tags.split(",") if item.strip()])
-    if visibility == "private":
-        setattr(video, "is_only_self", 1)
     with BiliBili(video) as bili:
         bili.login(str(cookie_path), str(cookie_path))
         part = bili.upload_file(record["file"], "AUTO", 3)
@@ -264,6 +265,8 @@ def publish(
     season_factory: Callable[[Path], SeasonClient] = SeasonClient,
     max_items: int | None = None,
 ) -> int:
+    if visibility != "public":
+        raise ValueError("Bilibili publishing is public-only")
     records = json.loads(report_path.read_text(encoding="utf-8"))
     state = load_publish_state(state_path, state_path.with_name("image-usage.json"))
     pending_uploaded = [
@@ -315,7 +318,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path, default=Path("output/build-report.json"))
     parser.add_argument("--cookies", type=Path, required=True)
-    parser.add_argument("--visibility", choices=("private", "public"), default="private")
+    parser.add_argument("--visibility", choices=("public",), default="public")
     parser.add_argument("--tid", type=int, default=171)
     parser.add_argument("--tags", default="授权素材,音乐")
     parser.add_argument("--state", type=Path, default=Path("state/publish-state.json"))

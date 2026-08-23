@@ -31,6 +31,8 @@ def serial_publish(
 ) -> dict[str, int]:
     if batch_size < 1:
         raise ValueError("batch_size must be a positive integer")
+    if visibility != "public":
+        raise ValueError("Bilibili publishing is public-only")
 
     built = 0
     published = 0
@@ -113,7 +115,7 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--youtube-cookies", type=Path)
     parser.add_argument("--bilibili-cookies", type=Path, required=True)
-    parser.add_argument("--visibility", choices=("private", "public"), required=True)
+    parser.add_argument("--visibility", choices=("public",), default="public")
     parser.add_argument("--tid", type=int, default=171)
     parser.add_argument("--tags", default="授权素材,音乐")
     parser.add_argument("--season-title", required=True)
