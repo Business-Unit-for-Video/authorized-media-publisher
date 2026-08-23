@@ -1340,7 +1340,7 @@
       "published_at": "2026-08-22T08:07:27.152329+00:00"
     },
     "miBGaUagOz8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=miBGaUagOz8",
       "title": "周杰倫 Jay Chou【愛你沒差 Love you, no matter what】Official MV",
       "image_id": "2d093a79abea9ae3a010",
@@ -1350,7 +1350,11 @@
       "submitting_at": "2026-08-23T03:17:53.785444+00:00",
       "aid": 117142649374575,
       "bvid": "BV1148s6dECS",
-      "uploaded_at": "2026-08-23T03:18:08.024187+00:00"
+      "uploaded_at": "2026-08-23T03:18:08.024187+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-23T03:18:09.985417+00:00"
     }
   },
   "season": {
