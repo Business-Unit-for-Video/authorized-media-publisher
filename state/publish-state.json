@@ -1448,7 +1448,7 @@
       "published_at": "2026-08-23T03:24:38.199884+00:00"
     },
     "Xi_RBDWZaT0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=Xi_RBDWZaT0",
       "title": "周杰倫 Jay Chou【懦夫 Coward】-Official Music Video",
       "image_id": "cc835529563c7e1e0d3a",
@@ -1458,7 +1458,11 @@
       "submitting_at": "2026-08-23T03:26:10.084022+00:00",
       "aid": 117142682864481,
       "bvid": "BV17k8s61E1m",
-      "uploaded_at": "2026-08-23T03:26:25.742237+00:00"
+      "uploaded_at": "2026-08-23T03:26:25.742237+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-23T03:26:27.928547+00:00"
     }
   },
   "season": {
