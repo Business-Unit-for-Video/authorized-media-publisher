@@ -1502,14 +1502,17 @@
       "published_at": "2026-08-23T03:29:11.672728+00:00"
     },
     "RJerfq6MqY0": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=RJerfq6MqY0",
       "title": "周杰倫 Jay Chou【我的地盤 My Territory】-Official Music Video",
       "image_id": "b4bf3e7fa09933710d74",
       "image_cycle": 1,
       "workflow_run_id": "32614919651-10",
       "reserved_at": "2026-08-23T03:30:49.824426+00:00",
-      "submitting_at": "2026-08-23T03:30:50.857238+00:00"
+      "submitting_at": "2026-08-23T03:30:50.857238+00:00",
+      "aid": 117142699639928,
+      "bvid": "BV1Er8s6jEYt",
+      "uploaded_at": "2026-08-23T03:31:04.794589+00:00"
     }
   },
   "season": {
