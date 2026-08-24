@@ -1700,7 +1700,7 @@
       "published_at": "2026-08-24T04:05:26.363679+00:00"
     },
     "ycZ526O9rZA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=ycZ526O9rZA",
       "title": "2005 1 22 揭瓦",
       "image_id": "3a5b5e6f7c77da685866",
@@ -1710,7 +1710,11 @@
       "submitting_at": "2026-08-24T07:24:43.658069+00:00",
       "aid": 117149276309229,
       "bvid": "BV1QX8e6fETY",
-      "uploaded_at": "2026-08-24T07:25:33.268745+00:00"
+      "uploaded_at": "2026-08-24T07:25:33.268745+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-08-24T07:25:35.325787+00:00"
     }
   },
   "season": {
