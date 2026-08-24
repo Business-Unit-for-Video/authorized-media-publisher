@@ -268,15 +268,19 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> P
 
 def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) -> None:
     base_filter = (
-        f"scale={width}:{height}:force_original_aspect_ratio=decrease,"
-        f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1"
+        f"scale={width}:{height}:force_original_aspect_ratio=increase,"
+        f"crop={width}:{height},boxblur=luma_radius=32:luma_power=2,"
+        "eq=brightness=-0.45:saturation=0.15,"
+        "drawbox=x=0:y=0:w=iw:h=ih:color=black@0.65:t=fill,setsar=1"
     )
-    overlay_width = max(1, width // 4)
+    main_width = max(1, round(width * 0.84))
+    main_height = max(1, round(height * 0.84))
     filtergraph = (
-        f"[0:v]{base_filter}[base];"
-        f"[1:v]scale={overlay_width}:-2,format=rgba,"
-        "colorchannelmixer=aa=0.35[watermark];"
-        "[base][watermark]overlay=W-w-32:32:shortest=1[composite]"
+        f"[0:v]{base_filter}[background];"
+        f"[1:v]format=rgba,scale={main_width}:{main_height}:"
+        f"force_original_aspect_ratio=decrease,pad={main_width}:{main_height}:"
+        "(ow-iw)/2:(oh-ih)/2:color=black@0[main];"
+        "[background][main]overlay=(W-w)/2:(H-h)/2:shortest=1[composite]"
     )
     command = [
         "ffmpeg", "-y", "-i", str(video), "-loop", "1", "-i", str(image),

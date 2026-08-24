@@ -154,14 +154,16 @@ def test_image_download_retries_then_uses_thumbnail(tmp_path: Path) -> None:
     assert attempts == [row["image_url"], row["image_url"], row["thumbnail_url"]]
 
 
-def test_ffmpeg_overlays_transparent_image_over_video(tmp_path: Path) -> None:
+def test_ffmpeg_makes_image_main_content_and_blurs_video(tmp_path: Path) -> None:
     with patch("media_publisher.cli.subprocess.run") as run:
         run_ffmpeg(tmp_path / "video.mp4", tmp_path / "image.jpg", tmp_path / "output.mp4", 1920, 1080)
     command = run.call_args.args[0]
     filtergraph = command[command.index("-filter_complex") + 1]
     assert "[0:v]" in filtergraph
-    assert "[base][watermark]overlay=W-w-32:32" in filtergraph
-    assert "colorchannelmixer=aa=0.35" in filtergraph
+    assert "boxblur=luma_radius=32:luma_power=2" in filtergraph
+    assert "drawbox=x=0:y=0:w=iw:h=ih:color=black@0.65" in filtergraph
+    assert "[1:v]format=rgba" in filtergraph
+    assert "overlay=(W-w)/2:(H-h)/2" in filtergraph
     assert command[command.index("-map") + 1] == "[composite]"
     assert "0:a?" in command
 
