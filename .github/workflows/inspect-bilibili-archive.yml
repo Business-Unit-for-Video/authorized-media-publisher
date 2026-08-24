@@ -1,0 +1,44 @@
+name: Inspect Bilibili archive status
+
+on:
+  workflow_dispatch:
+    inputs:
+      aid:
+        description: "Bilibili AID to inspect"
+        required: true
+        default: "117149477637705"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    environment: bilibili-publish
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install inspector
+        run: python -m pip install .
+      - name: Write Bilibili credential
+        env:
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}
+        run: |
+          test -n "$BILIBILI_COOKIE_JSON"
+          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
+          chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
+      - name: Inspect archive review status
+        run: |
+          python scripts/inspect_bilibili_archive.py \
+            --cookies "$RUNNER_TEMP/bilibili-cookies.json" \
+            --aid "${{ inputs.aid }}" \
+            --output output/archive-inspection.json
+      - name: Upload archive inspection report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: bilibili-archive-inspection-${{ github.run_id }}
+          path: output/archive-inspection.json
+          if-no-files-found: ignore
