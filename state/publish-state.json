@@ -1574,7 +1574,7 @@
       "published_at": "2026-08-24T03:53:18.835394+00:00"
     },
     "ChXiROKng30": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=ChXiROKng30",
       "title": "Jay Chou 周杰倫【手語 Sign Language】-Official Music Video",
       "image_id": "748a113f205bcb2a1c61",
@@ -1584,7 +1584,11 @@
       "submitting_at": "2026-08-24T03:54:40.926313+00:00",
       "aid": 117148454226829,
       "bvid": "BV15M8i6BEk1",
-      "uploaded_at": "2026-08-24T03:54:53.547955+00:00"
+      "uploaded_at": "2026-08-24T03:54:53.547955+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-24T03:54:55.554760+00:00"
     }
   },
   "season": {
