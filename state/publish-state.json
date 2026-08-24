@@ -1538,13 +1538,14 @@
       "published_at": "2026-08-24T03:50:27.892780+00:00"
     },
     "3LFDEeLm0ss": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=3LFDEeLm0ss",
       "title": "周杰倫 Jay Chou【我要夏天 I Want Summer (feat. 楊瑞代 Gary)】Official MV",
       "image_id": "ebf903e731a0d2b53460",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-2",
-      "reserved_at": "2026-08-24T03:51:15.897532+00:00"
+      "reserved_at": "2026-08-24T03:51:15.897532+00:00",
+      "submitting_at": "2026-08-24T03:51:17.025672+00:00"
     }
   },
   "season": {
