@@ -1664,14 +1664,17 @@
       "published_at": "2026-08-24T04:00:07.801534+00:00"
     },
     "sTNJsIcPSvE": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=sTNJsIcPSvE",
       "title": "周杰倫 Jay Chou【星晴 Starry Mood】-Official Music Video",
       "image_id": "19600e726f302685e075",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-9",
       "reserved_at": "2026-08-24T04:00:58.863540+00:00",
-      "submitting_at": "2026-08-24T04:00:59.966292+00:00"
+      "submitting_at": "2026-08-24T04:00:59.966292+00:00",
+      "aid": 117148487780134,
+      "bvid": "BV1V38i6iEqf",
+      "uploaded_at": "2026-08-24T04:01:42.451176+00:00"
     }
   },
   "season": {
