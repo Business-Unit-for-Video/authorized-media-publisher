@@ -163,6 +163,7 @@ def test_ffmpeg_makes_image_main_content_and_blurs_video(tmp_path: Path) -> None
     assert "boxblur=luma_radius=32:luma_power=2" in filtergraph
     assert "drawbox=x=0:y=0:w=iw:h=ih:color=black@0.65" in filtergraph
     assert "[1:v]format=rgba" in filtergraph
+    assert "scale=1612:906:force_original_aspect_ratio=decrease" in filtergraph
     assert "overlay=(W-w)/2:(H-h)/2" in filtergraph
     assert command[command.index("-map") + 1] == "[composite]"
     assert "0:a?" in command

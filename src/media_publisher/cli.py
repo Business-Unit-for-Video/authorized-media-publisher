@@ -273,8 +273,8 @@ def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) 
         "eq=brightness=-0.45:saturation=0.15,"
         "drawbox=x=0:y=0:w=iw:h=ih:color=black@0.65:t=fill,setsar=1"
     )
-    main_width = max(1, round(width * 0.84))
-    main_height = max(1, round(height * 0.84))
+    main_width = max(2, (round(width * 0.84) // 2) * 2)
+    main_height = max(2, (round(height * 0.84) // 2) * 2)
     filtergraph = (
         f"[0:v]{base_filter}[background];"
         f"[1:v]format=rgba,scale={main_width}:{main_height}:"
