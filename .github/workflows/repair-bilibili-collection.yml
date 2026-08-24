@@ -23,7 +23,7 @@ jobs:
         run: python -m pip install .
       - name: Write Bilibili credential
         env:
-          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_COOKIE_JSON }}
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}
         run: |
           test -n "$BILIBILI_COOKIE_JSON"
           printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"

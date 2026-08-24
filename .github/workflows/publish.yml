@@ -55,8 +55,8 @@ jobs:
           sudo apt-get install -y ffmpeg
       - name: Write credential files
         env:
-          YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_COOKIE_FILE }}
-          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_COOKIE_JSON }}
+          YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_SOURCE_COOKIE_FILE_AUTHORIZED_PUBLISHER }}
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}
         run: |
           if [ -n "$YOUTUBE_COOKIE_FILE" ]; then
             printf '%s' "$YOUTUBE_COOKIE_FILE" > "$RUNNER_TEMP/youtube-cookies.txt"
