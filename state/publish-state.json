@@ -1646,13 +1646,14 @@
       "published_at": "2026-08-24T03:58:32.116825+00:00"
     },
     "UBySINroNkw": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=UBySINroNkw",
       "title": "周杰倫 Jay Chou【明明就 Ming Ming Jiu】Official MV",
       "image_id": "a8a9cacd5c8c68b47a7f",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-8",
-      "reserved_at": "2026-08-24T03:59:47.478188+00:00"
+      "reserved_at": "2026-08-24T03:59:47.478188+00:00",
+      "submitting_at": "2026-08-24T03:59:48.627379+00:00"
     }
   },
   "season": {
