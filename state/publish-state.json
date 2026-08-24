@@ -1628,14 +1628,17 @@
       "published_at": "2026-08-24T03:57:13.376844+00:00"
     },
     "n_KlMpP0vdw": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=n_KlMpP0vdw",
       "title": "周杰倫 Jay Chou【斷了的弦 Broken Strings】Official MV",
       "image_id": "1798b22bb19fda3366e6",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-7",
       "reserved_at": "2026-08-24T03:58:11.270374+00:00",
-      "submitting_at": "2026-08-24T03:58:12.396306+00:00"
+      "submitting_at": "2026-08-24T03:58:12.396306+00:00",
+      "aid": 117148471002213,
+      "bvid": "BV1LT8i6uEaq",
+      "uploaded_at": "2026-08-24T03:58:30.071389+00:00"
     }
   },
   "season": {
