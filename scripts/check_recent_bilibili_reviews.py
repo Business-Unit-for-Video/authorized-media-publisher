@@ -8,8 +8,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from media_publisher.publish import load_cookie_data
-from scripts.inspect_bilibili_archive import inspect_archive
+from inspect_bilibili_archive import inspect_archive
 
 
 REJECTION_WORDS = re.compile(
