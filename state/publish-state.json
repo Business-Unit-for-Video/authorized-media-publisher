@@ -1520,13 +1520,14 @@
       "published_at": "2026-08-23T03:31:06.939005+00:00"
     },
     "6d0v2InyN_w": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=6d0v2InyN_w",
       "title": "周杰倫 Jay Chou【我落淚 情緒零碎 Tears of Scattered Emotion】Official MV",
       "image_id": "a364901a802e408cd89e",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-1",
-      "reserved_at": "2026-08-24T03:50:11.995987+00:00"
+      "reserved_at": "2026-08-24T03:50:11.995987+00:00",
+      "submitting_at": "2026-08-24T03:50:13.418760+00:00"
     }
   },
   "season": {
