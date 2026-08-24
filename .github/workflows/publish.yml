@@ -6,7 +6,7 @@ on:
       video_manifest:
         description: "CSV path for explicitly authorized video URLs"
         required: true
-        default: "input/videos.csv"
+        default: "input/guodegang-early-successes.csv"
       image_manifest:
         description: "CSV path for authorized images or adult-performer-image-inventory/output/images.csv"
         required: true
@@ -18,7 +18,7 @@ on:
       season_title:
         description: "Bilibili collection title; existing collection is reused by exact title"
         required: true
-        default: "周杰伦"
+        default: "于纲"
       season_description:
         description: "Description used only when creating a new Bilibili collection"
         required: false
@@ -31,10 +31,11 @@ on:
         description: "Output height"
         required: true
         default: "1080"
+  schedule:
+    - cron: "0 1 * * *"
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: authorized-media-publisher
@@ -71,15 +72,25 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Check recent submissions before publishing
+        env:
+          VIDEO_MANIFEST: ${{ inputs.video_manifest || 'input/guodegang-early-successes.csv' }}
+        run: |
+          python scripts/check_recent_bilibili_reviews.py \
+            --cookies "$RUNNER_TEMP/bilibili-cookies.json" \
+            --state state/publish-state.json \
+            --videos "$VIDEO_MANIFEST" \
+            --output output/recent-review-check.json \
+            --limit 2
       - name: Build and publish each video serially
         env:
-          VIDEO_MANIFEST: ${{ inputs.video_manifest }}
-          IMAGE_MANIFEST: ${{ inputs.image_manifest }}
-          OUTPUT_WIDTH: ${{ inputs.width }}
-          OUTPUT_HEIGHT: ${{ inputs.height }}
-          BATCH_SIZE: ${{ inputs.batch_size }}
-          SEASON_TITLE: ${{ inputs.season_title }}
-          SEASON_DESCRIPTION: ${{ inputs.season_description }}
+          VIDEO_MANIFEST: ${{ inputs.video_manifest || 'input/guodegang-early-successes.csv' }}
+          IMAGE_MANIFEST: ${{ inputs.image_manifest || 'input/images.csv' }}
+          OUTPUT_WIDTH: ${{ inputs.width || '1920' }}
+          OUTPUT_HEIGHT: ${{ inputs.height || '1080' }}
+          BATCH_SIZE: ${{ inputs.batch_size || '2' }}
+          SEASON_TITLE: ${{ inputs.season_title || '于纲' }}
+          SEASON_DESCRIPTION: ${{ inputs.season_description || '' }}
           YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
         run: |
           YOUTUBE_COOKIE_ARGS=()
@@ -107,52 +118,5 @@ jobs:
           path: |
             output/build-report.json
             state/publish-state.json
+            output/recent-review-check.json
           if-no-files-found: ignore
-      - name: Queue next serial batch
-        if: ${{ success() }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VIDEO_MANIFEST: ${{ inputs.video_manifest }}
-          IMAGE_MANIFEST: ${{ inputs.image_manifest }}
-          BATCH_SIZE: ${{ inputs.batch_size }}
-          SEASON_TITLE: ${{ inputs.season_title }}
-          SEASON_DESCRIPTION: ${{ inputs.season_description }}
-          OUTPUT_WIDTH: ${{ inputs.width }}
-          OUTPUT_HEIGHT: ${{ inputs.height }}
-        run: |
-          python - <<'PY'
-          import csv
-          import json
-          import os
-          import subprocess
-
-          with open(os.environ["VIDEO_MANIFEST"], encoding="utf-8-sig", newline="") as handle:
-              rows = list(csv.DictReader(handle))
-          with open("state/publish-state.json", encoding="utf-8") as handle:
-              state = json.load(handle)
-          pending = [
-              row["id"] for row in rows
-              if state.get("videos", {}).get(row["id"], {}).get("status") != "published"
-          ]
-          if not pending:
-              print("All videos in the manifest are published.")
-              raise SystemExit(0)
-
-          fields = {
-              "video_manifest": os.environ["VIDEO_MANIFEST"],
-              "image_manifest": os.environ["IMAGE_MANIFEST"],
-              "batch_size": os.environ["BATCH_SIZE"],
-              "season_title": os.environ["SEASON_TITLE"],
-              "season_description": os.environ["SEASON_DESCRIPTION"],
-              "width": os.environ["OUTPUT_WIDTH"],
-              "height": os.environ["OUTPUT_HEIGHT"],
-          }
-          command = [
-              "gh", "workflow", "run", "publish.yml",
-              "--repo", os.environ["GITHUB_REPOSITORY"], "--ref", "main",
-          ]
-          for key, value in fields.items():
-              command.extend(["--field", f"{key}={value}"])
-          print(f"Queued next batch; {len(pending)} videos remain.")
-          subprocess.run(command, check=True)
-          PY
