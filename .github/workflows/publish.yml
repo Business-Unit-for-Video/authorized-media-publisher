@@ -14,11 +14,11 @@ on:
       batch_size:
         description: "Maximum number of new videos to process serially in this run"
         required: true
-        default: "1"
+        default: "10"
       season_title:
         description: "Bilibili collection title; existing collection is reused by exact title"
         required: true
-        default: "音乐视频合集"
+        default: "周杰伦"
       season_description:
         description: "Description used only when creating a new Bilibili collection"
         required: false
