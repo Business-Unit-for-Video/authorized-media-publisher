@@ -14,7 +14,7 @@ on:
       batch_size:
         description: "Maximum number of new videos to process serially in this run"
         required: true
-        default: "10"
+        default: "2"
       season_title:
         description: "Bilibili collection title; existing collection is reused by exact title"
         required: true
@@ -34,6 +34,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: authorized-media-publisher
@@ -42,7 +43,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 360
     environment: bilibili-publish
     steps:
       - uses: actions/checkout@v4
@@ -107,3 +108,51 @@ jobs:
             output/build-report.json
             state/publish-state.json
           if-no-files-found: ignore
+      - name: Queue next serial batch
+        if: ${{ success() }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VIDEO_MANIFEST: ${{ inputs.video_manifest }}
+          IMAGE_MANIFEST: ${{ inputs.image_manifest }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
+          SEASON_TITLE: ${{ inputs.season_title }}
+          SEASON_DESCRIPTION: ${{ inputs.season_description }}
+          OUTPUT_WIDTH: ${{ inputs.width }}
+          OUTPUT_HEIGHT: ${{ inputs.height }}
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          import os
+          import subprocess
+
+          with open(os.environ["VIDEO_MANIFEST"], encoding="utf-8-sig", newline="") as handle:
+              rows = list(csv.DictReader(handle))
+          with open("state/publish-state.json", encoding="utf-8") as handle:
+              state = json.load(handle)
+          pending = [
+              row["id"] for row in rows
+              if state.get("videos", {}).get(row["id"], {}).get("status") != "published"
+          ]
+          if not pending:
+              print("All videos in the manifest are published.")
+              raise SystemExit(0)
+
+          fields = {
+              "video_manifest": os.environ["VIDEO_MANIFEST"],
+              "image_manifest": os.environ["IMAGE_MANIFEST"],
+              "batch_size": os.environ["BATCH_SIZE"],
+              "season_title": os.environ["SEASON_TITLE"],
+              "season_description": os.environ["SEASON_DESCRIPTION"],
+              "width": os.environ["OUTPUT_WIDTH"],
+              "height": os.environ["OUTPUT_HEIGHT"],
+          }
+          command = [
+              "gh", "workflow", "run", "publish.yml",
+              "--repo", os.environ["GITHUB_REPOSITORY"], "--ref", "main",
+          ]
+          for key, value in fields.items():
+              command.extend(["--field", f"{key}={value}"])
+          print(f"Queued next batch; {len(pending)} videos remain.")
+          subprocess.run(command, check=True)
+          PY
