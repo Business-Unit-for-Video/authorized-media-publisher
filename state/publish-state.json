@@ -1682,13 +1682,14 @@
       "published_at": "2026-08-24T04:01:44.936861+00:00"
     },
     "nCfrfCzaB2A": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=nCfrfCzaB2A",
       "title": "周杰倫 Jay Chou【時光機 Time Machine】-Official Music Video",
       "image_id": "dbd2ce60e5cf851b58c6",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-10",
-      "reserved_at": "2026-08-24T04:05:10.209810+00:00"
+      "reserved_at": "2026-08-24T04:05:10.209810+00:00",
+      "submitting_at": "2026-08-24T04:05:11.407168+00:00"
     }
   },
   "season": {
