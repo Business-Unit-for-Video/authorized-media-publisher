@@ -1610,7 +1610,7 @@
       "published_at": "2026-08-24T03:55:50.372378+00:00"
     },
     "YJfHuATJYsQ": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=YJfHuATJYsQ",
       "title": "周杰倫 Jay Chou【擱淺 Step Aside】-Official Music Video",
       "image_id": "46c4efbb881184996265",
@@ -1620,7 +1620,11 @@
       "submitting_at": "2026-08-24T03:56:55.271965+00:00",
       "aid": 117148471004695,
       "bvid": "BV1LT8i6uENp",
-      "uploaded_at": "2026-08-24T03:57:11.259013+00:00"
+      "uploaded_at": "2026-08-24T03:57:11.259013+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-24T03:57:13.376844+00:00"
     }
   },
   "season": {
