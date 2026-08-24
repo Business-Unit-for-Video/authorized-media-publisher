@@ -1738,14 +1738,17 @@
       "rejection_reason": "根据相关法律法规政策，您的视频【P1(00:10:29-00:10:37)】【P1内容】中含有违禁内容，若多次警告无效将导致账号封停"
     },
     "ycZ526O9rZA-v3": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=ycZ526O9rZA",
       "title": "2005 1 22 揭瓦",
       "image_id": "71b9fd44b688ddb9b1ed",
       "image_cycle": 1,
       "workflow_run_id": "32708513212-1",
       "reserved_at": "2026-08-24T09:19:26.381579+00:00",
-      "submitting_at": "2026-08-24T09:19:27.471696+00:00"
+      "submitting_at": "2026-08-24T09:19:27.471696+00:00",
+      "aid": 117149746072753,
+      "bvid": "BV1CwhN6NEBs",
+      "uploaded_at": "2026-08-24T09:24:01.577336+00:00"
     }
   },
   "season": {
