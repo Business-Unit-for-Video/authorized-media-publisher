@@ -1556,7 +1556,7 @@
       "published_at": "2026-08-24T03:51:29.504813+00:00"
     },
     "TMB6-YflpA4": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=TMB6-YflpA4",
       "title": "周杰倫 Jay Chou【手寫的從前 Handwritten Past】Official MV",
       "image_id": "13bb4f5ecf6a0b71286d",
@@ -1566,7 +1566,11 @@
       "submitting_at": "2026-08-24T03:53:02.902599+00:00",
       "aid": 117148454424108,
       "bvid": "BV15M8i6zESL",
-      "uploaded_at": "2026-08-24T03:53:16.679321+00:00"
+      "uploaded_at": "2026-08-24T03:53:16.679321+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-24T03:53:18.835394+00:00"
     }
   },
   "season": {
