@@ -1592,13 +1592,14 @@
       "published_at": "2026-08-24T03:54:55.554760+00:00"
     },
     "f5hakuX3lCA": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=f5hakuX3lCA",
       "title": "周杰倫 Jay Chou【扯 Pull Apart】-Official Music Video",
       "image_id": "04013446108b2b7f94ce",
       "image_cycle": 1,
       "workflow_run_id": "32687556427-5",
-      "reserved_at": "2026-08-24T03:55:36.301735+00:00"
+      "reserved_at": "2026-08-24T03:55:36.301735+00:00",
+      "submitting_at": "2026-08-24T03:55:37.509854+00:00"
     }
   },
   "season": {
