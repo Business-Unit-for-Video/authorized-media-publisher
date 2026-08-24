@@ -12,6 +12,7 @@ from media_publisher.cli import (
     read_image_manifest,
     read_manifest,
     read_video_manifest,
+    run_ffmpeg,
     select_images,
     select_video_batch,
     validate_image,
@@ -151,6 +152,18 @@ def test_image_download_retries_then_uses_thumbnail(tmp_path: Path) -> None:
         actual = download_image(row, tmp_path / "image")
     assert actual == row["thumbnail_url"]
     assert attempts == [row["image_url"], row["image_url"], row["thumbnail_url"]]
+
+
+def test_ffmpeg_overlays_transparent_image_over_video(tmp_path: Path) -> None:
+    with patch("media_publisher.cli.subprocess.run") as run:
+        run_ffmpeg(tmp_path / "video.mp4", tmp_path / "image.jpg", tmp_path / "output.mp4", 1920, 1080)
+    command = run.call_args.args[0]
+    filtergraph = command[command.index("-filter_complex") + 1]
+    assert "[0:v]" in filtergraph
+    assert "[base][watermark]overlay=W-w-32:32" in filtergraph
+    assert "colorchannelmixer=aa=0.35" in filtergraph
+    assert command[command.index("-map") + 1] == "[composite]"
+    assert "0:a?" in command
 
 
 def test_image_rotation_resets_after_exhaustion() -> None:

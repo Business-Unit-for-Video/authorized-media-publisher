@@ -42,6 +42,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     environment: bilibili-publish
     steps:
       - uses: actions/checkout@v4
@@ -97,3 +98,12 @@ jobs:
             --season-description "$SEASON_DESCRIPTION" \
             --run-id "${{ github.run_id }}" \
             "${YOUTUBE_COOKIE_ARGS[@]}"
+      - name: Upload publish report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: authorized-media-publisher-report-${{ github.run_id }}
+          path: |
+            output/build-report.json
+            state/publish-state.json
+          if-no-files-found: ignore

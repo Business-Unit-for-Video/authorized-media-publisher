@@ -32,7 +32,7 @@ python -m pip install -e .
 media-publisher --videos input/videos.csv --images input/images.csv
 ```
 
-Selected images are downloaded and validated before expensive video downloads begin. A transient invalid image response is retried, then `thumbnail_url` is used when the inventory provides one. Each source video is downloaded, the selected image is scaled with aspect ratio preserved, padded to the requested fixed canvas (default `1920x1080`), and combined with the source audio. `output/build-report.json` records the actual image URL used, both sources, and rights metadata.
+Selected images are downloaded and validated before expensive video downloads begin. A transient invalid image response is retried, then `thumbnail_url` is used when the inventory provides one. Each source video is downloaded, fitted to the requested fixed canvas (default `1920x1080`), and keeps its original audio. The selected image is scaled to a picture-in-picture overlay in the top-right corner with 35% opacity. `output/build-report.json` records the actual image URL used, both sources, and rights metadata.
 
 ## GitHub Actions
 

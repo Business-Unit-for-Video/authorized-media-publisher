@@ -267,14 +267,23 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> P
 
 
 def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) -> None:
-    filtergraph = (
+    base_filter = (
         f"scale={width}:{height}:force_original_aspect_ratio=decrease,"
         f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1"
     )
+    overlay_width = max(1, width // 4)
+    filtergraph = (
+        f"[0:v]{base_filter}[base];"
+        f"[1:v]scale={overlay_width}:-2,format=rgba,"
+        "colorchannelmixer=aa=0.35[watermark];"
+        "[base][watermark]overlay=W-w-32:32:shortest=1[composite]"
+    )
     command = [
         "ffmpeg", "-y", "-i", str(video), "-loop", "1", "-i", str(image),
-        "-filter_complex", f"[1:v]{filtergraph}[cover]",
-        "-map", "0:a?", "-map", "[cover]", "-c:v", "mpeg4", "-b:v", "2M", "-pix_fmt", "yuv420p", "-shortest", "-movflags", "+faststart", str(output),
+        "-filter_complex", filtergraph,
+        "-map", "[composite]", "-map", "0:a?", "-c:v", "mpeg4", "-b:v", "2M",
+        "-c:a", "aac", "-b:a", "192k", "-pix_fmt", "yuv420p", "-shortest",
+        "-movflags", "+faststart", str(output),
     ]
     subprocess.run(command, check=True)
 
