@@ -10,7 +10,7 @@ This repository contains only the processing and publishing logic. It does not s
 video_id,url,title,channel,channel_id,duration,upload_date,availability,live_status,view_count,matched_queries,discovered_at
 ```
 
-The publisher maps `video_id` to its internal ID and `url` to the source URL. Rights and publish-scope fields are optional audit metadata rather than runtime gates. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for direct media URLs.
+The publisher maps `video_id` to its internal ID and `url` to the source URL. Rights and publish-scope fields are optional audit metadata rather than runtime gates. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for direct media URLs. An optional `remove_segments` column accepts semicolon-separated ranges such as `00:10:27-00:10:39`; those ranges are removed from both the video and audio before the image overlay is rendered.
 
 `input/images.csv` accepts the exact 17-column output from `adult-performer-image-inventory/output/images.csv`:
 

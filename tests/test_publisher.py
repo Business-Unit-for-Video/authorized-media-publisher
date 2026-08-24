@@ -12,6 +12,7 @@ from media_publisher.cli import (
     read_image_manifest,
     read_manifest,
     read_video_manifest,
+    parse_remove_segments,
     run_ffmpeg,
     select_images,
     select_video_batch,
@@ -167,6 +168,22 @@ def test_ffmpeg_makes_image_main_content_and_blurs_video(tmp_path: Path) -> None
     assert "overlay=(W-w)/2:(H-h)/2" in filtergraph
     assert command[command.index("-map") + 1] == "[composite]"
     assert "0:a?" in command
+
+
+def test_ffmpeg_removes_video_and_audio_segments(tmp_path: Path) -> None:
+    assert parse_remove_segments("00:10:27-00:10:39;42-45") == [(627.0, 639.0), (42.0, 45.0)]
+    with patch("media_publisher.cli.subprocess.run") as run:
+        run_ffmpeg(
+            tmp_path / "video.mp4", tmp_path / "image.jpg", tmp_path / "output.mp4",
+            1920, 1080, "00:10:27-00:10:39",
+        )
+    command = run.call_args.args[0]
+    filtergraph = command[command.index("-filter_complex") + 1]
+    assert "select='not(between(t,627,639))'" in filtergraph
+    assert "aselect='not(between(t,627,639))'" in filtergraph
+    assert "setpts=N/FRAME_RATE/TB" in filtergraph
+    assert "asetpts=N/SR/TB" in filtergraph
+    assert command[command.index("-map") + 3] == "[audio]"
 
 
 def test_image_rotation_resets_after_exhaustion() -> None:

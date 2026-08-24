@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -266,7 +267,60 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> P
     return target
 
 
-def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) -> None:
+def _parse_timecode(value: str) -> float:
+    value = value.strip()
+    if not value:
+        raise ValueError("empty timecode")
+    parts = value.split(":")
+    if len(parts) > 3:
+        raise ValueError(f"invalid timecode: {value}")
+    try:
+        seconds = 0.0
+        for part in parts:
+            seconds = seconds * 60 + float(part)
+    except ValueError as exc:
+        raise ValueError(f"invalid timecode: {value}") from exc
+    if seconds < 0:
+        raise ValueError(f"timecode must be non-negative: {value}")
+    return seconds
+
+
+def parse_remove_segments(value: str) -> list[tuple[float, float]]:
+    """Parse semicolon-separated start-end ranges used to remove source media."""
+    if not value.strip():
+        return []
+    segments: list[tuple[float, float]] = []
+    for item in re.split(r"[;\n]+", value):
+        item = item.strip()
+        if not item:
+            continue
+        match = re.fullmatch(r"(.+?)\s*-\s*(.+)", item)
+        if not match:
+            raise ValueError(f"invalid remove segment: {item}")
+        start = _parse_timecode(match.group(1))
+        end = _parse_timecode(match.group(2))
+        if end <= start:
+            raise ValueError(f"remove segment end must be after start: {item}")
+        segments.append((start, end))
+    return segments
+
+
+def _keep_expression(segments: list[tuple[float, float]]) -> str:
+    ranges = " || ".join(
+        f"between(t,{start:g},{end:g})" for start, end in segments
+    )
+    return f"not({ranges})"
+
+
+def run_ffmpeg(
+    video: Path,
+    image: Path,
+    output: Path,
+    width: int,
+    height: int,
+    remove_segments: str = "",
+) -> None:
+    segments = parse_remove_segments(remove_segments)
     base_filter = (
         f"scale={width}:{height}:force_original_aspect_ratio=increase,"
         f"crop={width}:{height},boxblur=luma_radius=32:luma_power=2,"
@@ -275,17 +329,28 @@ def run_ffmpeg(video: Path, image: Path, output: Path, width: int, height: int) 
     )
     main_width = max(2, (round(width * 0.84) // 2) * 2)
     main_height = max(2, (round(height * 0.84) // 2) * 2)
-    filtergraph = (
-        f"[0:v]{base_filter}[background];"
+    source_video = "[0:v]"
+    audio_map = "0:a?"
+    audio_filter = ""
+    if segments:
+        keep = _keep_expression(segments)
+        source_video += f"select='{keep}',setpts=N/FRAME_RATE/TB,"
+        audio_filter = f"[0:a]aselect='{keep}',asetpts=N/SR/TB[audio];"
+        audio_map = "[audio]"
+    filter_parts = [
+        f"{source_video}{base_filter}[background]",
         f"[1:v]format=rgba,scale={main_width}:{main_height}:"
         f"force_original_aspect_ratio=decrease,pad={main_width}:{main_height}:"
-        "(ow-iw)/2:(oh-ih)/2:color=black@0[main];"
-        "[background][main]overlay=(W-w)/2:(H-h)/2:shortest=1[composite]"
-    )
+        "(ow-iw)/2:(oh-ih)/2:color=black@0[main]",
+        "[background][main]overlay=(W-w)/2:(H-h)/2:shortest=1[composite]",
+    ]
+    if audio_filter:
+        filter_parts.append(audio_filter.rstrip(";"))
+    filtergraph = ";".join(filter_parts)
     command = [
         "ffmpeg", "-y", "-i", str(video), "-loop", "1", "-i", str(image),
         "-filter_complex", filtergraph,
-        "-map", "[composite]", "-map", "0:a?", "-c:v", "mpeg4", "-b:v", "2M",
+        "-map", "[composite]", "-map", audio_map, "-c:v", "mpeg4", "-b:v", "2M",
         "-c:a", "aac", "-b:a", "192k", "-pix_fmt", "yuv420p", "-shortest",
         "-movflags", "+faststart", str(output),
     ]
@@ -344,7 +409,14 @@ def build(
             video_path = download_video(video_row["video_url"], temp_dir / video_row["id"], youtube_cookies)
             image_path, actual_image_url = downloaded_images[index]
             output_path = output_dir / f"{index + 1:04d}-{video_row['id']}.mp4"
-            run_ffmpeg(video_path, image_path, output_path, width, height)
+            run_ffmpeg(
+                video_path,
+                image_path,
+                output_path,
+                width,
+                height,
+                video_row.get("remove_segments", ""),
+            )
             report.append({
                 "video_id": video_row["id"],
                 "file": str(output_path),
@@ -356,6 +428,7 @@ def build(
                 "image_id": image_row["id"],
                 "image_usage_cycle": str(image_cycle),
                 "attribution": image_row["attribution"],
+                "remove_segments": video_row.get("remove_segments", ""),
             })
     (output_dir.parent / "build-report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
