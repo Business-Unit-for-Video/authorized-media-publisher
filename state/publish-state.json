@@ -1718,14 +1718,17 @@
       "published_at": "2026-08-24T07:25:35.325787+00:00"
     },
     "ycZ526O9rZA-v2": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=ycZ526O9rZA",
       "title": "2005 1 22 揭瓦",
       "image_id": "148afaec717a6df2e527",
       "image_cycle": 1,
       "workflow_run_id": "32703770974-1",
       "reserved_at": "2026-08-24T08:13:34.530680+00:00",
-      "submitting_at": "2026-08-24T08:13:36.294726+00:00"
+      "submitting_at": "2026-08-24T08:13:36.294726+00:00",
+      "aid": 117149477637705,
+      "bvid": "BV1mf8e6RE6G",
+      "uploaded_at": "2026-08-24T08:14:01.726290+00:00"
     }
   },
   "season": {
