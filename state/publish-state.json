@@ -32,6 +32,7 @@
       "38b4b35c0ed74e4f6d3e",
       "3a5b5e6f7c77da685866",
       "428a36985bf12c7becb9",
+      "4320a0c912ec95dedc90",
       "46c4efbb881184996265",
       "4bd7bc24adbb25fd5741",
       "4c0596da3eed215b787e",
@@ -1807,6 +1808,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-08-25T10:54:05.953742+00:00"
+    },
+    "eOc6cG1l9JM": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=eOc6cG1l9JM",
+      "title": "2004 12 4 红事会及返场－郭德纲张永久",
+      "image_id": "4320a0c912ec95dedc90",
+      "image_cycle": 1,
+      "workflow_run_id": "32837791874-2",
+      "reserved_at": "2026-08-25T11:19:55.881037+00:00"
     }
   },
   "season": {
