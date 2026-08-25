@@ -24,15 +24,32 @@ def has_rejection_signal(signals: list[dict[str, Any]]) -> bool:
     for signal in signals:
         field = str(signal.get("field", "")).lower()
         value = signal.get("value")
-        if value in (None, "", [], {}):
+        if value is None or value is False or value == 0:
+            continue
+        if isinstance(value, str) and not value.strip():
+            continue
+        if isinstance(value, (list, dict)) and not value:
             continue
         text = json.dumps(value, ensure_ascii=False)
-        if "reject" in field or "reject" in text.lower():
+
+        # Bilibili includes empty reject_reason fields and a zero
+        # reject_reason_id on normally published archives. Field names alone
+        # are therefore not evidence of a rejected submission.
+        if "reject_reason" in field and not field.endswith("_id"):
             return True
-        if any(key in field for key in ("audit_status", "review_status", "state", "status")):
-            if REJECTION_WORDS.search(text):
-                return True
-        if "reason" in field and REJECTION_WORDS.search(text):
+        if any(
+            key in field
+            for key in (
+                "audit_status",
+                "review_status",
+                "state",
+                "status",
+                "reason",
+                "message",
+                "warning",
+                "notice",
+            )
+        ) and REJECTION_WORDS.search(text):
             return True
     return False
 

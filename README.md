@@ -40,6 +40,8 @@ Selected images are downloaded and validated before expensive video downloads be
 
 The workflow uses the Biliup CLI and currently pins `biliup==1.2.2`. Review Bilibili rules, copyright status, and image rights before submission.
 
+审核阻塞的状态位置、人工核对步骤和更新方式见[中文操作说明](docs/bilibili-review-gate.md)。
+
 ## Image inventory
 
 The discovery list is maintained separately in [`Business-Unit-for-Video/adult-performer-image-inventory`](https://github.com/Business-Unit-for-Video/adult-performer-image-inventory). Its committed `output/` contains exactly 1000 deduplicated candidate image links with source pages and query provenance.
