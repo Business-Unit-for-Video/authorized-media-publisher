@@ -1810,13 +1810,14 @@
       "published_at": "2026-08-25T10:54:05.953742+00:00"
     },
     "eOc6cG1l9JM": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=eOc6cG1l9JM",
       "title": "2004 12 4 红事会及返场－郭德纲张永久",
       "image_id": "4320a0c912ec95dedc90",
       "image_cycle": 1,
       "workflow_run_id": "32837791874-2",
-      "reserved_at": "2026-08-25T11:19:55.881037+00:00"
+      "reserved_at": "2026-08-25T11:19:55.881037+00:00",
+      "submitting_at": "2026-08-25T11:19:57.110331+00:00"
     }
   },
   "season": {
