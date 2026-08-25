@@ -1792,7 +1792,7 @@
       "published_at": "2026-08-25T03:02:06.783924+00:00"
     },
     "TEBsbnLXZ_w": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=TEBsbnLXZ_w",
       "title": "2005 2 11 富贵图 郭德纲 张文顺",
       "image_id": "c522661329d99054ef1a",
@@ -1802,7 +1802,11 @@
       "submitting_at": "2026-08-25T10:53:32.546393+00:00",
       "aid": 117155769092171,
       "bvid": "BV14mh36ZEBK",
-      "uploaded_at": "2026-08-25T10:54:03.823540+00:00"
+      "uploaded_at": "2026-08-25T10:54:03.823540+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-08-25T10:54:05.953742+00:00"
     }
   },
   "season": {
