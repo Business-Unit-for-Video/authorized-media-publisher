@@ -1756,7 +1756,7 @@
       "published_at": "2026-08-24T09:24:03.937157+00:00"
     },
     "7VC5qbYWSVM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=7VC5qbYWSVM",
       "title": "2005 2 26 天下无贼",
       "image_id": "18d99433e14c0a2182a0",
@@ -1766,7 +1766,11 @@
       "submitting_at": "2026-08-25T02:41:08.263916+00:00",
       "aid": 117153822936287,
       "bvid": "BV1v8h36gE99",
-      "uploaded_at": "2026-08-25T02:41:35.265381+00:00"
+      "uploaded_at": "2026-08-25T02:41:35.265381+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-08-25T02:41:37.293266+00:00"
     }
   },
   "season": {
