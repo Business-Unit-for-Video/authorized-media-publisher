@@ -1792,13 +1792,14 @@
       "published_at": "2026-08-25T03:02:06.783924+00:00"
     },
     "TEBsbnLXZ_w": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=TEBsbnLXZ_w",
       "title": "2005 2 11 富贵图 郭德纲 张文顺",
       "image_id": "c522661329d99054ef1a",
       "image_cycle": 1,
       "workflow_run_id": "32837791874-1",
-      "reserved_at": "2026-08-25T10:53:31.283501+00:00"
+      "reserved_at": "2026-08-25T10:53:31.283501+00:00",
+      "submitting_at": "2026-08-25T10:53:32.546393+00:00"
     }
   },
   "season": {
