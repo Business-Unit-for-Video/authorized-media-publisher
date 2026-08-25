@@ -1756,14 +1756,17 @@
       "published_at": "2026-08-24T09:24:03.937157+00:00"
     },
     "7VC5qbYWSVM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=7VC5qbYWSVM",
       "title": "2005 2 26 天下无贼",
       "image_id": "18d99433e14c0a2182a0",
       "image_cycle": 1,
       "workflow_run_id": "32800850890-1",
       "reserved_at": "2026-08-25T02:41:07.096926+00:00",
-      "submitting_at": "2026-08-25T02:41:08.263916+00:00"
+      "submitting_at": "2026-08-25T02:41:08.263916+00:00",
+      "aid": 117153822936287,
+      "bvid": "BV1v8h36gE99",
+      "uploaded_at": "2026-08-25T02:41:35.265381+00:00"
     }
   },
   "season": {
