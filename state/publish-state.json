@@ -1774,7 +1774,7 @@
       "published_at": "2026-08-25T02:41:37.293266+00:00"
     },
     "vQxSWn7ra7A": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=vQxSWn7ra7A",
       "title": "2005 2 14 双唱快板 李菁郭德纲",
       "image_id": "6e6af96d8545922f507f",
@@ -1784,7 +1784,11 @@
       "submitting_at": "2026-08-25T03:01:30.549953+00:00",
       "aid": 117153906886572,
       "bvid": "BV1FHh362EDB",
-      "uploaded_at": "2026-08-25T03:02:04.640075+00:00"
+      "uploaded_at": "2026-08-25T03:02:04.640075+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-08-25T03:02:06.783924+00:00"
     }
   },
   "season": {
