@@ -1721,7 +1721,7 @@
       "published_at": "2026-08-24T07:25:35.325787+00:00"
     },
     "ycZ526O9rZA-v2": {
-      "status": "rejected",
+      "status": "skipped",
       "video_url": "https://www.youtube.com/watch?v=ycZ526O9rZA",
       "title": "2005 1 22 揭瓦",
       "image_id": "148afaec717a6df2e527",
@@ -1737,7 +1737,9 @@
       "season_attached": true,
       "published_at": "2026-08-24T08:14:03.878341+00:00",
       "rejected_at": "2026-08-24T08:25:00+00:00",
-      "rejection_reason": "根据相关法律法规政策，您的视频【P1(00:10:29-00:10:37)】【P1内容】中含有违禁内容，若多次警告无效将导致账号封停"
+      "rejection_reason": "根据相关法律法规政策，您的视频【P1(00:10:29-00:10:37)】【P1内容】中含有违禁内容，若多次警告无效将导致账号封停",
+      "skipped_at": "2026-08-26T14:18:50.8987659Z",
+      "skip_reason": "该稿件审核理由特殊且暂不重试，标记为 skipped 以免阻塞后续视频"
     },
     "ycZ526O9rZA-v3": {
       "status": "published",
