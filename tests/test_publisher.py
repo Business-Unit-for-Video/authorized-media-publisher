@@ -204,6 +204,14 @@ def test_batch_skips_reserved_and_published() -> None:
         select_video_batch(videos, state, 0)
 
 
+def test_batch_skips_skipped_video() -> None:
+    videos = [{"id": "v1"}, {"id": "v2"}]
+    state = initial_state()
+    state["videos"] = {"v1": {"status": "skipped"}}
+
+    assert [row["id"] for row in select_video_batch(videos, state, 2)] == ["v2"]
+
+
 def build_manifests(tmp_path: Path) -> tuple[Path, Path]:
     videos = write(
         tmp_path / "videos.csv",
