@@ -72,3 +72,29 @@ def test_recent_check_allows_an_open_archive(tmp_path: Path) -> None:
             "inspection": inspection,
         }],
     }
+
+
+def test_skipped_archive_is_not_checked_or_blocking(tmp_path: Path) -> None:
+    manifest = tmp_path / "videos.csv"
+    manifest.write_text("id\nv1\n", encoding="utf-8")
+    state = tmp_path / "publish-state.json"
+    state.write_text(json.dumps({
+        "videos": {
+            "v1": {
+                "status": "skipped",
+                "aid": 123,
+                "skip_reason": "稿件不可见，暂不重试",
+            },
+        },
+    }), encoding="utf-8")
+    output = tmp_path / "recent-review-check.json"
+
+    with patch("scripts.check_recent_bilibili_reviews.inspect_archive") as inspect:
+        assert check_recent(tmp_path / "cookies.json", state, manifest, output, 2) == 0
+
+    inspect.assert_not_called()
+    assert json.loads(output.read_text(encoding="utf-8")) == {
+        "checked": 0,
+        "blocked": False,
+        "reports": [],
+    }
