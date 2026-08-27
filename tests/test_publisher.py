@@ -12,6 +12,7 @@ from media_publisher.cli import (
     read_image_manifest,
     read_manifest,
     read_video_manifest,
+    filter_video_rows,
     parse_remove_segments,
     run_ffmpeg,
     select_images,
@@ -46,6 +47,8 @@ def test_workflow_is_public_only() -> None:
     assert "  publish:\n" in workflow
     assert "publish_mode:" not in workflow
     assert "--visibility public" in workflow
+    assert "default: \"long_form\"" in workflow
+    assert "--content-policy \"$CONTENT_POLICY\"" in workflow
 
 
 def test_publish_rejects_non_public_visibility(tmp_path: Path) -> None:
@@ -81,7 +84,25 @@ def test_youtube_inventory_schema_is_normalized(tmp_path: Path) -> None:
         "id": "abc", "title": "Song",
         "video_url": "https://www.youtube.com/watch?v=abc",
         "rights_basis": "licensed", "publish_scope": "public",
+        "duration": "212",
     }]
+
+
+def test_long_form_policy_requires_explicit_signal() -> None:
+    videos = [
+        {"id": "lecture", "title": "完整课程", "video_url": "https://x.test/l", "content_type": "long_form"},
+        {"id": "duration", "title": "专题讲座", "video_url": "https://x.test/d", "duration": "1800"},
+        {"id": "short", "title": "课程片段", "video_url": "https://x.test/s", "duration": "3600"},
+        {"id": "unknown", "title": "未标注内容", "video_url": "https://x.test/u"},
+        {"id": "clip", "title": "A clip", "video_url": "https://x.test/c", "content_type": "clip", "duration": "7200"},
+    ]
+    selected = filter_video_rows(videos, "long_form", 1800)
+    assert [row["id"] for row in selected] == ["lecture", "duration"]
+
+
+def test_long_form_policy_validates_threshold() -> None:
+    with pytest.raises(ValueError, match="non-negative"):
+        filter_video_rows([], "long_form", -1)
 
 
 def test_youtube_download_uses_yt_dlp(tmp_path: Path) -> None:

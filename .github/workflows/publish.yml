@@ -15,6 +15,18 @@ on:
         description: "Maximum number of new videos to process serially in this run"
         required: true
         default: "2"
+      content_policy:
+        description: "Only publish explicitly marked long-form courses/lectures"
+        required: true
+        default: "long_form"
+        type: choice
+        options:
+          - long_form
+          - all
+      min_duration_seconds:
+        description: "Minimum duration for rows that do not set content_type=long_form"
+        required: true
+        default: "1800"
       season_title:
         description: "Bilibili collection title; existing collection is reused by exact title"
         required: true
@@ -89,6 +101,8 @@ jobs:
           OUTPUT_WIDTH: ${{ inputs.width || '1920' }}
           OUTPUT_HEIGHT: ${{ inputs.height || '1080' }}
           BATCH_SIZE: ${{ inputs.batch_size || '2' }}
+          CONTENT_POLICY: ${{ inputs.content_policy || 'long_form' }}
+          MIN_DURATION_SECONDS: ${{ inputs.min_duration_seconds || '1800' }}
           SEASON_TITLE: ${{ inputs.season_title || '于纲' }}
           SEASON_DESCRIPTION: ${{ inputs.season_description || '' }}
           YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
@@ -104,6 +118,8 @@ jobs:
             --height "$OUTPUT_HEIGHT" \
             --state state/publish-state.json \
             --batch-size "$BATCH_SIZE" \
+            --content-policy "$CONTENT_POLICY" \
+            --min-duration-seconds "$MIN_DURATION_SECONDS" \
             --bilibili-cookies "$RUNNER_TEMP/bilibili-cookies.json" \
             --visibility public \
             --season-title "$SEASON_TITLE" \

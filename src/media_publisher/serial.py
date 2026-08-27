@@ -28,6 +28,8 @@ def serial_publish(
     run_id: str,
     builder: Callable[..., int] = build,
     publisher: Callable[..., int] = publish,
+    content_policy: str = "all",
+    min_duration_seconds: int = 1800,
 ) -> dict[str, int]:
     if batch_size < 1:
         raise ValueError("batch_size must be a positive integer")
@@ -83,6 +85,8 @@ def serial_publish(
             publish_state_path=publish_state_path,
             batch_size=1,
             youtube_cookies=youtube_cookies,
+            content_policy=content_policy,
+            min_duration_seconds=min_duration_seconds,
         )
         item_published = publisher(
             report_path,
@@ -121,6 +125,8 @@ def main() -> int:
     parser.add_argument("--season-title", required=True)
     parser.add_argument("--season-description", default="")
     parser.add_argument("--run-id", default="local")
+    parser.add_argument("--content-policy", choices=("all", "long_form"), default="all")
+    parser.add_argument("--min-duration-seconds", type=int, default=1800)
     args = parser.parse_args()
 
     result = serial_publish(
@@ -139,6 +145,8 @@ def main() -> int:
         args.season_title,
         args.season_description,
         args.run_id,
+        content_policy=args.content_policy,
+        min_duration_seconds=args.min_duration_seconds,
     )
     print(json.dumps(result, ensure_ascii=False))
     return 0
