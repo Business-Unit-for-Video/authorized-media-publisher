@@ -12,6 +12,8 @@ video_id,url,title,channel,channel_id,duration,upload_date,availability,live_sta
 
 The publisher maps `video_id` to its internal ID and `url` to the source URL. Rights and publish-scope fields are optional audit metadata rather than runtime gates. YouTube watch URLs are downloaded with `yt-dlp`; the legacy native manifest schema remains supported for direct media URLs. An optional `remove_segments` column accepts semicolon-separated ranges such as `00:10:27-00:10:39`; those ranges are removed from both the video and audio before the image overlay is rendered.
 
+For course publishing, add either `content_type=long_form` (or `lecture`/`course`) or a numeric `duration`/`duration_seconds` column. Rows marked `clip`, `short`, `片段`, `小段`, or with clip-like titles are excluded by the `long_form` policy. Rows without an explicit long-form marker or a duration meeting the threshold are also excluded; the publisher does not guess that an unknown video is a full course.
+
 `input/images.csv` accepts the exact 17-column output from `adult-performer-image-inventory/output/images.csv`:
 
 ```text
@@ -36,7 +38,7 @@ Selected images are downloaded and validated before expensive video downloads be
 
 ## GitHub Actions
 
-`.github/workflows/publish.yml` is manual only and public-only. Every run builds and uploads media in the same job. `batch_size` is the maximum number of state items processed in the run. Execution is strictly serial: finish one pending collection attachment when present, otherwise build one video, publish it, persist its state, and only then continue. A failure therefore preserves earlier completed uploads. Before remote submission, state changes from `reserved` to `submitting`; if the runner stops while the remote result is unknown, later runs halt instead of automatically creating a duplicate, so the Bilibili account and state must be reconciled manually. Configure the repository environment `bilibili-publish` with an Actions secret named `BILIBILI_COOKIE_JSON`. The secret value must be the Biliup cookie JSON, and is written only to the ephemeral runner filesystem.
+`.github/workflows/publish.yml` is manual/scheduled and public-only. It defaults to the `long_form` content policy with a 1,800-second minimum, so a manifest must explicitly identify full courses/lectures before anything is downloaded or uploaded. Set the workflow input to `all` only for a deliberately reviewed non-course manifest. Every run builds and uploads media in the same job. `batch_size` is the maximum number of state items processed in the run. Execution is strictly serial: finish one pending collection attachment when present, otherwise build one video, publish it, persist its state, and only then continue. A failure therefore preserves earlier completed uploads. Before remote submission, state changes from `reserved` to `submitting`; if the runner stops while the remote result is unknown, later runs halt instead of automatically creating a duplicate, so the Bilibili account and state must be reconciled manually. Configure the repository environment `bilibili-publish` with an Actions secret named `BILIBILI_COOKIE_JSON`. The secret value must be the Biliup cookie JSON, and is written only to the ephemeral runner filesystem.
 
 The workflow uses the Biliup CLI and currently pins `biliup==1.2.2`. Review Bilibili rules, copyright status, and image rights before submission.
 

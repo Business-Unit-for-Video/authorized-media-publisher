@@ -16,6 +16,23 @@ YOUTUBE_FIELDS = ("video_id", "url", "title")
 IMAGE_FIELDS = ("id", "image_url", "rights_basis", "publish_scope", "attribution")
 IMAGE_INVENTORY_FIELDS = ("id", "image_url", "source_page_url", "rights_status")
 
+# Publishing is intentionally conservative when the workflow is configured for
+# long-form content.  A manifest may opt in explicitly with ``content_type``
+# or provide a duration (in seconds).  Unknown entries are not guessed to be a
+# lecture, which prevents short clips from entering a scheduled run by
+# accident.
+LONG_FORM_CONTENT_TYPES = {
+    "course", "full", "full-length", "full_length", "lecture", "long-form",
+    "long_form", "大课", "完整", "长视频",
+}
+CLIP_CONTENT_TYPES = {
+    "clip", "fragment", "short", "short-form", "short_form", "snippet",
+    "片段", "短片", "小段",
+}
+CLIP_TITLE_PATTERN = re.compile(
+    r"(?i)(?:\bclip\b|片段|精彩片段|短片|小段|精华版|集锦|段\s*(?:\d+|[一二三四五六七八九十]))"
+)
+
 
 def read_manifest(path: Path, fields: tuple[str, ...]) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
@@ -40,13 +57,66 @@ def read_video_manifest(
     missing = set(YOUTUBE_FIELDS) - fieldnames
     if missing:
         raise ValueError(f"{path}: unsupported video schema; missing columns: {', '.join(sorted(missing))}")
-    return [{
+    normalized = [{
         "id": row["video_id"],
         "title": row["title"],
         "video_url": row["url"],
         "rights_basis": rights_basis,
         "publish_scope": publish_scope,
     } for row in rows]
+    # Keep optional discovery metadata available to the long-form policy.
+    for source, target in zip(rows, normalized):
+        for field in ("duration", "duration_seconds", "content_type", "video_type"):
+            if source.get(field, "").strip():
+                target[field] = source[field].strip()
+    return normalized
+
+
+def _duration_seconds(row: dict[str, str]) -> float | None:
+    """Return a manifest duration when it is a valid non-negative number."""
+    for field in ("duration_seconds", "duration"):
+        value = row.get(field, "").strip()
+        if not value:
+            continue
+        try:
+            duration = float(value)
+        except ValueError:
+            return None
+        return duration if duration >= 0 else None
+    return None
+
+
+def filter_video_rows(
+    videos: list[dict[str, str]],
+    content_policy: str = "all",
+    min_duration_seconds: int = 1800,
+) -> list[dict[str, str]]:
+    """Apply the optional long-form-only publication policy.
+
+    ``all`` preserves the historical local CLI behaviour.  ``long_form`` is
+    used by the scheduled publisher and requires an explicit long-form type or
+    a duration at least ``min_duration_seconds``.  Clip markers and unknown
+    rows are excluded rather than inferred to be safe.
+    """
+    if content_policy not in {"all", "long_form"}:
+        raise ValueError("content_policy must be 'all' or 'long_form'")
+    if min_duration_seconds < 0:
+        raise ValueError("min_duration_seconds must be non-negative")
+    if content_policy == "all":
+        return videos
+
+    selected: list[dict[str, str]] = []
+    for row in videos:
+        content_type = (row.get("content_type") or row.get("video_type") or "").strip().casefold()
+        if content_type in CLIP_CONTENT_TYPES or CLIP_TITLE_PATTERN.search(row.get("title", "")):
+            continue
+        if content_type in LONG_FORM_CONTENT_TYPES:
+            selected.append(row)
+            continue
+        duration = _duration_seconds(row)
+        if duration is not None and duration >= min_duration_seconds:
+            selected.append(row)
+    return selected
 
 
 def read_image_manifest(
@@ -370,11 +440,14 @@ def build(
     publish_state_path: Path = Path("state/publish-state.json"),
     batch_size: int = 1,
     youtube_cookies: Path | None = None,
+    content_policy: str = "all",
+    min_duration_seconds: int = 1800,
 ) -> int:
     videos = read_video_manifest(video_manifest, video_rights_basis, video_publish_scope)
     images = read_image_manifest(image_manifest, image_rights_basis, image_publish_scope)
     validate_rows(videos, "video")
     validate_rows(images, "image")
+    videos = filter_video_rows(videos, content_policy, min_duration_seconds)
     publish_state = load_publish_state(
         publish_state_path, publish_state_path.with_name("image-usage.json")
     )
@@ -450,12 +523,15 @@ def main() -> int:
     parser.add_argument("--publish-state", type=Path, default=Path("state/publish-state.json"))
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--youtube-cookies", type=Path)
+    parser.add_argument("--content-policy", choices=("all", "long_form"), default="all")
+    parser.add_argument("--min-duration-seconds", type=int, default=1800)
     args = parser.parse_args()
     count = build(
         args.videos, args.images, args.output, args.width, args.height,
         args.video_rights_basis, args.video_publish_scope,
         args.image_rights_basis, args.image_publish_scope,
         args.publish_state, args.batch_size, args.youtube_cookies,
+        args.content_policy, args.min_duration_seconds,
     )
     print(json.dumps({"built": count, "width": args.width, "height": args.height}, ensure_ascii=False))
     return 0
