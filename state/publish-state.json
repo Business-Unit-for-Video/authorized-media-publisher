@@ -1923,7 +1923,7 @@
       "published_at": "2026-08-31T09:44:29.595265+00:00"
     },
     "ZcShYmOhHM0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=ZcShYmOhHM0",
       "title": "周杰倫 Jay Chou【最後的戰役 The Final Battle】Official MV",
       "image_id": "fab346f034f4294a7fa7",
@@ -1933,7 +1933,11 @@
       "submitting_at": "2026-08-31T09:50:26.066439+00:00",
       "aid": 117189491295605,
       "bvid": "BV1U5th63EoP",
-      "uploaded_at": "2026-08-31T09:50:46.095419+00:00"
+      "uploaded_at": "2026-08-31T09:50:46.095419+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T09:50:48.320161+00:00"
     }
   },
   "season": {
