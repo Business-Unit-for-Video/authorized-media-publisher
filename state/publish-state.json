@@ -2031,13 +2031,14 @@
       "published_at": "2026-08-31T10:16:47.047984+00:00"
     },
     "qIZ5MAwbeCg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=qIZ5MAwbeCg",
       "title": "周杰倫 Jay Chou【止戰之殤 Wounds of War】-Official Music Video",
       "image_id": "9e2cfb0c3a9422bd6b8f",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-8",
-      "reserved_at": "2026-08-31T10:22:05.481379+00:00"
+      "reserved_at": "2026-08-31T10:22:05.481379+00:00",
+      "submitting_at": "2026-08-31T10:22:06.551696+00:00"
     }
   },
   "season": {
