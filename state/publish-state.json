@@ -2157,7 +2157,7 @@
       "published_at": "2026-08-31T10:56:18.344426+00:00"
     },
     "-QqpEvN2Xd8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=-QqpEvN2Xd8",
       "title": "周杰倫 Jay Chou【烏克麗麗 Ukulele】Official MV",
       "image_id": "d95cba201da8673884c0",
@@ -2167,7 +2167,11 @@
       "submitting_at": "2026-08-31T10:59:14.284506+00:00",
       "aid": 117189759732366,
       "bvid": "BV1cSt86bEg2",
-      "uploaded_at": "2026-08-31T10:59:26.444180+00:00"
+      "uploaded_at": "2026-08-31T10:59:26.444180+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T10:59:28.539899+00:00"
     }
   },
   "season": {
