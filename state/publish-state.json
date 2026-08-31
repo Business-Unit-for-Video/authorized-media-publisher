@@ -2085,7 +2085,7 @@
       "published_at": "2026-08-31T10:30:40.661364+00:00"
     },
     "Kbvu9Vt5_eE": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=Kbvu9Vt5_eE",
       "title": "周杰倫 Jay Chou【浪漫手機 Romantic Cellphone】-Official Music Video",
       "image_id": "5227003ab2b3aa3cc7fd",
@@ -2095,7 +2095,11 @@
       "submitting_at": "2026-08-31T10:35:55.270286+00:00",
       "aid": 117189675845661,
       "bvid": "BV1FDt86ZEn5",
-      "uploaded_at": "2026-08-31T10:36:13.336835+00:00"
+      "uploaded_at": "2026-08-31T10:36:13.336835+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T10:36:15.457420+00:00"
     }
   },
   "season": {
