@@ -12,7 +12,6 @@ from media_publisher.cli import (
     read_image_manifest,
     read_manifest,
     read_video_manifest,
-    filter_video_rows,
     parse_remove_segments,
     run_ffmpeg,
     select_images,
@@ -47,8 +46,10 @@ def test_workflow_is_public_only() -> None:
     assert "  publish:\n" in workflow
     assert "publish_mode:" not in workflow
     assert "--visibility public" in workflow
-    assert "default: \"long_form\"" in workflow
-    assert "--content-policy \"$CONTENT_POLICY\"" in workflow
+    assert "content_policy:" not in workflow
+    assert "min_duration_seconds:" not in workflow
+    assert "--content-policy" not in workflow
+    assert "--min-duration-seconds" not in workflow
 
 
 def test_publish_rejects_non_public_visibility(tmp_path: Path) -> None:
@@ -86,23 +87,6 @@ def test_youtube_inventory_schema_is_normalized(tmp_path: Path) -> None:
         "rights_basis": "licensed", "publish_scope": "public",
         "duration": "212",
     }]
-
-
-def test_long_form_policy_requires_explicit_signal() -> None:
-    videos = [
-        {"id": "lecture", "title": "完整课程", "video_url": "https://x.test/l", "content_type": "long_form"},
-        {"id": "duration", "title": "专题讲座", "video_url": "https://x.test/d", "duration": "1800"},
-        {"id": "short", "title": "课程片段", "video_url": "https://x.test/s", "duration": "3600"},
-        {"id": "unknown", "title": "未标注内容", "video_url": "https://x.test/u"},
-        {"id": "clip", "title": "A clip", "video_url": "https://x.test/c", "content_type": "clip", "duration": "7200"},
-    ]
-    selected = filter_video_rows(videos, "long_form", 1800)
-    assert [row["id"] for row in selected] == ["lecture", "duration"]
-
-
-def test_long_form_policy_validates_threshold() -> None:
-    with pytest.raises(ValueError, match="non-negative"):
-        filter_video_rows([], "long_form", -1)
 
 
 def test_youtube_download_uses_yt_dlp(tmp_path: Path) -> None:
@@ -263,6 +247,26 @@ def test_build_limits_batch_and_does_not_advance_state(tmp_path: Path) -> None:
     report = json.loads((tmp_path / "output" / "build-report.json").read_text())
     assert report[0]["video_id"] == "v1"
     assert report[0]["image_id"] == "i1"
+
+
+def test_build_uses_csv_rows_without_duration_filter(tmp_path: Path) -> None:
+    videos = write(
+        tmp_path / "videos.csv",
+        "id,title,video_url,rights_basis,publish_scope,content_type,duration\n"
+        "v1,A clip,https://x.test/1.mp4,owned,public,clip,1\n",
+    )
+    images = write(
+        tmp_path / "images.csv",
+        "id,image_url,rights_basis,publish_scope,attribution\n"
+        "i1,https://x.test/1.jpg,licensed,public,Artist\n",
+    )
+    output = tmp_path / "output" / "videos"
+    with patch("media_publisher.cli.download_video"), patch(
+        "media_publisher.cli.download_image", side_effect=lambda row, path: row["image_url"]
+    ), patch("media_publisher.cli.run_ffmpeg"):
+        assert build(videos, images, output, 1280, 720, batch_size=1) == 1
+    report = json.loads((tmp_path / "output" / "build-report.json").read_text())
+    assert report[0]["video_id"] == "v1"
 
 
 def test_failed_build_does_not_advance_state(tmp_path: Path) -> None:

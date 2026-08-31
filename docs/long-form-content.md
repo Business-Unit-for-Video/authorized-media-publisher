@@ -1,22 +1,7 @@
-# 大课/长视频清单规则
+# 发布器的职责边界
 
-这个发布仓库默认只处理完整的大课、讲座或课程，不把大量短片段混入投稿队列。
+`authorized-media-publisher` 只负责把人工选定的 CSV 视频制作并公开投稿到 Bilibili，并按状态加入指定合集。
 
-## 清单标注
+本仓库不检查视频是否为大课、不按时长筛选，也不生成文字转视频内容。视频时长、课程类型、片段排除和 15–20 分钟延后保存等规则，应由上游发现或转写仓库负责；通过筛选后的记录再交给本发布器即可。
 
-视频清单可以在现有字段之外增加以下可选字段：
-
-```csv
-content_type,duration_seconds
-long_form,3600
-```
-
-`content_type` 明确标为 `long_form`、`lecture`、`course`、`full` 或“大课”时可进入队列。标为 `clip`、`short`、`fragment`、“片段”或“小段”的条目会被排除。
-
-没有 `content_type` 的条目，只有在提供 `duration` 或 `duration_seconds` 且达到最低时长时才会进入队列。工作流默认最低时长为 1,800 秒（30 分钟）；无法确认类型或时长的条目会被跳过，不会下载、构建或投稿。
-
-## Actions 设置
-
-`Publish authorized media` 工作流的 `content_policy` 默认是 `long_form`，`min_duration_seconds` 默认是 `1800`。只有在人工确认整份清单确实不含片段时，才应选择 `all`。
-
-旧的清单如果没有这些字段，不会被自动推断为大课。请先复制一份清单，补充 `content_type=long_form` 或有效时长，再在 Actions 中使用它。已记录为 `published` 或 `skipped` 的视频仍然按状态去重，不会重复投稿。
+清单中的 `duration`、`duration_seconds` 或 `content_type` 可以保留为审计字段，但不会改变发布器的选择结果。发布器仍会跳过状态文件中已经完成或明确跳过的同一视频，避免重复投稿。
