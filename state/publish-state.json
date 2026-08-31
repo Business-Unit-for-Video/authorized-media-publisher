@@ -2139,14 +2139,17 @@
       "published_at": "2026-08-31T10:49:37.640260+00:00"
     },
     "K5qKpFLWaoA": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=K5qKpFLWaoA",
       "title": "周杰倫 Jay Chou【火車叨位去 The Train's Destination】Official MV",
       "image_id": "1e52bad5f137ab92f328",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-14",
       "reserved_at": "2026-08-31T10:55:47.789389+00:00",
-      "submitting_at": "2026-08-31T10:55:49.244746+00:00"
+      "submitting_at": "2026-08-31T10:55:49.244746+00:00",
+      "aid": 117189742955728,
+      "bvid": "BV1w1t86wEDf",
+      "uploaded_at": "2026-08-31T10:56:16.198488+00:00"
     }
   },
   "season": {
