@@ -2283,14 +2283,17 @@
       "published_at": "2026-08-31T13:55:19.335052+00:00"
     },
     "6mvA0cTFhXg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=6mvA0cTFhXg",
       "title": "郭德纲相声专场下",
       "image_id": "9312e829c447a38146c3",
       "image_cycle": 1,
       "workflow_run_id": "33395588828-2",
       "reserved_at": "2026-08-31T14:34:35.388044+00:00",
-      "submitting_at": "2026-08-31T14:34:36.835408+00:00"
+      "submitting_at": "2026-08-31T14:34:36.835408+00:00",
+      "aid": 117190615368239,
+      "bvid": "BV1Ejta6fE9b",
+      "uploaded_at": "2026-08-31T14:35:27.482518+00:00"
     }
   },
   "season": {
