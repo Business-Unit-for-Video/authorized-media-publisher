@@ -2247,13 +2247,14 @@
       "published_at": "2026-08-31T11:18:34.601481+00:00"
     },
     "9o20U91aJdg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=9o20U91aJdg",
       "title": "周杰倫 Jay Chou【牛仔很忙 Cowboy on the Run】-Official Music Video",
       "image_id": "5c4cc0158d032ced0d97",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-20",
-      "reserved_at": "2026-08-31T11:21:50.319135+00:00"
+      "reserved_at": "2026-08-31T11:21:50.319135+00:00",
+      "submitting_at": "2026-08-31T11:21:51.560414+00:00"
     }
   },
   "season": {
