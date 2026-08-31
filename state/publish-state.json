@@ -1869,7 +1869,7 @@
       "published_at": "2026-08-31T08:30:05.624864+00:00"
     },
     "DYptgVvkVLQ": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=DYptgVvkVLQ",
       "title": "周杰倫 Jay Chou【晴天 Sunny Day】-Official Music Video",
       "image_id": "5a7948add53061e3669d",
@@ -1879,7 +1879,11 @@
       "submitting_at": "2026-08-31T09:30:23.071970+00:00",
       "aid": 117189407476411,
       "bvid": "BV1MLth6rE41",
-      "uploaded_at": "2026-08-31T09:30:35.852504+00:00"
+      "uploaded_at": "2026-08-31T09:30:35.852504+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T09:30:38.290117+00:00"
     }
   },
   "season": {
