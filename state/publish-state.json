@@ -2103,13 +2103,14 @@
       "published_at": "2026-08-31T10:36:15.457420+00:00"
     },
     "SW3OQ0ijUCI": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=SW3OQ0ijUCI",
       "title": "Jay Chou 周杰倫【Gold Rush Town 淘金小鎮】Official Music Video",
       "image_id": "8520bd5ade21141f1100",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-12",
-      "reserved_at": "2026-08-31T10:42:24.183329+00:00"
+      "reserved_at": "2026-08-31T10:42:24.183329+00:00",
+      "submitting_at": "2026-08-31T10:42:25.321142+00:00"
     }
   },
   "season": {
