@@ -85,6 +85,7 @@
       "c6b51b35f239e288d0d1",
       "c7c8924c1b00e8bf33d0",
       "c8b08889c8e1d6ebe8b0",
+      "c93cb752c3e17b46e724",
       "c956277354e6c1d4fe2d",
       "ca22927434caa819f146",
       "cc835529563c7e1e0d3a",
@@ -1956,6 +1957,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-08-31T09:55:42.427216+00:00"
+    },
+    "8CD06hC1KGU": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=8CD06hC1KGU",
+      "title": "周杰倫 Jay Chou【本草綱目Chinese Herbal Manual】-Official Music Video",
+      "image_id": "c93cb752c3e17b46e724",
+      "image_cycle": 1,
+      "workflow_run_id": "33378693421-4",
+      "reserved_at": "2026-08-31T09:59:58.722370+00:00"
     }
   },
   "season": {
