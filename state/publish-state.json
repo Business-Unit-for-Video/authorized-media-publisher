@@ -2211,13 +2211,14 @@
       "published_at": "2026-08-31T11:09:24.782410+00:00"
     },
     "nhyT8HDT4lg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=nhyT8HDT4lg",
       "title": "周杰倫 Jay Chou【爸 我回來了 Dad, I'm home】Official MV",
       "image_id": "fc76854d46eb8e723ea6",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-18",
-      "reserved_at": "2026-08-31T11:13:48.972568+00:00"
+      "reserved_at": "2026-08-31T11:13:48.972568+00:00",
+      "submitting_at": "2026-08-31T11:13:50.222695+00:00"
     }
   },
   "season": {
