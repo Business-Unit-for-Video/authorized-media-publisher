@@ -6,7 +6,7 @@ import shutil
 from pathlib import Path
 from typing import Callable
 
-from media_publisher.cli import build, load_publish_state
+from media_publisher.cli import build, load_publish_state, read_video_manifest
 from media_publisher.publish import publish
 
 
@@ -34,6 +34,7 @@ def serial_publish(
     if visibility != "public":
         raise ValueError("Bilibili publishing is public-only")
 
+    manifest_ids = {row["id"] for row in read_video_manifest(video_manifest)}
     built = 0
     published = 0
     report_path = output_dir.parent / "build-report.json"
@@ -43,7 +44,8 @@ def serial_publish(
         )
         uncertain = [
             video_id for video_id, entry in state["videos"].items()
-            if entry.get("status") in {"submitting", "uploading"}
+            if video_id in manifest_ids
+            and entry.get("status") in {"submitting", "uploading"}
         ]
         if uncertain:
             raise RuntimeError(
@@ -52,7 +54,8 @@ def serial_publish(
                 + "; inspect Bilibili and reconcile state before continuing"
             )
         pending_uploaded = any(
-            entry.get("status") == "uploaded" for entry in state["videos"].values()
+            video_id in manifest_ids and entry.get("status") == "uploaded"
+            for video_id, entry in state["videos"].items()
         )
         if pending_uploaded:
             output_dir.parent.mkdir(parents=True, exist_ok=True)
@@ -68,6 +71,7 @@ def serial_publish(
                 season_description,
                 f"{run_id}-{item_number}",
                 max_items=1,
+                eligible_video_ids=manifest_ids,
             )
             continue
 
@@ -95,6 +99,7 @@ def serial_publish(
             season_description,
             f"{run_id}-{item_number}",
             max_items=1,
+            eligible_video_ids=manifest_ids,
         )
         published += item_published
         if item_built == 0:

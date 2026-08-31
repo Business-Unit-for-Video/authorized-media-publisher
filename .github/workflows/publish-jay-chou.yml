@@ -1,0 +1,98 @@
+name: 发布周杰伦视频到 Bilibili
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: "本次串行发布的视频数量上限"
+        required: true
+        default: "2"
+      width:
+        description: "输出宽度"
+        required: true
+        default: "1920"
+      height:
+        description: "输出高度"
+        required: true
+        default: "1080"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: authorized-media-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    environment: bilibili-publish
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 安装发布器、下载器、上传器和 FFmpeg
+        run: |
+          python -m pip install . yt-dlp biliup==1.2.2
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+      - name: 写入临时凭据文件
+        env:
+          YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_SOURCE_COOKIE_FILE_AUTHORIZED_PUBLISHER }}
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}
+        run: |
+          if [ -n "$YOUTUBE_COOKIE_FILE" ]; then
+            printf '%s' "$YOUTUBE_COOKIE_FILE" > "$RUNNER_TEMP/youtube-cookies.txt"
+            chmod 600 "$RUNNER_TEMP/youtube-cookies.txt"
+          fi
+          test -n "$BILIBILI_COOKIE_JSON"
+          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
+          chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
+      - name: 配置状态提交身份
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: 发布前检查周杰伦最近稿件
+        run: |
+          python scripts/check_recent_bilibili_reviews.py \
+            --cookies "$RUNNER_TEMP/bilibili-cookies.json" \
+            --state state/publish-state.json \
+            --videos input/videos.csv \
+            --output output/recent-review-check.json \
+            --limit 2
+      - name: 串行制作并发布周杰伦视频
+        env:
+          OUTPUT_WIDTH: ${{ inputs.width || '1920' }}
+          OUTPUT_HEIGHT: ${{ inputs.height || '1080' }}
+          BATCH_SIZE: ${{ inputs.batch_size || '2' }}
+          YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
+        run: |
+          YOUTUBE_COOKIE_ARGS=()
+          if [ -f "$YOUTUBE_COOKIE_PATH" ]; then
+            YOUTUBE_COOKIE_ARGS=(--youtube-cookies "$YOUTUBE_COOKIE_PATH")
+          fi
+          media-publish-serial \
+            --videos input/videos.csv \
+            --images input/images.csv \
+            --width "$OUTPUT_WIDTH" \
+            --height "$OUTPUT_HEIGHT" \
+            --state state/publish-state.json \
+            --batch-size "$BATCH_SIZE" \
+            --bilibili-cookies "$RUNNER_TEMP/bilibili-cookies.json" \
+            --visibility public \
+            --season-title "周杰伦" \
+            --season-description "" \
+            --run-id "${{ github.run_id }}" \
+            "${YOUTUBE_COOKIE_ARGS[@]}"
+      - name: 上传周杰伦发布报告
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: jay-chou-publish-report-${{ github.run_id }}
+          path: |
+            output/build-report.json
+            state/publish-state.json
+            output/recent-review-check.json
+          if-no-files-found: ignore

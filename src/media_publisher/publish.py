@@ -264,6 +264,7 @@ def publish(
     uploader: Callable[..., dict[str, object]] = upload_video,
     season_factory: Callable[[Path], SeasonClient] = SeasonClient,
     max_items: int | None = None,
+    eligible_video_ids: set[str] | None = None,
 ) -> int:
     if visibility != "public":
         raise ValueError("Bilibili publishing is public-only")
@@ -273,6 +274,7 @@ def publish(
         (video_id, entry)
         for video_id, entry in state["videos"].items()
         if entry.get("status") == "uploaded"
+        and (eligible_video_ids is None or video_id in eligible_video_ids)
     ]
     if not records and not pending_uploaded:
         return 0

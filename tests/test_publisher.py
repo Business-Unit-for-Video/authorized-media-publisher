@@ -37,19 +37,32 @@ def initial_state() -> dict[str, object]:
     }
 
 
-def test_workflow_is_public_only() -> None:
-    workflow = (Path(__file__).parents[1] / ".github/workflows/publish.yml").read_text(
-        encoding="utf-8"
-    )
-    assert "          - build\n" not in workflow
-    assert "  build:\n" not in workflow
-    assert "  publish:\n" in workflow
-    assert "publish_mode:" not in workflow
-    assert "--visibility public" in workflow
-    assert "content_policy:" not in workflow
-    assert "min_duration_seconds:" not in workflow
-    assert "--content-policy" not in workflow
-    assert "--min-duration-seconds" not in workflow
+def test_collection_workflows_are_fixed_and_public_only() -> None:
+    workflow_dir = Path(__file__).parents[1] / ".github/workflows"
+    jay_chou = (workflow_dir / "publish-jay-chou.yml").read_text(encoding="utf-8")
+    yu_gang = (workflow_dir / "publish-yu-gang.yml").read_text(encoding="utf-8")
+    assert not (workflow_dir / "publish.yml").exists()
+
+    for workflow in (jay_chou, yu_gang):
+        assert "          - build\n" not in workflow
+        assert "  build:\n" not in workflow
+        assert "  publish:\n" in workflow
+        assert "publish_mode:" not in workflow
+        assert "--visibility public" in workflow
+        assert "video_manifest:" not in workflow
+        assert "season_title:" not in workflow
+        assert "content_policy:" not in workflow
+        assert "min_duration_seconds:" not in workflow
+        assert "--content-policy" not in workflow
+        assert "--min-duration-seconds" not in workflow
+        assert "group: authorized-media-publisher" in workflow
+
+    assert "--videos input/videos.csv" in jay_chou
+    assert '--season-title "周杰伦"' in jay_chou
+    assert "schedule:" not in jay_chou
+    assert "--videos input/guodegang-early-successes.csv" in yu_gang
+    assert '--season-title "于纲"' in yu_gang
+    assert 'cron: "0 1 * * *"' in yu_gang
 
 
 def test_publish_rejects_non_public_visibility(tmp_path: Path) -> None:
@@ -325,6 +338,15 @@ def report_file(tmp_path: Path) -> Path:
     }]))
 
 
+def serial_manifest(tmp_path: Path, *video_ids: str) -> Path:
+    rows = ["id,title,video_url,rights_basis,publish_scope"]
+    rows.extend(
+        f"{video_id},{video_id},https://x.test/{video_id}.mp4,owned,public"
+        for video_id in video_ids
+    )
+    return write(tmp_path / "videos.csv", "\n".join(rows) + "\n")
+
+
 def test_serial_publish_builds_and_publishes_one_at_a_time(tmp_path: Path) -> None:
     events: list[tuple[str, int]] = []
     next_item = 0
@@ -349,7 +371,7 @@ def test_serial_publish_builds_and_publishes_one_at_a_time(tmp_path: Path) -> No
         return 1
 
     result = serial_publish(
-        tmp_path / "videos.csv",
+        serial_manifest(tmp_path, "v1", "v2", "v3"),
         tmp_path / "images.csv",
         tmp_path / "output" / "videos",
         1280,
@@ -393,7 +415,7 @@ def test_serial_publish_stops_when_no_new_video(tmp_path: Path) -> None:
         return 0
 
     result = serial_publish(
-        tmp_path / "videos.csv", tmp_path / "images.csv",
+        serial_manifest(tmp_path, "v1"), tmp_path / "images.csv",
         tmp_path / "output" / "videos", 1280, 720,
         tmp_path / "state.json", 10, None, tmp_path / "cookies.json",
         "public", 171, "tag", "season", "", "run",
@@ -420,7 +442,7 @@ def test_serial_publish_stops_after_publish_failure(tmp_path: Path) -> None:
 
     with pytest.raises(RuntimeError, match="upload failed"):
         serial_publish(
-            tmp_path / "videos.csv", tmp_path / "images.csv",
+            serial_manifest(tmp_path, "v1"), tmp_path / "images.csv",
             tmp_path / "output" / "videos", 1280, 720,
             tmp_path / "state.json", 10, None, tmp_path / "cookies.json",
             "public", 171, "tag", "season", "", "run",
@@ -436,7 +458,7 @@ def test_serial_publish_blocks_uncertain_upload_state(tmp_path: Path) -> None:
     state_path.write_text(json.dumps(state), encoding="utf-8")
     with pytest.raises(RuntimeError, match="outcome is uncertain"):
         serial_publish(
-            tmp_path / "videos.csv", tmp_path / "images.csv",
+            serial_manifest(tmp_path, "v1"), tmp_path / "images.csv",
             tmp_path / "output" / "videos", 1280, 720,
             state_path, 10, None, tmp_path / "cookies.json",
             "public", 171, "tag", "season", "", "run",
@@ -460,7 +482,7 @@ def test_serial_publish_finishes_one_pending_attachment_before_build(tmp_path: P
         return 1
 
     result = serial_publish(
-        tmp_path / "videos.csv", tmp_path / "images.csv",
+        serial_manifest(tmp_path, "v1"), tmp_path / "images.csv",
         tmp_path / "output" / "videos", 1280, 720,
         state_path, 1, None, tmp_path / "cookies.json",
         "public", 171, "tag", "season", "", "run",
@@ -468,6 +490,27 @@ def test_serial_publish_finishes_one_pending_attachment_before_build(tmp_path: P
     )
     assert result == {"built": 0, "published": 1}
     assert events == ["publish"]
+
+
+def test_publish_ignores_pending_attachment_from_other_manifest(tmp_path: Path) -> None:
+    state_path = tmp_path / "state.json"
+    state = initial_state()
+    state["videos"] = {"other": {"status": "uploaded", "aid": 1, "title": "other"}}
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    empty_report = write(tmp_path / "report.json", "[]")
+
+    assert publish(
+        empty_report,
+        tmp_path / "cookies.json",
+        "public",
+        171,
+        "tag",
+        state_path,
+        "current season",
+        "",
+        eligible_video_ids={"current"},
+        season_factory=MagicMock(side_effect=AssertionError("season should not be opened")),
+    ) == 0
 
 
 def test_publish_persists_reservation_upload_and_season(tmp_path: Path) -> None:

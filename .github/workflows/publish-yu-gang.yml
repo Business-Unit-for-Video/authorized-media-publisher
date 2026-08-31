@@ -1,34 +1,18 @@
-name: Publish authorized media
+name: 发布于纲视频到 Bilibili
 
 on:
   workflow_dispatch:
     inputs:
-      video_manifest:
-        description: "CSV path for explicitly authorized video URLs"
-        required: true
-        default: "input/guodegang-early-successes.csv"
-      image_manifest:
-        description: "CSV path for authorized images or adult-performer-image-inventory/output/images.csv"
-        required: true
-        default: "input/images.csv"
       batch_size:
-        description: "Maximum number of new videos to process serially in this run"
+        description: "本次串行发布的视频数量上限"
         required: true
         default: "2"
-      season_title:
-        description: "Bilibili collection title; existing collection is reused by exact title"
-        required: true
-        default: "于纲"
-      season_description:
-        description: "Description used only when creating a new Bilibili collection"
-        required: false
-        default: ""
       width:
-        description: "Output width"
+        description: "输出宽度"
         required: true
         default: "1920"
       height:
-        description: "Output height"
+        description: "输出高度"
         required: true
         default: "1080"
   schedule:
@@ -51,12 +35,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install publisher, downloader, uploader, and FFmpeg
+      - name: 安装发布器、下载器、上传器和 FFmpeg
         run: |
           python -m pip install . yt-dlp biliup==1.2.2
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-      - name: Write credential files
+      - name: 写入临时凭据文件
         env:
           YOUTUBE_COOKIE_FILE: ${{ secrets.YOUTUBE_SOURCE_COOKIE_FILE_AUTHORIZED_PUBLISHER }}
           BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}
@@ -68,29 +52,23 @@ jobs:
           test -n "$BILIBILI_COOKIE_JSON"
           printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
           chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
-      - name: Configure state commits
+      - name: 配置状态提交身份
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Check recent submissions before publishing
-        env:
-          VIDEO_MANIFEST: ${{ inputs.video_manifest || 'input/guodegang-early-successes.csv' }}
+      - name: 发布前检查于纲最近稿件
         run: |
           python scripts/check_recent_bilibili_reviews.py \
             --cookies "$RUNNER_TEMP/bilibili-cookies.json" \
             --state state/publish-state.json \
-            --videos "$VIDEO_MANIFEST" \
+            --videos input/guodegang-early-successes.csv \
             --output output/recent-review-check.json \
             --limit 2
-      - name: Build and publish each video serially
+      - name: 串行制作并发布于纲视频
         env:
-          VIDEO_MANIFEST: ${{ inputs.video_manifest || 'input/guodegang-early-successes.csv' }}
-          IMAGE_MANIFEST: ${{ inputs.image_manifest || 'input/images.csv' }}
           OUTPUT_WIDTH: ${{ inputs.width || '1920' }}
           OUTPUT_HEIGHT: ${{ inputs.height || '1080' }}
           BATCH_SIZE: ${{ inputs.batch_size || '2' }}
-          SEASON_TITLE: ${{ inputs.season_title || '于纲' }}
-          SEASON_DESCRIPTION: ${{ inputs.season_description || '' }}
           YOUTUBE_COOKIE_PATH: ${{ runner.temp }}/youtube-cookies.txt
         run: |
           YOUTUBE_COOKIE_ARGS=()
@@ -98,23 +76,23 @@ jobs:
             YOUTUBE_COOKIE_ARGS=(--youtube-cookies "$YOUTUBE_COOKIE_PATH")
           fi
           media-publish-serial \
-            --videos "$VIDEO_MANIFEST" \
-            --images "$IMAGE_MANIFEST" \
+            --videos input/guodegang-early-successes.csv \
+            --images input/images.csv \
             --width "$OUTPUT_WIDTH" \
             --height "$OUTPUT_HEIGHT" \
             --state state/publish-state.json \
             --batch-size "$BATCH_SIZE" \
             --bilibili-cookies "$RUNNER_TEMP/bilibili-cookies.json" \
             --visibility public \
-            --season-title "$SEASON_TITLE" \
-            --season-description "$SEASON_DESCRIPTION" \
+            --season-title "于纲" \
+            --season-description "" \
             --run-id "${{ github.run_id }}" \
             "${YOUTUBE_COOKIE_ARGS[@]}"
-      - name: Upload publish report
+      - name: 上传于纲发布报告
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: authorized-media-publisher-report-${{ github.run_id }}
+          name: yu-gang-publish-report-${{ github.run_id }}
           path: |
             output/build-report.json
             state/publish-state.json
