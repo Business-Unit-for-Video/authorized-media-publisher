@@ -1887,7 +1887,7 @@
       "published_at": "2026-08-31T09:30:38.290117+00:00"
     },
     "CYT9DPJdtS4": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=CYT9DPJdtS4",
       "title": "周杰倫 Jay Chou【暗號 Secret Code】Official MV",
       "image_id": "8de39ca64760402186a3",
@@ -1897,7 +1897,11 @@
       "submitting_at": "2026-08-31T09:35:10.176643+00:00",
       "aid": 117189424319963,
       "bvid": "BV1xnth6MEpF",
-      "uploaded_at": "2026-08-31T09:35:24.150957+00:00"
+      "uploaded_at": "2026-08-31T09:35:24.150957+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T09:35:26.737486+00:00"
     }
   },
   "season": {
