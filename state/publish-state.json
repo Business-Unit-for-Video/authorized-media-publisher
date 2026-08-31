@@ -2175,14 +2175,17 @@
       "published_at": "2026-08-31T10:59:28.539899+00:00"
     },
     "IYiIL2ZgOK4": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=IYiIL2ZgOK4",
       "title": "周杰倫 Jay Chou【無雙 Incomparable】-Official Music Video",
       "image_id": "751f4b3140eb0cb2ace3",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-16",
       "reserved_at": "2026-08-31T11:03:55.986400+00:00",
-      "submitting_at": "2026-08-31T11:03:57.515006+00:00"
+      "submitting_at": "2026-08-31T11:03:57.515006+00:00",
+      "aid": 117189776510123,
+      "bvid": "BV1cUt86FE4s",
+      "uploaded_at": "2026-08-31T11:04:11.575041+00:00"
     }
   },
   "season": {
