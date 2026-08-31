@@ -2013,14 +2013,17 @@
       "published_at": "2026-08-31T10:10:47.901733+00:00"
     },
     "qzwsQTY-99o": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=qzwsQTY-99o",
       "title": "周杰倫 Jay Chou【楓Maple Leaf 】-Official Music Video",
       "image_id": "ad0817e8ad706f2316b5",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-7",
       "reserved_at": "2026-08-31T10:16:27.208264+00:00",
-      "submitting_at": "2026-08-31T10:16:28.334311+00:00"
+      "submitting_at": "2026-08-31T10:16:28.334311+00:00",
+      "aid": 117189592089996,
+      "bvid": "BV1Uet86zEYt",
+      "uploaded_at": "2026-08-31T10:16:44.952008+00:00"
     }
   },
   "season": {
