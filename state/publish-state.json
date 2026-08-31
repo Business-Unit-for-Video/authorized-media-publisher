@@ -1977,13 +1977,14 @@
       "published_at": "2026-08-31T10:00:16.607479+00:00"
     },
     "qct0JLjaHDc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=qct0JLjaHDc",
       "title": "周杰倫 Jay Chou【東風破 Dong-Feng-Po】-Official Music Video",
       "image_id": "98652a9142b1d09a9e3b",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-5",
-      "reserved_at": "2026-08-31T10:05:57.456000+00:00"
+      "reserved_at": "2026-08-31T10:05:57.456000+00:00",
+      "submitting_at": "2026-08-31T10:05:58.660722+00:00"
     }
   },
   "season": {
