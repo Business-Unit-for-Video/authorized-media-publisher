@@ -1905,14 +1905,17 @@
       "published_at": "2026-08-31T09:35:26.737486+00:00"
     },
     "1emA1EFsPMM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=1emA1EFsPMM",
       "title": "周杰倫 Jay Chou【最偉大的作品 Greatest Works of Art】Official MV",
       "image_id": "62d619b92333de6a8f68",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-1",
       "reserved_at": "2026-08-31T09:44:11.240990+00:00",
-      "submitting_at": "2026-08-31T09:44:12.368764+00:00"
+      "submitting_at": "2026-08-31T09:44:12.368764+00:00",
+      "aid": 117189457743355,
+      "bvid": "BV1S3th6VECq",
+      "uploaded_at": "2026-08-31T09:44:27.404166+00:00"
     }
   },
   "season": {
