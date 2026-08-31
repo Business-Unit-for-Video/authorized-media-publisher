@@ -2229,7 +2229,7 @@
       "published_at": "2026-08-31T11:14:06.168461+00:00"
     },
     "LdPjnubLRN0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=LdPjnubLRN0",
       "title": "周杰倫 Jay Chou【爺爺泡的茶 Grandpa's Tea】Official MV",
       "image_id": "aed409d4a2134e5ca107",
@@ -2239,7 +2239,11 @@
       "submitting_at": "2026-08-31T11:18:18.422052+00:00",
       "aid": 117189843684616,
       "bvid": "BV1i7t86nEWe",
-      "uploaded_at": "2026-08-31T11:18:32.470914+00:00"
+      "uploaded_at": "2026-08-31T11:18:32.470914+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T11:18:34.601481+00:00"
     }
   },
   "season": {
