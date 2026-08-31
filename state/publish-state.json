@@ -73,6 +73,7 @@
       "8f5a5515564b04018593",
       "8ff2600a9346404a7d1b",
       "92a629d439d88775b281",
+      "9312e829c447a38146c3",
       "98652a9142b1d09a9e3b",
       "9bd08d1fec865e833fbf",
       "9e2cfb0c3a9422bd6b8f",
@@ -2280,6 +2281,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-08-31T13:55:19.335052+00:00"
+    },
+    "6mvA0cTFhXg": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=6mvA0cTFhXg",
+      "title": "郭德纲相声专场下",
+      "image_id": "9312e829c447a38146c3",
+      "image_cycle": 1,
+      "workflow_run_id": "33395588828-2",
+      "reserved_at": "2026-08-31T14:34:35.388044+00:00"
     }
   },
   "season": {
