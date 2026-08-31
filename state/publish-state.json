@@ -1833,14 +1833,17 @@
       "skip_reason_code": 62002
     },
     "XnvXqzVcXYg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=XnvXqzVcXYg",
       "title": "2004 12 4 双学济南话－郭德纲王文林",
       "image_id": "c0ad52b310c55ef2dbb8",
       "image_cycle": 1,
       "workflow_run_id": "33368779015-1",
       "reserved_at": "2026-08-31T08:01:20.710448+00:00",
-      "submitting_at": "2026-08-31T08:01:22.833446+00:00"
+      "submitting_at": "2026-08-31T08:01:22.833446+00:00",
+      "aid": 117189105486416,
+      "bvid": "BV1zMtt6UENx",
+      "uploaded_at": "2026-08-31T08:12:00.774406+00:00"
     }
   },
   "season": {
