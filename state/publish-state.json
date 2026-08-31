@@ -2193,14 +2193,17 @@
       "published_at": "2026-08-31T11:04:14.006712+00:00"
     },
     "COMHDRqAvYE": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=COMHDRqAvYE",
       "title": "周杰倫 Jay Chou【煙花易冷 Fade Away】Official MV",
       "image_id": "6e9f9a0695cda49670d6",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-17",
       "reserved_at": "2026-08-31T11:09:08.268475+00:00",
-      "submitting_at": "2026-08-31T11:09:09.350640+00:00"
+      "submitting_at": "2026-08-31T11:09:09.350640+00:00",
+      "aid": 117189793286882,
+      "bvid": "BV1jLt86QEZk",
+      "uploaded_at": "2026-08-31T11:09:22.661178+00:00"
     }
   },
   "season": {
