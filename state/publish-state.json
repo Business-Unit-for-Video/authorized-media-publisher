@@ -1851,14 +1851,17 @@
       "published_at": "2026-08-31T08:12:03.039857+00:00"
     },
     "9qyHpZ9Nzpg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=9qyHpZ9Nzpg",
       "title": "对口郭德纲 李菁－学电台",
       "image_id": "eed7eaade837a025e815",
       "image_cycle": 1,
       "workflow_run_id": "33368779015-2",
       "reserved_at": "2026-08-31T08:29:36.706965+00:00",
-      "submitting_at": "2026-08-31T08:29:37.898912+00:00"
+      "submitting_at": "2026-08-31T08:29:37.898912+00:00",
+      "aid": 117189172527753,
+      "bvid": "BV1g4tt6iEeZ",
+      "uploaded_at": "2026-08-31T08:30:01.862822+00:00"
     }
   },
   "season": {
