@@ -74,6 +74,7 @@
       "b6fcc8191934fb858af6",
       "b7ee15c4b1c398fbea57",
       "bd486765c1338d9e5b62",
+      "c0ad52b310c55ef2dbb8",
       "c1c726d73be6b35532f3",
       "c2906d936ee8384b7fac",
       "c522661329d99054ef1a",
@@ -1830,6 +1831,15 @@
       "skipped_at": "2026-08-26T01:09:36.5585871Z",
       "skip_reason": "稿件不可见（Bilibili 公开接口返回 62002），暂不重试",
       "skip_reason_code": 62002
+    },
+    "XnvXqzVcXYg": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=XnvXqzVcXYg",
+      "title": "2004 12 4 双学济南话－郭德纲王文林",
+      "image_id": "c0ad52b310c55ef2dbb8",
+      "image_cycle": 1,
+      "workflow_run_id": "33368779015-1",
+      "reserved_at": "2026-08-31T08:01:20.710448+00:00"
     }
   },
   "season": {
