@@ -2265,14 +2265,17 @@
       "published_at": "2026-08-31T11:22:07.130895+00:00"
     },
     "sNYDLAu23Mc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=sNYDLAu23Mc",
       "title": "郭德纲相声专场上",
       "image_id": "7100c936c49a90334615",
       "image_cycle": 1,
       "workflow_run_id": "33395588828-1",
       "reserved_at": "2026-08-31T13:54:16.139398+00:00",
-      "submitting_at": "2026-08-31T13:54:17.912862+00:00"
+      "submitting_at": "2026-08-31T13:54:17.912862+00:00",
+      "aid": 117190447663300,
+      "bvid": "BV1tBta6yE8x",
+      "uploaded_at": "2026-08-31T13:55:17.034953+00:00"
     }
   },
   "season": {
