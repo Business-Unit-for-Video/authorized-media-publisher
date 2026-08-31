@@ -2049,14 +2049,17 @@
       "published_at": "2026-08-31T10:22:26.557268+00:00"
     },
     "wUJ37I6au2w": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=wUJ37I6au2w",
       "title": "周杰倫 Jay Chou【水手怕水 Sailor Afraid of Water】Official MV",
       "image_id": "722eff65789dbd0be5ef",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-9",
       "reserved_at": "2026-08-31T10:26:34.775685+00:00",
-      "submitting_at": "2026-08-31T10:26:35.870247+00:00"
+      "submitting_at": "2026-08-31T10:26:35.870247+00:00",
+      "aid": 117189625514216,
+      "bvid": "BV1Kqt86qE1i",
+      "uploaded_at": "2026-08-31T10:26:48.701118+00:00"
     }
   },
   "season": {
