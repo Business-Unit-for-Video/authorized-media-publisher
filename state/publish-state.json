@@ -2067,7 +2067,7 @@
       "published_at": "2026-08-31T10:26:50.804256+00:00"
     },
     "-ytYpXm3cv0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=-ytYpXm3cv0",
       "title": "周杰倫 Jay Chou【流浪詩人 Drifting Poet】-Official Music Video",
       "image_id": "ee4b09b836e0fb6c03f2",
@@ -2077,7 +2077,11 @@
       "submitting_at": "2026-08-31T10:30:24.882035+00:00",
       "aid": 117189642292686,
       "bvid": "BV1Tit86ME58",
-      "uploaded_at": "2026-08-31T10:30:38.276391+00:00"
+      "uploaded_at": "2026-08-31T10:30:38.276391+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T10:30:40.661364+00:00"
     }
   },
   "season": {
