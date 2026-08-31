@@ -1941,7 +1941,7 @@
       "published_at": "2026-08-31T09:50:48.320161+00:00"
     },
     "2zxc27bvrO8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=2zxc27bvrO8",
       "title": "周杰倫 Jay Chou【最長的電影 The Longest Movie】-Official Music Video",
       "image_id": "690f624f5a262363b57b",
@@ -1951,7 +1951,11 @@
       "submitting_at": "2026-08-31T09:55:21.814162+00:00",
       "aid": 117189508074908,
       "bvid": "BV1SGth6kEcB",
-      "uploaded_at": "2026-08-31T09:55:40.335163+00:00"
+      "uploaded_at": "2026-08-31T09:55:40.335163+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-08-31T09:55:42.427216+00:00"
     }
   },
   "season": {
