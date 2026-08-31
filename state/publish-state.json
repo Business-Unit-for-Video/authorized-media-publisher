@@ -1851,7 +1851,7 @@
       "published_at": "2026-08-31T08:12:03.039857+00:00"
     },
     "9qyHpZ9Nzpg": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=9qyHpZ9Nzpg",
       "title": "对口郭德纲 李菁－学电台",
       "image_id": "eed7eaade837a025e815",
@@ -1861,7 +1861,11 @@
       "submitting_at": "2026-08-31T08:29:37.898912+00:00",
       "aid": 117189172527753,
       "bvid": "BV1g4tt6iEeZ",
-      "uploaded_at": "2026-08-31T08:30:01.862822+00:00"
+      "uploaded_at": "2026-08-31T08:30:01.862822+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-08-31T08:30:05.624864+00:00"
     }
   },
   "season": {
