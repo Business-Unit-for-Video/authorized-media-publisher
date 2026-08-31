@@ -2121,13 +2121,14 @@
       "published_at": "2026-08-31T10:42:41.414015+00:00"
     },
     "V4icndlWcPo": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=V4icndlWcPo",
       "title": "Jay Chou 周杰倫 【湘女多情】The girl from Hunan Lyric Video",
       "image_id": "d88bec87110199ba112b",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-13",
-      "reserved_at": "2026-08-31T10:49:15.177721+00:00"
+      "reserved_at": "2026-08-31T10:49:15.177721+00:00",
+      "submitting_at": "2026-08-31T10:49:16.262323+00:00"
     }
   },
   "season": {
