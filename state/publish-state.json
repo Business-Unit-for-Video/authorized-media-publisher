@@ -1959,13 +1959,14 @@
       "published_at": "2026-08-31T09:55:42.427216+00:00"
     },
     "8CD06hC1KGU": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=8CD06hC1KGU",
       "title": "周杰倫 Jay Chou【本草綱目Chinese Herbal Manual】-Official Music Video",
       "image_id": "c93cb752c3e17b46e724",
       "image_cycle": 1,
       "workflow_run_id": "33378693421-4",
-      "reserved_at": "2026-08-31T09:59:58.722370+00:00"
+      "reserved_at": "2026-08-31T09:59:58.722370+00:00",
+      "submitting_at": "2026-08-31T10:00:00.012113+00:00"
     }
   },
   "season": {
