@@ -8,6 +8,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from media_publisher.cli import read_video_manifest
+
 try:
     from scripts.inspect_bilibili_archive import inspect_archive
 except ModuleNotFoundError:
@@ -57,11 +59,7 @@ def has_rejection_signal(signals: list[dict[str, Any]]) -> bool:
 def check_recent(
     cookies: Path, state_path: Path, video_manifest: Path, output: Path, limit: int,
 ) -> int:
-    manifest_ids = {
-        row["id"] for row in __import__("csv").DictReader(
-            video_manifest.open(encoding="utf-8-sig", newline="")
-        )
-    }
+    manifest_ids = {row["id"] for row in read_video_manifest(video_manifest)}
     state = json.loads(state_path.read_text(encoding="utf-8"))
     candidates: list[tuple[str, dict[str, Any]]] = []
     for video_id, entry in state.get("videos", {}).items():
