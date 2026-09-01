@@ -2312,14 +2312,17 @@
       "submitting_at": "2026-09-01T00:18:01.974562+00:00"
     },
     "drvPjRwj2SM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=drvPjRwj2SM",
       "title": "郭德纲 李菁 论梦",
       "image_id": "d5f3f13eb95ade922cec",
       "image_cycle": 1,
       "workflow_run_id": "33465982499-1",
       "reserved_at": "2026-09-01T03:37:27.967762+00:00",
-      "submitting_at": "2026-09-01T03:37:29.102693+00:00"
+      "submitting_at": "2026-09-01T03:37:29.102693+00:00",
+      "aid": 117193769486911,
+      "bvid": "BV1Hatg6uE49",
+      "uploaded_at": "2026-09-01T03:57:52.173302+00:00"
     }
   },
   "season": {
