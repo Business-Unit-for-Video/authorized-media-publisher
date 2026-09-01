@@ -2366,14 +2366,17 @@
       "published_at": "2026-09-01T06:27:26.702816+00:00"
     },
     "PQy_xgFUBIc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=PQy_xgFUBIc",
       "title": "百兽图",
       "image_id": "91e77ea739d3e08c155d",
       "image_cycle": 1,
       "workflow_run_id": "33475836455-2",
       "reserved_at": "2026-09-01T06:50:28.692677+00:00",
-      "submitting_at": "2026-09-01T06:50:29.981622+00:00"
+      "submitting_at": "2026-09-01T06:50:29.981622+00:00",
+      "aid": 117194440575966,
+      "bvid": "BV1AKtu6MEru",
+      "uploaded_at": "2026-09-01T06:51:10.493675+00:00"
     }
   },
   "season": {
