@@ -2348,13 +2348,14 @@
       "published_at": "2026-09-01T04:19:34.190553+00:00"
     },
     "8jeN0Dp6LHo": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=8jeN0Dp6LHo",
       "title": "论相声50年之现状",
       "image_id": "bcba77332a58bcf978c1",
       "image_cycle": 1,
       "workflow_run_id": "33475836455-1",
-      "reserved_at": "2026-09-01T06:26:45.903478+00:00"
+      "reserved_at": "2026-09-01T06:26:45.903478+00:00",
+      "submitting_at": "2026-09-01T06:26:47.240831+00:00"
     }
   },
   "season": {
