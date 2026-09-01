@@ -2330,7 +2330,7 @@
       "published_at": "2026-09-01T03:57:54.477043+00:00"
     },
     "aXKatNXBUuE": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=aXKatNXBUuE",
       "title": "郭德纲 张文顺 王文林爆笑相声《大审案》",
       "image_id": "4113055c4ffdf847c4ba",
@@ -2340,7 +2340,11 @@
       "submitting_at": "2026-09-01T04:12:33.448159+00:00",
       "aid": 117193853373011,
       "bvid": "BV1eNtg6oEB4",
-      "uploaded_at": "2026-09-01T04:19:31.963433+00:00"
+      "uploaded_at": "2026-09-01T04:19:31.963433+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-09-01T04:19:34.190553+00:00"
     }
   },
   "season": {
