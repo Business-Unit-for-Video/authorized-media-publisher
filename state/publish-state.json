@@ -76,6 +76,7 @@
       "91e77ea739d3e08c155d",
       "92a629d439d88775b281",
       "9312e829c447a38146c3",
+      "980c728dda4d65d0260c",
       "98652a9142b1d09a9e3b",
       "9bd08d1fec865e833fbf",
       "9e2cfb0c3a9422bd6b8f",
@@ -2399,6 +2400,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-09-02T05:38:53.993491+00:00"
+    },
+    "AEQ6FoItYqo": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=AEQ6FoItYqo",
+      "title": "拍照惊奇",
+      "image_id": "980c728dda4d65d0260c",
+      "image_cycle": 1,
+      "workflow_run_id": "33594711218-2",
+      "reserved_at": "2026-09-02T05:52:41.850587+00:00"
     }
   },
   "season": {
