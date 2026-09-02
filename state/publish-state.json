@@ -2384,7 +2384,7 @@
       "published_at": "2026-09-01T06:51:12.992201+00:00"
     },
     "p8Iw3MsNGFc": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=p8Iw3MsNGFc",
       "title": "栓娃娃",
       "image_id": "fcf454b6bc6235630641",
@@ -2394,7 +2394,11 @@
       "submitting_at": "2026-09-02T05:38:34.534018+00:00",
       "aid": 117199826062187,
       "bvid": "BV1AHt76FE1b",
-      "uploaded_at": "2026-09-02T05:38:51.996977+00:00"
+      "uploaded_at": "2026-09-02T05:38:51.996977+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-09-02T05:38:53.993491+00:00"
     }
   },
   "season": {
