@@ -2402,13 +2402,14 @@
       "published_at": "2026-09-02T05:38:53.993491+00:00"
     },
     "AEQ6FoItYqo": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=AEQ6FoItYqo",
       "title": "拍照惊奇",
       "image_id": "980c728dda4d65d0260c",
       "image_cycle": 1,
       "workflow_run_id": "33594711218-2",
-      "reserved_at": "2026-09-02T05:52:41.850587+00:00"
+      "reserved_at": "2026-09-02T05:52:41.850587+00:00",
+      "submitting_at": "2026-09-02T05:52:43.014486+00:00"
     }
   },
   "season": {
