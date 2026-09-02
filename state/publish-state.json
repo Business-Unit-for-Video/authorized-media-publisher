@@ -2402,7 +2402,7 @@
       "published_at": "2026-09-02T05:38:53.993491+00:00"
     },
     "AEQ6FoItYqo": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=AEQ6FoItYqo",
       "title": "拍照惊奇",
       "image_id": "980c728dda4d65d0260c",
@@ -2412,7 +2412,11 @@
       "submitting_at": "2026-09-02T05:52:43.014486+00:00",
       "aid": 117199876391110,
       "bvid": "BV1ovt76JEBT",
-      "uploaded_at": "2026-09-02T05:53:10.961233+00:00"
+      "uploaded_at": "2026-09-02T05:53:10.961233+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-09-02T05:53:13.096636+00:00"
     }
   },
   "season": {
