@@ -2384,13 +2384,14 @@
       "published_at": "2026-09-01T06:51:12.992201+00:00"
     },
     "p8Iw3MsNGFc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=p8Iw3MsNGFc",
       "title": "栓娃娃",
       "image_id": "fcf454b6bc6235630641",
       "image_cycle": 1,
       "workflow_run_id": "33594711218-1",
-      "reserved_at": "2026-09-02T05:38:33.157290+00:00"
+      "reserved_at": "2026-09-02T05:38:33.157290+00:00",
+      "submitting_at": "2026-09-02T05:38:34.534018+00:00"
     }
   },
   "season": {
