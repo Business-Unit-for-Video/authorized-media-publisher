@@ -9,6 +9,7 @@
       "0439f6de0bd2dbd88d65",
       "0581e5f054b69da47340",
       "08122a87ad329f9c8ccc",
+      "08d236f76e19f4e7f5df",
       "0bfa6cc45baa74ea7938",
       "0f65e071a42b4f7cf8d9",
       "0feab7e32cd85857ce25",
@@ -2424,6 +2425,15 @@
       "title": "我要幸福",
       "unavailable_reason": "YouTube: Video unavailable; blocked due to the claimed content by Beijing New Media Group (北京电视台).",
       "unavailable_at": "2026-09-04T05:40:27Z"
+    },
+    "LZsEeOkV7CU": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=LZsEeOkV7CU",
+      "title": "我要奋斗",
+      "image_id": "08d236f76e19f4e7f5df",
+      "image_cycle": 1,
+      "workflow_run_id": "33841593214-1",
+      "reserved_at": "2026-09-04T05:56:36.345529+00:00"
     }
   },
   "season": {
