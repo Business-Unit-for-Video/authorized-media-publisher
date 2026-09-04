@@ -2427,14 +2427,17 @@
       "unavailable_at": "2026-09-04T05:40:27Z"
     },
     "LZsEeOkV7CU": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=LZsEeOkV7CU",
       "title": "我要奋斗",
       "image_id": "08d236f76e19f4e7f5df",
       "image_cycle": 1,
       "workflow_run_id": "33841593214-1",
       "reserved_at": "2026-09-04T05:56:36.345529+00:00",
-      "submitting_at": "2026-09-04T05:56:37.854481+00:00"
+      "submitting_at": "2026-09-04T05:56:37.854481+00:00",
+      "aid": 117211217858220,
+      "bvid": "BV1G7tq6eEzX",
+      "uploaded_at": "2026-09-04T05:57:01.144406+00:00"
     }
   },
   "season": {
