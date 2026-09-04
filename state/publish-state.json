@@ -2445,7 +2445,7 @@
       "published_at": "2026-09-04T05:57:03.344651+00:00"
     },
     "QEG5NHG_ipM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=QEG5NHG_ipM",
       "title": "我要反三俗",
       "image_id": "a98a319093d4c5734b64",
@@ -2455,7 +2455,11 @@
       "submitting_at": "2026-09-04T06:07:11.723508+00:00",
       "aid": 117211268188268,
       "bvid": "BV14Uti6WEbL",
-      "uploaded_at": "2026-09-04T06:08:44.834753+00:00"
+      "uploaded_at": "2026-09-04T06:08:44.834753+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-09-04T06:08:46.896878+00:00"
     }
   },
   "season": {
