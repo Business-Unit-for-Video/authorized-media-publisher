@@ -2427,7 +2427,7 @@
       "unavailable_at": "2026-09-04T05:40:27Z"
     },
     "LZsEeOkV7CU": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=LZsEeOkV7CU",
       "title": "我要奋斗",
       "image_id": "08d236f76e19f4e7f5df",
@@ -2437,7 +2437,11 @@
       "submitting_at": "2026-09-04T05:56:37.854481+00:00",
       "aid": 117211217858220,
       "bvid": "BV1G7tq6eEzX",
-      "uploaded_at": "2026-09-04T05:57:01.144406+00:00"
+      "uploaded_at": "2026-09-04T05:57:01.144406+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-09-04T05:57:03.344651+00:00"
     }
   },
   "season": {
