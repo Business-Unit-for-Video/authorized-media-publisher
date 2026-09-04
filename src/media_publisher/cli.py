@@ -16,6 +16,15 @@ YOUTUBE_FIELDS = ("video_id", "url", "title")
 IMAGE_FIELDS = ("id", "image_url", "rights_basis", "publish_scope", "attribution")
 IMAGE_INVENTORY_FIELDS = ("id", "image_url", "source_page_url", "rights_status")
 
+
+class UnavailableVideoError(RuntimeError):
+    """Raised when the source platform explicitly reports a video as unavailable."""
+
+    def __init__(self, url: str, detail: str) -> None:
+        self.url = url
+        self.detail = detail.strip()[:500] or "source video is unavailable"
+        super().__init__(f"source video unavailable: {self.detail}")
+
 def read_manifest(path: Path, fields: tuple[str, ...]) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
@@ -263,7 +272,34 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> P
         if cookie_path:
             command.extend(["--cookies", str(cookie_path)])
         command.extend(["-o", f"{target}.%(ext)s", url])
-        result = subprocess.run(command, check=True, capture_output=True, text=True)
+        try:
+            result = subprocess.run(command, check=True, capture_output=True, text=True)
+        except subprocess.CalledProcessError as exc:
+            # yt-dlp writes the useful playability reason to stderr.  Preserve
+            # normal failures, but let the serial runner safely skip an item
+            # when YouTube explicitly says that the source cannot be played.
+            output = "\n".join(
+                part.strip() for part in (exc.stderr or "", exc.stdout or "") if part and part.strip()
+            )
+            lowered = output.lower()
+            markers = (
+                "video unavailable",
+                "this video is unavailable",
+                "private video",
+                "has been removed",
+                "not available in your country",
+            )
+            if any(marker in lowered for marker in markers):
+                matching_line = next(
+                    (
+                        line.strip()
+                        for line in output.splitlines()
+                        if any(marker in line.lower() for marker in markers)
+                    ),
+                    "Video unavailable",
+                )
+                raise UnavailableVideoError(url, matching_line) from exc
+            raise
         paths = [Path(line) for line in result.stdout.splitlines() if line.strip()]
         if not paths or not paths[-1].is_file():
             raise RuntimeError("yt-dlp did not report a downloaded media file")

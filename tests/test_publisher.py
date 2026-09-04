@@ -1,10 +1,12 @@
 import json
+import subprocess
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 import pytest
 
 from media_publisher.cli import (
+    UnavailableVideoError,
     build,
     download,
     download_image,
@@ -119,6 +121,34 @@ def test_youtube_download_uses_yt_dlp(tmp_path: Path) -> None:
     assert command[command.index("--js-runtimes") + 1] == "node"
     assert command[command.index("--remote-components") + 1] == "ejs:github"
     assert command[command.index("--cookies") + 1] == str(cookies)
+
+
+def test_youtube_unavailable_error_is_classified(tmp_path: Path) -> None:
+    error = subprocess.CalledProcessError(
+        1,
+        ["yt-dlp"],
+        stderr="[youtube] abc: Video unavailable",
+    )
+    with patch("subprocess.run", side_effect=error):
+        with pytest.raises(UnavailableVideoError, match="Video unavailable"):
+            download_video(
+                "https://www.youtube.com/watch?v=abc",
+                tmp_path / "video.source",
+            )
+
+
+def test_youtube_other_download_errors_still_fail(tmp_path: Path) -> None:
+    error = subprocess.CalledProcessError(
+        1,
+        ["yt-dlp"],
+        stderr="ERROR: network connection reset",
+    )
+    with patch("subprocess.run", side_effect=error):
+        with pytest.raises(subprocess.CalledProcessError):
+            download_video(
+                "https://www.youtube.com/watch?v=abc",
+                tmp_path / "video.source",
+            )
 
 
 def test_inventory_image_schema_is_normalized(tmp_path: Path) -> None:
@@ -449,6 +479,60 @@ def test_serial_publish_stops_after_publish_failure(tmp_path: Path) -> None:
             builder=builder, publisher=publisher,
         )
     assert events == ["build", "publish"]
+
+
+def test_serial_publish_marks_unavailable_and_continues(tmp_path: Path) -> None:
+    events: list[str] = []
+    builds = 0
+    commits: list[str] = []
+
+    def builder(*args, **kwargs) -> int:
+        nonlocal builds
+        builds += 1
+        if builds == 1:
+            raise UnavailableVideoError(
+                "https://www.youtube.com/watch?v=v1",
+                "Video unavailable",
+            )
+        output_dir = args[2]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir.parent / "build-report.json").write_text(
+            json.dumps([{"video_id": "v2"}]), encoding="utf-8"
+        )
+        events.append("build-v2")
+        return 1
+
+    def publisher(*args, **kwargs) -> int:
+        events.append("publish-v2")
+        return 1
+
+    with patch("media_publisher.serial.git_commit_state", side_effect=lambda path, message: commits.append(message)):
+        result = serial_publish(
+            serial_manifest(tmp_path, "v1", "v2"),
+            tmp_path / "images.csv",
+            tmp_path / "output" / "videos",
+            1280,
+            720,
+            tmp_path / "state.json",
+            2,
+            None,
+            tmp_path / "cookies.json",
+            "public",
+            171,
+            "tag",
+            "season",
+            "",
+            "run",
+            builder=builder,
+            publisher=publisher,
+        )
+
+    assert result == {"built": 1, "published": 1}
+    assert events == ["build-v2", "publish-v2"]
+    assert commits == ["chore: mark YouTube video unavailable v1"]
+    saved = json.loads((tmp_path / "state.json").read_text(encoding="utf-8"))
+    assert saved["videos"]["v1"]["status"] == "unavailable"
+    assert saved["videos"]["v1"]["unavailable_reason"] == "Video unavailable"
 
 
 def test_serial_publish_blocks_uncertain_upload_state(tmp_path: Path) -> None:

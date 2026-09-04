@@ -39,6 +39,8 @@
 
 `skipped` 会被构建器视为已处理项目，也不会进入最近审核检查，因此不会阻塞其他视频。它不会删除 Bilibili 原稿，也不会自动申诉或重新投稿。以后若要重试，应先人工确认原因，再使用新的清单 ID 和修改后的素材重新提交。
 
+如果 YouTube 下载器明确返回“Video unavailable”“Private video”“has been removed”或地区不可用等源平台错误，串行发布器会把该条记录为 `unavailable`，保存 `unavailable_reason` 和 `unavailable_at`，然后继续处理同一批次的下一条。它不会进入 Bilibili，也不会被当作待审核稿件；网络错误、Cookie 错误或其他无法明确归类的下载错误仍会使 workflow 失败，避免把临时故障误标记为不可用。
+
 当前清单中的 `eOc6cG1l9JM` 已按此规则记录为 `skipped`（Bilibili `aid=117155869756824`，`bvid=BV1juhG6CEJH`，原因码 `62002`）。后续运行会保留这条记录并跳过它，不会再次投稿，也不会阻塞其他条目。
 
 不要将 `submitting` 直接改为 `published`，除非已在 Bilibili 创作中心核对该稿件确实存在并且 `aid`、`bvid` 与状态文件一致。这样可避免重复投稿。

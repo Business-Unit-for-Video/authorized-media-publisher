@@ -6,8 +6,14 @@ import shutil
 from pathlib import Path
 from typing import Callable
 
-from media_publisher.cli import build, load_publish_state, read_video_manifest
-from media_publisher.publish import publish
+from media_publisher.cli import (
+    UnavailableVideoError,
+    build,
+    load_publish_state,
+    read_video_manifest,
+    select_video_batch,
+)
+from media_publisher.publish import git_commit_state, mark_unavailable, publish, save_state
 
 
 def serial_publish(
@@ -34,7 +40,8 @@ def serial_publish(
     if visibility != "public":
         raise ValueError("Bilibili publishing is public-only")
 
-    manifest_ids = {row["id"] for row in read_video_manifest(video_manifest)}
+    video_rows = read_video_manifest(video_manifest)
+    manifest_ids = {row["id"] for row in video_rows}
     built = 0
     published = 0
     report_path = output_dir.parent / "build-report.json"
@@ -78,16 +85,39 @@ def serial_publish(
         # Each iteration exposes only one newly built file to the publisher.
         shutil.rmtree(output_dir, ignore_errors=True)
         report_path.unlink(missing_ok=True)
-        item_built = builder(
-            video_manifest,
-            image_manifest,
-            output_dir,
-            width,
-            height,
-            publish_state_path=publish_state_path,
-            batch_size=1,
-            youtube_cookies=youtube_cookies,
-        )
+        selected = select_video_batch(video_rows, state, 1)
+        try:
+            item_built = builder(
+                video_manifest,
+                image_manifest,
+                output_dir,
+                width,
+                height,
+                publish_state_path=publish_state_path,
+                batch_size=1,
+                youtube_cookies=youtube_cookies,
+            )
+        except UnavailableVideoError as exc:
+            # An explicit source-platform unavailability is terminal for this
+            # item, but must not stop the remaining serial batch.  Other
+            # download errors still propagate and fail the workflow.
+            if not selected:
+                raise
+            record = selected[0]
+            state = load_publish_state(
+                publish_state_path, publish_state_path.with_name("image-usage.json")
+            )
+            mark_unavailable(state, record, exc.detail)
+            save_state(publish_state_path, state)
+            git_commit_state(
+                publish_state_path,
+                f"chore: mark YouTube video unavailable {record['id']}",
+            )
+            print(
+                f"跳过不可用 YouTube 视频 {record['id']} ({record['title']}): {exc.detail}",
+                flush=True,
+            )
+            continue
         item_published = publisher(
             report_path,
             bilibili_cookies,

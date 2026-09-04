@@ -96,6 +96,28 @@ def mark_published(
     })
 
 
+def mark_unavailable(
+    state: dict[str, object], record: dict[str, str], reason: str,
+) -> None:
+    """Record a source video that the platform explicitly reports unavailable."""
+    video_id = record["id"]
+    videos = state["videos"]
+    entry = videos.get(video_id)
+    if entry is None:
+        entry = {
+            "video_url": record["video_url"],
+            "title": record["title"],
+        }
+        videos[video_id] = entry
+    entry.update({
+        "status": "unavailable",
+        "video_url": record["video_url"],
+        "title": record["title"],
+        "unavailable_reason": reason[:500],
+        "unavailable_at": now_iso(),
+    })
+
+
 def load_cookie_data(path: Path) -> tuple[dict[str, str], str]:
     data = json.loads(path.read_text(encoding="utf-8"))
     cookies = {
