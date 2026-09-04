@@ -2445,14 +2445,17 @@
       "published_at": "2026-09-04T05:57:03.344651+00:00"
     },
     "QEG5NHG_ipM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=QEG5NHG_ipM",
       "title": "我要反三俗",
       "image_id": "a98a319093d4c5734b64",
       "image_cycle": 1,
       "workflow_run_id": "33841593214-2",
       "reserved_at": "2026-09-04T06:07:10.496552+00:00",
-      "submitting_at": "2026-09-04T06:07:11.723508+00:00"
+      "submitting_at": "2026-09-04T06:07:11.723508+00:00",
+      "aid": 117211268188268,
+      "bvid": "BV14Uti6WEbL",
+      "uploaded_at": "2026-09-04T06:08:44.834753+00:00"
     }
   },
   "season": {
