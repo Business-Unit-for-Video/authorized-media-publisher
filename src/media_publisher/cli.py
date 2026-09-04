@@ -7,6 +7,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from pathlib import Path
 from urllib.parse import quote, urlparse, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
@@ -24,6 +25,60 @@ class UnavailableVideoError(RuntimeError):
         self.url = url
         self.detail = detail.strip()[:500] or "source video is unavailable"
         super().__init__(f"source video unavailable: {self.detail}")
+
+
+_TITLE_NOISE = (
+    "周杰倫",
+    "周杰伦",
+    "杰威爾音樂",
+    "杰威尔音乐",
+    "杰威爾",
+    "杰威尔",
+    "官方完整版",
+    "官方完整",
+    "完整版",
+    "官方",
+    "完整",
+    "音樂錄影帶",
+    "音乐录影带",
+    "音樂視頻",
+    "音乐视频",
+    "歌詞",
+    "歌词",
+    "頻道",
+    "频道",
+    "高清",
+)
+
+
+def canonical_content_key(title: str) -> str:
+    """Return a conservative content key for cross-source title deduplication."""
+    normalized = unicodedata.normalize("NFKC", title).casefold()
+    cjk = "".join(re.findall(r"[\u3400-\u9fff]", normalized))
+    for token in sorted(_TITLE_NOISE, key=len, reverse=True):
+        cjk = cjk.replace(token, "")
+    if len(cjk) >= 2:
+        return f"zh:{cjk}"
+
+    latin = re.sub(r"[^a-z0-9]+", "", normalized)
+    for token in ("officialmusicvideo", "officialvideo", "officialmv", "lyrics", "lyric", "4k", "hd"):
+        latin = latin.replace(token, "")
+    return f"text:{latin}" if len(latin) >= 4 else ""
+
+
+def find_published_duplicate(
+    record: dict[str, str], state: dict[str, object],
+) -> str | None:
+    """Find another source ID whose normalized content is already on Bilibili."""
+    key = canonical_content_key(record.get("title", ""))
+    if not key:
+        return None
+    for video_id, entry in state["videos"].items():
+        if video_id == record["id"] or entry.get("status") not in {"published", "uploaded"}:
+            continue
+        if canonical_content_key(str(entry.get("title") or "")) == key:
+            return video_id
+    return None
 
 def read_manifest(path: Path, fields: tuple[str, ...]) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:

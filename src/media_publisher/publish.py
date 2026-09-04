@@ -118,6 +118,23 @@ def mark_unavailable(
     })
 
 
+def mark_duplicate(
+    state: dict[str, object], record: dict[str, str], duplicate_of: str,
+) -> None:
+    """Record a different source ID for content that is already published."""
+    video_id = record["id"]
+    entry = state["videos"].get(video_id) or {}
+    state["videos"][video_id] = entry
+    entry.update({
+        "status": "duplicate",
+        "video_url": record["video_url"],
+        "title": record["title"],
+        "duplicate_of": duplicate_of,
+        "duplicate_reason": "normalized title matches already published content",
+        "duplicate_at": now_iso(),
+    })
+
+
 def load_cookie_data(path: Path) -> tuple[dict[str, str], str]:
     data = json.loads(path.read_text(encoding="utf-8"))
     cookies = {

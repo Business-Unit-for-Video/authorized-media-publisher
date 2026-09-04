@@ -2309,14 +2309,17 @@
       "published_at": "2026-08-31T14:35:29.656153+00:00"
     },
     "jLkTp5CR7UU": {
-      "status": "submitting",
+      "status": "duplicate",
       "video_url": "https://www.youtube.com/watch?v=jLkTp5CR7UU",
       "title": "周杰倫【牛仔很忙 官方完整MV】Jay Chou  Cowboy On The Run  MV Niu Zi Hen Mang [4K]",
       "image_id": "d06997815bad89c85214",
       "image_cycle": 1,
       "workflow_run_id": "33452415320-1",
       "reserved_at": "2026-09-01T00:18:00.864304+00:00",
-      "submitting_at": "2026-09-01T00:18:01.974562+00:00"
+      "submitting_at": "2026-09-01T00:18:01.974562+00:00",
+      "duplicate_of": "9o20U91aJdg",
+      "duplicate_reason": "Same 169-second Cowboy on the Run content was already published on 2026-08-31; Bilibili submission was confirmed absent after the failed upload.",
+      "duplicate_at": "2026-09-04T06:10:00Z"
     },
     "drvPjRwj2SM": {
       "status": "published",

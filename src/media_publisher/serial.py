@@ -9,11 +9,18 @@ from typing import Callable
 from media_publisher.cli import (
     UnavailableVideoError,
     build,
+    find_published_duplicate,
     load_publish_state,
     read_video_manifest,
     select_video_batch,
 )
-from media_publisher.publish import git_commit_state, mark_unavailable, publish, save_state
+from media_publisher.publish import (
+    git_commit_state,
+    mark_duplicate,
+    mark_unavailable,
+    publish,
+    save_state,
+)
 
 
 def serial_publish(
@@ -45,7 +52,9 @@ def serial_publish(
     built = 0
     published = 0
     report_path = output_dir.parent / "build-report.json"
-    for item_number in range(1, batch_size + 1):
+    item_number = 0
+    while published < batch_size:
+        item_number += 1
         state = load_publish_state(
             publish_state_path, publish_state_path.with_name("image-usage.json")
         )
@@ -86,6 +95,22 @@ def serial_publish(
         shutil.rmtree(output_dir, ignore_errors=True)
         report_path.unlink(missing_ok=True)
         selected = select_video_batch(video_rows, state, 1)
+        if not selected:
+            break
+        record = selected[0]
+        duplicate_of = find_published_duplicate(record, state)
+        if duplicate_of:
+            mark_duplicate(state, record, duplicate_of)
+            save_state(publish_state_path, state)
+            git_commit_state(
+                publish_state_path,
+                f"chore: mark duplicate video {record['id']}",
+            )
+            print(
+                f"跳过重复内容 {record['id']} ({record['title']}), 已发布来源: {duplicate_of}",
+                flush=True,
+            )
+            continue
         try:
             item_built = builder(
                 video_manifest,
@@ -103,7 +128,6 @@ def serial_publish(
             # download errors still propagate and fail the workflow.
             if not selected:
                 raise
-            record = selected[0]
             state = load_publish_state(
                 publish_state_path, publish_state_path.with_name("image-usage.json")
             )

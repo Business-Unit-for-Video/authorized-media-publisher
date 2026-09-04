@@ -8,9 +8,11 @@ import pytest
 from media_publisher.cli import (
     UnavailableVideoError,
     build,
+    canonical_content_key,
     download,
     download_image,
     download_video,
+    find_published_duplicate,
     read_image_manifest,
     read_manifest,
     read_video_manifest,
@@ -151,6 +153,37 @@ def test_youtube_other_download_errors_still_fail(tmp_path: Path) -> None:
             )
 
 
+def test_content_key_matches_same_music_video_from_different_sources() -> None:
+    first = "周杰倫 Jay Chou【牛仔很忙 Cowboy on the Run】-Official Music Video"
+    second = "周杰倫【牛仔很忙 官方完整MV】Jay Chou Cowboy On The Run [4K]"
+
+    assert canonical_content_key(first) == "zh:牛仔很忙"
+    assert canonical_content_key(second) == canonical_content_key(first)
+    assert canonical_content_key("周杰倫 Jay Chou【青花瓷】Official MV") != canonical_content_key(first)
+
+
+def test_find_published_duplicate_ignores_unavailable_source() -> None:
+    record = {
+        "id": "new",
+        "title": "周杰倫【牛仔很忙 官方完整MV】",
+    }
+    state = initial_state()
+    state["videos"] = {
+        "published": {
+            "status": "published",
+            "title": "周杰倫【牛仔很忙 Cowboy on the Run】-Official Music Video",
+        },
+        "unavailable": {
+            "status": "unavailable",
+            "title": "周杰倫【青花瓷】Official MV",
+        },
+    }
+
+    assert find_published_duplicate(record, state) == "published"
+    record["title"] = "周杰倫【青花瓷】Official MV"
+    assert find_published_duplicate(record, state) is None
+
+
 def test_inventory_image_schema_is_normalized(tmp_path: Path) -> None:
     path = write(
         tmp_path / "images.csv",
@@ -258,6 +291,17 @@ def test_batch_skips_skipped_video() -> None:
     state["videos"] = {"v1": {"status": "skipped"}}
 
     assert [row["id"] for row in select_video_batch(videos, state, 2)] == ["v2"]
+
+
+def test_batch_skips_unavailable_and_duplicate_videos() -> None:
+    videos = [{"id": "v1"}, {"id": "v2"}, {"id": "v3"}]
+    state = initial_state()
+    state["videos"] = {
+        "v1": {"status": "unavailable"},
+        "v2": {"status": "duplicate"},
+    }
+
+    assert [row["id"] for row in select_video_batch(videos, state, 3)] == ["v3"]
 
 
 def build_manifests(tmp_path: Path) -> tuple[Path, Path]:
@@ -504,6 +548,10 @@ def test_serial_publish_marks_unavailable_and_continues(tmp_path: Path) -> None:
 
     def publisher(*args, **kwargs) -> int:
         events.append("publish-v2")
+        state_path = args[5]
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["videos"]["v2"] = {"status": "published", "title": "v2"}
+        state_path.write_text(json.dumps(state), encoding="utf-8")
         return 1
 
     with patch("media_publisher.serial.git_commit_state", side_effect=lambda path, message: commits.append(message)):
@@ -533,6 +581,67 @@ def test_serial_publish_marks_unavailable_and_continues(tmp_path: Path) -> None:
     saved = json.loads((tmp_path / "state.json").read_text(encoding="utf-8"))
     assert saved["videos"]["v1"]["status"] == "unavailable"
     assert saved["videos"]["v1"]["unavailable_reason"] == "Video unavailable"
+
+
+def test_serial_publish_marks_cross_source_duplicate_and_continues(tmp_path: Path) -> None:
+    manifest = write(
+        tmp_path / "videos.csv",
+        "id,title,video_url,rights_basis,publish_scope\n"
+        "new-cowboy,周杰倫【牛仔很忙 官方完整MV】,https://x.test/cowboy.mp4,owned,public\n"
+        "next,周杰倫【青花瓷】Official MV,https://x.test/next.mp4,owned,public\n",
+    )
+    state_path = tmp_path / "state.json"
+    state = initial_state()
+    state["videos"] = {
+        "old-cowboy": {
+            "status": "published",
+            "title": "周杰倫【牛仔很忙 Cowboy on the Run】-Official Music Video",
+        }
+    }
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    events: list[str] = []
+
+    def builder(*args, **kwargs) -> int:
+        output_dir = args[2]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir.parent / "build-report.json").write_text(
+            json.dumps([{"video_id": "next"}]), encoding="utf-8"
+        )
+        events.append("build-next")
+        return 1
+
+    def publisher(*args, **kwargs) -> int:
+        events.append("publish-next")
+        return 1
+
+    commits: list[str] = []
+    with patch("media_publisher.serial.git_commit_state", side_effect=lambda path, message: commits.append(message)):
+        result = serial_publish(
+            manifest,
+            tmp_path / "images.csv",
+            tmp_path / "output" / "videos",
+            1280,
+            720,
+            state_path,
+            1,
+            None,
+            tmp_path / "cookies.json",
+            "public",
+            171,
+            "tag",
+            "season",
+            "",
+            "run",
+            builder=builder,
+            publisher=publisher,
+        )
+
+    assert result == {"built": 1, "published": 1}
+    assert events == ["build-next", "publish-next"]
+    assert commits == ["chore: mark duplicate video new-cowboy"]
+    saved = json.loads(state_path.read_text(encoding="utf-8"))
+    assert saved["videos"]["new-cowboy"]["status"] == "duplicate"
+    assert saved["videos"]["new-cowboy"]["duplicate_of"] == "old-cowboy"
 
 
 def test_serial_publish_blocks_uncertain_upload_state(tmp_path: Path) -> None:

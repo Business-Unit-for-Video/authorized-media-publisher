@@ -41,6 +41,8 @@
 
 如果 YouTube 下载器明确返回“Video unavailable”“Private video”“has been removed”或地区不可用等源平台错误，串行发布器会把该条记录为 `unavailable`，保存 `unavailable_reason` 和 `unavailable_at`，然后继续处理同一批次的下一条。它不会进入 Bilibili，也不会被当作待审核稿件；网络错误、Cookie 错误或其他无法明确归类的下载错误仍会使 workflow 失败，避免把临时故障误标记为不可用。
 
+如果不同 YouTube ID 的规范化内容标题与已经发布的稿件一致，串行发布器会记录 `status: duplicate` 和 `duplicate_of`，不再制作或投稿，并继续寻找下一条。这个状态用于跨来源去重；同一 ID 去重仍由状态文件直接保证。
+
 当前清单中的 `eOc6cG1l9JM` 已按此规则记录为 `skipped`（Bilibili `aid=117155869756824`，`bvid=BV1juhG6CEJH`，原因码 `62002`）。后续运行会保留这条记录并跳过它，不会再次投稿，也不会阻塞其他条目。
 
 不要将 `submitting` 直接改为 `published`，除非已在 Bilibili 创作中心核对该稿件确实存在并且 `aid`、`bvid` 与状态文件一致。这样可避免重复投稿。
