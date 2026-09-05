@@ -2564,7 +2564,7 @@
       "published_at": "2026-09-05T10:12:23.645403+00:00"
     },
     "Y4xCVlyCvX4": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=Y4xCVlyCvX4",
       "title": "周杰倫 Jay Chou【簡單愛 Simple Love】Official MV",
       "image_id": "361c0994d83f189d7fef",
@@ -2574,7 +2574,11 @@
       "submitting_at": "2026-09-05T10:17:43.906837+00:00",
       "aid": 117217911901011,
       "bvid": "BV1ECt26qEYY",
-      "uploaded_at": "2026-09-05T10:17:55.621508+00:00"
+      "uploaded_at": "2026-09-05T10:17:55.621508+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-09-05T10:17:57.748784+00:00"
     }
   },
   "season": {
