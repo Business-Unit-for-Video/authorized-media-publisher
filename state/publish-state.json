@@ -2505,7 +2505,7 @@
       "published_at": "2026-09-05T09:17:20.896936+00:00"
     },
     "yHoadRoVF-U": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=yHoadRoVF-U",
       "title": "周杰倫 Jay Chou【琴傷 Piano of Sorrow】Official MV",
       "image_id": "dbbd8490f1feb32d1950",
@@ -2515,7 +2515,11 @@
       "submitting_at": "2026-09-05T09:22:21.399105+00:00",
       "aid": 117217693862744,
       "bvid": "BV1xutm6SESL",
-      "uploaded_at": "2026-09-05T09:22:32.577064+00:00"
+      "uploaded_at": "2026-09-05T09:22:32.577064+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-09-05T09:22:34.611693+00:00"
     }
   },
   "season": {
