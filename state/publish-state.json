@@ -3,6 +3,7 @@
   "images": {
     "cycle": 2,
     "used_image_ids": [
+      "0f65e071a42b4f7cf8d9",
       "10340e09a8a23fe11eb5",
       "361c0994d83f189d7fef",
       "371980b3bdcfc382aba7",
@@ -2597,6 +2598,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T10:22:13.612624+00:00"
+    },
+    "F_dGEjzRG_Y": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=F_dGEjzRG_Y",
+      "title": "周杰倫 Jay Chou【粉色海洋 Pink Ocean】Official MV",
+      "image_id": "0f65e071a42b4f7cf8d9",
+      "image_cycle": 2,
+      "workflow_run_id": "33957307523-15",
+      "reserved_at": "2026-09-05T10:25:41.475760+00:00"
     }
   },
   "season": {
