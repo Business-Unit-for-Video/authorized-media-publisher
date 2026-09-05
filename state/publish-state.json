@@ -2690,13 +2690,14 @@
       "published_at": "2026-09-05T10:45:44.331320+00:00"
     },
     "nHtW9w12uYc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=nHtW9w12uYc",
       "title": "周杰倫 Jay Chou【美人魚 Mermaid】Official MV",
       "image_id": "c2906d936ee8384b7fac",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-20",
-      "reserved_at": "2026-09-05T10:50:27.006050+00:00"
+      "reserved_at": "2026-09-05T10:50:27.006050+00:00",
+      "submitting_at": "2026-09-05T10:50:28.040306+00:00"
     }
   },
   "season": {
