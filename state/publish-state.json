@@ -2420,13 +2420,14 @@
       "published_at": "2026-09-05T09:31:09.210292+00:00"
     },
     "K9CbHZLXPIA": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=K9CbHZLXPIA",
       "title": "周杰倫 Jay Chou【白色風車 White Windmill】-Official Music Video",
       "image_id": "d2a44f25560a465360e6",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-5",
-      "reserved_at": "2026-09-05T09:36:52.488061+00:00"
+      "reserved_at": "2026-09-05T09:36:52.488061+00:00",
+      "submitting_at": "2026-09-05T09:36:53.568339+00:00"
     }
   },
   "season": {
