@@ -2582,13 +2582,14 @@
       "published_at": "2026-09-05T10:17:57.748784+00:00"
     },
     "KmaqqnLGUG0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=KmaqqnLGUG0",
       "title": "周杰倫 Jay Chou【米蘭小鐵匠 Little Blacksmith in Milan】Official MV",
       "image_id": "859b9716a5db48eaa3b2",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-14",
-      "reserved_at": "2026-09-05T10:21:59.066423+00:00"
+      "reserved_at": "2026-09-05T10:21:59.066423+00:00",
+      "submitting_at": "2026-09-05T10:22:00.018674+00:00"
     }
   },
   "season": {
