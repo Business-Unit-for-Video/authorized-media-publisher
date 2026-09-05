@@ -77,6 +77,7 @@
       "91e77ea739d3e08c155d",
       "92a629d439d88775b281",
       "9312e829c447a38146c3",
+      "96602e3b4e99fae834c9",
       "980c728dda4d65d0260c",
       "98652a9142b1d09a9e3b",
       "9bd08d1fec865e833fbf",
@@ -2466,6 +2467,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-09-04T06:08:46.896878+00:00"
+    },
+    "LZsEeOkV7CU-v2": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=LZsEeOkV7CU",
+      "title": "我要奋斗",
+      "image_id": "96602e3b4e99fae834c9",
+      "image_cycle": 1,
+      "workflow_run_id": "33956269817-1",
+      "reserved_at": "2026-09-05T09:00:30.160413+00:00"
     }
   },
   "season": {
