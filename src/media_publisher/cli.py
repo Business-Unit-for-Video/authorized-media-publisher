@@ -340,6 +340,31 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> P
                 part.strip() for part in (exc.stderr or "", exc.stdout or "") if part and part.strip()
             )
             lowered = output.lower()
+            if cookie_path and "cookies are no longer valid" in lowered:
+                print("yt-dlp cookie session is invalid; retrying without cookies", file=sys.stderr)
+                retry_command = list(command)
+                cookie_index = retry_command.index("--cookies")
+                del retry_command[cookie_index:cookie_index + 2]
+                try:
+                    result = subprocess.run(
+                        retry_command, check=True, capture_output=True, text=True
+                    )
+                except subprocess.CalledProcessError as retry_exc:
+                    retry_output = "\n".join(
+                        part.strip()
+                        for part in (retry_exc.stderr or "", retry_exc.stdout or "")
+                        if part and part.strip()
+                    )
+                    output = "\n".join(part for part in (output, retry_output) if part)
+                    lowered = output.lower()
+                    exc = retry_exc
+                else:
+                    exc = None
+            if exc is None:
+                paths = [Path(line) for line in result.stdout.splitlines() if line.strip()]
+                if not paths or not paths[-1].is_file():
+                    raise RuntimeError("yt-dlp did not report a downloaded media file")
+                return paths[-1]
             markers = (
                 "video unavailable",
                 "this video is unavailable",

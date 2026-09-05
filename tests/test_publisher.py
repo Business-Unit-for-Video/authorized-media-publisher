@@ -153,6 +153,30 @@ def test_youtube_other_download_errors_still_fail(tmp_path: Path) -> None:
             )
 
 
+def test_invalid_youtube_cookies_retry_without_them(tmp_path: Path) -> None:
+    cookies = tmp_path / "youtube-cookies.txt"
+    cookies.write_text("cookie", encoding="utf-8")
+    downloaded = tmp_path / "video.source.mp4"
+    downloaded.write_bytes(b"video")
+    cookie_error = subprocess.CalledProcessError(
+        1,
+        ["yt-dlp"],
+        stderr="The provided YouTube account cookies are no longer valid",
+    )
+    retry_result = MagicMock(stdout=str(downloaded) + "\n")
+
+    with patch("subprocess.run", side_effect=[cookie_error, retry_result]) as run:
+        actual = download_video(
+            "https://www.youtube.com/watch?v=abc",
+            tmp_path / "video.source",
+            cookies,
+        )
+
+    assert actual == downloaded
+    assert "--cookies" in run.call_args_list[0].args[0]
+    assert "--cookies" not in run.call_args_list[1].args[0]
+
+
 def test_content_key_matches_same_music_video_from_different_sources() -> None:
     first = "周杰倫 Jay Chou【牛仔很忙 Cowboy on the Run】-Official Music Video"
     second = "周杰倫【牛仔很忙 官方完整MV】Jay Chou Cowboy On The Run [4K]"
