@@ -2654,14 +2654,17 @@
       "published_at": "2026-09-05T10:34:58.723943+00:00"
     },
     "APgx1k-2Tqc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=APgx1k-2Tqc",
       "title": "周杰倫 JAY CHOU ft. JABBAWOCKEEZ【紅顏如霜 Cold Hearted】Official MV",
       "image_id": "08122a87ad329f9c8ccc",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-18",
       "reserved_at": "2026-09-05T10:40:09.785611+00:00",
-      "submitting_at": "2026-09-05T10:40:10.781236+00:00"
+      "submitting_at": "2026-09-05T10:40:10.781236+00:00",
+      "aid": 117217995786133,
+      "bvid": "BV1e3t26bERZ",
+      "uploaded_at": "2026-09-05T10:40:22.032006+00:00"
     }
   },
   "season": {
