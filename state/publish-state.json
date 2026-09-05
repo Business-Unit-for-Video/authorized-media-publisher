@@ -4,6 +4,7 @@
     "cycle": 2,
     "used_image_ids": [
       "10340e09a8a23fe11eb5",
+      "361c0994d83f189d7fef",
       "371980b3bdcfc382aba7",
       "60471a9beefc956dbb51",
       "6986c0a6aae9e41c5e2e",
@@ -2561,6 +2562,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T10:12:23.645403+00:00"
+    },
+    "Y4xCVlyCvX4": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=Y4xCVlyCvX4",
+      "title": "周杰倫 Jay Chou【簡單愛 Simple Love】Official MV",
+      "image_id": "361c0994d83f189d7fef",
+      "image_cycle": 2,
+      "workflow_run_id": "33957307523-13",
+      "reserved_at": "2026-09-05T10:17:42.913587+00:00"
     }
   },
   "season": {
