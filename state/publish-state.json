@@ -17,6 +17,7 @@
       "a20601d314d07a692397",
       "b7ee15c4b1c398fbea57",
       "bd486765c1338d9e5b62",
+      "c2906d936ee8384b7fac",
       "c6b51b35f239e288d0d1",
       "d2a44f25560a465360e6",
       "f2d61df0e6f7fac6c32b"
@@ -2687,6 +2688,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T10:45:44.331320+00:00"
+    },
+    "nHtW9w12uYc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=nHtW9w12uYc",
+      "title": "周杰倫 Jay Chou【美人魚 Mermaid】Official MV",
+      "image_id": "c2906d936ee8384b7fac",
+      "image_cycle": 2,
+      "workflow_run_id": "33957307523-20",
+      "reserved_at": "2026-09-05T10:50:27.006050+00:00"
     }
   },
   "season": {
