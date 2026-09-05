@@ -8,6 +8,7 @@
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "a20601d314d07a692397",
+      "bd486765c1338d9e5b62",
       "d2a44f25560a465360e6"
     ]
   },
@@ -2489,6 +2490,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T09:49:31.593543+00:00"
+    },
+    "6ZeE3vgwQSI": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=6ZeE3vgwQSI",
+      "title": "周杰倫 Jay Chou【竊愛 Stolen Love】Official MV",
+      "image_id": "bd486765c1338d9e5b62",
+      "image_cycle": 2,
+      "workflow_run_id": "33957307523-9",
+      "reserved_at": "2026-09-05T09:54:09.417692+00:00"
     }
   },
   "season": {
