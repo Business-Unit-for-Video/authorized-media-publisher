@@ -357,7 +357,8 @@ def download_video(url: str, target: Path, cookie_path: Path | None = None) -> P
                     "Video unavailable",
                 )
                 raise UnavailableVideoError(url, matching_line) from exc
-            raise
+            detail = output[-2000:] if output else f"exit code {exc.returncode}"
+            raise RuntimeError(f"yt-dlp failed for {url}: {detail}") from exc
         paths = [Path(line) for line in result.stdout.splitlines() if line.strip()]
         if not paths or not paths[-1].is_file():
             raise RuntimeError("yt-dlp did not report a downloaded media file")

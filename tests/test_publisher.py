@@ -146,7 +146,7 @@ def test_youtube_other_download_errors_still_fail(tmp_path: Path) -> None:
         stderr="ERROR: network connection reset",
     )
     with patch("subprocess.run", side_effect=error):
-        with pytest.raises(subprocess.CalledProcessError):
+        with pytest.raises(RuntimeError, match="network connection reset"):
             download_video(
                 "https://www.youtube.com/watch?v=abc",
                 tmp_path / "video.source",
