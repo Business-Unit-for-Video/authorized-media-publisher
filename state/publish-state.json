@@ -2384,7 +2384,7 @@
       "published_at": "2026-09-05T09:22:34.611693+00:00"
     },
     "mm8T-lBXQXA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=mm8T-lBXQXA",
       "title": "周杰倫 Jay Chou【甜甜的 Sweet】-Official Music Video",
       "image_id": "6a4795ce0cdb5300f0c8",
@@ -2394,7 +2394,11 @@
       "submitting_at": "2026-09-05T09:27:16.035134+00:00",
       "aid": 117217710639999,
       "bvid": "BV1rqt26rERv",
-      "uploaded_at": "2026-09-05T09:27:28.192510+00:00"
+      "uploaded_at": "2026-09-05T09:27:28.192510+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-09-05T09:27:30.307259+00:00"
     }
   },
   "season": {
