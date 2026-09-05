@@ -2474,7 +2474,7 @@
       "published_at": "2026-09-05T09:46:51.124345+00:00"
     },
     "_8OdiGdWJec": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=_8OdiGdWJec",
       "title": "周杰倫 JAY CHOU【稻香Remix搖滾版 Rice Field Rock Remix】Official MV",
       "image_id": "6986c0a6aae9e41c5e2e",
@@ -2484,7 +2484,11 @@
       "submitting_at": "2026-09-05T09:49:20.026023+00:00",
       "aid": 117217794459817,
       "bvid": "BV1s8t26jE2S",
-      "uploaded_at": "2026-09-05T09:49:29.487950+00:00"
+      "uploaded_at": "2026-09-05T09:49:29.487950+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-09-05T09:49:31.593543+00:00"
     }
   },
   "season": {
