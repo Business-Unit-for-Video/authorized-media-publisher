@@ -267,6 +267,20 @@ def test_ffmpeg_removes_video_and_audio_segments(tmp_path: Path) -> None:
     assert command[command.index("-map") + 3] == "[audio]"
 
 
+def test_native_manifest_allows_omitted_optional_trailing_values(tmp_path: Path) -> None:
+    manifest = write(
+        tmp_path / "videos.csv",
+        "id,title,video_url,rights_basis,publish_scope,remove_segments\n"
+        "v1,one,https://x.test/1.mp4,authorized,public\n"
+        "v2,two,https://x.test/2.mp4,authorized,public,00:02:46-00:02:57\n",
+    )
+
+    rows = read_video_manifest(manifest)
+
+    assert rows[0]["remove_segments"] == ""
+    assert rows[1]["remove_segments"] == "00:02:46-00:02:57"
+
+
 def test_image_rotation_resets_after_exhaustion() -> None:
     images = [{"id": "i1"}, {"id": "i2"}, {"id": "i3"}]
     first, state = select_images(images, 2, {"cycle": 1, "used_image_ids": []})
@@ -717,7 +731,7 @@ def test_publish_persists_reservation_upload_and_season(tmp_path: Path) -> None:
         uploader=lambda *args: {"aid": 123, "bvid": "BV1"},
         season_factory=lambda path: season,
     )
-    saved = json.loads(state.read_text())
+    saved = json.loads(state.read_text(encoding="utf-8"))
     assert count == 1
     assert saved["videos"]["v1"]["status"] == "published"
     assert saved["videos"]["v1"]["aid"] == 123

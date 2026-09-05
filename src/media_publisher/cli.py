@@ -99,7 +99,10 @@ def read_video_manifest(
         fieldnames = set(reader.fieldnames or [])
         rows = list(reader)
     if set(VIDEO_FIELDS).issubset(fieldnames):
-        return rows
+        return [
+            {key: value or "" for key, value in row.items()}
+            for row in rows
+        ]
     missing = set(YOUTUBE_FIELDS) - fieldnames
     if missing:
         raise ValueError(f"{path}: unsupported video schema; missing columns: {', '.join(sorted(missing))}")
