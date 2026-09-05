@@ -2487,13 +2487,14 @@
       "published_at": "2026-09-05T09:00:53.022149+00:00"
     },
     "kYhh1PpsOg4": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=kYhh1PpsOg4",
       "title": "周杰倫 Jay Chou【珊瑚海 Coral Sea (feat. 梁心頤 Lara)】-Official Music Video",
       "image_id": "fe3c5c5d01ce621e7807",
       "image_cycle": 1,
       "workflow_run_id": "33957307523-1",
-      "reserved_at": "2026-09-05T09:17:04.565413+00:00"
+      "reserved_at": "2026-09-05T09:17:04.565413+00:00",
+      "submitting_at": "2026-09-05T09:17:05.561891+00:00"
     }
   },
   "season": {
