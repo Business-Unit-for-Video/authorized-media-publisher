@@ -2456,14 +2456,17 @@
       "published_at": "2026-09-05T09:41:56.084213+00:00"
     },
     "sHD_z90ZKV0": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=sHD_z90ZKV0",
       "title": "周杰倫 Jay Chou【稻香 Rice Field】-Official Music Video",
       "image_id": "371980b3bdcfc382aba7",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-7",
       "reserved_at": "2026-09-05T09:46:35.795412+00:00",
-      "submitting_at": "2026-09-05T09:46:36.783075+00:00"
+      "submitting_at": "2026-09-05T09:46:36.783075+00:00",
+      "aid": 117217794459144,
+      "bvid": "BV1x8t26jELf",
+      "uploaded_at": "2026-09-05T09:46:48.982624+00:00"
     }
   },
   "season": {
