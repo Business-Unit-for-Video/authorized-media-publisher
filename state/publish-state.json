@@ -2672,7 +2672,7 @@
       "published_at": "2026-09-05T10:40:24.369728+00:00"
     },
     "wt0RKW3aC84": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=wt0RKW3aC84",
       "title": "周杰倫 Jay Chou【給我一首歌的時間 Give me the Time of One Song】-Official Music Video",
       "image_id": "f2d61df0e6f7fac6c32b",
@@ -2682,7 +2682,11 @@
       "submitting_at": "2026-09-05T10:45:20.145826+00:00",
       "aid": 117218012629205,
       "bvid": "BV1QLt26dErd",
-      "uploaded_at": "2026-09-05T10:45:41.953749+00:00"
+      "uploaded_at": "2026-09-05T10:45:41.953749+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-09-05T10:45:44.331320+00:00"
     }
   },
   "season": {
