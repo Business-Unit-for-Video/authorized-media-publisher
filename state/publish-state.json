@@ -2492,13 +2492,14 @@
       "published_at": "2026-09-05T09:49:31.593543+00:00"
     },
     "6ZeE3vgwQSI": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=6ZeE3vgwQSI",
       "title": "周杰倫 Jay Chou【竊愛 Stolen Love】Official MV",
       "image_id": "bd486765c1338d9e5b62",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-9",
-      "reserved_at": "2026-09-05T09:54:09.417692+00:00"
+      "reserved_at": "2026-09-05T09:54:09.417692+00:00",
+      "submitting_at": "2026-09-05T09:54:10.447385+00:00"
     }
   },
   "season": {
