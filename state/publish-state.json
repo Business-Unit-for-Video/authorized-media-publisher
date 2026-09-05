@@ -3,7 +3,8 @@
   "images": {
     "cycle": 2,
     "used_image_ids": [
-      "6a4795ce0cdb5300f0c8"
+      "6a4795ce0cdb5300f0c8",
+      "a20601d314d07a692397"
     ]
   },
   "videos": {
@@ -2399,6 +2400,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T09:27:30.307259+00:00"
+    },
+    "Aa5j0_61Xfo": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=Aa5j0_61Xfo",
+      "title": "周杰倫 Jay Chou【療傷燒肉粽 Healing Rice Dumpling】Official MV",
+      "image_id": "a20601d314d07a692397",
+      "image_cycle": 2,
+      "workflow_run_id": "33957307523-4",
+      "reserved_at": "2026-09-05T09:30:55.831255+00:00"
     }
   },
   "season": {
