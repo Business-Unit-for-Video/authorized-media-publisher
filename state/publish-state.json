@@ -2618,13 +2618,14 @@
       "published_at": "2026-09-05T10:25:55.597898+00:00"
     },
     "L6joGUdc6y4": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=L6joGUdc6y4",
       "title": "周杰倫 Jay Chou【紅塵客棧 Hong-Chen Inn】Official MV",
       "image_id": "03c1b478e81968112293",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-16",
-      "reserved_at": "2026-09-05T10:30:13.846265+00:00"
+      "reserved_at": "2026-09-05T10:30:13.846265+00:00",
+      "submitting_at": "2026-09-05T10:30:14.900550+00:00"
     }
   },
   "season": {
