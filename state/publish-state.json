@@ -2510,7 +2510,7 @@
       "published_at": "2026-09-05T09:54:22.024023+00:00"
     },
     "QQucPUfXUQQ": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=QQucPUfXUQQ",
       "title": "周杰倫Jay Chou(ジェイ・チョウ)【等你下課Waiting For You (with 楊瑞代 Gary)】(君を待っている) Official MV",
       "image_id": "82ccdc55a44da3468164",
@@ -2520,7 +2520,11 @@
       "submitting_at": "2026-09-05T10:02:04.350493+00:00",
       "aid": 117217844989094,
       "bvid": "BV1LSt26eEvB",
-      "uploaded_at": "2026-09-05T10:02:14.850957+00:00"
+      "uploaded_at": "2026-09-05T10:02:14.850957+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-09-05T10:02:17.156593+00:00"
     }
   },
   "season": {
