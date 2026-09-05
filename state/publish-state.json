@@ -3,6 +3,7 @@
   "images": {
     "cycle": 2,
     "used_image_ids": [
+      "10340e09a8a23fe11eb5",
       "371980b3bdcfc382aba7",
       "60471a9beefc956dbb51",
       "6986c0a6aae9e41c5e2e",
@@ -2543,6 +2544,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T10:07:36.631405+00:00"
+    },
+    "v489sYYjtHI": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=v489sYYjtHI",
+      "title": "周杰倫 Jay Chou【算什麼男人 What Kind of Man】Official MV (ft. 林依晨)",
+      "image_id": "10340e09a8a23fe11eb5",
+      "image_cycle": 2,
+      "workflow_run_id": "33957307523-12",
+      "reserved_at": "2026-09-05T10:12:08.225558+00:00"
     }
   },
   "season": {
