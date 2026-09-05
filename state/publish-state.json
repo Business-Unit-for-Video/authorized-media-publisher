@@ -2636,14 +2636,17 @@
       "published_at": "2026-09-05T10:30:28.992283+00:00"
     },
     "LL50Fu4UvG0": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=LL50Fu4UvG0",
       "title": "周杰倫 Jay Chou【紅模仿 Moulin Rouge】-Official Music Video",
       "image_id": "b7ee15c4b1c398fbea57",
       "image_cycle": 2,
       "workflow_run_id": "33957307523-17",
       "reserved_at": "2026-09-05T10:34:43.654070+00:00",
-      "submitting_at": "2026-09-05T10:34:44.626253+00:00"
+      "submitting_at": "2026-09-05T10:34:44.626253+00:00",
+      "aid": 117217979009616,
+      "bvid": "BV1YGt26ZED7",
+      "uploaded_at": "2026-09-05T10:34:56.656553+00:00"
     }
   },
   "season": {
