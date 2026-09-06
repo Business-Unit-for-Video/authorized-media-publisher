@@ -15,6 +15,7 @@
       "82ccdc55a44da3468164",
       "859b9716a5db48eaa3b2",
       "a20601d314d07a692397",
+      "a3caffc084ca41e62ed4",
       "b7ee15c4b1c398fbea57",
       "bd486765c1338d9e5b62",
       "c2906d936ee8384b7fac",
@@ -2705,11 +2706,20 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-09-05T10:50:41.500211+00:00"
+    },
+    "QonA0cdVSs0": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=QonA0cdVSs0",
+      "title": "我要上春晚",
+      "image_id": "a3caffc084ca41e62ed4",
+      "image_cycle": 2,
+      "workflow_run_id": "34014138881-1",
+      "reserved_at": "2026-09-06T05:40:54.752457+00:00"
     }
   },
   "season": {
-    "title": "周杰伦",
-    "season_id": 8728825,
-    "section_id": 9727754
+    "title": "于纲",
+    "season_id": 8919073,
+    "section_id": 9947605
   }
 }
