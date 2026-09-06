@@ -2708,13 +2708,14 @@
       "published_at": "2026-09-05T10:50:41.500211+00:00"
     },
     "QonA0cdVSs0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=QonA0cdVSs0",
       "title": "我要上春晚",
       "image_id": "a3caffc084ca41e62ed4",
       "image_cycle": 2,
       "workflow_run_id": "34014138881-1",
-      "reserved_at": "2026-09-06T05:40:54.752457+00:00"
+      "reserved_at": "2026-09-06T05:40:54.752457+00:00",
+      "submitting_at": "2026-09-06T05:40:56.072518+00:00"
     }
   },
   "season": {
