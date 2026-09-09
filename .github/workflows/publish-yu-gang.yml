@@ -15,8 +15,6 @@ on:
         description: "输出高度"
         required: true
         default: "1080"
-  schedule:
-    - cron: "0 1 * * *"
 
 permissions:
   contents: write
