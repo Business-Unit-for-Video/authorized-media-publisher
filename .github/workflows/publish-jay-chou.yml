@@ -46,6 +46,9 @@ jobs:
           if [ -n "$YOUTUBE_COOKIE_FILE" ]; then
             printf '%s' "$YOUTUBE_COOKIE_FILE" > "$RUNNER_TEMP/youtube-cookies.txt"
             chmod 600 "$RUNNER_TEMP/youtube-cookies.txt"
+            python scripts/validate_youtube_cookies.py "$RUNNER_TEMP/youtube-cookies.txt"
+          else
+            echo "No YouTube cookie secret; public-source downloads may fail for restricted videos."
           fi
           test -n "$BILIBILI_COOKIE_JSON"
           printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
