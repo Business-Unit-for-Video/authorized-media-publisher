@@ -231,8 +231,8 @@ def test_download_percent_encodes_non_ascii_url_path(tmp_path: Path) -> None:
     response = MagicMock()
     response.__enter__.return_value.read.side_effect = [b"image", b""]
     with patch("media_publisher.cli.urlopen", return_value=response) as mocked:
-        download("https://laoshi.ink/assets/img/celebrities/jav/いち花.jpg", tmp_path / "image")
-    assert "%E3%81%84%E3%81%A1%E8%8A%B1.jpg" in mocked.call_args.args[0].full_url
+        download("https://example.com/assets/测试封面.jpg", tmp_path / "image")
+    assert "%E6%B5%8B%E8%AF%95%E5%B0%81%E9%9D%A2.jpg" in mocked.call_args.args[0].full_url
     assert (tmp_path / "image").read_bytes() == b"image"
 
 
