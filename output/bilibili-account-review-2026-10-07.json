@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-07",
+  "source": "Bilibili creator-center account archive API",
+  "cookie_values_included": false,
+  "items": [
+    {"title":"周杰倫【皮影戲 Shadow Play】Official MV","bvid":"BV1rzt26gEgK","state":"退回仅自见","decision":"manual_reedit_required","reason":"内容全程、封面涉及穿着暴露及低俗风险"},
+    {"title":"我要奋斗","bvid":"BV1G7tq6eEzX","state":"退回仅自见","decision":"resolved_by_published_replacement","replacement_bvid":"BV1p7tm65E5H","reason":"原稿口播片段被退回，修订版已开放浏览"},
+    {"title":"郭德纲相声专场上","bvid":"BV1tBta6yE8x","state":"退回仅自见","decision":"manual_edit_required","reason":"00:56:36-00:57:06 涉及未经证实或不符合事实、史实的信息"},
+    {"title":"红事会及返场－郭德纲张永久","bvid":"BV1juhG6CEJH","state":"退回仅自见","decision":"manual_description_fix_required","reason":"简介含不规范推广内容"},
+    {"title":"周杰倫【威廉古堡 William Castle】Official MV","bvid":"BV1Zm8K6bEkk","state":"退回仅自见","decision":"manual_reedit_required","reason":"内容全程、封面涉及裸露或敏感部位"},
+    {"title":"周杰倫【Now You See Me】Official MV (120s)","bvid":"BV1iAMR6MEi4","state":"退回仅自见","decision":"do_not_retry","reason":"内容全程、封面涉及违法与不良内容，存在封号风险"},
+    {"title":"John Legend - All of Me","bvid":"BV1i8D6YGER9","state":"已锁定","decision":"do_not_retry","reason":"涉及身体部位裸露"},
+    {"title":"灌篮高手 三井寿之歌《直到世界的尽头》","bvid":"BV1YwDdY2Ea4","state":"已锁定","decision":"appeal_only","reason":"RIAJ 权利人版权申诉"},
+    {"title":"小岛浪吹：不要再移民新加坡","bvid":"BV1kh3geXEGG","state":"退回仅自见","decision":"manual_edit_required","reason":"00:12:48-00:13:21 不予审核通过"},
+    {"title":"万合天宜《报告老板》","bvid":"BV1CMKzeHEbJ","state":"已锁定","decision":"do_not_retry","reason":"版权原因"},
+    {"title":"精英教育和平民教育","bvid":"BV1BH4y1n7ow","state":"退回仅自见","decision":"manual_edit_required","reason":"00:02:04-00:02:11 含不规范表述"}
+  ]
+}
