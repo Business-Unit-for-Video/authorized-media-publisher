@@ -515,10 +515,25 @@ def build(
                 raise ValueError(f"reserved image {image_id} is no longer in the manifest")
             selected_images.append((image_by_id[image_id], int(existing["image_cycle"])))
         else:
-            chosen, working_image_state = select_images_with_cycles(
-                images, 1, working_image_state
-            )
-            selected_images.extend(chosen)
+            requested_image_id = video_row.get("image_id", "").strip()
+            if requested_image_id:
+                if requested_image_id not in image_by_id:
+                    raise ValueError(
+                        f"video {video_row['id']} requests image {requested_image_id}, "
+                        "but it is not present in the image manifest"
+                    )
+                selected_images.append((
+                    image_by_id[requested_image_id],
+                    int(working_image_state["cycle"]),
+                ))
+                working_image_state["used_image_ids"] = sorted(
+                    set(working_image_state["used_image_ids"]) | {requested_image_id}
+                )
+            else:
+                chosen, working_image_state = select_images_with_cycles(
+                    images, 1, working_image_state
+                )
+                selected_images.extend(chosen)
     output_dir.mkdir(parents=True, exist_ok=True)
     report: list[dict[str, str]] = []
     with tempfile.TemporaryDirectory(prefix="media-publisher-") as temp:
