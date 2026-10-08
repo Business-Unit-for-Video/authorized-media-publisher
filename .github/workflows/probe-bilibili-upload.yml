@@ -1,0 +1,26 @@
+name: 探测 Bilibili 预上传接口
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    environment: bilibili-publish
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install requests
+      - name: 写入 Bilibili Cookie
+        env:
+          BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}
+        run: |
+          test -n "$BILIBILI_COOKIE_JSON"
+          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
+          chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
+      - name: 生成探测文件
+        run: dd if=/dev/zero of="$RUNNER_TEMP/probe.bin" bs=1024 count=1
+      - name: 探测预上传响应（不上传、不投稿）
+        run: python scripts/probe_bilibili_preupload.py --cookies "$RUNNER_TEMP/bilibili-cookies.json" --file "$RUNNER_TEMP/probe.bin"
