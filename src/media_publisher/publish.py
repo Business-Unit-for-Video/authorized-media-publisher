@@ -171,7 +171,7 @@ def upload_video(
     video.set_tag([item.strip() for item in tags.split(",") if item.strip()])
     with BiliBili(video) as bili:
         bili.login(str(cookie_path), str(cookie_path))
-        part = bili.upload_file(record["file"], "AUTO", 3)
+        part = bili.upload_file(record["file"], "bda2", 3)
         part["title"] = Path(record["file"]).stem[:80]
         video.append(part)
         result = bili.submit("web")
