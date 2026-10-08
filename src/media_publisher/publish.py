@@ -177,8 +177,16 @@ def upload_video(
             try:
                 part = bili.upload_file(record["file"], upload_line, 3)
                 break
-            except (KeyError, TypeError, ValueError, RuntimeError) as exc:
-                last_error = exc
+            except Exception as exc:
+                text = str(exc)
+                if "601" in text or "上传视频过快" in text:
+                    raise RuntimeError(
+                        "Bilibili upload is rate-limited (code 601): please wait before retrying"
+                    ) from exc
+                if isinstance(exc, (KeyError, TypeError, ValueError, RuntimeError)):
+                    last_error = exc
+                else:
+                    raise
         if part is None:
             raise RuntimeError("Bilibili preupload returned no usable upload response on any route: " + repr(last_error))
         part["title"] = Path(record["file"]).stem[:80]
