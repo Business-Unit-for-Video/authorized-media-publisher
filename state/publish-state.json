@@ -17,6 +17,7 @@
       "859b9716a5db48eaa3b2",
       "a20601d314d07a692397",
       "a3caffc084ca41e62ed4",
+      "b6392e23670eb827ff02",
       "b7ee15c4b1c398fbea57",
       "bd486765c1338d9e5b62",
       "c2906d936ee8384b7fac",
@@ -2738,6 +2739,15 @@
       "workflow_run_id": "37710206466-1",
       "reserved_at": "2026-10-08T01:48:27.869014+00:00",
       "submitting_at": "2026-10-08T01:48:29.043660+00:00"
+    },
+    "sNYDLAu23Mc-v4": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=sNYDLAu23Mc",
+      "title": "郭德纲相声专场上（剪除审核时间段）",
+      "image_id": "b6392e23670eb827ff02",
+      "image_cycle": 2,
+      "workflow_run_id": "37715564258-1",
+      "reserved_at": "2026-10-08T03:03:37.579163+00:00"
     }
   },
   "season": {
