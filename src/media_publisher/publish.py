@@ -171,7 +171,16 @@ def upload_video(
     video.set_tag([item.strip() for item in tags.split(",") if item.strip()])
     with BiliBili(video) as bili:
         bili.login(str(cookie_path), str(cookie_path))
-        part = bili.upload_file(record["file"], "bda2", 3)
+        last_error: Exception | None = None
+        part = None
+        for upload_line in ("bda2", "tx", "txa", "alia", "AUTO"):
+            try:
+                part = bili.upload_file(record["file"], upload_line, 3)
+                break
+            except (KeyError, TypeError, ValueError, RuntimeError) as exc:
+                last_error = exc
+        if part is None:
+            raise RuntimeError("Bilibili preupload returned no usable upload response on any route: " + repr(last_error))
         part["title"] = Path(record["file"]).stem[:80]
         video.append(part)
         result = bili.submit("web")
