@@ -1,0 +1,33 @@
+name: 核对并解除不确定投稿状态
+on:
+  workflow_dispatch:
+    inputs:
+      video_id: {description: '仓库中的视频 ID', required: true, default: 'QonA0cdVSs0'}
+      title: {description: 'Bilibili 稿件标题', required: true, default: '我要上春晚'}
+permissions: {contents: write}
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    environment: bilibili-publish
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install requests
+      - name: 写入 Bilibili Cookie
+        env: {BILIBILI_COOKIE_JSON: ${{ secrets.BILIBILI_PUBLISH_COOKIE_JSON }}}
+        run: |
+          test -n "$BILIBILI_COOKIE_JSON"
+          printf '%s' "$BILIBILI_COOKIE_JSON" > "$RUNNER_TEMP/bilibili-cookies.json"
+          chmod 600 "$RUNNER_TEMP/bilibili-cookies.json"
+      - name: 按标题核对账号稿件并更新状态
+        run: python scripts/reconcile_submitting.py --cookies "$RUNNER_TEMP/bilibili-cookies.json" --state state/publish-state.json --video-id "${{ inputs.video_id }}" --title "${{ inputs.title }}" --report output/reconcile-submitting.json
+      - name: 提交状态变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/publish-state.json output/reconcile-submitting.json
+          git diff --cached --quiet || git commit -m "chore: reconcile uncertain Bilibili submission"
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        with: {name: reconcile-submitting-report-${{ github.run_id }}, path: output/reconcile-submitting.json}
