@@ -2715,14 +2715,16 @@
       "published_at": "2026-09-05T10:50:41.500211+00:00"
     },
     "QonA0cdVSs0": {
-      "status": "submitting",
+      "status": "retryable",
       "video_url": "https://www.youtube.com/watch?v=QonA0cdVSs0",
       "title": "我要上春晚",
       "image_id": "a3caffc084ca41e62ed4",
       "image_cycle": 2,
       "workflow_run_id": "34014138881-1",
       "reserved_at": "2026-09-06T05:40:54.752457+00:00",
-      "submitting_at": "2026-09-06T05:40:56.072518+00:00"
+      "submitting_at": "2026-09-06T05:40:56.072518+00:00",
+      "reconciled_at": "2026-10-11T03:06:53.224986+00:00",
+      "reconcile_reason": "账号稿件列表未找到同标题稿件，可重新处理"
     },
     "sNYDLAu23Mc-v2": {
       "status": "submitting",
