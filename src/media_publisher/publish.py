@@ -183,10 +183,7 @@ def upload_video(
                     raise RuntimeError(
                         "Bilibili upload is rate-limited (code 601): please wait before retrying"
                     ) from exc
-                if isinstance(exc, (KeyError, TypeError, ValueError, RuntimeError)):
-                    last_error = exc
-                else:
-                    raise
+                last_error = exc
         if part is None:
             raise RuntimeError("Bilibili preupload returned no usable upload response on any route: " + repr(last_error))
         part["title"] = Path(record["file"]).stem[:80]
