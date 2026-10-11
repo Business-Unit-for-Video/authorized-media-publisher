@@ -30,6 +30,8 @@ jobs:
     environment: bilibili-publish
     steps:
       - uses: actions/checkout@v4
+      - name: 快速检查发布状态（先于依赖安装）
+        run: python3 scripts/check_publish_preflight.py --state state/publish-state.json --videos input/guodegang-early-successes.csv
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
