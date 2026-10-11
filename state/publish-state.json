@@ -11,6 +11,7 @@
       "2e632f68f39c6da8318a",
       "361c0994d83f189d7fef",
       "371980b3bdcfc382aba7",
+      "4bd7bc24adbb25fd5741",
       "60471a9beefc956dbb51",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
@@ -2771,6 +2772,15 @@
       "workflow_run_id": "38097414226-1",
       "reserved_at": "2026-10-11T00:23:45.024763+00:00",
       "submitting_at": "2026-10-11T00:23:46.105743+00:00"
+    },
+    "aO9SU-w8hnM-test-20261011-v2": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=aO9SU-w8hnM",
+      "title": "周杰倫 Jay Chou【蛇舞 Snake Dance】-Official Music Video（短视频上传测试）",
+      "image_id": "4bd7bc24adbb25fd5741",
+      "image_cycle": 2,
+      "workflow_run_id": "38099649027-1",
+      "reserved_at": "2026-10-11T01:01:12.983664+00:00"
     }
   },
   "season": {
