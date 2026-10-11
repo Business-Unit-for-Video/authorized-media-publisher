@@ -27,7 +27,8 @@
       "c7c8924c1b00e8bf33d0",
       "d2a44f25560a465360e6",
       "f2d61df0e6f7fac6c32b",
-      "f62778673f8cff15186e"
+      "f62778673f8cff15186e",
+      "safe-github-mark-20261007"
     ]
   },
   "videos": {
@@ -2789,6 +2790,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-11T01:06:37.790159+00:00"
+    },
+    "qeW7xypeu6o-v2": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=qeW7xypeu6o",
+      "title": "周杰倫 Jay Chou【皮影戲 Shadow Play】Official MV（更换合规封面）",
+      "image_id": "safe-github-mark-20261007",
+      "image_cycle": 2,
+      "workflow_run_id": "38100921288-1",
+      "reserved_at": "2026-10-11T01:28:24.728022+00:00"
     }
   },
   "season": {
