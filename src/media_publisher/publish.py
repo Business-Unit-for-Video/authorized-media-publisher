@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,7 +28,26 @@ def git_commit_state(path: Path, message: str) -> None:
     if staged.returncode != 1:
         raise RuntimeError("unable to inspect staged publish state")
     subprocess.run(["git", "commit", "-m", message], check=True)
-    subprocess.run(["git", "push", "origin", "HEAD:main"], check=True)
+    for attempt in range(1, 5):
+        pushed = subprocess.run(
+            ["git", "push", "origin", "HEAD:main"],
+            capture_output=True,
+            text=True,
+        )
+        if pushed.returncode == 0:
+            return
+        if attempt == 4:
+            detail = (pushed.stderr or pushed.stdout).strip()
+            raise RuntimeError(f"unable to push publish state after {attempt} attempts: {detail}")
+        fetched = subprocess.run(["git", "fetch", "origin", "main"], capture_output=True, text=True)
+        if fetched.returncode != 0:
+            raise RuntimeError(f"unable to fetch latest publish state: {(fetched.stderr or fetched.stdout).strip()}")
+        rebased = subprocess.run(["git", "rebase", "origin/main"], capture_output=True, text=True)
+        if rebased.returncode != 0:
+            subprocess.run(["git", "rebase", "--abort"], capture_output=True, text=True)
+            detail = (rebased.stderr or rebased.stdout).strip()
+            raise RuntimeError(f"publish state changed concurrently and could not be rebased: {detail}")
+        time.sleep(attempt)
 
 
 def reserve_record(
