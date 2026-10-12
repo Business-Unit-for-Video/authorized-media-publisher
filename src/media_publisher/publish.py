@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
+import os
 import subprocess
 import time
 from dataclasses import dataclass
@@ -155,6 +157,64 @@ def mark_duplicate(
     })
 
 
+def _install_fast_biliup_upload_policy(bili_cls: object) -> None:
+    """Bound biliup's hidden chunk retry loop to a predictable CI timeout.
+
+    biliup 1.2.11 retries a timed-out chunk ten times and silently continues
+    after the final failure.  That can leave an Action running for hours and
+    eventually submit an incomplete upload.  Keep the library's protocol but
+    make failures explicit so the caller can try another upload route.
+    """
+    import aiohttp
+
+    retries = max(1, int(os.getenv("BILIBILI_CHUNK_RETRIES", "2")))
+    timeout_seconds = max(10, int(os.getenv("BILIBILI_CHUNK_TIMEOUT_SECONDS", "45")))
+
+    async def bounded_upload(params, file, chunk_size, afunc, tasks=1):
+        params["chunk"] = -1
+        timeout = aiohttp.ClientTimeout(
+            total=timeout_seconds,
+            connect=min(10, timeout_seconds),
+            sock_connect=min(10, timeout_seconds),
+            sock_read=timeout_seconds,
+        )
+
+        async def upload_chunk(session):
+            while True:
+                chunks_data = file.read(chunk_size)
+                if not chunks_data:
+                    return
+                params["chunk"] += 1
+                params["size"] = len(chunks_data)
+                params["partNumber"] = params["chunk"] + 1
+                params["start"] = params["chunk"] * chunk_size
+                params["end"] = params["start"] + params["size"]
+                clone = params.copy()
+                last_error = None
+                for attempt in range(1, retries + 1):
+                    try:
+                        await afunc(session, chunks_data, clone)
+                        last_error = None
+                        break
+                    except (asyncio.TimeoutError, aiohttp.ClientError) as exc:
+                        last_error = exc
+                        print(
+                            f"chunk {clone['chunk']} timeout/error; "
+                            f"retry {attempt}/{retries}: {type(exc).__name__}",
+                            flush=True,
+                        )
+                if last_error is not None:
+                    raise RuntimeError(
+                        f"Bilibili chunk {clone['chunk']} failed after "
+                        f"{retries} attempts"
+                    ) from last_error
+
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            await asyncio.gather(*[upload_chunk(session) for _ in range(max(1, tasks))])
+
+    bili_cls._upload = staticmethod(bounded_upload)
+
+
 def load_cookie_data(path: Path) -> tuple[dict[str, str], str]:
     data = json.loads(path.read_text(encoding="utf-8"))
     cookies = {
@@ -189,13 +249,19 @@ def upload_video(
     video.source = record["video_source"]
     video.tid = tid
     video.set_tag([item.strip() for item in tags.split(",") if item.strip()])
+    _install_fast_biliup_upload_policy(BiliBili)
     with BiliBili(video) as bili:
         bili.login(str(cookie_path), str(cookie_path))
         last_error: Exception | None = None
         part = None
         for upload_line in ("bda2", "tx", "txa", "alia", "AUTO"):
             try:
-                part = bili.upload_file(record["file"], upload_line, 3)
+                # biliup caches the previous probe result; clear it so each
+                # fallback really uses the requested route.
+                if hasattr(bili, "_auto_os"):
+                    bili._auto_os = None
+                upload_tasks = max(1, int(os.getenv("BILIBILI_UPLOAD_TASKS", "1")))
+                part = bili.upload_file(record["file"], upload_line, upload_tasks)
                 break
             except Exception as exc:
                 text = str(exc)

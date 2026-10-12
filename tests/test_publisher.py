@@ -24,6 +24,7 @@ from media_publisher.cli import (
     validate_rows,
 )
 from media_publisher.publish import SeasonClient, publish
+import media_publisher.publish as publish_module
 from media_publisher.serial import serial_publish
 
 
@@ -81,6 +82,46 @@ def test_publish_rejects_non_public_visibility(tmp_path: Path) -> None:
             "season",
             "",
         )
+
+
+def test_fast_biliup_policy_retries_then_raises(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakeClientError(Exception):
+        pass
+
+    class FakeAiohttp:
+        ClientError = FakeClientError
+
+    class FakeBili:
+        pass
+
+    monkeypatch.setitem(__import__("sys").modules, "aiohttp", FakeAiohttp)
+    monkeypatch.setenv("BILIBILI_CHUNK_RETRIES", "2")
+
+    async def always_fails(*args):
+        raise FakeClientError("offline")
+
+    async def run():
+        import io
+
+        class Session:
+            async def __aenter__(self):
+                return self
+
+            async def __aexit__(self, *args):
+                return False
+
+        class Timeout:
+            def __init__(self, **kwargs):
+                pass
+
+        FakeAiohttp.ClientTimeout = Timeout
+        FakeAiohttp.ClientSession = lambda **kwargs: Session()
+        publish_module._install_fast_biliup_upload_policy(FakeBili)
+        with pytest.raises(RuntimeError, match="failed after 2 attempts"):
+            await FakeBili._upload({}, io.BytesIO(b"data"), 4, always_fails, tasks=1)
+
+    import asyncio
+    asyncio.run(run())
 
 
 def test_manifest_allows_empty_rights_metadata(tmp_path: Path) -> None:
