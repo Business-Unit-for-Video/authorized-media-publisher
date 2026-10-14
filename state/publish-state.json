@@ -25,6 +25,7 @@
       "60471a9beefc956dbb51",
       "63e1e19c6ecb140428f7",
       "6808694377d47a41bdd4",
+      "691d1235476d934d30ca",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "82a624df78be4642e03b",
@@ -3328,6 +3329,15 @@
       "status": "unavailable",
       "unavailable_reason": "ERROR: [youtube] uEPjIOWgW_4: Video unavailable",
       "unavailable_at": "2026-10-14T05:44:30.853299+00:00"
+    },
+    "fqV_lnxzFxA": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=fqV_lnxzFxA",
+      "title": "2005 8 20 报菜名",
+      "image_id": "691d1235476d934d30ca",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-8",
+      "reserved_at": "2026-10-14T06:12:18.709233+00:00"
     }
   },
   "season": {
