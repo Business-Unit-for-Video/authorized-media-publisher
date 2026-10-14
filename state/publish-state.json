@@ -2939,14 +2939,17 @@
       "published_at": "2026-10-14T02:31:48.243207+00:00"
     },
     "PdjbRvvJAzg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=PdjbRvvJAzg",
       "title": "周杰倫 Jay Chou【菊花台 Chrysanthemum Terrace】-Official Music Video",
       "image_id": "63e1e19c6ecb140428f7",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-6",
       "reserved_at": "2026-10-14T02:36:41.244468+00:00",
-      "submitting_at": "2026-10-14T02:36:44.065534+00:00"
+      "submitting_at": "2026-10-14T02:36:44.065534+00:00",
+      "aid": 117436921741773,
+      "bvid": "BV1Vspk6iECz",
+      "uploaded_at": "2026-10-14T02:37:02.962272+00:00"
     }
   },
   "season": {
