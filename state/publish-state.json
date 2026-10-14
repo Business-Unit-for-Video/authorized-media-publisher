@@ -3198,7 +3198,7 @@
       "published_at": "2026-10-14T03:37:40.504202+00:00"
     },
     "SdBwt6pyNwE": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=SdBwt6pyNwE",
       "title": "周杰倫 Jay Chou【 軌跡 Tracks】Official MV",
       "image_id": "f03b9eb15b184744d9d5",
@@ -3208,7 +3208,11 @@
       "submitting_at": "2026-10-14T03:43:48.072405+00:00",
       "aid": 117437190178695,
       "bvid": "BV1xFpk6XENh",
-      "uploaded_at": "2026-10-14T03:44:08.809876+00:00"
+      "uploaded_at": "2026-10-14T03:44:08.809876+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-14T03:44:12.079507+00:00"
     }
   },
   "season": {
