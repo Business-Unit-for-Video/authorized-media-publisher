@@ -3349,14 +3349,17 @@
       "published_at": "2026-10-14T06:14:31.044518+00:00"
     },
     "2ZZLDxs7zL0": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=2ZZLDxs7zL0",
       "title": "2005 8 7 黄鹤楼",
       "image_id": "f8729fa6014de02d9c65",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-9",
       "reserved_at": "2026-10-14T06:39:08.603195+00:00",
-      "submitting_at": "2026-10-14T06:39:11.622387+00:00"
+      "submitting_at": "2026-10-14T06:39:11.622387+00:00",
+      "aid": 117437894755841,
+      "bvid": "BV1jrpC6CEgK",
+      "uploaded_at": "2026-10-14T06:41:06.990110+00:00"
     }
   },
   "season": {
