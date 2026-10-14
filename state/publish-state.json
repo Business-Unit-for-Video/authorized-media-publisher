@@ -3475,7 +3475,7 @@
       "published_at": "2026-10-14T08:24:50.256231+00:00"
     },
     "q2OdlCvN_Zo": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=q2OdlCvN_Zo",
       "title": "北京相声大会   小段   穷富论   郭德纲",
       "image_id": "d0a16fd25064ed910ca3",
@@ -3485,7 +3485,11 @@
       "submitting_at": "2026-10-14T08:54:21.911211+00:00",
       "aid": 117438414849678,
       "bvid": "BV1cjp26tEvB",
-      "uploaded_at": "2026-10-14T08:55:43.885626+00:00"
+      "uploaded_at": "2026-10-14T08:55:43.885626+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T08:55:47.552096+00:00"
     }
   },
   "season": {
