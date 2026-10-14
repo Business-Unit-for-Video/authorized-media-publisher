@@ -28,6 +28,7 @@
       "c7c8924c1b00e8bf33d0",
       "c956277354e6c1d4fe2d",
       "d2a44f25560a465360e6",
+      "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e",
       "safe-github-mark-20261007"
@@ -2846,6 +2847,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T01:44:32.822039+00:00"
+    },
+    "eS2T9IiOYbc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=eS2T9IiOYbc",
+      "title": "周杰倫 Jay Chou【聽爸爸的話 Listen to Dad】Official MV",
+      "image_id": "f22b178f63b255d05744",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-1",
+      "reserved_at": "2026-10-14T02:14:04.874501+00:00"
     }
   },
   "season": {
