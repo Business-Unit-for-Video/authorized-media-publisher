@@ -3234,13 +3234,14 @@
       "published_at": "2026-10-14T04:03:13.891495+00:00"
     },
     "jiBPUGzINok": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=jiBPUGzINok",
       "title": "夸住宅加返场",
       "image_id": "b2430018cd50aceaf458",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-2",
-      "reserved_at": "2026-10-14T04:27:01.514674+00:00"
+      "reserved_at": "2026-10-14T04:27:01.514674+00:00",
+      "submitting_at": "2026-10-14T04:27:04.751894+00:00"
     }
   },
   "season": {
