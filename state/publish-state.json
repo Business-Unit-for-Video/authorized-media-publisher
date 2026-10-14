@@ -3511,7 +3511,7 @@
       "published_at": "2026-10-14T09:25:01.108090+00:00"
     },
     "6DrlrfY8J_s": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=6DrlrfY8J_s",
       "title": "北京相声大会   20041128   第1部第6集   综合专场 师傅经 clip",
       "image_id": "7449defe331043ec66b5",
@@ -3521,7 +3521,11 @@
       "submitting_at": "2026-10-14T10:01:08.233354+00:00",
       "aid": 117438683285315,
       "bvid": "BV1VQp16yEgr",
-      "uploaded_at": "2026-10-14T10:02:44.361962+00:00"
+      "uploaded_at": "2026-10-14T10:02:44.361962+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T10:02:48.209215+00:00"
     }
   },
   "season": {
