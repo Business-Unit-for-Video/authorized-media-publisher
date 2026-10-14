@@ -3162,13 +3162,14 @@
       "published_at": "2026-10-14T03:30:32.587064+00:00"
     },
     "CllkiAZajJI": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=CllkiAZajJI",
       "title": "周杰倫 Jay Chou【超跑女神 Sports Car Model】Official MV",
       "image_id": "d0ceb26c4d76e8e2a60c",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-19",
-      "reserved_at": "2026-10-14T03:33:25.587071+00:00"
+      "reserved_at": "2026-10-14T03:33:25.587071+00:00",
+      "submitting_at": "2026-10-14T03:33:28.585515+00:00"
     }
   },
   "season": {
