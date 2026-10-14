@@ -3331,14 +3331,17 @@
       "unavailable_at": "2026-10-14T05:44:30.853299+00:00"
     },
     "fqV_lnxzFxA": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=fqV_lnxzFxA",
       "title": "2005 8 20 报菜名",
       "image_id": "691d1235476d934d30ca",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-8",
       "reserved_at": "2026-10-14T06:12:18.709233+00:00",
-      "submitting_at": "2026-10-14T06:12:22.717239+00:00"
+      "submitting_at": "2026-10-14T06:12:22.717239+00:00",
+      "aid": 117437777314242,
+      "bvid": "BV1fjpy6UEUo",
+      "uploaded_at": "2026-10-14T06:14:27.553555+00:00"
     }
   },
   "season": {
