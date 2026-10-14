@@ -2885,13 +2885,14 @@
       "published_at": "2026-10-14T02:18:43.973138+00:00"
     },
     "pbyWurQZ948": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=pbyWurQZ948",
       "title": "周杰倫 Jay Chou【自導自演 Self-directed Act】Official MV",
       "image_id": "5679c79136508a251c92",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-3",
-      "reserved_at": "2026-10-14T02:23:00.543439+00:00"
+      "reserved_at": "2026-10-14T02:23:00.543439+00:00",
+      "submitting_at": "2026-10-14T02:23:03.519087+00:00"
     }
   },
   "season": {
