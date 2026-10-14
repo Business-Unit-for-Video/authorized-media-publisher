@@ -3457,13 +3457,14 @@
       "published_at": "2026-10-14T08:13:18.393467+00:00"
     },
     "mxpnsKx-Njk": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=mxpnsKx-Njk",
       "title": "2005 2 26 色即是空 郭德纲李菁",
       "image_id": "0581e5f054b69da47340",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-15",
-      "reserved_at": "2026-10-14T08:23:59.851417+00:00"
+      "reserved_at": "2026-10-14T08:23:59.851417+00:00",
+      "submitting_at": "2026-10-14T08:24:02.846234+00:00"
     }
   },
   "season": {
