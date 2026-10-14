@@ -3385,7 +3385,7 @@
       "published_at": "2026-10-14T07:03:06.135509+00:00"
     },
     "HrlNbgB7Cw0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=HrlNbgB7Cw0",
       "title": "2005 6 12 托妻献子",
       "image_id": "dc75d5f53f0c09a0b35a",
@@ -3395,7 +3395,11 @@
       "submitting_at": "2026-10-14T07:26:25.067302+00:00",
       "aid": 117438062528494,
       "bvid": "BV1uopC6YEcT",
-      "uploaded_at": "2026-10-14T07:27:43.417921+00:00"
+      "uploaded_at": "2026-10-14T07:27:43.417921+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T07:27:47.236133+00:00"
     }
   },
   "season": {
