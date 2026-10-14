@@ -3385,14 +3385,17 @@
       "published_at": "2026-10-14T07:03:06.135509+00:00"
     },
     "HrlNbgB7Cw0": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=HrlNbgB7Cw0",
       "title": "2005 6 12 托妻献子",
       "image_id": "dc75d5f53f0c09a0b35a",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-11",
       "reserved_at": "2026-10-14T07:26:22.110761+00:00",
-      "submitting_at": "2026-10-14T07:26:25.067302+00:00"
+      "submitting_at": "2026-10-14T07:26:25.067302+00:00",
+      "aid": 117438062528494,
+      "bvid": "BV1uopC6YEcT",
+      "uploaded_at": "2026-10-14T07:27:43.417921+00:00"
     }
   },
   "season": {
