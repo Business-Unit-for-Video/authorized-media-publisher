@@ -3565,13 +3565,14 @@
       "published_at": "2026-10-14T11:13:21.397772+00:00"
     },
     "0KsDrWGpjGM": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=0KsDrWGpjGM",
       "title": "北京相声大会   20041219   卖布头",
       "image_id": "ab3a8e8b2f4b9313e3f0",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-21",
-      "reserved_at": "2026-10-14T11:36:43.740188+00:00"
+      "reserved_at": "2026-10-14T11:36:43.740188+00:00",
+      "submitting_at": "2026-10-14T11:36:46.802204+00:00"
     }
   },
   "season": {
