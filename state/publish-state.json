@@ -3216,14 +3216,17 @@
       "published_at": "2026-10-14T03:44:12.079507+00:00"
     },
     "S84Kq54frso": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=S84Kq54frso",
       "title": "我是文学家",
       "image_id": "555e4a19ec4530546b36",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-1",
       "reserved_at": "2026-10-14T04:02:23.284496+00:00",
-      "submitting_at": "2026-10-14T04:02:26.361720+00:00"
+      "submitting_at": "2026-10-14T04:02:26.361720+00:00",
+      "aid": 117437257288701,
+      "bvid": "BV1t9pr6oEBY",
+      "uploaded_at": "2026-10-14T04:03:10.584299+00:00"
     }
   },
   "season": {
