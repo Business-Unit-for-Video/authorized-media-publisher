@@ -57,6 +57,7 @@
       "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e",
+      "f8729fa6014de02d9c65",
       "safe-github-mark-20261007"
     ]
   },
@@ -3346,6 +3347,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-14T06:14:31.044518+00:00"
+    },
+    "2ZZLDxs7zL0": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=2ZZLDxs7zL0",
+      "title": "2005 8 7 黄鹤楼",
+      "image_id": "f8729fa6014de02d9c65",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-9",
+      "reserved_at": "2026-10-14T06:39:08.603195+00:00"
     }
   },
   "season": {
