@@ -3529,13 +3529,14 @@
       "published_at": "2026-10-14T10:02:48.209215+00:00"
     },
     "_SFv7mHFgpY": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=_SFv7mHFgpY",
       "title": "北京相声大会   20041212   第2部第1集 豆腐堂会 clip",
       "image_id": "8f5a5515564b04018593",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-19",
-      "reserved_at": "2026-10-14T10:37:32.962275+00:00"
+      "reserved_at": "2026-10-14T10:37:32.962275+00:00",
+      "submitting_at": "2026-10-14T10:37:36.092993+00:00"
     }
   },
   "season": {
