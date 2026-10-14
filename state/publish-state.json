@@ -3234,7 +3234,7 @@
       "published_at": "2026-10-14T04:03:13.891495+00:00"
     },
     "jiBPUGzINok": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=jiBPUGzINok",
       "title": "夸住宅加返场",
       "image_id": "b2430018cd50aceaf458",
@@ -3244,7 +3244,11 @@
       "submitting_at": "2026-10-14T04:27:04.751894+00:00",
       "aid": 117437357884655,
       "bvid": "BV1Qhpy6uEf4",
-      "uploaded_at": "2026-10-14T04:28:32.632981+00:00"
+      "uploaded_at": "2026-10-14T04:28:32.632981+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T04:28:36.399747+00:00"
     }
   },
   "season": {
