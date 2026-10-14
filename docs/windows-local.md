@@ -18,7 +18,9 @@ PyPI 的 `biliup==1.2.11` 完整包需要 Rust/C++ 编译，本项目实际只�
 
 ## Cookie 放置位置
 
-默认目录在仓库之外：`%LOCALAPPDATA%\authorized-media-publisher\credentials`。
+默认目录在仓库之外：`%USERPROFILE%\.authorized-media-publisher\credentials`。例如 `C:\Users\Future\.authorized-media-publisher\credentials`。
+
+此目录取代早期的 `%LOCALAPPDATA%\authorized-media-publisher\credentials`。打包的桌面应用可能把 AppData 访问重定向到自己的 LocalCache，导致应用内看得到 Cookie、普通 PowerShell 却找不到。请在普通 PowerShell 中执行下面的同步命令来建立新的固定目录；旧目录不会自动删除。
 
 | 本地文件 | 内容来源 |
 |---|---|
@@ -26,6 +28,14 @@ PyPI 的 `biliup==1.2.11` 完整包需要 Rust/C++ 编译，本项目实际只�
 | `bilibili-cookies.json` | 同仓库 `private/cookies.json` 的原始 JSON，含 `cookie_info.cookies` |
 
 不要把 Cookie 或 Token 提交到本仓库。GitHub Secrets 不会自动同步到本地，源 Cookie 更新后需刷新本地副本。运行时会再复制两份 Cookie 到临时目录，避免上传器和 yt-dlp 改写原始导出。可用 `-CookieDirectory` 指定其他仓库外目录。
+
+若提示文件缺失，或源 Cookie 已更新，在实际运行的 Windows PowerShell 中执行：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -SyncCookies
+```
+
+它从上述固定的私有仓库路径下载两份 Cookie，全部验证格式后替换本地文件，再运行检查，不会投稿。GitHub 凭据依次取自当前进程的 `GH_TOKEN` / `GITHUB_TOKEN`、仓库父目录 `authority.md` 的 `GITHUB_TOKEN=...`、已配置的 Git credential helper；不会打开新登录窗口，也不打印凭据。两份 Cookie 留在本机，不改 GitHub Secrets。
 
 ## 检查与启动
 

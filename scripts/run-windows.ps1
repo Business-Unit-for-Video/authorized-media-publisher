@@ -2,7 +2,9 @@ param(
     [ValidateSet('JayChou', 'YuGang')]
     [string]$Collection = 'JayChou',
     [string]$VideoId = '',
-    [string]$CookieDirectory = (Join-Path $env:LOCALAPPDATA 'authorized-media-publisher\credentials'),
+    # USERPROFILE avoids MSIX LocalAppData redirection inside desktop apps.
+    [string]$CookieDirectory = (Join-Path $env:USERPROFILE '.authorized-media-publisher\credentials'),
+    [switch]$SyncCookies,
     [switch]$Publish
 )
 
@@ -19,6 +21,12 @@ try {
     $env:PYTHONUNBUFFERED = '1'
     Push-Location $repoRoot
     try {
+        if ($SyncCookies) {
+            & $pythonExe -m scripts.sync_windows_cookies --cookie-directory $CookieDirectory
+            if ($LASTEXITCODE -ne 0) {
+                throw "Cookie sync stopped (exit $LASTEXITCODE). See the message above."
+            }
+        }
         $arguments = @('-m', 'scripts.run_windows', '--collection', $Collection,
             '--cookie-directory', $CookieDirectory)
         if ($VideoId) { $arguments += @('--video-id', $VideoId) }

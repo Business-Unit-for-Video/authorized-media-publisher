@@ -82,12 +82,19 @@ def main() -> int:
         first = youtube_cookie.read_text(encoding='utf-8-sig').splitlines()
         if not first or not first[0].lower().startswith(('# netscape http cookie file', '# http cookie file')):
             problems.append('YouTube Cookie 需要 Netscape 格式，不能是 GitHub 网页 HTML')
-    try:
-        load_cookie_data(bilibili_cookie)
-    except (OSError, ValueError, KeyError, TypeError, AttributeError):
-        problems.append(f'Bilibili Cookie 缺失或格式不正确：{bilibili_cookie}')
+    if not bilibili_cookie.is_file():
+        problems.append(f'缺少 Bilibili Cookie：{bilibili_cookie}')
+    else:
+        try:
+            load_cookie_data(bilibili_cookie)
+        except OSError:
+            problems.append(f'无法读取 Bilibili Cookie，请检查文件权限：{bilibili_cookie}')
+        except (ValueError, KeyError, TypeError, AttributeError):
+            problems.append(f'Bilibili Cookie 格式不正确：{bilibili_cookie}')
     if problems:
         print('\n'.join(problems), flush=True)
+        print('可在当前 PowerShell 重新同步后检查：', flush=True)
+        print('powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\run-windows.ps1 -SyncCookies', flush=True)
         return 2
 
     if args.publish:
