@@ -3252,7 +3252,7 @@
       "published_at": "2026-10-14T04:28:36.399747+00:00"
     },
     "v1-CBoQWuVc": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=v1-CBoQWuVc",
       "title": "天津专场爆笑大返场破纪录的25次大返场 高清版",
       "image_id": "c8b08889c8e1d6ebe8b0",
@@ -3262,7 +3262,11 @@
       "submitting_at": "2026-10-14T05:03:58.380877+00:00",
       "aid": 117437508880812,
       "bvid": "BV12rpy6aEy2",
-      "uploaded_at": "2026-10-14T05:05:49.466041+00:00"
+      "uploaded_at": "2026-10-14T05:05:49.466041+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T05:05:53.403068+00:00"
     }
   },
   "season": {
