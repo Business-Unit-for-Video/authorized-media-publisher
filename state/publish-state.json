@@ -61,6 +61,7 @@
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e",
       "f8729fa6014de02d9c65",
+      "ffa5b9e2e21ba5f97726",
       "safe-github-mark-20261007"
     ]
   },
@@ -3418,6 +3419,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-14T07:45:27.627821+00:00"
+    },
+    "pJMDQkDYzrg": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=pJMDQkDYzrg",
+      "title": "2005 5 6 大相面郭德纲 李菁",
+      "image_id": "ffa5b9e2e21ba5f97726",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-13",
+      "reserved_at": "2026-10-14T07:55:00.647361+00:00"
     }
   },
   "season": {
