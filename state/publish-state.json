@@ -2921,7 +2921,7 @@
       "published_at": "2026-10-14T02:28:03.347819+00:00"
     },
     "oQqM30Oh-Pk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=oQqM30Oh-Pk",
       "title": "周杰倫 Jay Chou【英雄 Hero】Official MV",
       "image_id": "a62ad9dc52185980620a",
@@ -2931,7 +2931,11 @@
       "submitting_at": "2026-10-14T02:31:30.304350+00:00",
       "aid": 117436904965775,
       "bvid": "BV1Lnpk6uE64",
-      "uploaded_at": "2026-10-14T02:31:44.936682+00:00"
+      "uploaded_at": "2026-10-14T02:31:44.936682+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-14T02:31:48.243207+00:00"
     }
   },
   "season": {
