@@ -3367,13 +3367,14 @@
       "published_at": "2026-10-14T06:41:10.659824+00:00"
     },
     "H-MSGC1MfSM": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=H-MSGC1MfSM",
       "title": "2005 7 31 醋点灯",
       "image_id": "ca22927434caa819f146",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-10",
-      "reserved_at": "2026-10-14T07:01:34.500522+00:00"
+      "reserved_at": "2026-10-14T07:01:34.500522+00:00",
+      "submitting_at": "2026-10-14T07:01:38.542431+00:00"
     }
   },
   "season": {
