@@ -2993,13 +2993,14 @@
       "published_at": "2026-10-14T02:46:33.542205+00:00"
     },
     "P7ItYKdY0WU": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=P7ItYKdY0WU",
       "title": "周杰倫 Jay Chou【藍色風暴 Blue Storm】-Official Music Video",
       "image_id": "4ca4a30494daaaaf2a1c",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-9",
-      "reserved_at": "2026-10-14T02:51:20.456615+00:00"
+      "reserved_at": "2026-10-14T02:51:20.456615+00:00",
+      "submitting_at": "2026-10-14T02:51:23.297496+00:00"
     }
   },
   "season": {
