@@ -2903,14 +2903,17 @@
       "published_at": "2026-10-14T02:23:25.410256+00:00"
     },
     "q1ww6bDjfiI": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=q1ww6bDjfiI",
       "title": "周杰倫 Jay Chou【花海 Floral Sea】-Official Music Video",
       "image_id": "82a624df78be4642e03b",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-4",
       "reserved_at": "2026-10-14T02:27:39.298377+00:00",
-      "submitting_at": "2026-10-14T02:27:42.208134+00:00"
+      "submitting_at": "2026-10-14T02:27:42.208134+00:00",
+      "aid": 117436888189358,
+      "bvid": "BV15Hpk6BEv7",
+      "uploaded_at": "2026-10-14T02:27:59.954152+00:00"
     }
   },
   "season": {
