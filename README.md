@@ -28,6 +28,8 @@ Do not add a real person's photo URL unless you have the necessary image rights 
 
 ## Local run
 
+Windows 原生安装、检查与单视频发布见[Windows 本地运行说明](docs/windows-local.md)。GitHub Actions 保持独立可用。
+
 ```bash
 python -m pip install -e .
 # Requires ffmpeg on PATH.
