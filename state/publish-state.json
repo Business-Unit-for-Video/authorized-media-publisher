@@ -3180,7 +3180,7 @@
       "published_at": "2026-10-14T03:33:44.472936+00:00"
     },
     "-WkecBaA4z8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=-WkecBaA4z8",
       "title": "周杰倫 Jay Chou【跨時代 The Era】Official MV",
       "image_id": "b6fcc8191934fb858af6",
@@ -3190,7 +3190,11 @@
       "submitting_at": "2026-10-14T03:37:21.856357+00:00",
       "aid": 117437156558079,
       "bvid": "BV1Kopr6REmr",
-      "uploaded_at": "2026-10-14T03:37:37.240177+00:00"
+      "uploaded_at": "2026-10-14T03:37:37.240177+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-14T03:37:40.504202+00:00"
     }
   },
   "season": {
