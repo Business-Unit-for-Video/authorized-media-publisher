@@ -34,6 +34,7 @@
       "c7c8924c1b00e8bf33d0",
       "c956277354e6c1d4fe2d",
       "d2a44f25560a465360e6",
+      "e8633c5b5efe960f62c4",
       "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e",
@@ -2972,6 +2973,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T02:41:46.651716+00:00"
+    },
+    "KcK8WurGpEQ": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=KcK8WurGpEQ",
+      "title": "周杰倫 Jay Chou【藉口 Excuse】-Official Music Video",
+      "image_id": "e8633c5b5efe960f62c4",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-8",
+      "reserved_at": "2026-10-14T02:46:09.561926+00:00"
     }
   },
   "season": {
