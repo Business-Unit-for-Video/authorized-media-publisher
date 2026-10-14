@@ -2806,7 +2806,7 @@
       "submitting_at": "2026-10-11T01:28:25.680571+00:00"
     },
     "IXuhdnB2dAY": {
-      "status": "published",
+      "status": "skipped",
       "video_url": "https://www.youtube.com/watch?v=IXuhdnB2dAY",
       "title": "周杰倫 JAY CHOU (feat. 楊瑞代) 【聖誕星 Christmas Star】Official MV",
       "image_id": "18b816827aafeed03652",
@@ -2823,7 +2823,12 @@
       "season_id": 8728825,
       "section_id": 9727754,
       "season_attached": true,
-      "published_at": "2026-10-14T01:38:01.970935+00:00"
+      "published_at": "2026-10-14T01:38:01.970935+00:00",
+      "review_checked_at": "2026-10-14T02:05:35.099635+00:00",
+      "bilibili_review_state": -2,
+      "reject_reason": "版权原因，该视频【P1(00:00:00-00:03:03)】【P1音频】不予审核通过，建议增加创作程度",
+      "skipped_at": "2026-10-14T02:05:35.099635+00:00",
+      "skip_reason": "用户要求将本次审核退回稿件标为跳过；保留原稿及投稿记录，暂不重试，不阻塞后续视频。"
     },
     "_B8RaLCNUZw": {
       "status": "published",
