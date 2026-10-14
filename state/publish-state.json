@@ -2957,14 +2957,17 @@
       "published_at": "2026-10-14T02:37:06.288960+00:00"
     },
     "VitJnr3IySc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=VitJnr3IySc",
       "title": "周杰倫 Jay Chou【蒲公英的約定 A Dandelion's Promise】-Official Music Video",
       "image_id": "2d093a79abea9ae3a010",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-7",
       "reserved_at": "2026-10-14T02:41:23.612619+00:00",
-      "submitting_at": "2026-10-14T02:41:26.496103+00:00"
+      "submitting_at": "2026-10-14T02:41:26.496103+00:00",
+      "aid": 117436938455525,
+      "bvid": "BV19Wpk6KEH1",
+      "uploaded_at": "2026-10-14T02:41:43.267632+00:00"
     }
   },
   "season": {
