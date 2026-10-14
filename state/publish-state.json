@@ -3493,7 +3493,7 @@
       "published_at": "2026-10-14T08:55:47.552096+00:00"
     },
     "0bYAIntNp-g": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=0bYAIntNp-g",
       "title": "北京相声大会   20041127   第1部第1集   失传曲目专场 赌论",
       "image_id": "ec3b86a38b4b88854b0e",
@@ -3503,7 +3503,11 @@
       "submitting_at": "2026-10-14T09:23:30.736059+00:00",
       "aid": 117438532291432,
       "bvid": "BV198p26mEdT",
-      "uploaded_at": "2026-10-14T09:24:57.236132+00:00"
+      "uploaded_at": "2026-10-14T09:24:57.236132+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T09:25:01.108090+00:00"
     }
   },
   "season": {
