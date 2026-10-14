@@ -13,6 +13,7 @@
       "361c0994d83f189d7fef",
       "371980b3bdcfc382aba7",
       "4bd7bc24adbb25fd5741",
+      "5679c79136508a251c92",
       "60471a9beefc956dbb51",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
@@ -2882,6 +2883,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T02:18:43.973138+00:00"
+    },
+    "pbyWurQZ948": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=pbyWurQZ948",
+      "title": "周杰倫 Jay Chou【自導自演 Self-directed Act】Official MV",
+      "image_id": "5679c79136508a251c92",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-3",
+      "reserved_at": "2026-10-14T02:23:00.543439+00:00"
     }
   },
   "season": {
