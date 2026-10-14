@@ -3029,13 +3029,14 @@
       "published_at": "2026-10-14T02:56:29.561872+00:00"
     },
     "H7pOrQEnc3c": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=H7pOrQEnc3c",
       "title": "周杰倫 Jay Chou【蝸牛 Snail】Official MV",
       "image_id": "0bfa6cc45baa74ea7938",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-11",
-      "reserved_at": "2026-10-14T02:59:50.409249+00:00"
+      "reserved_at": "2026-10-14T02:59:50.409249+00:00",
+      "submitting_at": "2026-10-14T02:59:53.295983+00:00"
     }
   },
   "season": {
