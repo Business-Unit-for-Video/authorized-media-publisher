@@ -59,6 +59,7 @@
       "e8633c5b5efe960f62c4",
       "ea8d54421823936a8c50",
       "eb3a41f81a98b3e055b9",
+      "ec3b86a38b4b88854b0e",
       "f03b9eb15b184744d9d5",
       "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
@@ -3490,6 +3491,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-14T08:55:47.552096+00:00"
+    },
+    "0bYAIntNp-g": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=0bYAIntNp-g",
+      "title": "北京相声大会   20041127   第1部第1集   失传曲目专场 赌论",
+      "image_id": "ec3b86a38b4b88854b0e",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-17",
+      "reserved_at": "2026-10-14T09:23:27.582156+00:00"
     }
   },
   "season": {
