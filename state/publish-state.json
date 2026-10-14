@@ -9,6 +9,7 @@
       "10340e09a8a23fe11eb5",
       "10b9f309a38e5ce38f7c",
       "18b816827aafeed03652",
+      "2d093a79abea9ae3a010",
       "2e632f68f39c6da8318a",
       "361c0994d83f189d7fef",
       "371980b3bdcfc382aba7",
@@ -2954,6 +2955,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T02:37:06.288960+00:00"
+    },
+    "VitJnr3IySc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=VitJnr3IySc",
+      "title": "周杰倫 Jay Chou【蒲公英的約定 A Dandelion's Promise】-Official Music Video",
+      "image_id": "2d093a79abea9ae3a010",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-7",
+      "reserved_at": "2026-10-14T02:41:23.612619+00:00"
     }
   },
   "season": {
