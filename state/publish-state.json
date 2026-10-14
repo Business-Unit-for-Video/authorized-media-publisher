@@ -3547,13 +3547,14 @@
       "published_at": "2026-10-14T10:39:38.994175+00:00"
     },
     "O9csrmZSIYI": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=O9csrmZSIYI",
       "title": "北京相声大会   20041218   第2部第4集 梦中婚 clip",
       "image_id": "36766a9450924c6a695f",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-20",
-      "reserved_at": "2026-10-14T11:11:24.809438+00:00"
+      "reserved_at": "2026-10-14T11:11:24.809438+00:00",
+      "submitting_at": "2026-10-14T11:11:27.935700+00:00"
     }
   },
   "season": {
