@@ -29,6 +29,7 @@
       "691d1235476d934d30ca",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
+      "7449defe331043ec66b5",
       "82a624df78be4642e03b",
       "82ccdc55a44da3468164",
       "859b9716a5db48eaa3b2",
@@ -3508,6 +3509,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-14T09:25:01.108090+00:00"
+    },
+    "6DrlrfY8J_s": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=6DrlrfY8J_s",
+      "title": "北京相声大会   20041128   第1部第6集   综合专场 师傅经 clip",
+      "image_id": "7449defe331043ec66b5",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-18",
+      "reserved_at": "2026-10-14T10:01:05.190378+00:00"
     }
   },
   "season": {
