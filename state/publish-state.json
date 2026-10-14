@@ -3270,7 +3270,7 @@
       "published_at": "2026-10-14T05:05:53.403068+00:00"
     },
     "H5kjw_rQ4uM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=H5kjw_rQ4uM",
       "title": "四大名著",
       "image_id": "6808694377d47a41bdd4",
@@ -3280,7 +3280,11 @@
       "submitting_at": "2026-10-14T05:15:15.178962+00:00",
       "aid": 117437559211780,
       "bvid": "BV1cGpy6pEX8",
-      "uploaded_at": "2026-10-14T05:15:49.284813+00:00"
+      "uploaded_at": "2026-10-14T05:15:49.284813+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T05:15:52.916179+00:00"
     }
   },
   "season": {
