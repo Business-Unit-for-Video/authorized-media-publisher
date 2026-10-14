@@ -3306,14 +3306,17 @@
       "published_at": "2026-10-14T05:28:45.956281+00:00"
     },
     "wohvQSOAYL8": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=wohvQSOAYL8",
       "title": "五毒论",
       "image_id": "5001449201774e19420d",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-6",
       "reserved_at": "2026-10-14T05:43:16.633863+00:00",
-      "submitting_at": "2026-10-14T05:43:19.598481+00:00"
+      "submitting_at": "2026-10-14T05:43:19.598481+00:00",
+      "aid": 117437659876019,
+      "bvid": "BV1wupy6sE9r",
+      "uploaded_at": "2026-10-14T05:44:20.354899+00:00"
     }
   },
   "season": {
