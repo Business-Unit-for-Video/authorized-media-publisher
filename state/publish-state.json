@@ -3270,14 +3270,17 @@
       "published_at": "2026-10-14T05:05:53.403068+00:00"
     },
     "H5kjw_rQ4uM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=H5kjw_rQ4uM",
       "title": "四大名著",
       "image_id": "6808694377d47a41bdd4",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-4",
       "reserved_at": "2026-10-14T05:15:12.191740+00:00",
-      "submitting_at": "2026-10-14T05:15:15.178962+00:00"
+      "submitting_at": "2026-10-14T05:15:15.178962+00:00",
+      "aid": 117437559211780,
+      "bvid": "BV1cGpy6pEX8",
+      "uploaded_at": "2026-10-14T05:15:49.284813+00:00"
     }
   },
   "season": {
