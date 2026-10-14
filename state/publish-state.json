@@ -2849,13 +2849,14 @@
       "published_at": "2026-10-14T01:44:32.822039+00:00"
     },
     "eS2T9IiOYbc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=eS2T9IiOYbc",
       "title": "周杰倫 Jay Chou【聽爸爸的話 Listen to Dad】Official MV",
       "image_id": "f22b178f63b255d05744",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-1",
-      "reserved_at": "2026-10-14T02:14:04.874501+00:00"
+      "reserved_at": "2026-10-14T02:14:04.874501+00:00",
+      "submitting_at": "2026-10-14T02:14:08.440264+00:00"
     }
   },
   "season": {
