@@ -3065,7 +3065,7 @@
       "published_at": "2026-10-14T03:04:22.640810+00:00"
     },
     "KKsioz-zaZY": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=KKsioz-zaZY",
       "title": "周杰倫 Jay Chou【說了再見 Say Goodbye】Official MV",
       "image_id": "28c40c00e25e200ba535",
@@ -3075,7 +3075,11 @@
       "submitting_at": "2026-10-14T03:09:34.486549+00:00",
       "aid": 117437055896191,
       "bvid": "BV13Upr6cEFF",
-      "uploaded_at": "2026-10-14T03:09:53.182498+00:00"
+      "uploaded_at": "2026-10-14T03:09:53.182498+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-14T03:09:56.427550+00:00"
     }
   },
   "season": {
