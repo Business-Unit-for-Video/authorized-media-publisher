@@ -1,0 +1,46 @@
+{
+  "video_id": "IXuhdnB2dAY",
+  "title": "周杰倫 JAY CHOU (feat. 楊瑞代) 【聖誕星 Christmas Star】Official MV",
+  "checked_at": "2026-10-14T01:31:18.707442+00:00",
+  "previous_status": "submitting",
+  "new_status": "reserved",
+  "action": "账号核对后恢复原记录，允许重试；未执行投稿",
+  "account_check": {
+    "authenticated": true,
+    "endpoint": "https://member.bilibili.com/x/web/archives",
+    "requested_status": "pubed,not_pubed,is_pubing",
+    "api_code": 0,
+    "page_size": 50,
+    "pages_checked": 23,
+    "reported_total": 1125,
+    "unique_archives_checked": 1125,
+    "pagination_count_stable": true,
+    "complete": true,
+    "state_counts": {
+      "0": 1095,
+      "-2": 8,
+      "-50": 19,
+      "-4": 3
+    },
+    "title_search_terms_case_insensitive": [
+      "聖誕星",
+      "圣诞星",
+      "Christmas",
+      "IXuhdnB2dAY"
+    ],
+    "matches": []
+  },
+  "failed_run": {
+    "url": "https://github.com/Business-Unit-for-Video/authorized-media-publisher/actions/runs/38140670777",
+    "job_id": 114473717291,
+    "conclusion": "failure",
+    "timeout_error_count": 50,
+    "terminal_error": "RuntimeError: Bilibili preupload returned no usable upload response on any route: None"
+  },
+  "notes": [
+    "保留原 ID、来源地址、封面、workflow_run_id 和原始时间字段。",
+    "使用核心发布器支持的 reserved 状态；现有 retryable 状态不会被自动发布队列选中。",
+    "核对基于当前账号完整稿件管理列表的标题匹配，并结合原上传失败日志；未删除任何稿件或历史记录。",
+    "x2/creative/web/archives/sp 仅返回了 1114 条 state=0 记录，传入状态筛选仍相同；因此没有将该接口单独用作不存在稿件的依据。"
+  ]
+}

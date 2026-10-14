@@ -65,7 +65,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps
 
 正式运行会要求仓库干净且位于 main，先 `git pull --ff-only`，检查最近两条该合集稿件的审核结果，再串行处理清单。与云端共用并提交 `state/publish-state.json`，每条完成后仍由原发布器加入合集、推送 GitHub。文件及报告位于被 Git 忽略的 `output/windows-local/`。
 
-`submitting` / `uploading` 等历史记录不会自动清空。自动模式若清单中的 ID 本身处于此状态，会阻塞整批并提示核对；若是清单外的其他 ID 已经发布或提交了同一来源，自动模式会排除这个来源候选，单 ID 模式则报错停止。需先核对账号，不应删除状态文件或改 ID 重投。更换运行地点不会自动解决《圣诞星》的历史阻塞。
+`submitting` / `uploading` 等历史记录不会自动清空。自动模式若清单中的 ID 本身处于此状态，会阻塞整批并提示核对；若是清单外的其他 ID 已经发布或提交了同一来源，自动模式会排除这个来源候选，单 ID 模式则报错停止。需先核对账号，不应删除状态文件或改 ID 重投。更换运行地点不会自动解决历史阻塞。确认创作中心完整稿件列表中不存在对应投稿后，可保留原记录并恢复为 `reserved`，追加核对时间与依据；`retryable` 不会被当前发布队列自动选中。《圣诞星》于 2026-10-14 完成核对并恢复待重试，依据见 `state/reconciliations/IXuhdnB2dAY-20261014.json`。
 
 检查通过仅证明环境和本地文件可用，Cookie 在线有效性、账号状态及实际分片传输仍需单独验证。本地网络也可能失败。浏览器、requests 与 aiohttp 的代理行为不同；当前分片上传不会自动使用 `HTTP_PROXY` / `HTTPS_PROXY`。不要因浏览器能打开视频，就认定上传节点也可连接。
 
