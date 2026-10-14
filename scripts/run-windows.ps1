@@ -1,6 +1,8 @@
 param(
     [ValidateSet('JayChou', 'YuGang')]
     [string]$Collection = 'JayChou',
+    [ValidateRange(1, 2147483647)]
+    [int]$BatchSize = 1,
     [string]$VideoId = '',
     # USERPROFILE avoids MSIX LocalAppData redirection inside desktop apps.
     [string]$CookieDirectory = (Join-Path $env:USERPROFILE '.authorized-media-publisher\credentials'),
@@ -28,6 +30,7 @@ try {
             }
         }
         $arguments = @('-m', 'scripts.run_windows', '--collection', $Collection,
+            '--batch-size', $BatchSize.ToString(),
             '--cookie-directory', $CookieDirectory)
         if ($VideoId) { $arguments += @('--video-id', $VideoId) }
         if ($Publish) { $arguments += '--publish' }

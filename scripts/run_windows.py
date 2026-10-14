@@ -1,4 +1,4 @@
-"""Check the native Windows environment, or explicitly publish one selected item."""
+"""Check native Windows setup, then publish from a collection by count or ID."""
 
 from __future__ import annotations
 
@@ -46,6 +46,29 @@ def ineligible_reason(record: dict, state: dict) -> str:
     return ''
 
 
+def automatic_records(records: list[dict], state: dict) -> list[dict]:
+    """Keep the whole eligible queue so skipped sources do not consume quota."""
+    ids = {row['id'] for row in records}
+    uncertain = [
+        f"{video_id} ({entry.get('title', '')})"
+        for video_id, entry in state['videos'].items()
+        if video_id in ids and entry.get('status') in {'submitting', 'uploading'}
+    ]
+    if uncertain:
+        raise LocalCheckError('清单包含投稿结果不确定的记录，请先核对账号：' + '、'.join(uncertain))
+    # Match serial_publish: finish existing uploads before building new items.
+    pending = [row for row in records if state['videos'].get(row['id'], {}).get('status') == 'uploaded']
+    remaining = [row for row in records if state['videos'].get(row['id'], {}).get('status') != 'uploaded']
+    queue = []
+    seen_sources = set()
+    for row in pending + remaining:
+        if ineligible_reason(row, state) or row['video_url'] in seen_sources:
+            continue
+        queue.append(row)
+        seen_sources.add(row['video_url'])
+    return queue
+
+
 def git(*arguments: str) -> str:
     result = subprocess.run(['git', *arguments], cwd=ROOT, check=True,
                             capture_output=True, text=True, encoding='utf-8')
@@ -56,11 +79,14 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--collection', choices=COLLECTIONS, default='JayChou')
     parser.add_argument('--video-id')
+    parser.add_argument('--batch-size', type=int, default=1)
     parser.add_argument('--cookie-directory', type=Path, required=True)
     parser.add_argument('--publish', action='store_true')
     args = parser.parse_args()
-    if args.publish and not args.video_id:
-        parser.error('正式发布必须指定 --video-id；每次只处理这一条')
+    if args.batch_size < 1:
+        parser.error('--batch-size 必须是正整数')
+    if args.video_id and args.batch_size != 1:
+        parser.error('指定 --video-id 时只能处理一条；按数量自动选取时请去掉 --video-id')
 
     problems = []
     for executable in ('git', 'ffmpeg', 'ffprobe', 'node'):
@@ -122,13 +148,18 @@ def main() -> int:
         if reason:
             raise LocalCheckError(f"{selected['id']}: {reason}")
         print(f"选定：{selected['id']} | {selected['title']}", flush=True)
+        candidates = [selected]
     else:
-        candidates = [row for row in records if not ineligible_reason(row, state)]
-        print('可选记录（前五条；正式发布前仍需检查账号）：', flush=True)
-        for row in candidates[:5]:
+        candidates = automatic_records(records, state)
+        print(f'本次最多完成 {args.batch_size} 条，按清单顺序串行处理；当前候选 {len(candidates)} 条。', flush=True)
+        print('预计处理（遇到重复或源不可用会继续取下一条）：', flush=True)
+        for row in candidates[:args.batch_size]:
             print(f"  {row['id']} | {row['title']}", flush=True)
     if not args.publish:
-        print('检查结束，没有下载、转码或投稿。使用 -VideoId ID -Publish 才会公开发布。', flush=True)
+        print('检查结束，没有下载、转码或投稿。增加 -Publish 才会公开发布。', flush=True)
+        return 0
+    if not candidates:
+        print('清单没有可处理的视频。', flush=True)
         return 0
 
     output = ROOT / 'output/windows-local'
@@ -140,11 +171,12 @@ def main() -> int:
     try:
         if check_recent(bilibili_cookie, state_path, manifest, output / 'recent-review-check.json', 2):
             raise LocalCheckError('最近稿件有审核退回记录，请先处理')
-        single_manifest = output / 'selected-video.csv'
-        with single_manifest.open('w', encoding='utf-8', newline='') as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(selected))
+        batch_manifest = output / 'selected-videos.csv'
+        with batch_manifest.open('w', encoding='utf-8', newline='') as handle:
+            fields = list(dict.fromkeys(key for row in candidates for key in row))
+            writer = csv.DictWriter(handle, fieldnames=fields)
             writer.writeheader()
-            writer.writerow(selected)
+            writer.writerows(candidates)
         # Both biliup and yt-dlp can rewrite cookie files. Preserve both exports.
         with tempfile.TemporaryDirectory(prefix='publisher-credentials-') as temporary:
             runtime_cookie = Path(temporary) / 'bilibili-cookies.json'
@@ -152,8 +184,8 @@ def main() -> int:
             shutil.copyfile(bilibili_cookie, runtime_cookie)
             shutil.copyfile(youtube_cookie, runtime_youtube)
             result = serial_publish(
-                single_manifest, ROOT / 'input/images.csv', output / 'videos',
-                1920, 1080, state_path, 1, runtime_youtube, runtime_cookie,
+                batch_manifest, ROOT / 'input/images.csv', output / 'videos',
+                1920, 1080, state_path, args.batch_size, runtime_youtube, runtime_cookie,
                 'public', 171, '授权素材,音乐', season_title, '',
                 'windows-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'),
             )

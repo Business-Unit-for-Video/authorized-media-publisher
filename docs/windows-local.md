@@ -39,29 +39,33 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps
 
 ## 检查与启动
 
-默认仅检查程序、Python 模块、Cookie 文件格式和发布状态，并列出前五条可选记录。不会下载、转码、访问账号或投稿：
+默认仅检查程序、Python 模块、Cookie 文件格式和发布状态，并预览指定数量的候选记录。不会下载、转码、访问账号或投稿。数量默认 1，可用 `-BatchSize` 调整：
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -BatchSize 2
 ```
 
-检查于纲清单使用 `-Collection YuGang`；默认 `JayChou` 是周杰伦。选定 ID 后先检查，例如：
+增加 `-Publish` 后，像 Actions 一样自动从所选合集清单取视频，无需输入 ID。发布周杰伦清单中接下来的最多两条：
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -Collection JayChou -VideoId "实际视频ID"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -BatchSize 2 -Publish
 ```
 
-只有增加 `-Publish` 才开始公开投稿。每次只处理指定的一条，保留原视频 ID，不创建绕过去重的测试 ID：
+切换于纲清单及合集使用 `-Collection YuGang`：
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -Collection JayChou -VideoId "实际视频ID" -Publish
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -Collection YuGang -BatchSize 2 -Publish
 ```
+
+`-BatchSize` 是本次最多完成的数量：按原清单顺序，一个完成再处理下一个；已上传但待挂合集的记录优先补挂，计入完成数。已发布/跳过的记录、同来源或同标题的重复内容不再上传；源视频明确不可用时记录状态并继续往后取，不占成功数量。清单耗尽则提前结束，其他下载/上传失败仍会停止。此参数不会创建每天定时任务。
+
+仍可用 `-VideoId "实际视频ID" -Publish` 单独处理一条，此时 `-BatchSize` 必须为 1。所有方式都保留原视频 ID，不生成绕过去重的测试 ID。
 
 正式运行前，先确认该视频在账号中未发布，以及 GitHub Actions 没有同时执行发布。Actions 的 concurrency 不能锁住本地进程；本地锁只防止两个本地入口互相抢占。保持电脑联网且不休眠。
 
-正式运行会要求仓库干净且位于 main，先 `git pull --ff-only`，检查最近两条该合集稿件的审核结果，再处理单条清单。与云端共用并提交 `state/publish-state.json`，成功后仍由原发布器加入合集、推送 GitHub。状态为 `uploaded` 的记录只补挂合集。文件及报告位于被 Git 忽略的 `output/windows-local/`。
+正式运行会要求仓库干净且位于 main，先 `git pull --ff-only`，检查最近两条该合集稿件的审核结果，再串行处理清单。与云端共用并提交 `state/publish-state.json`，每条完成后仍由原发布器加入合集、推送 GitHub。文件及报告位于被 Git 忽略的 `output/windows-local/`。
 
-`submitting` / `uploading` 等历史记录不会自动清空。相同来源在另一个 ID 下已发布或结果不确定时也会停止；需先核对账号，不应删除状态文件或改 ID 重投。更换运行地点不会自动解决《圣诞星》的历史阻塞。
+`submitting` / `uploading` 等历史记录不会自动清空。自动模式若清单中的 ID 本身处于此状态，会阻塞整批并提示核对；若是清单外的其他 ID 已经发布或提交了同一来源，自动模式会排除这个来源候选，单 ID 模式则报错停止。需先核对账号，不应删除状态文件或改 ID 重投。更换运行地点不会自动解决《圣诞星》的历史阻塞。
 
 检查通过仅证明环境和本地文件可用，Cookie 在线有效性、账号状态及实际分片传输仍需单独验证。本地网络也可能失败。浏览器、requests 与 aiohttp 的代理行为不同；当前分片上传不会自动使用 `HTTP_PROXY` / `HTTPS_PROXY`。不要因浏览器能打开视频，就认定上传节点也可连接。
 
