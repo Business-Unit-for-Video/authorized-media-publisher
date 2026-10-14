@@ -3331,7 +3331,7 @@
       "unavailable_at": "2026-10-14T05:44:30.853299+00:00"
     },
     "fqV_lnxzFxA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=fqV_lnxzFxA",
       "title": "2005 8 20 报菜名",
       "image_id": "691d1235476d934d30ca",
@@ -3341,7 +3341,11 @@
       "submitting_at": "2026-10-14T06:12:22.717239+00:00",
       "aid": 117437777314242,
       "bvid": "BV1fjpy6UEUo",
-      "uploaded_at": "2026-10-14T06:14:27.553555+00:00"
+      "uploaded_at": "2026-10-14T06:14:27.553555+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T06:14:31.044518+00:00"
     }
   },
   "season": {
