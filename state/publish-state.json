@@ -3144,14 +3144,17 @@
       "published_at": "2026-10-14T03:24:57.973531+00:00"
     },
     "4j0Fgmsxr-o": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=4j0Fgmsxr-o",
       "title": "周杰倫 Jay Chou【超人不會飛 Superman Can't Fly】Official MV",
       "image_id": "eb3a41f81a98b3e055b9",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-18",
       "reserved_at": "2026-10-14T03:30:06.558577+00:00",
-      "submitting_at": "2026-10-14T03:30:09.475051+00:00"
+      "submitting_at": "2026-10-14T03:30:09.475051+00:00",
+      "aid": 117437139780435,
+      "bvid": "BV1L6pr6iELh",
+      "uploaded_at": "2026-10-14T03:30:29.142932+00:00"
     }
   },
   "season": {
