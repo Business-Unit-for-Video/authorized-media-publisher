@@ -3529,7 +3529,7 @@
       "published_at": "2026-10-14T10:02:48.209215+00:00"
     },
     "_SFv7mHFgpY": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=_SFv7mHFgpY",
       "title": "北京相声大会   20041212   第2部第1集 豆腐堂会 clip",
       "image_id": "8f5a5515564b04018593",
@@ -3539,7 +3539,11 @@
       "submitting_at": "2026-10-14T10:37:36.092993+00:00",
       "aid": 117438817502438,
       "bvid": "BV1TPp26iEgB",
-      "uploaded_at": "2026-10-14T10:39:35.077782+00:00"
+      "uploaded_at": "2026-10-14T10:39:35.077782+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T10:39:38.994175+00:00"
     }
   },
   "season": {
