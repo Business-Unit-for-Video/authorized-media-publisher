@@ -3511,14 +3511,17 @@
       "published_at": "2026-10-14T09:25:01.108090+00:00"
     },
     "6DrlrfY8J_s": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=6DrlrfY8J_s",
       "title": "北京相声大会   20041128   第1部第6集   综合专场 师傅经 clip",
       "image_id": "7449defe331043ec66b5",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-18",
       "reserved_at": "2026-10-14T10:01:05.190378+00:00",
-      "submitting_at": "2026-10-14T10:01:08.233354+00:00"
+      "submitting_at": "2026-10-14T10:01:08.233354+00:00",
+      "aid": 117438683285315,
+      "bvid": "BV1VQp16yEgr",
+      "uploaded_at": "2026-10-14T10:02:44.361962+00:00"
     }
   },
   "season": {
