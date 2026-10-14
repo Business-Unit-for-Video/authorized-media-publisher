@@ -3288,14 +3288,17 @@
       "published_at": "2026-10-14T05:15:52.916179+00:00"
     },
     "tAjHdsasiyM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=tAjHdsasiyM",
       "title": "你要折腾",
       "image_id": "188e4ed85f82ac0e4d26",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T035045Z-5",
       "reserved_at": "2026-10-14T05:27:58.083028+00:00",
-      "submitting_at": "2026-10-14T05:28:00.925824+00:00"
+      "submitting_at": "2026-10-14T05:28:00.925824+00:00",
+      "aid": 117437609543945,
+      "bvid": "BV1FVpy6QEkM",
+      "uploaded_at": "2026-10-14T05:28:42.489640+00:00"
     }
   },
   "season": {
