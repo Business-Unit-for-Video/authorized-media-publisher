@@ -2805,7 +2805,7 @@
       "submitting_at": "2026-10-11T01:28:25.680571+00:00"
     },
     "IXuhdnB2dAY": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=IXuhdnB2dAY",
       "title": "周杰倫 JAY CHOU (feat. 楊瑞代) 【聖誕星 Christmas Star】Official MV",
       "image_id": "18b816827aafeed03652",
@@ -2815,7 +2815,10 @@
       "submitting_at": "2026-10-14T01:37:45.052251+00:00",
       "reconciled_at": "2026-10-14T01:31:18.707442+00:00",
       "reconcile_reason": "已完整核对创作中心全部 1125 条稿件，未找到聖誕星、圣诞星或 Christmas 标题；原 Actions 在上传阶段超时失败，恢复原记录为 reserved 以允许重试。",
-      "reconcile_report": "state/reconciliations/IXuhdnB2dAY-20261014.json"
+      "reconcile_report": "state/reconciliations/IXuhdnB2dAY-20261014.json",
+      "aid": 117436686796020,
+      "bvid": "BV116pk6sEra",
+      "uploaded_at": "2026-10-14T01:37:58.451004+00:00"
     }
   },
   "season": {
