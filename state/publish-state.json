@@ -3090,14 +3090,17 @@
       "unavailable_at": "2026-10-14T03:10:03.630501+00:00"
     },
     "mLFhTFiX0uM": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=mLFhTFiX0uM",
       "title": "周杰倫 Jay Chou【說好的幸福呢 The Promised Love】-Official Music Video",
       "image_id": "5f081868679989c63b81",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-15",
       "reserved_at": "2026-10-14T03:14:50.656622+00:00",
-      "submitting_at": "2026-10-14T03:14:53.552012+00:00"
+      "submitting_at": "2026-10-14T03:14:53.552012+00:00",
+      "aid": 117437072672701,
+      "bvid": "BV1G2pr6aEPz",
+      "uploaded_at": "2026-10-14T03:15:10.679307+00:00"
     }
   },
   "season": {
