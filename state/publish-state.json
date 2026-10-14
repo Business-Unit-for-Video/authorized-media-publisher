@@ -3547,7 +3547,7 @@
       "published_at": "2026-10-14T10:39:38.994175+00:00"
     },
     "O9csrmZSIYI": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=O9csrmZSIYI",
       "title": "北京相声大会   20041218   第2部第4集 梦中婚 clip",
       "image_id": "36766a9450924c6a695f",
@@ -3557,7 +3557,11 @@
       "submitting_at": "2026-10-14T11:11:27.935700+00:00",
       "aid": 117438951720907,
       "bvid": "BV1stp16cEqS",
-      "uploaded_at": "2026-10-14T11:13:16.955319+00:00"
+      "uploaded_at": "2026-10-14T11:13:16.955319+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T11:13:21.397772+00:00"
     }
   },
   "season": {
