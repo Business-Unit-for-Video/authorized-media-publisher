@@ -38,6 +38,7 @@
       "c6b51b35f239e288d0d1",
       "c7c8924c1b00e8bf33d0",
       "c956277354e6c1d4fe2d",
+      "d0ceb26c4d76e8e2a60c",
       "d2a44f25560a465360e6",
       "dce650a04ba22fdb92c9",
       "e6218dc29c412b76b210",
@@ -3159,6 +3160,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T03:30:32.587064+00:00"
+    },
+    "CllkiAZajJI": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=CllkiAZajJI",
+      "title": "周杰倫 Jay Chou【超跑女神 Sports Car Model】Official MV",
+      "image_id": "d0ceb26c4d76e8e2a60c",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-19",
+      "reserved_at": "2026-10-14T03:33:25.587071+00:00"
     }
   },
   "season": {
