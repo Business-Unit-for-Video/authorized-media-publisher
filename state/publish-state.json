@@ -40,6 +40,7 @@
       "c956277354e6c1d4fe2d",
       "d2a44f25560a465360e6",
       "dce650a04ba22fdb92c9",
+      "e6218dc29c412b76b210",
       "e8633c5b5efe960f62c4",
       "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
@@ -3105,6 +3106,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T03:15:14.162003+00:00"
+    },
+    "NH43WjeoVgs": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=NH43WjeoVgs",
+      "title": "周杰倫 Jay Chou【 說走就走 Let's Go】Official MV",
+      "image_id": "e6218dc29c412b76b210",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-16",
+      "reserved_at": "2026-10-14T03:19:02.160415+00:00"
     }
   },
   "season": {
