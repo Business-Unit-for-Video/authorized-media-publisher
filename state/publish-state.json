@@ -49,6 +49,7 @@
       "c956277354e6c1d4fe2d",
       "ca22927434caa819f146",
       "d0ceb26c4d76e8e2a60c",
+      "d23c2d652e9f160ad9ba",
       "d2a44f25560a465360e6",
       "dc75d5f53f0c09a0b35a",
       "dce650a04ba22fdb92c9",
@@ -3436,6 +3437,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-14T07:55:35.056636+00:00"
+    },
+    "_vGDdkSpgh4": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=_vGDdkSpgh4",
+      "title": "2005 5 3 郭德纲 李文山攒底活－打灯谜＋八扇屏＋徐德亮媳妇的故事",
+      "image_id": "d23c2d652e9f160ad9ba",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-14",
+      "reserved_at": "2026-10-14T08:12:05.626416+00:00"
     }
   },
   "season": {
