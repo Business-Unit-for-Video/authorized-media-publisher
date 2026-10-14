@@ -3403,7 +3403,7 @@
       "published_at": "2026-10-14T07:27:47.236133+00:00"
     },
     "MtB-Yvi_HTk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=MtB-Yvi_HTk",
       "title": "2005 5 28 郭德纲 于谦 返场小段集（各家媳妇的故事）",
       "image_id": "92a629d439d88775b281",
@@ -3413,7 +3413,11 @@
       "submitting_at": "2026-10-14T07:44:37.105833+00:00",
       "aid": 117438146413587,
       "bvid": "BV1WspC6sERg",
-      "uploaded_at": "2026-10-14T07:45:24.292719+00:00"
+      "uploaded_at": "2026-10-14T07:45:24.292719+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-14T07:45:27.627821+00:00"
     }
   },
   "season": {
