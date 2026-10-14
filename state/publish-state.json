@@ -19,6 +19,7 @@
       "82ccdc55a44da3468164",
       "859b9716a5db48eaa3b2",
       "a20601d314d07a692397",
+      "a315e1837de19309b9bb",
       "a3caffc084ca41e62ed4",
       "b6392e23670eb827ff02",
       "b7ee15c4b1c398fbea57",
@@ -2864,6 +2865,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T02:14:30.056155+00:00"
+    },
+    "zqKoXPHhmsM": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=zqKoXPHhmsM",
+      "title": "周杰倫 Jay Chou【聽見下雨的聲音 Rhythm of the Rain】Official MV",
+      "image_id": "a315e1837de19309b9bb",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T020851Z-2",
+      "reserved_at": "2026-10-14T02:18:19.511998+00:00"
     }
   },
   "season": {
