@@ -3011,13 +3011,14 @@
       "published_at": "2026-10-14T02:51:45.394634+00:00"
     },
     "s5Xl5MXboas": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=s5Xl5MXboas",
       "title": "周杰倫 Jay Chou【蘭亭序 Lan-Ting-Xu】-Official Music Video",
       "image_id": "dce650a04ba22fdb92c9",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-10",
-      "reserved_at": "2026-10-14T02:56:05.063068+00:00"
+      "reserved_at": "2026-10-14T02:56:05.063068+00:00",
+      "submitting_at": "2026-10-14T02:56:08.594835+00:00"
     }
   },
   "season": {
