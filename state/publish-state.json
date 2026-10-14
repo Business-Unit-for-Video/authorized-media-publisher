@@ -3126,14 +3126,17 @@
       "published_at": "2026-10-14T03:19:25.594619+00:00"
     },
     "a7ziV-RjqBo": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=a7ziV-RjqBo",
       "title": "Jay Chou 周杰倫【Who Cares 誰稀罕】Official Music Video",
       "image_id": "ea8d54421823936a8c50",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261014T020851Z-17",
       "reserved_at": "2026-10-14T03:24:31.553032+00:00",
-      "submitting_at": "2026-10-14T03:24:34.733994+00:00"
+      "submitting_at": "2026-10-14T03:24:34.733994+00:00",
+      "aid": 117437123003141,
+      "bvid": "BV15kpr6NEen",
+      "uploaded_at": "2026-10-14T03:24:54.694298+00:00"
     }
   },
   "season": {
