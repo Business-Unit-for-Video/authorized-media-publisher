@@ -17,6 +17,7 @@
       "371980b3bdcfc382aba7",
       "4bd7bc24adbb25fd5741",
       "4ca4a30494daaaaf2a1c",
+      "555e4a19ec4530546b36",
       "5679c79136508a251c92",
       "5f081868679989c63b81",
       "60471a9beefc956dbb51",
@@ -3213,11 +3214,20 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-14T03:44:12.079507+00:00"
+    },
+    "S84Kq54frso": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=S84Kq54frso",
+      "title": "我是文学家",
+      "image_id": "555e4a19ec4530546b36",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261014T035045Z-1",
+      "reserved_at": "2026-10-14T04:02:23.284496+00:00"
     }
   },
   "season": {
-    "title": "周杰伦",
-    "season_id": 8728825,
-    "section_id": 9727754
+    "title": "于纲",
+    "season_id": 8919073,
+    "section_id": 9947605
   }
 }
