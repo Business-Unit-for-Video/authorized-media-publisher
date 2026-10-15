@@ -3601,13 +3601,14 @@
       "published_at": "2026-10-15T01:56:46.396551+00:00"
     },
     "rFxBQWh7ZOQ": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=rFxBQWh7ZOQ",
       "title": "周杰倫 Jay Chou【迷魂曲 Enchanting Melody】Official MV",
       "image_id": "c1c726d73be6b35532f3",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261015T015141Z-2",
-      "reserved_at": "2026-10-15T01:59:53.935668+00:00"
+      "reserved_at": "2026-10-15T01:59:53.935668+00:00",
+      "submitting_at": "2026-10-15T01:59:56.935958+00:00"
     }
   },
   "season": {
