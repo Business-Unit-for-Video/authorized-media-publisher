@@ -3583,7 +3583,7 @@
       "published_at": "2026-10-14T11:38:01.828374+00:00"
     },
     "K0Myfz5phlY": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=K0Myfz5phlY",
       "title": "周杰倫 Jay Chou【迷迭香 Rosemary】-Official Music Video",
       "image_id": "38b4b35c0ed74e4f6d3e",
@@ -3593,7 +3593,11 @@
       "submitting_at": "2026-10-15T01:56:25.351811+00:00",
       "aid": 117442424603612,
       "bvid": "BV1f1J66aEUB",
-      "uploaded_at": "2026-10-15T01:56:42.999536+00:00"
+      "uploaded_at": "2026-10-15T01:56:42.999536+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-15T01:56:46.396551+00:00"
     }
   },
   "season": {
