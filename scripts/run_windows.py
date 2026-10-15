@@ -22,6 +22,12 @@ ROOT = Path(__file__).resolve().parents[1]
 COLLECTIONS = {
     'JayChou': ('input/videos.csv', '周杰伦'),
     'YuGang': ('input/guodegang-early-successes.csv', '于纲'),
+    'XiaoDaoDaLang': ('input/xiaodaodalang.csv', '小岛大浪吹'),
+    'BetterLeaf': ('input/betterleaf.csv', 'Better Leaf 好葉'),
+}
+COLLECTION_TAGS = {
+    'XiaoDaoDaLang': '小岛大浪吹,知识,财经',
+    'BetterLeaf': 'Better Leaf,好葉,知识,学习',
 }
 
 
@@ -186,7 +192,7 @@ def main() -> int:
             result = serial_publish(
                 batch_manifest, ROOT / 'input/images.csv', output / 'videos',
                 1920, 1080, state_path, args.batch_size, runtime_youtube, runtime_cookie,
-                'public', 171, '授权素材,音乐', season_title, '',
+                'public', 171, COLLECTION_TAGS.get(args.collection, '授权素材,音乐'), season_title, '',
                 'windows-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'),
             )
         print(json.dumps(result, ensure_ascii=False), flush=True)

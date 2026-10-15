@@ -40,14 +40,22 @@ Selected images are downloaded and validated before expensive video downloads be
 
 ## GitHub Actions
 
-The repository exposes two public-only workflows so their manifests and Bilibili collections cannot be mixed accidentally:
+四个独立入口固定使用各自清单和 Bilibili 合集，均为手动触发、公开投稿，默认每次最多完成两条：
 
-- `.github/workflows/publish-jay-chou.yml` manually publishes `input/videos.csv` to the `周杰伦` collection.
-- `.github/workflows/publish-yu-gang.yml` manually or daily publishes `input/guodegang-early-successes.csv` to the `于纲` collection. The daily schedule runs at 01:00 UTC (09:00 Asia/Singapore) and defaults to two videos.
+| Actions 文件 | 输入清单 | Bilibili 合集 |
+|---|---|---|
+| [publish-jay-chou.yml](.github/workflows/publish-jay-chou.yml) | `input/videos.csv` | 周杰伦 |
+| [publish-yu-gang.yml](.github/workflows/publish-yu-gang.yml) | `input/guodegang-early-successes.csv` | 于纲 |
+| [publish-xiaodaodalang.yml](.github/workflows/publish-xiaodaodalang.yml) | `input/xiaodaodalang.csv` | 小岛大浪吹 |
+| [publish-betterleaf.yml](.github/workflows/publish-betterleaf.yml) | `input/betterleaf.csv` | Better Leaf 好葉 |
 
-Both workflows use the same concurrency group and shared state file, so only one publisher runs at a time and completed content remains deduplicated across identical and alternate source IDs. Duration and course-type checks belong in upstream discovery or transcription repositories, not here. Every run builds and uploads media in the same job. `batch_size` is the maximum number of videos actually published or attached in the run; `unavailable` and `duplicate` rows do not consume this quota. Execution is strictly serial: finish one pending collection attachment from the selected CSV when present, otherwise inspect, build, publish, and persist one video before continuing. Other failures still stop the run, preserving earlier completed uploads. Before remote submission, state changes from `reserved` to `submitting`; if the runner stops while the remote result is unknown, later runs for that CSV halt instead of automatically creating a duplicate, so the Bilibili account and state must be reconciled manually. Configure the repository environment `bilibili-publish` with Actions secrets named `BILIBILI_PUBLISH_COOKIE_JSON` and, when needed, `YOUTUBE_SOURCE_COOKIE_FILE_AUTHORIZED_PUBLISHER`. Secret values are written only to the ephemeral runner filesystem.
+小岛大浪吹、Better Leaf 好葉的公开转写仓库、文档索引、清单更新和 Windows 命令见 [YouTube 频道转写与发布](docs/youtube-channel-publishing.md)。本仓库处理清单中的原视频与图片，不把转写文档重新生成视频。
 
-The workflow uses the Biliup CLI and currently pins `biliup==1.2.2`. Review Bilibili rules, copyright status, and image rights before submission.
+两频道的文档目录汇总见 [频道视频与转写文档目录](docs/channel-document-lists.md)。于纲、周杰伦的账号审核结果和剩余队列见 [2026-10-15 发布现状](docs/publishing-status-2026-10-15.md)。
+
+这些入口共用并发组和状态文件，同一时间只有一个云端发布任务运行，已完成内容按来源 ID 和内容标题去重。发布器不增加课程类型或时长过滤。`batch_size` 是本次实际发布或补挂合集的数量上限，`unavailable` 和 `duplicate` 不占数量。每条依次制作、投稿、记录状态再继续，其他失败会停止并保留此前的成功记录。
+
+提交前状态会从 `reserved` 改为 `submitting`；如果远端结果不确定，后续同清单任务会停止，需先核对 Bilibili 账号。环境 `bilibili-publish` 使用仓库已有的 `BILIBILI_PUBLISH_COOKIE_JSON` 和 `YOUTUBE_SOURCE_COOKIE_FILE_AUTHORIZED_PUBLISHER`，Secret 只写入临时文件。上传模块当前固定 `biliup==1.2.11`。
 
 审核阻塞的状态位置、人工核对步骤和更新方式见[中文操作说明](docs/bilibili-review-gate.md)。
 

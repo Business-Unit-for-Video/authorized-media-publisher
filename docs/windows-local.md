@@ -57,6 +57,15 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -Collection YuGang -BatchSize 2 -Publish
 ```
 
+小岛大浪吹与 Better Leaf 好葉也有独立清单及合集：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -Collection XiaoDaoDaLang -BatchSize 2 -Publish
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\run-windows.ps1 -Collection BetterLeaf -BatchSize 2 -Publish
+```
+
+两个频道的转写文档索引、清单更新及 Actions 入口见 [YouTube 频道转写与发布](youtube-channel-publishing.md)。
+
 `-BatchSize` 是本次最多完成的数量：按原清单顺序，一个完成再处理下一个；已上传但待挂合集的记录优先补挂，计入完成数。已发布/跳过的记录、同来源或同标题的重复内容不再上传；源视频明确不可用时记录状态并继续往后取，不占成功数量。清单耗尽则提前结束，其他下载/上传失败仍会停止。此参数不会创建每天定时任务。
 
 仍可用 `-VideoId "实际视频ID" -Publish` 单独处理一条，此时 `-BatchSize` 必须为 1。所有方式都保留原视频 ID，不生成绕过去重的测试 ID。

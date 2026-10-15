@@ -81,6 +81,38 @@ def test_publish_without_video_id_passes_batch_size_and_all_candidates(tmp_path,
     assert len(calls) == 1
 
 
+@pytest.mark.parametrize('collection,manifest,season,tags', [
+    ('XiaoDaoDaLang', 'xiaodaodalang', '小岛大浪吹', '小岛大浪吹,知识,财经'),
+    ('BetterLeaf', 'betterleaf', 'Better Leaf 好葉', 'Better Leaf,好葉,知识,学习'),
+])
+def test_channel_publish_uses_own_manifest_and_collection(tmp_path, monkeypatch, collection, manifest, season, tags):
+    environment(tmp_path, monkeypatch)
+    (tmp_path / f'input/{manifest}.csv').write_text(
+        'video_id,url,title\n'
+        f'{manifest}1,https://example.com/{manifest}1,First channel video\n'
+        f'{manifest}2,https://example.com/{manifest}2,Second channel video\n',
+        encoding='utf-8',
+    )
+    sys.argv += ['--collection', collection, '--batch-size', '2', '--publish']
+    allow_publish(monkeypatch)
+    reviews = []
+    monkeypatch.setattr(runner, 'check_recent', lambda *args: reviews.append(args[2]) or 0)
+    calls = []
+
+    def publish(*args):
+        calls.append(args)
+        assert [row['id'] for row in runner.read_video_manifest(args[0])] == [f'{manifest}1', f'{manifest}2']
+        assert args[5] == tmp_path / 'state/publish-state.json'
+        assert args[6] == 2
+        assert args[9:13] == ('public', 171, tags, season)
+        return {'built': 2, 'published': 2}
+
+    monkeypatch.setattr(runner, 'serial_publish', publish)
+    assert runner.main() == 0
+    assert len(calls) == 1
+    assert reviews == [tmp_path / f'input/{manifest}.csv']
+
+
 @pytest.mark.parametrize('arguments', [
     ['--batch-size', '0'],
     ['--batch-size', '-1'],

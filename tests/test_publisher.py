@@ -46,9 +46,11 @@ def test_collection_workflows_are_fixed_and_public_only() -> None:
     workflow_dir = Path(__file__).parents[1] / ".github/workflows"
     jay_chou = (workflow_dir / "publish-jay-chou.yml").read_text(encoding="utf-8")
     yu_gang = (workflow_dir / "publish-yu-gang.yml").read_text(encoding="utf-8")
+    xiaodaodalang = (workflow_dir / "publish-xiaodaodalang.yml").read_text(encoding="utf-8")
+    betterleaf = (workflow_dir / "publish-betterleaf.yml").read_text(encoding="utf-8")
     assert not (workflow_dir / "publish.yml").exists()
 
-    for workflow in (jay_chou, yu_gang):
+    for workflow in (jay_chou, yu_gang, xiaodaodalang, betterleaf):
         assert "          - build\n" not in workflow
         assert "  build:\n" not in workflow
         assert "  publish:\n" in workflow
@@ -61,13 +63,20 @@ def test_collection_workflows_are_fixed_and_public_only() -> None:
         assert "--content-policy" not in workflow
         assert "--min-duration-seconds" not in workflow
         assert "group: authorized-media-publisher" in workflow
+        assert "schedule:" not in workflow
 
     assert "--videos input/videos.csv" in jay_chou
     assert '--season-title "周杰伦"' in jay_chou
     assert "schedule:" not in jay_chou
     assert "--videos input/guodegang-early-successes.csv" in yu_gang
     assert '--season-title "于纲"' in yu_gang
-    assert 'cron: "0 1 * * *"' in yu_gang
+    assert "--videos input/xiaodaodalang.csv" in xiaodaodalang
+    assert '--season-title "小岛大浪吹"' in xiaodaodalang
+    assert "--videos input/betterleaf.csv" in betterleaf
+    assert '--season-title "Better Leaf 好葉"' in betterleaf
+    for workflow in (xiaodaodalang, betterleaf):
+        assert "--tags" in workflow and "知识" in workflow
+        assert "音乐" not in workflow
 
 
 def test_publish_rejects_non_public_visibility(tmp_path: Path) -> None:
