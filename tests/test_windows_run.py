@@ -135,6 +135,12 @@ def record(video_id, title=None, source=None):
     }
 
 
+def test_retryable_video_is_selected_for_republish():
+    records = [record('retry')]
+    state = {'videos': {'retry': {**records[0], 'status': 'retryable'}}}
+    assert select_video_batch(records, state, 1) == records
+
+
 def test_automatic_queue_prioritizes_pending_attachment_and_filters_duplicates():
     records = [
         record('first'),

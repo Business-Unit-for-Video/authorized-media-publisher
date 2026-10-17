@@ -227,7 +227,7 @@ def select_video_batch(
     known = state["videos"]
     selected = [
         row for row in videos
-        if row["id"] not in known or known[row["id"]].get("status") == "reserved"
+        if row["id"] not in known or known[row["id"]].get("status") in {"reserved", "retryable"}
     ]
     return selected[:batch_size]
 
