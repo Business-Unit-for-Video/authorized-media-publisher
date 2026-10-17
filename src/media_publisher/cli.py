@@ -509,7 +509,7 @@ def build(
     image_by_id = {row["id"]: row for row in images}
     for video_row in selected_videos:
         existing = publish_state["videos"].get(video_row["id"], {})
-        if existing.get("status") == "reserved":
+        if existing.get("status") in {"reserved", "retryable"}:
             image_id = str(existing["image_id"])
             if image_id not in image_by_id:
                 raise ValueError(f"reserved image {image_id} is no longer in the manifest")
