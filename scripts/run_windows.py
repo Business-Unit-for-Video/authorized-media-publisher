@@ -38,7 +38,7 @@ class LocalCheckError(RuntimeError):
 def ineligible_reason(record: dict, state: dict) -> str:
     entry = state['videos'].get(record['id'], {})
     status = entry.get('status')
-    if status not in (None, 'reserved', 'uploaded'):
+    if status not in (None, 'reserved', 'uploaded', 'retryable'):
         return f"状态为 {status}，请先核对稿件；不会自动重置历史记录"
     if entry and entry.get('video_url') != record['video_url']:
         return '同一 ID 的来源地址已变化'
