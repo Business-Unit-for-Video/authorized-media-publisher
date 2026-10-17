@@ -61,7 +61,7 @@ def reserve_record(
         existing = videos[video_id]
         if existing.get("video_url") != record["video_source"]:
             raise ValueError(f"video {video_id}: source URL changed")
-        if existing.get("status") == "reserved":
+        if existing.get("status") in {"reserved", "retryable"}:
             if existing.get("image_id") != record["image_id"]:
                 raise ValueError(f"video {video_id}: reserved image changed")
             existing.update({"workflow_run_id": run_id, "reserved_at": now_iso()})
