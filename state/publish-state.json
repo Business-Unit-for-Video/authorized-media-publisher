@@ -3624,8 +3624,8 @@
       "title": "周杰倫 Jay Chou【退後 A Step Back】-Official Music Video",
       "image_id": "8ff2600a9346404a7d1b",
       "image_cycle": 2,
-      "workflow_run_id": "windows-20261017T145724Z-1",
-      "reserved_at": "2026-10-17T15:03:07.785951+00:00",
+      "workflow_run_id": "windows-20261018T005915Z-1",
+      "reserved_at": "2026-10-18T01:05:06.475596+00:00",
       "submitting_at": "2026-10-17T15:03:10.720819+00:00",
       "reconciled_at": "2026-10-17T15:17:29.546888+00:00",
       "reconcile_reason": "Bilibili 预上传返回 601（上传过快），未获得 AID/BVID；稍后可重试"
