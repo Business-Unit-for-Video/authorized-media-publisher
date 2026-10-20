@@ -3693,13 +3693,14 @@
       "published_at": "2026-10-20T15:16:45.808283+00:00"
     },
     "XAhKFiPqGRQ": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=XAhKFiPqGRQ",
       "title": "Jay Chou 周杰倫【Country Road 鄉間的路】Official Music Video",
       "image_id": "5e039b5c751e608f385f",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-4",
-      "reserved_at": "2026-10-20T15:20:28.984320+00:00"
+      "reserved_at": "2026-10-20T15:20:28.984320+00:00",
+      "submitting_at": "2026-10-20T15:20:32.827405+00:00"
     }
   },
   "season": {
