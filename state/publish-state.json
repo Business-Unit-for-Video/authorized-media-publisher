@@ -26,6 +26,7 @@
       "371980b3bdcfc382aba7",
       "38b4b35c0ed74e4f6d3e",
       "428a36985bf12c7becb9",
+      "46c4efbb881184996265",
       "4bd7bc24adbb25fd5741",
       "4c0596da3eed215b787e",
       "4ca4a30494daaaaf2a1c",
@@ -3960,6 +3961,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T16:36:33.268792+00:00"
+    },
+    "UXwHuKmuhW8": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=UXwHuKmuhW8",
+      "title": "周杰倫 Jay Chou【魔術先生Magician】-Official Music Video",
+      "image_id": "46c4efbb881184996265",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-19",
+      "reserved_at": "2026-10-20T16:39:58.607542+00:00"
     }
   },
   "season": {
