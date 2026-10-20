@@ -3765,14 +3765,17 @@
       "published_at": "2026-10-20T15:37:18.127289+00:00"
     },
     "BZlFlBnwfOQ": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=BZlFlBnwfOQ",
       "title": "周杰倫 Jay Chou【陽明山 Yang-Ming Mountain】Official MV (ft. Henry Link)",
       "image_id": "d3781052d3066e0c4a91",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-8",
       "reserved_at": "2026-10-20T15:41:14.546157+00:00",
-      "submitting_at": "2026-10-20T15:41:17.864315+00:00"
+      "submitting_at": "2026-10-20T15:41:17.864315+00:00",
+      "aid": 117473982548396,
+      "bvid": "BV1GPnK64ENH",
+      "uploaded_at": "2026-10-20T15:41:32.239445+00:00"
     }
   },
   "season": {
