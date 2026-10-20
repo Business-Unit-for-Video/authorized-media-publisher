@@ -5,6 +5,7 @@
     "used_image_ids": [
       "01887476e2d54920a015",
       "03c1b478e81968112293",
+      "04013446108b2b7f94ce",
       "0581e5f054b69da47340",
       "08122a87ad329f9c8ccc",
       "0bfa6cc45baa74ea7938",
@@ -3942,6 +3943,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T16:30:46.126449+00:00"
+    },
+    "npiAxeLtHDM": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=npiAxeLtHDM",
+      "title": "周杰倫 Jay Chou【鬥牛 Basketball Match】-Official Music Video",
+      "image_id": "04013446108b2b7f94ce",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-18",
+      "reserved_at": "2026-10-20T16:36:06.827977+00:00"
     }
   },
   "season": {
