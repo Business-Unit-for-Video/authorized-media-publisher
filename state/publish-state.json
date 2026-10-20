@@ -4017,7 +4017,7 @@
       "published_at": "2026-10-20T16:50:42.051595+00:00"
     },
     "DuErkkiCaZU": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=DuErkkiCaZU",
       "title": "周杰倫 Jay Chou【黃金甲 Golden Armor】-Official Music Video",
       "image_id": "19600e726f302685e075",
@@ -4027,7 +4027,11 @@
       "submitting_at": "2026-10-20T16:54:46.377048+00:00",
       "aid": 117474267761382,
       "bvid": "BV1tanN6EEVa",
-      "uploaded_at": "2026-10-20T16:55:02.658354+00:00"
+      "uploaded_at": "2026-10-20T16:55:02.658354+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T16:55:06.727827+00:00"
     }
   },
   "season": {
