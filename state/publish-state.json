@@ -3711,7 +3711,7 @@
       "published_at": "2026-10-20T15:21:00.507424+00:00"
     },
     "9tN1xixvYOc": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=9tN1xixvYOc",
       "title": "周杰倫 Jay Chou【錯過的煙火 You Are The Firework I Missed】Official MV",
       "image_id": "428a36985bf12c7becb9",
@@ -3721,7 +3721,11 @@
       "submitting_at": "2026-10-20T15:25:48.436893+00:00",
       "aid": 117473932215830,
       "bvid": "BV1VwnK6ZEGe",
-      "uploaded_at": "2026-10-20T15:26:14.085232+00:00"
+      "uploaded_at": "2026-10-20T15:26:14.085232+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T15:26:19.375710+00:00"
     }
   },
   "season": {
