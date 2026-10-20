@@ -3639,13 +3639,14 @@
       "published_at": "2026-10-20T14:53:21.183956+00:00"
     },
     "jD0c4QY7L8s": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=jD0c4QY7L8s",
       "title": "周杰倫 Jay Chou【逆鱗 Against】-Official Music Video",
       "image_id": "603fb58da84ea14afb5d",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-1",
-      "reserved_at": "2026-10-20T15:06:31.785680+00:00"
+      "reserved_at": "2026-10-20T15:06:31.785680+00:00",
+      "submitting_at": "2026-10-20T15:06:35.291895+00:00"
     }
   },
   "season": {
