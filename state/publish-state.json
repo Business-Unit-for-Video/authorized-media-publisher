@@ -3945,7 +3945,7 @@
       "published_at": "2026-10-20T16:30:46.126449+00:00"
     },
     "npiAxeLtHDM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=npiAxeLtHDM",
       "title": "周杰倫 Jay Chou【鬥牛 Basketball Match】-Official Music Video",
       "image_id": "04013446108b2b7f94ce",
@@ -3955,7 +3955,11 @@
       "submitting_at": "2026-10-20T16:36:10.385902+00:00",
       "aid": 117474200652429,
       "bvid": "BV1sBnN65EHn",
-      "uploaded_at": "2026-10-20T16:36:29.473027+00:00"
+      "uploaded_at": "2026-10-20T16:36:29.473027+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T16:36:33.268792+00:00"
     }
   },
   "season": {
