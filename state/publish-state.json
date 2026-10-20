@@ -3909,13 +3909,14 @@
       "published_at": "2026-10-20T16:19:56.183491+00:00"
     },
     "JNS-KT_iwmg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=JNS-KT_iwmg",
       "title": "周杰倫 Jay Chou【驚嘆號 Exclamation Point】Official MV",
       "image_id": "13bb4f5ecf6a0b71286d",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-16",
-      "reserved_at": "2026-10-20T16:24:25.824930+00:00"
+      "reserved_at": "2026-10-20T16:24:25.824930+00:00",
+      "submitting_at": "2026-10-20T16:24:29.915138+00:00"
     }
   },
   "season": {
