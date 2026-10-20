@@ -3927,7 +3927,7 @@
       "published_at": "2026-10-20T16:24:52.200325+00:00"
     },
     "aaM7qG2ycjk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=aaM7qG2ycjk",
       "title": "周杰倫 Jay Chou【髮如雪 Hair White as Snow】-Official Music Video",
       "image_id": "748a113f205bcb2a1c61",
@@ -3937,7 +3937,11 @@
       "submitting_at": "2026-10-20T16:30:20.359848+00:00",
       "aid": 117474184003633,
       "bvid": "BV1VnnN6oEC4",
-      "uploaded_at": "2026-10-20T16:30:41.814701+00:00"
+      "uploaded_at": "2026-10-20T16:30:41.814701+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T16:30:46.126449+00:00"
     }
   },
   "season": {
