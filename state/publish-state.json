@@ -3999,14 +3999,17 @@
       "published_at": "2026-10-20T16:45:21.214159+00:00"
     },
     "Hq47d-ouX_Y": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=Hq47d-ouX_Y",
       "title": "周杰倫 Jay Chou【麥芽糖 Malt Candy】-Official Music Video",
       "image_id": "a8a9cacd5c8c68b47a7f",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-21",
       "reserved_at": "2026-10-20T16:50:16.356576+00:00",
-      "submitting_at": "2026-10-20T16:50:20.324109+00:00"
+      "submitting_at": "2026-10-20T16:50:20.324109+00:00",
+      "aid": 117474251050206,
+      "bvid": "BV1CznN6CEBy",
+      "uploaded_at": "2026-10-20T16:50:38.433774+00:00"
     }
   },
   "season": {
