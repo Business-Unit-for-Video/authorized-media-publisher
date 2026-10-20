@@ -4035,7 +4035,7 @@
       "published_at": "2026-10-20T16:55:06.727827+00:00"
     },
     "wRT-5heURhY": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=wRT-5heURhY",
       "title": "周杰倫 Jay Chou【黑色幽默 Dark Humor】-Official Music Video",
       "image_id": "dbd2ce60e5cf851b58c6",
@@ -4045,7 +4045,11 @@
       "submitting_at": "2026-10-20T17:02:28.385634+00:00",
       "aid": 117474301314999,
       "bvid": "BV14vnN6jE3K",
-      "uploaded_at": "2026-10-20T17:02:47.697637+00:00"
+      "uploaded_at": "2026-10-20T17:02:47.697637+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T17:02:51.494675+00:00"
     }
   },
   "season": {
