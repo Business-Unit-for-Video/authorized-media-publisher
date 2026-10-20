@@ -3981,7 +3981,7 @@
       "published_at": "2026-10-20T16:40:20.383820+00:00"
     },
     "mamQvkO6lyU": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=mamQvkO6lyU",
       "title": "Jay Chou 周杰倫【麥烝瑋 Mai】-Official Music Video",
       "image_id": "1798b22bb19fda3366e6",
@@ -3991,7 +3991,11 @@
       "submitting_at": "2026-10-20T16:44:59.845440+00:00",
       "aid": 117474234207645,
       "bvid": "BV1prnN6GEar",
-      "uploaded_at": "2026-10-20T16:45:17.476295+00:00"
+      "uploaded_at": "2026-10-20T16:45:17.476295+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T16:45:21.214159+00:00"
     }
   },
   "season": {
