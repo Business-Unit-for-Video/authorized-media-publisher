@@ -3801,13 +3801,14 @@
       "published_at": "2026-10-20T15:49:12.137108+00:00"
     },
     "OR-0wptI_u0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=OR-0wptI_u0",
       "title": "周杰倫 Jay Chou【雙截棍 Nunchucks】Official MV",
       "image_id": "cc835529563c7e1e0d3a",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-10",
-      "reserved_at": "2026-10-20T15:53:39.437438+00:00"
+      "reserved_at": "2026-10-20T15:53:39.437438+00:00",
+      "submitting_at": "2026-10-20T15:53:43.195038+00:00"
     }
   },
   "season": {
