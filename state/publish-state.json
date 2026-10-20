@@ -3783,14 +3783,17 @@
       "published_at": "2026-10-20T15:41:36.508545+00:00"
     },
     "T4qPsRLjGCY": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=T4qPsRLjGCY",
       "title": "周杰倫 Jay Chou 【雙刀 Double Blade】-Official Music Video",
       "image_id": "4c0596da3eed215b787e",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-9",
       "reserved_at": "2026-10-20T15:48:40.148271+00:00",
-      "submitting_at": "2026-10-20T15:48:43.643341+00:00"
+      "submitting_at": "2026-10-20T15:48:43.643341+00:00",
+      "aid": 117474016103796,
+      "bvid": "BV1jRnN6YEKi",
+      "uploaded_at": "2026-10-20T15:49:08.190437+00:00"
     }
   },
   "season": {
