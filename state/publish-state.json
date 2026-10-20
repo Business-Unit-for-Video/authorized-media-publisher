@@ -12,6 +12,7 @@
       "0feab7e32cd85857ce25",
       "10340e09a8a23fe11eb5",
       "10b9f309a38e5ce38f7c",
+      "13bb4f5ecf6a0b71286d",
       "14683834d645baa2a9c9",
       "1585a11b484a7814f4f4",
       "188e4ed85f82ac0e4d26",
@@ -3906,6 +3907,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T16:19:56.183491+00:00"
+    },
+    "JNS-KT_iwmg": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=JNS-KT_iwmg",
+      "title": "周杰倫 Jay Chou【驚嘆號 Exclamation Point】Official MV",
+      "image_id": "13bb4f5ecf6a0b71286d",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-16",
+      "reserved_at": "2026-10-20T16:24:25.824930+00:00"
     }
   },
   "season": {
