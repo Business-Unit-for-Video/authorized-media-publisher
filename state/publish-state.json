@@ -3657,7 +3657,7 @@
       "published_at": "2026-10-20T15:07:10.383887+00:00"
     },
     "BSlMAJ7SkMA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=BSlMAJ7SkMA",
       "title": "周杰倫 Jay Chou【還在流浪 Still Wandering】Official MV",
       "image_id": "0feab7e32cd85857ce25",
@@ -3667,7 +3667,11 @@
       "submitting_at": "2026-10-20T15:12:03.276305+00:00",
       "aid": 117473865107417,
       "bvid": "BV1HynN6gEDn",
-      "uploaded_at": "2026-10-20T15:12:25.216863+00:00"
+      "uploaded_at": "2026-10-20T15:12:25.216863+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T15:12:31.680197+00:00"
     }
   },
   "season": {
