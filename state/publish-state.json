@@ -3819,7 +3819,7 @@
       "published_at": "2026-10-20T15:54:04.977175+00:00"
     },
     "jOxzAsnx9-0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=jOxzAsnx9-0",
       "title": "周杰倫 Jay Chou【雨下一整晚 Rain All Night】Official MV",
       "image_id": "de477164aae9c639e01a",
@@ -3829,7 +3829,11 @@
       "submitting_at": "2026-10-20T15:59:13.972910+00:00",
       "aid": 117474049722855,
       "bvid": "BV1vZnN6hEs9",
-      "uploaded_at": "2026-10-20T15:59:35.669127+00:00"
+      "uploaded_at": "2026-10-20T15:59:35.669127+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T15:59:39.405601+00:00"
     }
   },
   "season": {
