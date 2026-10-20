@@ -46,6 +46,7 @@
       "691d1235476d934d30ca",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
+      "71b9fd44b688ddb9b1ed",
       "7449defe331043ec66b5",
       "748a113f205bcb2a1c61",
       "82a624df78be4642e03b",
@@ -4086,6 +4087,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T17:13:48.473547+00:00"
+    },
+    "_byK6M95hTc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=_byK6M95hTc",
+      "title": "周杰倫 Jay Chou【龍拳 Dragon Fist】Official MV",
+      "image_id": "71b9fd44b688ddb9b1ed",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-26",
+      "reserved_at": "2026-10-20T17:18:46.727644+00:00"
     }
   },
   "season": {
