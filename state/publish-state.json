@@ -3981,13 +3981,14 @@
       "published_at": "2026-10-20T16:40:20.383820+00:00"
     },
     "mamQvkO6lyU": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=mamQvkO6lyU",
       "title": "Jay Chou 周杰倫【麥烝瑋 Mai】-Official Music Video",
       "image_id": "1798b22bb19fda3366e6",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-20",
-      "reserved_at": "2026-10-20T16:44:56.674365+00:00"
+      "reserved_at": "2026-10-20T16:44:56.674365+00:00",
+      "submitting_at": "2026-10-20T16:44:59.845440+00:00"
     }
   },
   "season": {
