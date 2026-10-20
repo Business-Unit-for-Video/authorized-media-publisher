@@ -3837,14 +3837,17 @@
       "published_at": "2026-10-20T15:59:39.405601+00:00"
     },
     "wr-6wwt8RXk": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=wr-6wwt8RXk",
       "title": "周杰倫 Jay Chou【霍元甲 Fearless】-Official Music Video",
       "image_id": "8ec409e72e675855127c",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-12",
       "reserved_at": "2026-10-20T16:04:45.083253+00:00",
-      "submitting_at": "2026-10-20T16:04:48.927640+00:00"
+      "submitting_at": "2026-10-20T16:04:48.927640+00:00",
+      "aid": 117474083211062,
+      "bvid": "BV1aWnN69E5R",
+      "uploaded_at": "2026-10-20T16:05:10.634407+00:00"
     }
   },
   "season": {
