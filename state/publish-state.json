@@ -3873,13 +3873,14 @@
       "published_at": "2026-10-20T16:10:37.841496+00:00"
     },
     "syYc5dydzmE": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=syYc5dydzmE",
       "title": "周杰倫 Jay Chou【鞋子特大號 Extra Large Shoes】Official MV",
       "image_id": "a364901a802e408cd89e",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-14",
-      "reserved_at": "2026-10-20T16:15:14.822230+00:00"
+      "reserved_at": "2026-10-20T16:15:14.822230+00:00",
+      "submitting_at": "2026-10-20T16:15:18.192113+00:00"
     }
   },
   "season": {
