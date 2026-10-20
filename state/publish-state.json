@@ -3729,7 +3729,7 @@
       "published_at": "2026-10-20T15:26:19.375710+00:00"
     },
     "H7hpK6cm-6k": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=H7hpK6cm-6k",
       "title": "周杰倫 Jay Chou【開不了口 I Find It Hard To Say】Official MV",
       "image_id": "1585a11b484a7814f4f4",
@@ -3739,7 +3739,11 @@
       "submitting_at": "2026-10-20T15:31:51.843304+00:00",
       "aid": 117473948993413,
       "bvid": "BV1VcnK6bEZC",
-      "uploaded_at": "2026-10-20T15:32:21.109037+00:00"
+      "uploaded_at": "2026-10-20T15:32:21.109037+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T15:32:25.262382+00:00"
     }
   },
   "season": {
