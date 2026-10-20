@@ -27,6 +27,7 @@
       "36766a9450924c6a695f",
       "371980b3bdcfc382aba7",
       "38b4b35c0ed74e4f6d3e",
+      "3a5b5e6f7c77da685866",
       "428a36985bf12c7becb9",
       "46c4efbb881184996265",
       "4bd7bc24adbb25fd5741",
@@ -4050,6 +4051,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T17:02:51.494675+00:00"
+    },
+    "bX33UI9ZPLk": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=bX33UI9ZPLk",
+      "title": "周杰倫 Jay Chou【黑色毛衣 Black Sweater】-Official Music Video",
+      "image_id": "3a5b5e6f7c77da685866",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-24",
+      "reserved_at": "2026-10-20T17:07:19.215303+00:00"
     }
   },
   "season": {
