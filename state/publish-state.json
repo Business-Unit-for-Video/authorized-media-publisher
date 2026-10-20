@@ -4071,13 +4071,14 @@
       "published_at": "2026-10-20T17:07:44.430143+00:00"
     },
     "6VRioN8euIs": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=6VRioN8euIs",
       "title": "周杰倫 Jay Chou【龍戰騎士 Dragon Rider】-Official Music Video",
       "image_id": "148afaec717a6df2e527",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-25",
-      "reserved_at": "2026-10-20T17:13:20.808550+00:00"
+      "reserved_at": "2026-10-20T17:13:20.808550+00:00",
+      "submitting_at": "2026-10-20T17:13:24.474573+00:00"
     }
   },
   "season": {
