@@ -3855,7 +3855,7 @@
       "published_at": "2026-10-20T16:05:14.354961+00:00"
     },
     "Z8Mqw0b9ADs": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=Z8Mqw0b9ADs",
       "title": "周杰倫 Jay Chou【青花瓷 Blue and White Porcelain】-Official Music Video",
       "image_id": "b4bf3e7fa09933710d74",
@@ -3865,7 +3865,11 @@
       "submitting_at": "2026-10-20T16:10:15.426943+00:00",
       "aid": 117474099989882,
       "bvid": "BV1bbnN6nEE8",
-      "uploaded_at": "2026-10-20T16:10:34.210463+00:00"
+      "uploaded_at": "2026-10-20T16:10:34.210463+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T16:10:37.841496+00:00"
     }
   },
   "season": {
