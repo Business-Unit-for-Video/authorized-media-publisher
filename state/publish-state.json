@@ -4107,7 +4107,7 @@
       "published_at": "2026-10-20T17:19:13.188356+00:00"
     },
     "RPWDeLqsN0g": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=RPWDeLqsN0g",
       "title": "周杰倫 Jay Chou【龍捲風 Tornado】-Official Music Video",
       "image_id": "18d99433e14c0a2182a0",
@@ -4117,7 +4117,11 @@
       "submitting_at": "2026-10-20T17:25:36.830739+00:00",
       "aid": 117474402045219,
       "bvid": "BV1NRnP6yEqn",
-      "uploaded_at": "2026-10-20T17:25:55.346875+00:00"
+      "uploaded_at": "2026-10-20T17:25:55.346875+00:00",
+      "season_id": 8728825,
+      "section_id": 9727754,
+      "season_attached": true,
+      "published_at": "2026-10-20T17:25:59.513434+00:00"
     }
   },
   "season": {
