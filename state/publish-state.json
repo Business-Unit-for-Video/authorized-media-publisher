@@ -80,6 +80,7 @@
       "e8633c5b5efe960f62c4",
       "ea8d54421823936a8c50",
       "eb3a41f81a98b3e055b9",
+      "ebf903e731a0d2b53460",
       "ec3b86a38b4b88854b0e",
       "f03b9eb15b184744d9d5",
       "f22b178f63b255d05744",
@@ -3888,6 +3889,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T16:15:38.850690+00:00"
+    },
+    "X2njc8is50o": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=X2njc8is50o",
+      "title": "周杰倫 Jay Chou【飄移 Drift】(頭文字Dの実写版)-Official Music Video",
+      "image_id": "ebf903e731a0d2b53460",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-15",
+      "reserved_at": "2026-10-20T16:19:34.106049+00:00"
     }
   },
   "season": {
