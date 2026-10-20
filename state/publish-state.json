@@ -3,6 +3,7 @@
   "images": {
     "cycle": 2,
     "used_image_ids": [
+      "01887476e2d54920a015",
       "03c1b478e81968112293",
       "0581e5f054b69da47340",
       "08122a87ad329f9c8ccc",
@@ -3672,6 +3673,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T15:12:31.680197+00:00"
+    },
+    "lkxWU9dURuc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=lkxWU9dURuc",
+      "title": "Jay Chou 周杰倫 【那天下雨了】The day it rained Lyric Video",
+      "image_id": "01887476e2d54920a015",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-3",
+      "reserved_at": "2026-10-20T15:16:18.372914+00:00"
     }
   },
   "season": {
