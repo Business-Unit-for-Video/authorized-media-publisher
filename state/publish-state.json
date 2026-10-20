@@ -3619,7 +3619,7 @@
       "published_at": "2026-10-15T02:00:17.413145+00:00"
     },
     "0-4mm0e2h44": {
-      "status": "submitting",
+      "status": "retryable",
       "video_url": "https://www.youtube.com/watch?v=0-4mm0e2h44",
       "title": "周杰倫 Jay Chou【退後 A Step Back】-Official Music Video",
       "image_id": "8ff2600a9346404a7d1b",
@@ -3627,7 +3627,7 @@
       "workflow_run_id": "windows-20261020T133227Z-1",
       "reserved_at": "2026-10-20T13:38:38.646353+00:00",
       "submitting_at": "2026-10-20T13:38:42.073665+00:00",
-      "reconciled_at": "2026-10-20T13:31:46.281248+00:00",
+      "reconciled_at": "2026-10-20T13:39:56.612429+00:00",
       "reconcile_reason": "账号稿件列表未找到同标题稿件，可重新处理"
     }
   },
