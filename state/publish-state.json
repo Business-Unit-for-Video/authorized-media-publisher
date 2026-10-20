@@ -16,6 +16,7 @@
       "13bb4f5ecf6a0b71286d",
       "14683834d645baa2a9c9",
       "1585a11b484a7814f4f4",
+      "1798b22bb19fda3366e6",
       "188e4ed85f82ac0e4d26",
       "18b816827aafeed03652",
       "28c40c00e25e200ba535",
@@ -3978,6 +3979,15 @@
       "section_id": 9727754,
       "season_attached": true,
       "published_at": "2026-10-20T16:40:20.383820+00:00"
+    },
+    "mamQvkO6lyU": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=mamQvkO6lyU",
+      "title": "Jay Chou 周杰倫【麥烝瑋 Mai】-Official Music Video",
+      "image_id": "1798b22bb19fda3366e6",
+      "image_cycle": 2,
+      "workflow_run_id": "windows-20261020T150210Z-20",
+      "reserved_at": "2026-10-20T16:44:56.674365+00:00"
     }
   },
   "season": {
