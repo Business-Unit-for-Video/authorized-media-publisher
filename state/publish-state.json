@@ -3747,14 +3747,17 @@
       "published_at": "2026-10-20T15:32:25.262382+00:00"
     },
     "qQ7g1tfEGFc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=qQ7g1tfEGFc",
       "title": "周杰倫 Jay Chou【陽光宅男 Sunshine Nerd】-Official Music Video",
       "image_id": "14683834d645baa2a9c9",
       "image_cycle": 2,
       "workflow_run_id": "windows-20261020T150210Z-7",
       "reserved_at": "2026-10-20T15:36:51.766339+00:00",
-      "submitting_at": "2026-10-20T15:36:55.813761+00:00"
+      "submitting_at": "2026-10-20T15:36:55.813761+00:00",
+      "aid": 117473965771178,
+      "bvid": "BV13NnK6dEHi",
+      "uploaded_at": "2026-10-20T15:37:14.324982+00:00"
     }
   },
   "season": {
