@@ -4266,13 +4266,14 @@
       "duplicate_at": "2026-10-21T19:44:51.791139+00:00"
     },
     "UXPMsyhzWVQ": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=UXPMsyhzWVQ",
       "title": "文章会",
       "image_id": "62d619b92333de6a8f68",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-8",
-      "reserved_at": "2026-10-21T19:50:02.637419+00:00"
+      "reserved_at": "2026-10-21T19:50:02.637419+00:00",
+      "submitting_at": "2026-10-21T19:50:03.803195+00:00"
     }
   },
   "season": {
