@@ -54,6 +54,7 @@
       "6a4795ce0cdb5300f0c8",
       "6e6af96d8545922f507f",
       "71b9fd44b688ddb9b1ed",
+      "722eff65789dbd0be5ef",
       "7449defe331043ec66b5",
       "748a113f205bcb2a1c61",
       "82a624df78be4642e03b",
@@ -4415,6 +4416,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T20:33:12.781870+00:00"
+    },
+    "0AL67wjhtck": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=0AL67wjhtck",
+      "title": "我要旅游",
+      "image_id": "722eff65789dbd0be5ef",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-17",
+      "reserved_at": "2026-10-21T20:44:01.233456+00:00"
     }
   },
   "season": {
