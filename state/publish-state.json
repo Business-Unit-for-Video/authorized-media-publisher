@@ -4320,13 +4320,14 @@
       "published_at": "2026-10-21T20:06:15.703509+00:00"
     },
     "PdUyHztDhnA": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=PdUyHztDhnA",
       "title": "民以食为天",
       "image_id": "c93cb752c3e17b46e724",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-11",
-      "reserved_at": "2026-10-21T20:09:43.785566+00:00"
+      "reserved_at": "2026-10-21T20:09:43.785566+00:00",
+      "submitting_at": "2026-10-21T20:09:45.269639+00:00"
     }
   },
   "season": {
