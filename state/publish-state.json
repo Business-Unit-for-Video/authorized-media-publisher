@@ -4526,7 +4526,7 @@
       "published_at": "2026-10-21T21:32:41.346486+00:00"
     },
     "QD1XyMwRaNg": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=QD1XyMwRaNg",
       "title": "寿比南山",
       "image_id": "d95cba201da8673884c0",
@@ -4536,7 +4536,11 @@
       "submitting_at": "2026-10-21T21:35:55.890390+00:00",
       "aid": 117481045756232,
       "bvid": "BV1tinr6HEUk",
-      "uploaded_at": "2026-10-21T21:36:08.807606+00:00"
+      "uploaded_at": "2026-10-21T21:36:08.807606+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T21:36:10.966826+00:00"
     }
   },
   "season": {
