@@ -4472,7 +4472,7 @@
       "published_at": "2026-10-21T20:59:15.062559+00:00"
     },
     "XmMcmo6oIP4": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=XmMcmo6oIP4",
       "title": "我是科学家",
       "image_id": "8520bd5ade21141f1100",
@@ -4482,7 +4482,11 @@
       "submitting_at": "2026-10-21T21:04:57.289074+00:00",
       "aid": 117480928316684,
       "bvid": "BV133nk6tEcu",
-      "uploaded_at": "2026-10-21T21:05:17.104611+00:00"
+      "uploaded_at": "2026-10-21T21:05:17.104611+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T21:05:19.574654+00:00"
     }
   },
   "season": {
