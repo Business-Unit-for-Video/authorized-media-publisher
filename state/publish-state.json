@@ -6,6 +6,7 @@
       "01887476e2d54920a015",
       "03c1b478e81968112293",
       "04013446108b2b7f94ce",
+      "0439f6de0bd2dbd88d65",
       "0581e5f054b69da47340",
       "08122a87ad329f9c8ccc",
       "0bfa6cc45baa74ea7938",
@@ -4353,6 +4354,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T20:15:59.385668+00:00"
+    },
+    "jZGKgZXWnjQ": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=jZGKgZXWnjQ",
+      "title": "郭德纲、于谦-西征梦",
+      "image_id": "0439f6de0bd2dbd88d65",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-13",
+      "reserved_at": "2026-10-21T20:22:20.233745+00:00"
     }
   },
   "season": {
