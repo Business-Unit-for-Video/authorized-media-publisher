@@ -123,6 +123,7 @@
       "f62778673f8cff15186e",
       "f8729fa6014de02d9c65",
       "fab346f034f4294a7fa7",
+      "fc76854d46eb8e723ea6",
       "ffa5b9e2e21ba5f97726",
       "safe-github-mark-20261007"
     ]
@@ -4577,6 +4578,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T21:47:29.802410+00:00"
+    },
+    "uZSim7nu_Cg": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=uZSim7nu_Cg",
+      "title": "郭德纲、杨进明-学评戏",
+      "image_id": "fc76854d46eb8e723ea6",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-26",
+      "reserved_at": "2026-10-21T21:52:56.698459+00:00"
     }
   },
   "season": {
