@@ -31,6 +31,7 @@
       "38b4b35c0ed74e4f6d3e",
       "3a5b5e6f7c77da685866",
       "428a36985bf12c7becb9",
+      "4320a0c912ec95dedc90",
       "46c4efbb881184996265",
       "4bd7bc24adbb25fd5741",
       "4c0596da3eed215b787e",
@@ -4165,6 +4166,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T17:48:07.050341+00:00"
+    },
+    "AfVctY-f7kE": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=AfVctY-f7kE",
+      "title": "北京相声大会   20050605   大字专场   大福寿全",
+      "image_id": "4320a0c912ec95dedc90",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-2",
+      "reserved_at": "2026-10-21T18:09:32.483953+00:00"
     }
   },
   "season": {
