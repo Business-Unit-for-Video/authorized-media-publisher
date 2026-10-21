@@ -4204,7 +4204,7 @@
       "published_at": "2026-10-21T19:14:41.571140+00:00"
     },
     "tUzDsVyMQg0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=tUzDsVyMQg0",
       "title": "四位文字辈老先生濒临失传的相声专题",
       "image_id": "eed7eaade837a025e815",
@@ -4214,7 +4214,11 @@
       "submitting_at": "2026-10-21T19:25:49.806130+00:00",
       "aid": 117480525663706,
       "bvid": "BV1NWnk6JEGV",
-      "uploaded_at": "2026-10-21T19:26:18.433015+00:00"
+      "uploaded_at": "2026-10-21T19:26:18.433015+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T19:26:20.598967+00:00"
     }
   },
   "season": {
