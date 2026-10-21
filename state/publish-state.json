@@ -107,6 +107,7 @@
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e",
       "f8729fa6014de02d9c65",
+      "fab346f034f4294a7fa7",
       "ffa5b9e2e21ba5f97726",
       "safe-github-mark-20261007"
     ]
@@ -4281,6 +4282,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T19:50:21.480875+00:00"
+    },
+    "rWGj9GkGdXY": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=rWGj9GkGdXY",
+      "title": "白事会",
+      "image_id": "fab346f034f4294a7fa7",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-9",
+      "reserved_at": "2026-10-21T19:58:17.902947+00:00"
     }
   },
   "season": {
