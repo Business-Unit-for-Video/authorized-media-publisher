@@ -4374,7 +4374,7 @@
       "published_at": "2026-10-21T20:22:51.779521+00:00"
     },
     "MjYnUDaUYyk": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=MjYnUDaUYyk",
       "title": "郭德纲、王文林-羊上树",
       "image_id": "ad0817e8ad706f2316b5",
@@ -4384,7 +4384,11 @@
       "submitting_at": "2026-10-21T20:28:28.853736+00:00",
       "aid": 117480777321352,
       "bvid": "BV1jcnk6NE4o",
-      "uploaded_at": "2026-10-21T20:28:56.382416+00:00"
+      "uploaded_at": "2026-10-21T20:28:56.382416+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:28:58.457778+00:00"
     }
   },
   "season": {
