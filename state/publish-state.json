@@ -4302,7 +4302,7 @@
       "published_at": "2026-10-21T19:58:43.817228+00:00"
     },
     "O5xT_FyK0sA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=O5xT_FyK0sA",
       "title": "郭德纲 于谦－东游记",
       "image_id": "690f624f5a262363b57b",
@@ -4312,7 +4312,11 @@
       "submitting_at": "2026-10-21T20:05:47.269212+00:00",
       "aid": 117480693434164,
       "bvid": "BV1Zznk6MEDR",
-      "uploaded_at": "2026-10-21T20:06:13.023903+00:00"
+      "uploaded_at": "2026-10-21T20:06:13.023903+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:06:15.703509+00:00"
     }
   },
   "season": {
