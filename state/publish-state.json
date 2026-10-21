@@ -4389,6 +4389,14 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T20:28:58.457778+00:00"
+    },
+    "ba42IURwWPI": {
+      "status": "duplicate",
+      "video_url": "https://www.youtube.com/watch?v=ba42IURwWPI",
+      "title": "报菜名",
+      "duplicate_of": "fqV_lnxzFxA",
+      "duplicate_reason": "normalized title matches already published content",
+      "duplicate_at": "2026-10-21T20:28:59.731338+00:00"
     }
   },
   "season": {
