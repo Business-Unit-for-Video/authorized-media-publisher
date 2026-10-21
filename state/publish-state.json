@@ -4526,14 +4526,17 @@
       "published_at": "2026-10-21T21:32:41.346486+00:00"
     },
     "QD1XyMwRaNg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=QD1XyMwRaNg",
       "title": "寿比南山",
       "image_id": "d95cba201da8673884c0",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-23",
       "reserved_at": "2026-10-21T21:35:54.773648+00:00",
-      "submitting_at": "2026-10-21T21:35:55.890390+00:00"
+      "submitting_at": "2026-10-21T21:35:55.890390+00:00",
+      "aid": 117481045756232,
+      "bvid": "BV1tinr6HEUk",
+      "uploaded_at": "2026-10-21T21:36:08.807606+00:00"
     }
   },
   "season": {
