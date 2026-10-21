@@ -4454,7 +4454,7 @@
       "published_at": "2026-10-21T20:51:34.413794+00:00"
     },
     "C8sRDrFx4rg": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=C8sRDrFx4rg",
       "title": "我是黑社会",
       "image_id": "5227003ab2b3aa3cc7fd",
@@ -4464,7 +4464,11 @@
       "submitting_at": "2026-10-21T20:58:29.954595+00:00",
       "aid": 117480894759072,
       "bvid": "BV1Jdnr6BEF6",
-      "uploaded_at": "2026-10-21T20:59:12.840610+00:00"
+      "uploaded_at": "2026-10-21T20:59:12.840610+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:59:15.062559+00:00"
     }
   },
   "season": {
