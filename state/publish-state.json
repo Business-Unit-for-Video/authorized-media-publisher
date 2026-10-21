@@ -4284,14 +4284,17 @@
       "published_at": "2026-10-21T19:50:21.480875+00:00"
     },
     "rWGj9GkGdXY": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=rWGj9GkGdXY",
       "title": "白事会",
       "image_id": "fab346f034f4294a7fa7",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-9",
       "reserved_at": "2026-10-21T19:58:17.902947+00:00",
-      "submitting_at": "2026-10-21T19:58:19.194463+00:00"
+      "submitting_at": "2026-10-21T19:58:19.194463+00:00",
+      "aid": 117480659879537,
+      "bvid": "BV1Fink63E3q",
+      "uploaded_at": "2026-10-21T19:58:41.555538+00:00"
     }
   },
   "season": {
