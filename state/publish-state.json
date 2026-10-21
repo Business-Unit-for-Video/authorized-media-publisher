@@ -39,6 +39,7 @@
       "5001449201774e19420d",
       "555e4a19ec4530546b36",
       "5679c79136508a251c92",
+      "5a7948add53061e3669d",
       "5e039b5c751e608f385f",
       "5f081868679989c63b81",
       "603fb58da84ea14afb5d",
@@ -4219,6 +4220,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T19:26:20.598967+00:00"
+    },
+    "ajjR0OoJrdA": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=ajjR0OoJrdA",
+      "title": "郭德纲 张文顺 返场小段",
+      "image_id": "5a7948add53061e3669d",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-5",
+      "reserved_at": "2026-10-21T19:29:57.460717+00:00"
     }
   },
   "season": {
