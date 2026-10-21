@@ -4544,14 +4544,17 @@
       "published_at": "2026-10-21T21:36:10.966826+00:00"
     },
     "x5yslyN5KIc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=x5yslyN5KIc",
       "title": "郭德纲 王文林-学西河",
       "image_id": "751f4b3140eb0cb2ace3",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-24",
       "reserved_at": "2026-10-21T21:42:06.930395+00:00",
-      "submitting_at": "2026-10-21T21:42:08.171357+00:00"
+      "submitting_at": "2026-10-21T21:42:08.171357+00:00",
+      "aid": 117481062533063,
+      "bvid": "BV1benr6XEom",
+      "uploaded_at": "2026-10-21T21:42:31.163529+00:00"
     }
   },
   "season": {
