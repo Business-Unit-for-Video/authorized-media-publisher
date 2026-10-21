@@ -4436,7 +4436,7 @@
       "published_at": "2026-10-21T20:44:35.041084+00:00"
     },
     "D4kCDCsxZw8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=D4kCDCsxZw8",
       "title": "怯跟班",
       "image_id": "ee4b09b836e0fb6c03f2",
@@ -4446,7 +4446,11 @@
       "submitting_at": "2026-10-21T20:50:53.269407+00:00",
       "aid": 117480861206996,
       "bvid": "BV1JXnr66EXV",
-      "uploaded_at": "2026-10-21T20:51:32.413756+00:00"
+      "uploaded_at": "2026-10-21T20:51:32.413756+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:51:34.413794+00:00"
     }
   },
   "season": {
