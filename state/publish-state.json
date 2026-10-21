@@ -4168,7 +4168,7 @@
       "published_at": "2026-10-21T17:48:07.050341+00:00"
     },
     "AfVctY-f7kE": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=AfVctY-f7kE",
       "title": "北京相声大会   20050605   大字专场   大福寿全",
       "image_id": "4320a0c912ec95dedc90",
@@ -4178,7 +4178,11 @@
       "submitting_at": "2026-10-21T18:09:34.218883+00:00",
       "aid": 117480240450325,
       "bvid": "BV1XSnk6hEhK",
-      "uploaded_at": "2026-10-21T18:10:29.628431+00:00"
+      "uploaded_at": "2026-10-21T18:10:29.628431+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T18:10:32.237141+00:00"
     }
   },
   "season": {
