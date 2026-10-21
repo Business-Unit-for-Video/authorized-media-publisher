@@ -4266,7 +4266,7 @@
       "duplicate_at": "2026-10-21T19:44:51.791139+00:00"
     },
     "UXPMsyhzWVQ": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=UXPMsyhzWVQ",
       "title": "文章会",
       "image_id": "62d619b92333de6a8f68",
@@ -4276,7 +4276,11 @@
       "submitting_at": "2026-10-21T19:50:03.803195+00:00",
       "aid": 117480626323579,
       "bvid": "BV1Tnnk6HEhS",
-      "uploaded_at": "2026-10-21T19:50:19.378561+00:00"
+      "uploaded_at": "2026-10-21T19:50:19.378561+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T19:50:21.480875+00:00"
     }
   },
   "season": {
