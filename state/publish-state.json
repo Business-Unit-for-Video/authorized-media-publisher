@@ -66,6 +66,7 @@
       "92a629d439d88775b281",
       "98652a9142b1d09a9e3b",
       "9bd08d1fec865e833fbf",
+      "9e2cfb0c3a9422bd6b8f",
       "a20601d314d07a692397",
       "a315e1837de19309b9bb",
       "a364901a802e408cd89e",
@@ -4397,6 +4398,15 @@
       "duplicate_of": "fqV_lnxzFxA",
       "duplicate_reason": "normalized title matches already published content",
       "duplicate_at": "2026-10-21T20:28:59.731338+00:00"
+    },
+    "EGvTgZdr-TA": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=EGvTgZdr-TA",
+      "title": "我要读书",
+      "image_id": "9e2cfb0c3a9422bd6b8f",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-16",
+      "reserved_at": "2026-10-21T20:32:54.288149+00:00"
     }
   },
   "season": {
