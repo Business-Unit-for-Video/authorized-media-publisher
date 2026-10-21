@@ -4320,7 +4320,7 @@
       "published_at": "2026-10-21T20:06:15.703509+00:00"
     },
     "PdUyHztDhnA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=PdUyHztDhnA",
       "title": "民以食为天",
       "image_id": "c93cb752c3e17b46e724",
@@ -4330,7 +4330,11 @@
       "submitting_at": "2026-10-21T20:09:45.269639+00:00",
       "aid": 117480710211094,
       "bvid": "BV1whnk6yEH3",
-      "uploaded_at": "2026-10-21T20:09:58.789181+00:00"
+      "uploaded_at": "2026-10-21T20:09:58.789181+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:10:00.861610+00:00"
     }
   },
   "season": {
