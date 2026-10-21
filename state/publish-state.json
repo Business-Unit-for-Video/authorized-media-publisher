@@ -4508,7 +4508,7 @@
       "published_at": "2026-10-21T21:20:06.714639+00:00"
     },
     "SHI2dSvgzJw": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=SHI2dSvgzJw",
       "title": "官衣贺喜",
       "image_id": "1e52bad5f137ab92f328",
@@ -4518,7 +4518,11 @@
       "submitting_at": "2026-10-21T21:32:18.774523+00:00",
       "aid": 117481028978551,
       "bvid": "BV1VMnk68E3Q",
-      "uploaded_at": "2026-10-21T21:32:39.186308+00:00"
+      "uploaded_at": "2026-10-21T21:32:39.186308+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T21:32:41.346486+00:00"
     }
   },
   "season": {
