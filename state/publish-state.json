@@ -4356,7 +4356,7 @@
       "published_at": "2026-10-21T20:15:59.385668+00:00"
     },
     "jZGKgZXWnjQ": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=jZGKgZXWnjQ",
       "title": "郭德纲、于谦-西征梦",
       "image_id": "0439f6de0bd2dbd88d65",
@@ -4366,7 +4366,11 @@
       "submitting_at": "2026-10-21T20:22:21.500256+00:00",
       "aid": 117480760543001,
       "bvid": "BV1cYnk6VEk1",
-      "uploaded_at": "2026-10-21T20:22:49.501326+00:00"
+      "uploaded_at": "2026-10-21T20:22:49.501326+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:22:51.779521+00:00"
     }
   },
   "season": {
