@@ -4580,13 +4580,14 @@
       "published_at": "2026-10-21T21:47:29.802410+00:00"
     },
     "uZSim7nu_Cg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=uZSim7nu_Cg",
       "title": "郭德纲、杨进明-学评戏",
       "image_id": "fc76854d46eb8e723ea6",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-26",
-      "reserved_at": "2026-10-21T21:52:56.698459+00:00"
+      "reserved_at": "2026-10-21T21:52:56.698459+00:00",
+      "submitting_at": "2026-10-21T21:52:57.877803+00:00"
     }
   },
   "season": {
