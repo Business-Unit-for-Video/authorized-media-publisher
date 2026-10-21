@@ -108,6 +108,7 @@
       "eb3a41f81a98b3e055b9",
       "ebf903e731a0d2b53460",
       "ec3b86a38b4b88854b0e",
+      "ee4b09b836e0fb6c03f2",
       "eed7eaade837a025e815",
       "f03b9eb15b184744d9d5",
       "f22b178f63b255d05744",
@@ -4433,6 +4434,15 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T20:44:35.041084+00:00"
+    },
+    "D4kCDCsxZw8": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=D4kCDCsxZw8",
+      "title": "怯跟班",
+      "image_id": "ee4b09b836e0fb6c03f2",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-18",
+      "reserved_at": "2026-10-21T20:50:52.086006+00:00"
     }
   },
   "season": {
