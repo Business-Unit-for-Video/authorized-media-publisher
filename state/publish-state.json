@@ -4400,7 +4400,7 @@
       "duplicate_at": "2026-10-21T20:28:59.731338+00:00"
     },
     "EGvTgZdr-TA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=EGvTgZdr-TA",
       "title": "我要读书",
       "image_id": "9e2cfb0c3a9422bd6b8f",
@@ -4410,7 +4410,11 @@
       "submitting_at": "2026-10-21T20:32:55.653835+00:00",
       "aid": 117480794097542,
       "bvid": "BV17fnr6iEbx",
-      "uploaded_at": "2026-10-21T20:33:10.734929+00:00"
+      "uploaded_at": "2026-10-21T20:33:10.734929+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:33:12.781870+00:00"
     }
   },
   "season": {
