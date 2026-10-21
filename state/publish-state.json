@@ -4454,13 +4454,14 @@
       "published_at": "2026-10-21T20:51:34.413794+00:00"
     },
     "C8sRDrFx4rg": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=C8sRDrFx4rg",
       "title": "我是黑社会",
       "image_id": "5227003ab2b3aa3cc7fd",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-19",
-      "reserved_at": "2026-10-21T20:58:28.452131+00:00"
+      "reserved_at": "2026-10-21T20:58:28.452131+00:00",
+      "submitting_at": "2026-10-21T20:58:29.954595+00:00"
     }
   },
   "season": {
