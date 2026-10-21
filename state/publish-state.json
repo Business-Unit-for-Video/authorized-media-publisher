@@ -4222,13 +4222,14 @@
       "published_at": "2026-10-21T19:26:20.598967+00:00"
     },
     "ajjR0OoJrdA": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=ajjR0OoJrdA",
       "title": "郭德纲 张文顺 返场小段",
       "image_id": "5a7948add53061e3669d",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-5",
-      "reserved_at": "2026-10-21T19:29:57.460717+00:00"
+      "reserved_at": "2026-10-21T19:29:57.460717+00:00",
+      "submitting_at": "2026-10-21T19:29:59.049797+00:00"
     }
   },
   "season": {
