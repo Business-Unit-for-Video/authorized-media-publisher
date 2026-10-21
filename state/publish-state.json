@@ -4418,13 +4418,14 @@
       "published_at": "2026-10-21T20:33:12.781870+00:00"
     },
     "0AL67wjhtck": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=0AL67wjhtck",
       "title": "我要旅游",
       "image_id": "722eff65789dbd0be5ef",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-17",
-      "reserved_at": "2026-10-21T20:44:01.233456+00:00"
+      "reserved_at": "2026-10-21T20:44:01.233456+00:00",
+      "submitting_at": "2026-10-21T20:44:02.447402+00:00"
     }
   },
   "season": {
