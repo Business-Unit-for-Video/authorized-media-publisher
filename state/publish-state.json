@@ -4580,7 +4580,7 @@
       "published_at": "2026-10-21T21:47:29.802410+00:00"
     },
     "uZSim7nu_Cg": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=uZSim7nu_Cg",
       "title": "郭德纲、杨进明-学评戏",
       "image_id": "fc76854d46eb8e723ea6",
@@ -4590,7 +4590,11 @@
       "submitting_at": "2026-10-21T21:52:57.877803+00:00",
       "aid": 117481112866135,
       "bvid": "BV1h8nr6xEpY",
-      "uploaded_at": "2026-10-21T21:53:27.925406+00:00"
+      "uploaded_at": "2026-10-21T21:53:27.925406+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T21:53:30.425212+00:00"
     }
   },
   "season": {
