@@ -44,6 +44,7 @@
       "5f081868679989c63b81",
       "603fb58da84ea14afb5d",
       "60471a9beefc956dbb51",
+      "62d619b92333de6a8f68",
       "63e1e19c6ecb140428f7",
       "6808694377d47a41bdd4",
       "691d1235476d934d30ca",
@@ -4263,6 +4264,15 @@
       "duplicate_of": "876m42rL28g",
       "duplicate_reason": "normalized title matches already published content",
       "duplicate_at": "2026-10-21T19:44:51.791139+00:00"
+    },
+    "UXPMsyhzWVQ": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=UXPMsyhzWVQ",
+      "title": "文章会",
+      "image_id": "62d619b92333de6a8f68",
+      "image_cycle": 2,
+      "workflow_run_id": "39630206804-8",
+      "reserved_at": "2026-10-21T19:50:02.637419+00:00"
     }
   },
   "season": {
