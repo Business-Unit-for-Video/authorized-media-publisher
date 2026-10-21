@@ -4472,13 +4472,14 @@
       "published_at": "2026-10-21T20:59:15.062559+00:00"
     },
     "XmMcmo6oIP4": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=XmMcmo6oIP4",
       "title": "我是科学家",
       "image_id": "8520bd5ade21141f1100",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-20",
-      "reserved_at": "2026-10-21T21:04:56.029512+00:00"
+      "reserved_at": "2026-10-21T21:04:56.029512+00:00",
+      "submitting_at": "2026-10-21T21:04:57.289074+00:00"
     }
   },
   "season": {
