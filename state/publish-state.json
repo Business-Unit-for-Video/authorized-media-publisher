@@ -4186,7 +4186,7 @@
       "published_at": "2026-10-21T18:10:32.237141+00:00"
     },
     "ja_ZoJidbDo": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=ja_ZoJidbDo",
       "title": "北京相声大会   20050709   郭德纲专场   精华版 大保镖",
       "image_id": "c0ad52b310c55ef2dbb8",
@@ -4196,7 +4196,11 @@
       "submitting_at": "2026-10-21T19:12:51.251170+00:00",
       "aid": 117480492108063,
       "bvid": "BV1Uonk6dE1S",
-      "uploaded_at": "2026-10-21T19:14:39.158297+00:00"
+      "uploaded_at": "2026-10-21T19:14:39.158297+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T19:14:41.571140+00:00"
     }
   },
   "season": {
