@@ -4490,13 +4490,14 @@
       "published_at": "2026-10-21T21:05:19.574654+00:00"
     },
     "j4a5NOhDMMY": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=j4a5NOhDMMY",
       "title": "怯大鼓",
       "image_id": "d88bec87110199ba112b",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-21",
-      "reserved_at": "2026-10-21T21:19:35.601402+00:00"
+      "reserved_at": "2026-10-21T21:19:35.601402+00:00",
+      "submitting_at": "2026-10-21T21:19:36.854005+00:00"
     }
   },
   "season": {
