@@ -4255,6 +4255,14 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T19:44:48.812818+00:00"
+    },
+    "rBdJqDpeNk8": {
+      "status": "duplicate",
+      "video_url": "https://www.youtube.com/watch?v=rBdJqDpeNk8",
+      "title": "郭德纲 于谦-返场段2",
+      "duplicate_of": "876m42rL28g",
+      "duplicate_reason": "normalized title matches already published content",
+      "duplicate_at": "2026-10-21T19:44:51.791139+00:00"
     }
   },
   "season": {
