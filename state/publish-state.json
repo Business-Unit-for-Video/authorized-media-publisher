@@ -4562,7 +4562,7 @@
       "published_at": "2026-10-21T21:42:33.201040+00:00"
     },
     "wMadxBykz6c": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=wMadxBykz6c",
       "title": "郭德纲 张文顺-学小曲",
       "image_id": "6e9f9a0695cda49670d6",
@@ -4572,7 +4572,11 @@
       "submitting_at": "2026-10-21T21:47:12.343450+00:00",
       "aid": 117481079310063,
       "bvid": "BV14znr6JECS",
-      "uploaded_at": "2026-10-21T21:47:27.783544+00:00"
+      "uploaded_at": "2026-10-21T21:47:27.783544+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T21:47:29.802410+00:00"
     }
   },
   "season": {
