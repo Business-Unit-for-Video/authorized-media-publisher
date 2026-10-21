@@ -4132,7 +4132,7 @@
       "published_at": "2026-10-20T17:25:59.513434+00:00"
     },
     "Yz9wWn7_eZs": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=Yz9wWn7_eZs",
       "title": "北京相声大会   20050215   群口相声专场 双簧",
       "image_id": "6e6af96d8545922f507f",
@@ -4142,7 +4142,11 @@
       "submitting_at": "2026-10-21T00:52:29.297067+00:00",
       "aid": 117476163586513,
       "bvid": "BV1cHni64EFz",
-      "uploaded_at": "2026-10-21T00:56:49.191838+00:00"
+      "uploaded_at": "2026-10-21T00:56:49.191838+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T00:56:52.954452+00:00"
     }
   },
   "season": {
