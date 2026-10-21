@@ -4436,14 +4436,17 @@
       "published_at": "2026-10-21T20:44:35.041084+00:00"
     },
     "D4kCDCsxZw8": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=D4kCDCsxZw8",
       "title": "怯跟班",
       "image_id": "ee4b09b836e0fb6c03f2",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-18",
       "reserved_at": "2026-10-21T20:50:52.086006+00:00",
-      "submitting_at": "2026-10-21T20:50:53.269407+00:00"
+      "submitting_at": "2026-10-21T20:50:53.269407+00:00",
+      "aid": 117480861206996,
+      "bvid": "BV1JXnr66EXV",
+      "uploaded_at": "2026-10-21T20:51:32.413756+00:00"
     }
   },
   "season": {
