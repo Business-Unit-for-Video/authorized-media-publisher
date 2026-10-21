@@ -4150,7 +4150,7 @@
       "published_at": "2026-10-21T00:56:52.954452+00:00"
     },
     "psQaQX6Puuo": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=psQaQX6Puuo",
       "title": "2005 05 01 郭德纲 北京相声大会专场@卖五器 怯洗澡 窦公训女",
       "image_id": "c522661329d99054ef1a",
@@ -4160,7 +4160,11 @@
       "submitting_at": "2026-10-21T17:44:04.728844+00:00",
       "aid": 117480139849940,
       "bvid": "BV1bVn66EEeB",
-      "uploaded_at": "2026-10-21T17:48:04.722101+00:00"
+      "uploaded_at": "2026-10-21T17:48:04.722101+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T17:48:07.050341+00:00"
     }
   },
   "season": {
