@@ -4240,13 +4240,14 @@
       "published_at": "2026-10-21T19:30:16.437896+00:00"
     },
     "876m42rL28g": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=876m42rL28g",
       "title": "郭德纲 于谦-返场段1",
       "image_id": "8de39ca64760402186a3",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-6",
-      "reserved_at": "2026-10-21T19:44:06.276512+00:00"
+      "reserved_at": "2026-10-21T19:44:06.276512+00:00",
+      "submitting_at": "2026-10-21T19:44:07.600666+00:00"
     }
   },
   "season": {
