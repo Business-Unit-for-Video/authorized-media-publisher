@@ -4418,7 +4418,7 @@
       "published_at": "2026-10-21T20:33:12.781870+00:00"
     },
     "0AL67wjhtck": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=0AL67wjhtck",
       "title": "我要旅游",
       "image_id": "722eff65789dbd0be5ef",
@@ -4428,7 +4428,11 @@
       "submitting_at": "2026-10-21T20:44:02.447402+00:00",
       "aid": 117480844492847,
       "bvid": "BV16Rnr6uE5n",
-      "uploaded_at": "2026-10-21T20:44:31.958423+00:00"
+      "uploaded_at": "2026-10-21T20:44:31.958423+00:00",
+      "season_id": 8919073,
+      "section_id": 9947605,
+      "season_attached": true,
+      "published_at": "2026-10-21T20:44:35.041084+00:00"
     }
   },
   "season": {
