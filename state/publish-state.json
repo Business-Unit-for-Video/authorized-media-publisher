@@ -4204,13 +4204,14 @@
       "published_at": "2026-10-21T19:14:41.571140+00:00"
     },
     "tUzDsVyMQg0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=tUzDsVyMQg0",
       "title": "四位文字辈老先生濒临失传的相声专题",
       "image_id": "eed7eaade837a025e815",
       "image_cycle": 2,
       "workflow_run_id": "39630206804-4",
-      "reserved_at": "2026-10-21T19:25:48.612344+00:00"
+      "reserved_at": "2026-10-21T19:25:48.612344+00:00",
+      "submitting_at": "2026-10-21T19:25:49.806130+00:00"
     }
   },
   "season": {
