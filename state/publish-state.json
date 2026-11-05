@@ -4616,7 +4616,7 @@
       "published_at": "2026-11-05T08:49:52.032852+00:00"
     },
     "9ei1PUmDz98": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=9ei1PUmDz98",
       "title": "張震嶽 A-Yue【思念是一種病 Yearning like a sickness】Official Music Video",
       "image_id": "5c4cc0158d032ced0d97",
@@ -4626,7 +4626,11 @@
       "submitting_at": "2026-11-05T09:09:30.405992+00:00",
       "aid": 117563052788909,
       "bvid": "BV1EW486pEhv",
-      "uploaded_at": "2026-11-05T09:13:17.878254+00:00"
+      "uploaded_at": "2026-11-05T09:13:17.878254+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T09:13:20.278785+00:00"
     }
   },
   "season": {
