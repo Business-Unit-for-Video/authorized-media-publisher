@@ -4778,13 +4778,14 @@
       "published_at": "2026-11-05T10:10:13.245101+00:00"
     },
     "ZQ8mn5fS5_M": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=ZQ8mn5fS5_M",
       "title": "MC HotDog 熱狗&張震嶽 A-Yue【我愛台妹】Official Music Video",
       "image_id": "980c728dda4d65d0260c",
       "image_cycle": 2,
       "workflow_run_id": "41997843112-10",
-      "reserved_at": "2026-11-05T10:14:24.355971+00:00"
+      "reserved_at": "2026-11-05T10:14:24.355971+00:00",
+      "submitting_at": "2026-11-05T10:14:25.498700+00:00"
     }
   },
   "season": {
