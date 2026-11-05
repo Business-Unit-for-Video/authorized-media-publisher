@@ -4,7 +4,8 @@
     "cycle": 3,
     "used_image_ids": [
       "6a4795ce0cdb5300f0c8",
-      "a20601d314d07a692397"
+      "a20601d314d07a692397",
+      "d2a44f25560a465360e6"
     ]
   },
   "videos": {
@@ -4732,6 +4733,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T14:38:31.519850+00:00"
+    },
+    "v8gIvYC8DlQ": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=v8gIvYC8DlQ",
+      "title": "張震嶽 A-Yue【放屁】Official Music Video",
+      "image_id": "d2a44f25560a465360e6",
+      "image_cycle": 3,
+      "workflow_run_id": "42038937731-5",
+      "reserved_at": "2026-11-05T14:45:07.560271+00:00"
     }
   },
   "season": {
