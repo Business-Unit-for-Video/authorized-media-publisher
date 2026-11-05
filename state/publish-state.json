@@ -115,6 +115,7 @@
       "d5f3f13eb95ade922cec",
       "d88bec87110199ba112b",
       "d95cba201da8673884c0",
+      "dbbd8490f1feb32d1950",
       "dbd2ce60e5cf851b58c6",
       "dc75d5f53f0c09a0b35a",
       "dce650a04ba22fdb92c9",
@@ -4814,6 +4815,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T14:10:23.425391+00:00"
+    },
+    "Ngyz1gmZzb0": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=Ngyz1gmZzb0",
+      "title": "張震嶽 A-Yue【秘密 Secret】Official Music Video",
+      "image_id": "dbbd8490f1feb32d1950",
+      "image_cycle": 2,
+      "workflow_run_id": "42038937731-2",
+      "reserved_at": "2026-11-05T14:18:31.024217+00:00"
     }
   },
   "season": {
