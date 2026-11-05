@@ -4,6 +4,7 @@
     "cycle": 3,
     "used_image_ids": [
       "371980b3bdcfc382aba7",
+      "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "a20601d314d07a692397",
       "d2a44f25560a465360e6"
@@ -4768,6 +4769,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T14:56:23.823531+00:00"
+    },
+    "_ZCC2thJdgU": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=_ZCC2thJdgU",
+      "title": "張震嶽 A-Yue【我想要的感覺 Perplexed】Official Music Video",
+      "image_id": "6986c0a6aae9e41c5e2e",
+      "image_cycle": 3,
+      "workflow_run_id": "42038937731-7",
+      "reserved_at": "2026-11-05T15:02:02.456745+00:00"
     }
   },
   "season": {
