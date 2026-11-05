@@ -4869,14 +4869,17 @@
       "published_at": "2026-11-05T15:42:58.680468+00:00"
     },
     "ZPIfEUSz-fc": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=ZPIfEUSz-fc",
       "title": "張震嶽 A-Yue【在凌晨】Official Music Video",
       "image_id": "361c0994d83f189d7fef",
       "image_cycle": 3,
       "workflow_run_id": "42038937731-13",
       "reserved_at": "2026-11-05T15:49:35.785309+00:00",
-      "submitting_at": "2026-11-05T15:49:37.340760+00:00"
+      "submitting_at": "2026-11-05T15:49:37.340760+00:00",
+      "aid": 117564629846367,
+      "bvid": "BV1AZ486FEKb",
+      "uploaded_at": "2026-11-05T15:53:03.586544+00:00"
     }
   },
   "season": {
