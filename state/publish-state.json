@@ -81,6 +81,7 @@
       "a8a9cacd5c8c68b47a7f",
       "ab3a8e8b2f4b9313e3f0",
       "ad0817e8ad706f2316b5",
+      "aed409d4a2134e5ca107",
       "b2430018cd50aceaf458",
       "b4bf3e7fa09933710d74",
       "b6392e23670eb827ff02",
@@ -4595,11 +4596,20 @@
       "section_id": 9947605,
       "season_attached": true,
       "published_at": "2026-10-21T21:53:30.425212+00:00"
+    },
+    "_VCU94B_Oig": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=_VCU94B_Oig",
+      "title": "張震嶽 A-Yue【再見 Good bye】Official Music Video",
+      "image_id": "aed409d4a2134e5ca107",
+      "image_cycle": 2,
+      "workflow_run_id": "41994906221-1",
+      "reserved_at": "2026-11-05T08:46:32.776054+00:00"
     }
   },
   "season": {
-    "title": "于纲",
-    "season_id": 8919073,
-    "section_id": 9947605
+    "title": "张震岳",
+    "season_id": 3875069,
+    "section_id": 4317300
   }
 }
