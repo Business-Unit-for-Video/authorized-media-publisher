@@ -4735,7 +4735,7 @@
       "published_at": "2026-11-05T14:38:31.519850+00:00"
     },
     "v8gIvYC8DlQ": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=v8gIvYC8DlQ",
       "title": "張震嶽 A-Yue【放屁】Official Music Video",
       "image_id": "d2a44f25560a465360e6",
@@ -4745,7 +4745,11 @@
       "submitting_at": "2026-11-05T14:45:08.911734+00:00",
       "aid": 117564361411309,
       "bvid": "BV1DH4h6kE6P",
-      "uploaded_at": "2026-11-05T14:47:09.201140+00:00"
+      "uploaded_at": "2026-11-05T14:47:09.201140+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T14:47:11.512362+00:00"
     }
   },
   "season": {
