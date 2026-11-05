@@ -4817,13 +4817,14 @@
       "published_at": "2026-11-05T14:10:23.425391+00:00"
     },
     "Ngyz1gmZzb0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=Ngyz1gmZzb0",
       "title": "張震嶽 A-Yue【秘密 Secret】Official Music Video",
       "image_id": "dbbd8490f1feb32d1950",
       "image_cycle": 2,
       "workflow_run_id": "42038937731-2",
-      "reserved_at": "2026-11-05T14:18:31.024217+00:00"
+      "reserved_at": "2026-11-05T14:18:31.024217+00:00",
+      "submitting_at": "2026-11-05T14:18:32.302186+00:00"
     }
   },
   "season": {
