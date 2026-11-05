@@ -4778,7 +4778,7 @@
       "published_at": "2026-11-05T10:10:13.245101+00:00"
     },
     "ZQ8mn5fS5_M": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=ZQ8mn5fS5_M",
       "title": "MC HotDog 熱狗&張震嶽 A-Yue【我愛台妹】Official Music Video",
       "image_id": "980c728dda4d65d0260c",
@@ -4788,7 +4788,11 @@
       "submitting_at": "2026-11-05T10:14:25.498700+00:00",
       "aid": 117563304447141,
       "bvid": "BV1Bk4b6nERs",
-      "uploaded_at": "2026-11-05T10:17:09.921660+00:00"
+      "uploaded_at": "2026-11-05T10:17:09.921660+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T10:17:12.275018+00:00"
     }
   },
   "season": {
