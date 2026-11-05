@@ -4706,13 +4706,14 @@
       "published_at": "2026-11-05T09:40:25.761721+00:00"
     },
     "_jmRXVb06i0": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=_jmRXVb06i0",
       "title": "張震嶽 A-Yue【跑車與坦克】Official Music Video HD",
       "image_id": "4113055c4ffdf847c4ba",
       "image_cycle": 2,
       "workflow_run_id": "41997843112-6",
-      "reserved_at": "2026-11-05T09:44:10.972910+00:00"
+      "reserved_at": "2026-11-05T09:44:10.972910+00:00",
+      "submitting_at": "2026-11-05T09:44:12.284630+00:00"
     }
   },
   "season": {
