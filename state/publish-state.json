@@ -4833,14 +4833,17 @@
       "published_at": "2026-11-05T15:26:41.763047+00:00"
     },
     "xSb7YjzCfX4": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=xSb7YjzCfX4",
       "title": "張震嶽 A-Yue【有一天 One day】Official Music Video",
       "image_id": "c6b51b35f239e288d0d1",
       "image_cycle": 3,
       "workflow_run_id": "42038937731-11",
       "reserved_at": "2026-11-05T15:31:57.196323+00:00",
-      "submitting_at": "2026-11-05T15:31:58.456541+00:00"
+      "submitting_at": "2026-11-05T15:31:58.456541+00:00",
+      "aid": 117564562737722,
+      "bvid": "BV1FA4h6dEJX",
+      "uploaded_at": "2026-11-05T15:35:22.987743+00:00"
     }
   },
   "season": {
