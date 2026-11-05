@@ -4634,7 +4634,7 @@
       "published_at": "2026-11-05T09:13:20.278785+00:00"
     },
     "4shwLyB7690": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=4shwLyB7690",
       "title": "張震嶽 A-Yue【愛の初體驗 Love's first taste】Official Music Video",
       "image_id": "7100c936c49a90334615",
@@ -4644,7 +4644,11 @@
       "submitting_at": "2026-11-05T09:17:28.581592+00:00",
       "aid": 117563086341657,
       "bvid": "BV174486nEQC",
-      "uploaded_at": "2026-11-05T09:19:21.408482+00:00"
+      "uploaded_at": "2026-11-05T09:19:21.408482+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T09:19:23.798625+00:00"
     }
   },
   "season": {
