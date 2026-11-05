@@ -102,6 +102,7 @@
       "c956277354e6c1d4fe2d",
       "ca22927434caa819f146",
       "cc835529563c7e1e0d3a",
+      "d06997815bad89c85214",
       "d0a16fd25064ed910ca3",
       "d0ceb26c4d76e8e2a60c",
       "d23c2d652e9f160ad9ba",
@@ -4667,6 +4668,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T09:26:51.388212+00:00"
+    },
+    "9ATcxIOeDiY": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=9ATcxIOeDiY",
+      "title": "張震嶽 A-Yue【破吉他】Official Music Video HD",
+      "image_id": "d06997815bad89c85214",
+      "image_cycle": 2,
+      "workflow_run_id": "41997843112-4",
+      "reserved_at": "2026-11-05T09:31:09.193077+00:00"
     }
   },
   "season": {
