@@ -4724,13 +4724,14 @@
       "published_at": "2026-11-05T09:47:35.994217+00:00"
     },
     "_dsyAjwf620": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=_dsyAjwf620",
       "title": "張震嶽 A-Yue【自由 Free】Official Music Video",
       "image_id": "bcba77332a58bcf978c1",
       "image_cycle": 2,
       "workflow_run_id": "41997843112-7",
-      "reserved_at": "2026-11-05T09:52:12.625675+00:00"
+      "reserved_at": "2026-11-05T09:52:12.625675+00:00",
+      "submitting_at": "2026-11-05T09:52:13.820732+00:00"
     }
   },
   "season": {
