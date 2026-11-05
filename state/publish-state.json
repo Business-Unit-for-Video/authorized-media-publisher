@@ -4887,7 +4887,7 @@
       "published_at": "2026-11-05T15:53:06.438039+00:00"
     },
     "laCb-3FS2g0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=laCb-3FS2g0",
       "title": "張震嶽 A-Yue【無名的情歌 No Name】Official Music Video",
       "image_id": "859b9716a5db48eaa3b2",
@@ -4897,7 +4897,11 @@
       "submitting_at": "2026-11-05T15:58:50.974376+00:00",
       "aid": 117564663398533,
       "bvid": "BV1dG4h6UE4g",
-      "uploaded_at": "2026-11-05T16:02:13.810207+00:00"
+      "uploaded_at": "2026-11-05T16:02:13.810207+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T16:03:02.619489+00:00"
     }
   },
   "season": {
