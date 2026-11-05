@@ -108,6 +108,7 @@
       "d23c2d652e9f160ad9ba",
       "d2a44f25560a465360e6",
       "d3781052d3066e0c4a91",
+      "d5f3f13eb95ade922cec",
       "d88bec87110199ba112b",
       "d95cba201da8673884c0",
       "dbd2ce60e5cf851b58c6",
@@ -4685,6 +4686,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T09:34:35.203522+00:00"
+    },
+    "fJTtB8oa4VI": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=fJTtB8oa4VI",
+      "title": "張震嶽 A-Yue【很難】Official Music Video",
+      "image_id": "d5f3f13eb95ade922cec",
+      "image_cycle": 2,
+      "workflow_run_id": "41997843112-5",
+      "reserved_at": "2026-11-05T09:38:29.891258+00:00"
     }
   },
   "season": {
