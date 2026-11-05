@@ -4670,13 +4670,14 @@
       "published_at": "2026-11-05T09:26:51.388212+00:00"
     },
     "9ATcxIOeDiY": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=9ATcxIOeDiY",
       "title": "張震嶽 A-Yue【破吉他】Official Music Video HD",
       "image_id": "d06997815bad89c85214",
       "image_cycle": 2,
       "workflow_run_id": "41997843112-4",
-      "reserved_at": "2026-11-05T09:31:09.193077+00:00"
+      "reserved_at": "2026-11-05T09:31:09.193077+00:00",
+      "submitting_at": "2026-11-05T09:31:10.347581+00:00"
     }
   },
   "season": {
