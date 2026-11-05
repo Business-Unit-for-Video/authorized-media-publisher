@@ -4815,7 +4815,7 @@
       "published_at": "2026-11-05T15:15:21.157733+00:00"
     },
     "LojTZIeB3cA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=LojTZIeB3cA",
       "title": "張震嶽 A-Yue【乾妹妹 Little sister】Official Music Video",
       "image_id": "82ccdc55a44da3468164",
@@ -4825,7 +4825,11 @@
       "submitting_at": "2026-11-05T15:23:14.643068+00:00",
       "aid": 117564529184047,
       "bvid": "BV1cF4h6ZEW4",
-      "uploaded_at": "2026-11-05T15:26:39.227678+00:00"
+      "uploaded_at": "2026-11-05T15:26:39.227678+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T15:26:41.763047+00:00"
     }
   },
   "season": {
