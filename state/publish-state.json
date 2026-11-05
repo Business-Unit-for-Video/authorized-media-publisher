@@ -4706,7 +4706,7 @@
       "published_at": "2026-11-05T09:40:25.761721+00:00"
     },
     "_jmRXVb06i0": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=_jmRXVb06i0",
       "title": "張震嶽 A-Yue【跑車與坦克】Official Music Video HD",
       "image_id": "4113055c4ffdf847c4ba",
@@ -4716,7 +4716,11 @@
       "submitting_at": "2026-11-05T09:44:12.284630+00:00",
       "aid": 117563187072437,
       "bvid": "BV1o24b6mEEh",
-      "uploaded_at": "2026-11-05T09:47:33.545872+00:00"
+      "uploaded_at": "2026-11-05T09:47:33.545872+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T09:47:35.994217+00:00"
     }
   },
   "season": {
