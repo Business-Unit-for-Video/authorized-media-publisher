@@ -3,7 +3,8 @@
   "images": {
     "cycle": 3,
     "used_image_ids": [
-      "6a4795ce0cdb5300f0c8"
+      "6a4795ce0cdb5300f0c8",
+      "a20601d314d07a692397"
     ]
   },
   "videos": {
@@ -4714,6 +4715,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T14:30:04.729453+00:00"
+    },
+    "4hTHm5CKtSI": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=4hTHm5CKtSI",
+      "title": "張震嶽 A-Yue【分手吧 Break up】Official Music Video",
+      "image_id": "a20601d314d07a692397",
+      "image_cycle": 3,
+      "workflow_run_id": "42038937731-4",
+      "reserved_at": "2026-11-05T14:36:34.897651+00:00"
     }
   },
   "season": {
