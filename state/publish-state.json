@@ -91,6 +91,7 @@
       "b6392e23670eb827ff02",
       "b6fcc8191934fb858af6",
       "b7ee15c4b1c398fbea57",
+      "bcba77332a58bcf978c1",
       "bd486765c1338d9e5b62",
       "c0ad52b310c55ef2dbb8",
       "c1c726d73be6b35532f3",
@@ -4721,6 +4722,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T09:47:35.994217+00:00"
+    },
+    "_dsyAjwf620": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=_dsyAjwf620",
+      "title": "張震嶽 A-Yue【自由 Free】Official Music Video",
+      "image_id": "bcba77332a58bcf978c1",
+      "image_cycle": 2,
+      "workflow_run_id": "41997843112-7",
+      "reserved_at": "2026-11-05T09:52:12.625675+00:00"
     }
   },
   "season": {
