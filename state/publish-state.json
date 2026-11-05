@@ -4851,13 +4851,14 @@
       "published_at": "2026-11-05T15:35:27.127676+00:00"
     },
     "ZIvWrKYdMQE": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=ZIvWrKYdMQE",
       "title": "張震嶽 ayal komod【浪人的... Surfer's Love Story】Official Music Video",
       "image_id": "10340e09a8a23fe11eb5",
       "image_cycle": 3,
       "workflow_run_id": "42038937731-12",
-      "reserved_at": "2026-11-05T15:41:00.509163+00:00"
+      "reserved_at": "2026-11-05T15:41:00.509163+00:00",
+      "submitting_at": "2026-11-05T15:41:02.404762+00:00"
     }
   },
   "season": {
