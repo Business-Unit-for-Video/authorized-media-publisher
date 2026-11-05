@@ -4753,7 +4753,7 @@
       "published_at": "2026-11-05T14:47:11.512362+00:00"
     },
     "tSGWdMLAvx8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=tSGWdMLAvx8",
       "title": "張震嶽 A-Yue【Free Night】Official Music Video",
       "image_id": "371980b3bdcfc382aba7",
@@ -4763,7 +4763,11 @@
       "submitting_at": "2026-11-05T14:52:56.269851+00:00",
       "aid": 117564411742741,
       "bvid": "BV1yi4h6AE5m",
-      "uploaded_at": "2026-11-05T14:56:21.415103+00:00"
+      "uploaded_at": "2026-11-05T14:56:21.415103+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T14:56:23.823531+00:00"
     }
   },
   "season": {
