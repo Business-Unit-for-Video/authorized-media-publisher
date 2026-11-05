@@ -135,6 +135,7 @@
       "fab346f034f4294a7fa7",
       "fc76854d46eb8e723ea6",
       "fcf454b6bc6235630641",
+      "fe3c5c5d01ce621e7807",
       "ffa5b9e2e21ba5f97726",
       "safe-github-mark-20261007"
     ]
@@ -4796,6 +4797,15 @@
       "skipped_at": "2026-11-05T13:47:30+00:00",
       "rejection_reason": "您的视频【P1内容全程】中含有不合规的素材（影视、歌曲、人物、游戏等），请及时修改",
       "skip_reason": "Bilibili 已退回，按用户要求跳过；保留原稿记录，不自动重投"
+    },
+    "FgVQFVhk2pY": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=FgVQFVhk2pY",
+      "title": "張震嶽 A-Yue【勇氣 Courage】Official Music Video",
+      "image_id": "fe3c5c5d01ce621e7807",
+      "image_cycle": 2,
+      "workflow_run_id": "42038937731-1",
+      "reserved_at": "2026-11-05T14:08:21.452677+00:00"
     }
   },
   "season": {
