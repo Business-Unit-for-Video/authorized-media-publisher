@@ -4699,7 +4699,7 @@
       "published_at": "2026-11-05T14:22:01.555704+00:00"
     },
     "6bi587lgWhM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=6bi587lgWhM",
       "title": "張震嶽 A-Yue【小宇】Official Music Video",
       "image_id": "6a4795ce0cdb5300f0c8",
@@ -4709,7 +4709,11 @@
       "submitting_at": "2026-11-05T14:26:38.658371+00:00",
       "aid": 117564294434281,
       "bvid": "BV1tt4h6zEpg",
-      "uploaded_at": "2026-11-05T14:30:02.040913+00:00"
+      "uploaded_at": "2026-11-05T14:30:02.040913+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T14:30:04.729453+00:00"
     }
   },
   "season": {
