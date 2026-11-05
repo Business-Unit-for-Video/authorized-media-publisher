@@ -7,6 +7,7 @@
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
       "a20601d314d07a692397",
+      "bd486765c1338d9e5b62",
       "d2a44f25560a465360e6"
     ]
   },
@@ -4794,6 +4795,15 @@
       "duplicate_of": "tSGWdMLAvx8",
       "duplicate_reason": "normalized title matches already published content",
       "duplicate_at": "2026-11-05T15:05:35.615716+00:00"
+    },
+    "hZMo-1E_z0w": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=hZMo-1E_z0w",
+      "title": "張震嶽 A-Yue&MC Hot Dog&侯佩岑 Patty Hou【就讓這首歌】Official Music Video",
+      "image_id": "bd486765c1338d9e5b62",
+      "image_cycle": 3,
+      "workflow_run_id": "42038937731-9",
+      "reserved_at": "2026-11-05T15:12:30.336723+00:00"
     }
   },
   "season": {
