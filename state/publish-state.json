@@ -4760,14 +4760,17 @@
       "published_at": "2026-11-05T10:02:23.654391+00:00"
     },
     "BE2oPBr76Ck": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=BE2oPBr76Ck",
       "title": "頑童MJ116 feat.張震嶽 A-Yue【雙手插口袋】Official Music Video",
       "image_id": "fcf454b6bc6235630641",
       "image_cycle": 2,
       "workflow_run_id": "41997843112-9",
       "reserved_at": "2026-11-05T10:06:49.611742+00:00",
-      "submitting_at": "2026-11-05T10:06:50.873096+00:00"
+      "submitting_at": "2026-11-05T10:06:50.873096+00:00",
+      "aid": 117563287865858,
+      "bvid": "BV1zC4b6DETi",
+      "uploaded_at": "2026-11-05T10:10:10.781874+00:00"
     }
   },
   "season": {
