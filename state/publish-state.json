@@ -4598,13 +4598,14 @@
       "published_at": "2026-10-21T21:53:30.425212+00:00"
     },
     "_VCU94B_Oig": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=_VCU94B_Oig",
       "title": "張震嶽 A-Yue【再見 Good bye】Official Music Video",
       "image_id": "aed409d4a2134e5ca107",
       "image_cycle": 2,
       "workflow_run_id": "41994906221-1",
-      "reserved_at": "2026-11-05T08:46:32.776054+00:00"
+      "reserved_at": "2026-11-05T08:46:32.776054+00:00",
+      "submitting_at": "2026-11-05T08:46:34.117507+00:00"
     }
   },
   "season": {
