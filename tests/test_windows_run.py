@@ -1,3 +1,4 @@
+import csv
 import json
 import sys
 
@@ -6,6 +7,17 @@ import pytest
 from media_publisher import serial as serial_module
 from media_publisher.cli import UnavailableVideoError, select_video_batch
 from scripts import run_windows as runner
+
+
+def test_zhang_yue_collection_uses_verified_rock_records_manifest():
+    manifest_name, season_title = runner.COLLECTIONS['ZhangYue']
+    with (runner.ROOT / manifest_name).open(encoding='utf-8-sig', newline='') as handle:
+        records = list(csv.DictReader(handle))
+    assert season_title == '张震岳'
+    assert len(records) >= 1
+    assert all(row.get('channel_id') == 'UCPcF3KTqhD67ADkukx_OeDg' for row in records)
+    assert all('张震嶽' in row.get('title', '') or 'A-Yue' in row.get('title', '')
+               or 'ayal komod' in row.get('title', '').lower() for row in records)
 
 
 @pytest.mark.parametrize('status', ['submitting', 'uploading', 'uploaded', 'published'])

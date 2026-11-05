@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('JayChou', 'YuGang', 'XiaoDaoDaLang', 'BetterLeaf')]
+    [ValidateSet('JayChou', 'ZhangYue', 'YuGang', 'XiaoDaoDaLang', 'BetterLeaf')]
     [string]$Collection = 'JayChou',
     [ValidateRange(1, 2147483647)]
     [int]$BatchSize = 1,

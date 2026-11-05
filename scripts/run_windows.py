@@ -21,6 +21,7 @@ from scripts.check_recent_bilibili_reviews import check_recent
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTIONS = {
     'JayChou': ('input/videos.csv', '周杰伦'),
+    'ZhangYue': ('input/zhang-yue.csv', '张震岳'),
     'YuGang': ('input/guodegang-early-successes.csv', '于纲'),
     'XiaoDaoDaLang': ('input/xiaodaodalang.csv', '小岛大浪吹'),
     'BetterLeaf': ('input/betterleaf.csv', 'Better Leaf 好葉'),

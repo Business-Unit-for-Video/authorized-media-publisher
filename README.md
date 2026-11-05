@@ -40,11 +40,12 @@ Selected images are downloaded and validated before expensive video downloads be
 
 ## GitHub Actions
 
-四个独立入口固定使用各自清单和 Bilibili 合集，均为手动触发、公开投稿，默认每次最多完成两条：
+五个独立入口固定使用各自清单和 Bilibili 合集，均为手动触发、公开投稿，默认每次最多完成两条：
 
 | Actions 文件 | 输入清单 | Bilibili 合集 |
 |---|---|---|
 | [publish-jay-chou.yml](.github/workflows/publish-jay-chou.yml) | `input/videos.csv` | 周杰伦 |
+| [publish-zhang-yue.yml](.github/workflows/publish-zhang-yue.yml) | `input/zhang-yue.csv` | 张震岳 |
 | [publish-yu-gang.yml](.github/workflows/publish-yu-gang.yml) | `input/guodegang-early-successes.csv` | 于纲 |
 | [publish-xiaodaodalang.yml](.github/workflows/publish-xiaodaodalang.yml) | `input/xiaodaodalang.csv` | 小岛大浪吹 |
 | [publish-betterleaf.yml](.github/workflows/publish-betterleaf.yml) | `input/betterleaf.csv` | Better Leaf 好葉 |
