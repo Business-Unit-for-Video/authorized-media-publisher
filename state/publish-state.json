@@ -72,6 +72,7 @@
       "8ec409e72e675855127c",
       "8f5a5515564b04018593",
       "8ff2600a9346404a7d1b",
+      "91e77ea739d3e08c155d",
       "92a629d439d88775b281",
       "9312e829c447a38146c3",
       "98652a9142b1d09a9e3b",
@@ -4739,6 +4740,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T09:54:15.698790+00:00"
+    },
+    "49xsEr77YCc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=49xsEr77YCc",
+      "title": "張震嶽 A-Yue【路口】Official Music Video",
+      "image_id": "91e77ea739d3e08c155d",
+      "image_cycle": 2,
+      "workflow_run_id": "41997843112-8",
+      "reserved_at": "2026-11-05T09:58:51.027647+00:00"
     }
   },
   "season": {
