@@ -3,6 +3,7 @@
   "images": {
     "cycle": 3,
     "used_image_ids": [
+      "10340e09a8a23fe11eb5",
       "371980b3bdcfc382aba7",
       "6986c0a6aae9e41c5e2e",
       "6a4795ce0cdb5300f0c8",
@@ -4848,6 +4849,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T15:35:27.127676+00:00"
+    },
+    "ZIvWrKYdMQE": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=ZIvWrKYdMQE",
+      "title": "張震嶽 ayal komod【浪人的... Surfer's Love Story】Official Music Video",
+      "image_id": "10340e09a8a23fe11eb5",
+      "image_cycle": 3,
+      "workflow_run_id": "42038937731-12",
+      "reserved_at": "2026-11-05T15:41:00.509163+00:00"
     }
   },
   "season": {
