@@ -4688,7 +4688,7 @@
       "published_at": "2026-11-05T09:34:35.203522+00:00"
     },
     "fJTtB8oa4VI": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=fJTtB8oa4VI",
       "title": "張震嶽 A-Yue【很難】Official Music Video",
       "image_id": "d5f3f13eb95ade922cec",
@@ -4698,7 +4698,11 @@
       "submitting_at": "2026-11-05T09:38:30.975353+00:00",
       "aid": 117563170226183,
       "bvid": "BV1HE486dEqj",
-      "uploaded_at": "2026-11-05T09:40:23.473781+00:00"
+      "uploaded_at": "2026-11-05T09:40:23.473781+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T09:40:25.761721+00:00"
     }
   },
   "season": {
