@@ -4799,7 +4799,7 @@
       "skip_reason": "Bilibili 已退回，按用户要求跳过；保留原稿记录，不自动重投"
     },
     "FgVQFVhk2pY": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=FgVQFVhk2pY",
       "title": "張震嶽 A-Yue【勇氣 Courage】Official Music Video",
       "image_id": "fe3c5c5d01ce621e7807",
@@ -4809,7 +4809,11 @@
       "submitting_at": "2026-11-05T14:08:22.724854+00:00",
       "aid": 117564227324492,
       "bvid": "BV1Vf4h6EEsX",
-      "uploaded_at": "2026-11-05T14:10:21.101281+00:00"
+      "uploaded_at": "2026-11-05T14:10:21.101281+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T14:10:23.425391+00:00"
     }
   },
   "season": {
