@@ -4652,13 +4652,14 @@
       "published_at": "2026-11-05T09:19:23.798625+00:00"
     },
     "xYi8L6Cu430": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=xYi8L6Cu430",
       "title": "張震嶽 A-Yue【雙手插口袋】Official Music Video",
       "image_id": "9312e829c447a38146c3",
       "image_cycle": 2,
       "workflow_run_id": "41997843112-3",
-      "reserved_at": "2026-11-05T09:23:26.246636+00:00"
+      "reserved_at": "2026-11-05T09:23:26.246636+00:00",
+      "submitting_at": "2026-11-05T09:23:27.407992+00:00"
     }
   },
   "season": {
