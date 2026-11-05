@@ -4742,7 +4742,7 @@
       "published_at": "2026-11-05T09:54:15.698790+00:00"
     },
     "49xsEr77YCc": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=49xsEr77YCc",
       "title": "張震嶽 A-Yue【路口】Official Music Video",
       "image_id": "91e77ea739d3e08c155d",
@@ -4752,7 +4752,11 @@
       "submitting_at": "2026-11-05T09:58:52.616776+00:00",
       "aid": 117563254179373,
       "bvid": "BV1F64b6XERG",
-      "uploaded_at": "2026-11-05T10:02:21.341243+00:00"
+      "uploaded_at": "2026-11-05T10:02:21.341243+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-05T10:02:23.654391+00:00"
     }
   },
   "season": {
