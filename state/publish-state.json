@@ -72,6 +72,7 @@
       "8f5a5515564b04018593",
       "8ff2600a9346404a7d1b",
       "92a629d439d88775b281",
+      "9312e829c447a38146c3",
       "98652a9142b1d09a9e3b",
       "9bd08d1fec865e833fbf",
       "9e2cfb0c3a9422bd6b8f",
@@ -4649,6 +4650,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-05T09:19:23.798625+00:00"
+    },
+    "xYi8L6Cu430": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=xYi8L6Cu430",
+      "title": "張震嶽 A-Yue【雙手插口袋】Official Music Video",
+      "image_id": "9312e829c447a38146c3",
+      "image_cycle": 2,
+      "workflow_run_id": "41997843112-3",
+      "reserved_at": "2026-11-05T09:23:26.246636+00:00"
     }
   },
   "season": {
