@@ -5075,13 +5075,14 @@
       "published_at": "2026-11-08T04:51:18.312877+00:00"
     },
     "RND2XzJEBR8": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=RND2XzJEBR8",
       "title": "張震嶽 ayal komod【梅雨季 Rainy Season】Official Music Video(4K)",
       "image_id": "b6392e23670eb827ff02",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-11",
-      "reserved_at": "2026-11-08T04:57:02.869056+00:00"
+      "reserved_at": "2026-11-08T04:57:02.869056+00:00",
+      "submitting_at": "2026-11-08T04:57:03.848061+00:00"
     }
   },
   "season": {
