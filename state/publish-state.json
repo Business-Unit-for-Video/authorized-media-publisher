@@ -4923,7 +4923,7 @@
       "published_at": "2026-11-08T03:39:09.670616+00:00"
     },
     "i5nuDFtGFoc": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=i5nuDFtGFoc",
       "title": "張震嶽 A-Yue【無路用的人】Official Music Video",
       "image_id": "03c1b478e81968112293",
@@ -4933,7 +4933,11 @@
       "submitting_at": "2026-11-08T03:45:34.244195+00:00",
       "aid": 117578756325587,
       "bvid": "BV1or4s6vEwM",
-      "uploaded_at": "2026-11-08T03:47:31.492464+00:00"
+      "uploaded_at": "2026-11-08T03:47:31.492464+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-08T03:47:33.725485+00:00"
     }
   },
   "season": {
