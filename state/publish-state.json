@@ -4923,13 +4923,14 @@
       "published_at": "2026-11-08T03:39:09.670616+00:00"
     },
     "i5nuDFtGFoc": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=i5nuDFtGFoc",
       "title": "張震嶽 A-Yue【無路用的人】Official Music Video",
       "image_id": "03c1b478e81968112293",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-2",
-      "reserved_at": "2026-11-08T03:45:32.406578+00:00"
+      "reserved_at": "2026-11-08T03:45:32.406578+00:00",
+      "submitting_at": "2026-11-08T03:45:34.244195+00:00"
     }
   },
   "season": {
