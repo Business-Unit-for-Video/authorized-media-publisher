@@ -4956,6 +4956,14 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T03:57:18.761026+00:00"
+    },
+    "TwLXNkZSz8k": {
+      "status": "duplicate",
+      "video_url": "https://www.youtube.com/watch?v=TwLXNkZSz8k",
+      "title": "張震嶽 A-Yue【Ok】Official Music Video",
+      "duplicate_of": "tSGWdMLAvx8",
+      "duplicate_reason": "normalized title matches already published content",
+      "duplicate_at": "2026-11-08T03:57:19.714670+00:00"
     }
   },
   "season": {
