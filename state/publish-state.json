@@ -4967,7 +4967,7 @@
       "duplicate_at": "2026-11-08T03:57:19.714670+00:00"
     },
     "iANSg3oFJ0M": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=iANSg3oFJ0M",
       "title": "張震嶽 A-Yue【天堂】Official Music Video",
       "image_id": "08122a87ad329f9c8ccc",
@@ -4977,7 +4977,11 @@
       "submitting_at": "2026-11-08T04:03:59.585289+00:00",
       "aid": 117578840148347,
       "bvid": "BV1ze4s6gEzG",
-      "uploaded_at": "2026-11-08T04:07:23.641739+00:00"
+      "uploaded_at": "2026-11-08T04:07:23.641739+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-08T04:07:25.922668+00:00"
     }
   },
   "season": {
