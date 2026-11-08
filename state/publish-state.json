@@ -5003,7 +5003,7 @@
       "published_at": "2026-11-08T04:16:36.136208+00:00"
     },
     "bBKveox5-jA": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=bBKveox5-jA",
       "title": "張震嶽 A-Yue【我會想念你】Official Music Video",
       "image_id": "c2906d936ee8384b7fac",
@@ -5013,7 +5013,11 @@
       "submitting_at": "2026-11-08T04:23:33.276597+00:00",
       "aid": 117578907256763,
       "bvid": "BV1hQ4s6ZEtC",
-      "uploaded_at": "2026-11-08T04:25:31.540120+00:00"
+      "uploaded_at": "2026-11-08T04:25:31.540120+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-08T04:25:33.743092+00:00"
     }
   },
   "season": {
