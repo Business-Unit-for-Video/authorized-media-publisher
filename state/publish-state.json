@@ -13,6 +13,7 @@
       "82ccdc55a44da3468164",
       "859b9716a5db48eaa3b2",
       "a20601d314d07a692397",
+      "b7ee15c4b1c398fbea57",
       "bd486765c1338d9e5b62",
       "c6b51b35f239e288d0d1",
       "d2a44f25560a465360e6"
@@ -4938,6 +4939,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T03:47:33.725485+00:00"
+    },
+    "mTmdrMDlWMs": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=mTmdrMDlWMs",
+      "title": "張震嶽 A-Yue【認輸】Official Music Video",
+      "image_id": "b7ee15c4b1c398fbea57",
+      "image_cycle": 3,
+      "workflow_run_id": "42442079930-3",
+      "reserved_at": "2026-11-08T03:53:51.230351+00:00"
     }
   },
   "season": {
