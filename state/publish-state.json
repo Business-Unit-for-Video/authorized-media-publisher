@@ -5021,7 +5021,7 @@
       "published_at": "2026-11-08T04:25:33.743092+00:00"
     },
     "_IHX-zYk6J8": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=_IHX-zYk6J8",
       "title": "張震嶽 A-Yue【男子漢】Official Music Video",
       "image_id": "a3caffc084ca41e62ed4",
@@ -5031,7 +5031,11 @@
       "submitting_at": "2026-11-08T04:31:36.110419+00:00",
       "aid": 117578940874995,
       "bvid": "BV1SR4s6dEem",
-      "uploaded_at": "2026-11-08T04:34:59.788307+00:00"
+      "uploaded_at": "2026-11-08T04:34:59.788307+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-08T04:35:02.032102+00:00"
     }
   },
   "season": {
