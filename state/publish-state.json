@@ -4985,7 +4985,7 @@
       "published_at": "2026-11-08T04:07:25.922668+00:00"
     },
     "T6bMx4MqwPI": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=T6bMx4MqwPI",
       "title": "張震嶽 A-Yue【我的心是為你跳】Official Music Video",
       "image_id": "f2d61df0e6f7fac6c32b",
@@ -4995,7 +4995,11 @@
       "submitting_at": "2026-11-08T04:13:10.152860+00:00",
       "aid": 117578873700513,
       "bvid": "BV1Bq4s6MEyM",
-      "uploaded_at": "2026-11-08T04:16:33.730702+00:00"
+      "uploaded_at": "2026-11-08T04:16:33.730702+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-08T04:16:36.136208+00:00"
     }
   },
   "season": {
