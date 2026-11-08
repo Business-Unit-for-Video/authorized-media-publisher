@@ -5173,14 +5173,17 @@
       "published_at": "2026-11-08T05:25:30.344694+00:00"
     },
     "tFyVFdaEmRA": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=tFyVFdaEmRA",
       "title": "張震嶽 A-Yue【要用力】Official Music Video",
       "image_id": "c956277354e6c1d4fe2d",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-17",
       "reserved_at": "2026-11-08T05:29:58.044796+00:00",
-      "submitting_at": "2026-11-08T05:29:58.987048+00:00"
+      "submitting_at": "2026-11-08T05:29:58.987048+00:00",
+      "aid": 117579175693212,
+      "bvid": "BV1XhWE6TECa",
+      "uploaded_at": "2026-11-08T05:33:16.376035+00:00"
     }
   },
   "season": {
