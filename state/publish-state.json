@@ -17,7 +17,8 @@
       "b7ee15c4b1c398fbea57",
       "bd486765c1338d9e5b62",
       "c6b51b35f239e288d0d1",
-      "d2a44f25560a465360e6"
+      "d2a44f25560a465360e6",
+      "f2d61df0e6f7fac6c32b"
     ]
   },
   "videos": {
@@ -4982,6 +4983,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T04:07:25.922668+00:00"
+    },
+    "T6bMx4MqwPI": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=T6bMx4MqwPI",
+      "title": "張震嶽 A-Yue【我的心是為你跳】Official Music Video",
+      "image_id": "f2d61df0e6f7fac6c32b",
+      "image_cycle": 3,
+      "workflow_run_id": "42442079930-6",
+      "reserved_at": "2026-11-08T04:13:09.182612+00:00"
     }
   },
   "season": {
