@@ -3,6 +3,7 @@
   "images": {
     "cycle": 3,
     "used_image_ids": [
+      "03c1b478e81968112293",
       "0f65e071a42b4f7cf8d9",
       "10340e09a8a23fe11eb5",
       "361c0994d83f189d7fef",
@@ -4920,6 +4921,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T03:39:09.670616+00:00"
+    },
+    "i5nuDFtGFoc": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=i5nuDFtGFoc",
+      "title": "張震嶽 A-Yue【無路用的人】Official Music Video",
+      "image_id": "03c1b478e81968112293",
+      "image_cycle": 3,
+      "workflow_run_id": "42442079930-2",
+      "reserved_at": "2026-11-08T03:45:32.406578+00:00"
     }
   },
   "season": {
