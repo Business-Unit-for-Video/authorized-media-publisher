@@ -5057,14 +5057,17 @@
       "published_at": "2026-11-08T04:42:03.926841+00:00"
     },
     "Oyy1BvbsREI": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=Oyy1BvbsREI",
       "title": "張震嶽 ayal komod【貪心 Greed】Official Music Video",
       "image_id": "f62778673f8cff15186e",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-10",
       "reserved_at": "2026-11-08T04:47:49.760795+00:00",
-      "submitting_at": "2026-11-08T04:47:50.664452+00:00"
+      "submitting_at": "2026-11-08T04:47:50.664452+00:00",
+      "aid": 117579007920579,
+      "bvid": "BV1aS4s6FExE",
+      "uploaded_at": "2026-11-08T04:51:16.121131+00:00"
     }
   },
   "season": {
