@@ -5111,14 +5111,17 @@
       "published_at": "2026-11-08T05:05:57.046324+00:00"
     },
     "_exfx5fdEDY": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=_exfx5fdEDY",
       "title": "張震嶽 A-Yue【捨不得】Official Music Video",
       "image_id": "c7c8924c1b00e8bf33d0",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-13",
       "reserved_at": "2026-11-08T05:10:14.182175+00:00",
-      "submitting_at": "2026-11-08T05:10:15.150200+00:00"
+      "submitting_at": "2026-11-08T05:10:15.150200+00:00",
+      "aid": 117579091872935,
+      "bvid": "BV1nVWE6SEvr",
+      "uploaded_at": "2026-11-08T05:12:08.057988+00:00"
     }
   },
   "season": {
