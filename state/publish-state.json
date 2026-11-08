@@ -5155,14 +5155,17 @@
       "published_at": "2026-11-08T05:18:05.833297+00:00"
     },
     "syLX_P06MPg": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=syLX_P06MPg",
       "title": "張震嶽 A-Yue【我家門前有大海】Official Music Video",
       "image_id": "18b816827aafeed03652",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-16",
       "reserved_at": "2026-11-08T05:22:03.133467+00:00",
-      "submitting_at": "2026-11-08T05:22:04.116436+00:00"
+      "submitting_at": "2026-11-08T05:22:04.116436+00:00",
+      "aid": 117579142138823,
+      "bvid": "BV1FLWE6EE9n",
+      "uploaded_at": "2026-11-08T05:25:28.141867+00:00"
     }
   },
   "season": {
