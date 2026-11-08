@@ -5126,6 +5126,14 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T05:12:10.505048+00:00"
+    },
+    "pj2F120nDlE": {
+      "status": "duplicate",
+      "video_url": "https://www.youtube.com/watch?v=pj2F120nDlE",
+      "title": "張震嶽 A-Yue【0204】Official Music Video",
+      "duplicate_of": "tSGWdMLAvx8",
+      "duplicate_reason": "normalized title matches already published content",
+      "duplicate_at": "2026-11-08T05:12:11.494021+00:00"
     }
   },
   "season": {
