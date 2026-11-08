@@ -22,6 +22,7 @@
       "bd486765c1338d9e5b62",
       "c2906d936ee8384b7fac",
       "c6b51b35f239e288d0d1",
+      "c7c8924c1b00e8bf33d0",
       "d2a44f25560a465360e6",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e"
@@ -5108,6 +5109,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T05:05:57.046324+00:00"
+    },
+    "_exfx5fdEDY": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=_exfx5fdEDY",
+      "title": "張震嶽 A-Yue【捨不得】Official Music Video",
+      "image_id": "c7c8924c1b00e8bf33d0",
+      "image_cycle": 3,
+      "workflow_run_id": "42442079930-13",
+      "reserved_at": "2026-11-08T05:10:14.182175+00:00"
     }
   },
   "season": {
