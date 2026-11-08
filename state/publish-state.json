@@ -5093,7 +5093,7 @@
       "published_at": "2026-11-08T05:00:30.675908+00:00"
     },
     "tt_JXfBIiBM": {
-      "status": "uploaded",
+      "status": "published",
       "video_url": "https://www.youtube.com/watch?v=tt_JXfBIiBM",
       "title": "張震嶽 ayal komod【搬家 Sadly Moving On】Official Music Video(4K)",
       "image_id": "10b9f309a38e5ce38f7c",
@@ -5103,7 +5103,11 @@
       "submitting_at": "2026-11-08T05:05:19.202148+00:00",
       "aid": 117579075094834,
       "bvid": "BV17HWE65EsH",
-      "uploaded_at": "2026-11-08T05:05:54.991886+00:00"
+      "uploaded_at": "2026-11-08T05:05:54.991886+00:00",
+      "season_id": 3875069,
+      "section_id": 4317300,
+      "season_attached": true,
+      "published_at": "2026-11-08T05:05:57.046324+00:00"
     }
   },
   "season": {
