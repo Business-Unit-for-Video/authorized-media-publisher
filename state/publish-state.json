@@ -4905,13 +4905,14 @@
       "published_at": "2026-11-05T16:03:02.619489+00:00"
     },
     "bFEKOqHfLsY": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=bFEKOqHfLsY",
       "title": "張震嶽 A-Yue【抱著你】Official Music Video HD",
       "image_id": "0f65e071a42b4f7cf8d9",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-1",
-      "reserved_at": "2026-11-08T03:37:15.071416+00:00"
+      "reserved_at": "2026-11-08T03:37:15.071416+00:00",
+      "submitting_at": "2026-11-08T03:37:16.208156+00:00"
     }
   },
   "season": {
