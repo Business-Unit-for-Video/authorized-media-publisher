@@ -5137,14 +5137,17 @@
       "duplicate_at": "2026-11-08T05:12:11.494021+00:00"
     },
     "1rau1QDJ9tQ": {
-      "status": "submitting",
+      "status": "uploaded",
       "video_url": "https://www.youtube.com/watch?v=1rau1QDJ9tQ",
       "title": "張震嶽 ayal komod【跟著感覺走 Go With The Flow】Official Music Video",
       "image_id": "4bd7bc24adbb25fd5741",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-15",
       "reserved_at": "2026-11-08T05:16:06.885409+00:00",
-      "submitting_at": "2026-11-08T05:16:07.859089+00:00"
+      "submitting_at": "2026-11-08T05:16:07.859089+00:00",
+      "aid": 117579125361419,
+      "bvid": "BV1FjWE6mEVm",
+      "uploaded_at": "2026-11-08T05:18:03.521148+00:00"
     }
   },
   "season": {
