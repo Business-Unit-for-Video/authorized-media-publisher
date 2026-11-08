@@ -5039,13 +5039,14 @@
       "published_at": "2026-11-08T04:35:02.032102+00:00"
     },
     "kwX-nw1bhcU": {
-      "status": "reserved",
+      "status": "submitting",
       "video_url": "https://www.youtube.com/watch?v=kwX-nw1bhcU",
       "title": "張震嶽 A-Yue & 林芯儀 Shennio Lin【回到過去】中視「光陰的故事」片尾曲 Official Music Video",
       "image_id": "2e632f68f39c6da8318a",
       "image_cycle": 3,
       "workflow_run_id": "42442079930-9",
-      "reserved_at": "2026-11-08T04:40:05.441808+00:00"
+      "reserved_at": "2026-11-08T04:40:05.441808+00:00",
+      "submitting_at": "2026-11-08T04:40:06.383627+00:00"
     }
   },
   "season": {
