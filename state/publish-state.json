@@ -27,6 +27,7 @@
       "c7c8924c1b00e8bf33d0",
       "c956277354e6c1d4fe2d",
       "d2a44f25560a465360e6",
+      "f22b178f63b255d05744",
       "f2d61df0e6f7fac6c32b",
       "f62778673f8cff15186e"
     ]
@@ -5188,6 +5189,15 @@
       "section_id": 4317300,
       "season_attached": true,
       "published_at": "2026-11-08T05:33:18.665388+00:00"
+    },
+    "6euKvexyyyM": {
+      "status": "reserved",
+      "video_url": "https://www.youtube.com/watch?v=6euKvexyyyM",
+      "title": "張震嶽 ayal komod【媽媽的眼睛 Mama's Eyes】Official Music Video",
+      "image_id": "f22b178f63b255d05744",
+      "image_cycle": 3,
+      "workflow_run_id": "42442079930-18",
+      "reserved_at": "2026-11-08T05:39:15.866321+00:00"
     }
   },
   "season": {
